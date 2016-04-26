@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Speech API Example</title>
+        
+        <link rel="stylesheet" href="css/stylesheet.css">
+    </head>
+    
+    <body class="flex-column-container">
+        <h1>Web Spell API</h1>
+        <p>also known as the <em>Web Speech API</em> in the muggle world</p>
+        
+        <section>
+            designed by the mages<br>
+            <em>Cassiano</em> and <em>Pedro Felipe</em> for<br>
+            <em>Sir Fegemo's JavaScripta Kingdom</em>
+        </section>
+        
+        <div class="flex-row-container">
+            <div class="text-right">
+                <p>click on the book<br>
+                    <em id="start-speech">TO START</em>
+                    <em id="stop-speech" class="hidden">TO STOP</em>
+                    <br>spell recognition
+                </p>
+            </div>
+            
+            <button id="toggle-speech" onclick="toggleRecognition(event)">
+                <img src="img/book.svg" alt="Microphone" class="icon">
+            </button>
+            
+            <img src="img/blackmage.svg" width="60px">
+            
+            <button id="toggle-synthesis">
+                <img src="img/wand.svg" alt="Microphone" class="icon">
+            </button>
+            
+            <div class="text-left">
+                <p>click on the wand<br>
+                    <em id="start-synthesis">TO START</em>
+                    <em id="stop-synthesis" class="hidden">TO STOP</em>
+                    <br>spell synthesis
+                </p>
+            </div>
+        </div>
+        
+        <span class="hidden" id="sr-not-supported">
+            Oh no! Your muggle browser doesn't support the Speech Recognition API!
+        </span>
+        <span class="hidden" id="ss-not-supported">
+            Oh no! Your muggle browser doesn't support the Speech Synthesis API!
+        </span>
+        
+        <div id="results" class="text-center">
+            <span id="final-span"></span>
+            <span id="interim-span"></span>
+        </div>
+        
+        <script src="js/script.js"></script>
+    </body>
+</html>
