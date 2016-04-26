@@ -1,0 +1,149 @@
+div#central{
+  display: flex;
+}
+
+div#central span#setas, div#central span#botoes {
+  flex: 3;
+}
+
+div#central span#options, div#central span#start {
+  flex: 2;
+}
+
+#analog {
+  font-size: 20px;
+  display: flex;
+}
+
+#analog #esq progress, #analog #dir progress {
+  width: 100px;
+}
+
+#analog #esq, #analog #dir {
+  flex: 2 1 50%;
+}
+
+#lados span, #meio span {
+  margin: 0 30px;
+}
+
+#x1, #x2 {
+  margin: 10px 0 !important;
+  line-height: 13px;
+  display: flex;
+}
+
+#central {
+  margin: 10px 0 !important;
+}
+
+#x1 span, #x2 span {
+  flex: 2 1 50%;
+}
+
+#controller button{
+  opacity: 0.3;
+}
+
+p#gamepad {
+  font-size: 25px;
+  margin: 30px 0;
+}
+
+#centro {
+  margin: auto;
+}
+
+#centro #ps button {
+  width: 30px;
+  height: 30px;
+  background-image:url("../images/ps.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+#triangulo button {
+  width: 30px;
+  height: 30px;
+  background-image:url("../images/triangle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+#quadrado button {
+  width: 30px;
+  height: 30px;
+  background-image:url("../images/square.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+#bolinha button {
+  width: 30px;
+  height: 30px;
+  background-image:url("../images/circle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+#xis button {
+  width: 30px;
+  height: 30px;
+  background-image:url("../images/cross.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+#cima button {
+  width: 25px;
+  height: 25px;
+  background-image:url("../images/up.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#esquerda button {
+  width: 25px;
+  height: 25px;
+  background-image:url("../images/left.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#direita button {
+  width: 25px;
+  height: 25px;
+  background-image:url("../images/right.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#baixo button {
+  width: 25px;
+  height: 25px;
+  background-image:url("../images/down.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#esq button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#dir button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#dir div, #esq div {
+  width: 100px;
+  margin: auto;
+}

@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+body
+{
+    max-width: 500px;
+    margin: 2em auto;
+    font-size: 20px;
+    background-color: #7DCEA0;
+}
+
+h1
+{
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+    color: white;
+}
+.hidden
+{
+    display: none;
+}
+
+.buttons-wrapper
+{
+    text-align: center;
+}
+.button-demo
+{
+   background-color:#F0B27A;
+   border: none;
+   color: white;
+   width: 80%;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 10px;
+}
