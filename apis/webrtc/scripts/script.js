@@ -1,0 +1,1 @@
+alert ("Hello, my friend. Stay a while, and listen!");
