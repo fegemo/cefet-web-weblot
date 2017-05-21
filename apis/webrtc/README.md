@@ -18,7 +18,7 @@ Autor(es):
 
 1. Matheus Ibrahim Nesteruk Moreira (201112040315)
 2. Bruno Goulart Meneghin (201112040153)
-3. Lucas Carvalhais ()
+3. Lucas Carvalhais (201312040173)
 
 Atribuições:
 
