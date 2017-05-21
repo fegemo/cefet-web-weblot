@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Geolocation API</title>
+	<link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="shortcut icon" href="imagens/logo_transparente.ico" type="image/x-icon">
+
+</head>
+<body>
+
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <span>
+                <img id="logo" src="imagens/logo_transparente.png" id="logotipo"/>
+            </span>
+            <span>
+                <div id="locais">
+                    <h2>Sua localização:</h2>
+                    <div id="map"></div>
+
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6dBtvBzr_M5Dipxub_vr9qKoyaprYwg&callback=initMap">
+                    </script>
+
+                </div>
+            </span>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>
