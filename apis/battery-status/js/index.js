@@ -6,20 +6,6 @@ var status = document.getElementById('status');
 
 var battery = navigator.getBattery();
 
-/*var nivelBateria = battery.level * 100;
-
-var textoBateria = nivelBateria + "%";
-
-nivel.textContent = textoBateria;
-
-if (battery.charging){
-    status.textContent = "Carregando...";
-    bateria.classList.remove('descarregando');
-} else {
-    status.textContent = battery.dischargingTime + "restantes...";
-    bateria.classList.add('descarregando');
-}*/
-
 updateBatteryStatus(battery);
 
 function updateBatteryStatus(battery) {
