@@ -1,10 +1,10 @@
-var hidden, visibilityChange; 
+let hidden, visibilityChange; 
 if (typeof document.hidden != "undefined") { // Suporte para Opera 12.10 e Firefox 18 em diante 
   hidden = "hidden";
   visibilityChange = "visibilitychange";
 }
 
-var audioElement = document.getElementById("audioElement");
+let audioElement = document.getElementById("audioElement");
 audioElement.play();
 
 function handleVisibilityChange() {

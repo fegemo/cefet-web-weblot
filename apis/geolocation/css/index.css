@@ -1,8 +1,58 @@
-body {
-	margin: 0;
+.demo-list-control {
+  width: 300px;
+}
+
+.demo-list-radio {
+  display: inline;
+}
+
+h2{
+    font-size: 30px;
+}
+
+#locais{
+    position: relative; 
+    width: 900px;
+    height: 100%;
+    left: 60px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body{
+    font-family:Verdana;
+}
+ 
+#tabela{
+    width:90%;
+    border:solid 1px;
+    text-align:left;
+    border-collapse:collapse;
+}
+ 
+#tabela tbody tr{
+    border:solid 1px;
+    height:30px;
+    cursor:pointer;
+}
+ 
+#tabela thead{
+    background:beige;
+}
+ 
+#tabela thead th:nth-child(1){
+    width:100px;
+}
+ 
+#tabela input{
+    color:navy;
+    width:100%;
 }
 
 #map {
-	height: 650px;
-	width: 100%;
+    height: 300px;
+    width: 500px;
+    /*border: #FA5858 Solid 3px;*/
 }

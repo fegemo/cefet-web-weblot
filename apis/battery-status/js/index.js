@@ -1,18 +1,18 @@
 //BATTERY STATUS
 
-var bateria = document.getElementById('bateria');
-var nivel = document.getElementById('nivel');
-var status = document.getElementById('status');
+let bateria = document.getElementById('bateria');
+let nivel = document.getElementById('nivel');
+let status = document.getElementById('status');
 
-var battery = navigator.getBattery();
+let battery = navigator.getBattery();
 
 updateBatteryStatus(battery);
 
 function updateBatteryStatus(battery) {
 
-	var nivelBateria = battery.level * 100;
+	let nivelBateria = battery.level * 100;
 
-	var textoBateria = nivelBateria + "%";
+	let textoBateria = nivelBateria + "%";
 
 	nivel.textContent = textoBateria;
 
