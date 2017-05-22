@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# cefet-web-weblot
-Um conjunto de códigos ilustrativos de APIs do HTML5
-=======
 # O Reino de Weblot :crown:
 
 Um conjunto de códigos ilustrativos de APIs do HTML5.
@@ -58,4 +54,3 @@ Além disso, crie um arquivo `README.md` (formato Markdown - veja [[3]][markdown
 [markdown-tutorial]: https://guides.github.com/features/mastering-markdown/
 [drag-and-drop-code]: https://github.com/fegemo/cefet-web-weblot/tree/master/api/drag-and-drop/
 [drag-and-drop-live]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
->>>>>>> master
