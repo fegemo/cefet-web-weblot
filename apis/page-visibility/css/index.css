@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #F6E3CE;
+    text-align: justify;
 }
 
 #cabecalho {
@@ -10,6 +11,7 @@ body{
 	padding-left: 34px;
 	padding-top: 20px; 
 	padding-bottom: 13px;
+	text-align: center;
 
 }
 #cabecalho h1 {
