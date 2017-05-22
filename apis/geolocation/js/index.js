@@ -26,7 +26,35 @@ function exibeMapa(latitude, longitude){
 		map: map,
 		title: "Meu local"
 	});
+
+	var marker1, marker2, marker3;
+	//var icone = 'https://cdn1.iconfinder.com/data/icons/gpsmapicons/blue/gpsmapicons01.png';
+	//var icone = 'imagens/marcadorPersonalizado.png';
+
+	marker1 = new google.maps.Marker({
+		position: new google.maps.LatLng(-19.9379465, -44.0002333),
+		title: "Unidade 1",
+		map: map,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+	});
+
+	marker2 = new google.maps.Marker({
+		position: new google.maps.LatLng(-19.940911, -44.0043728),
+		title: "Unidade 2",
+		map: map,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+	});
+
+	marker3 = new google.maps.Marker({
+		position: new google.maps.LatLng(-19.942112, -43.998520),
+		title: "Unidade 3",
+		map: map,
+		icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+	});
+
 }
+
+
 
 
 

@@ -1,9 +1,13 @@
-.demo-list-control {
-  width: 300px;
+body {
+    background-color: #F7D358;
+    font-family: 'Indie Flower', cursive;
 }
 
-.demo-list-radio {
-  display: inline;
+#logo {
+    width: 35%;
+    float: left;
+    padding-top: 15px;
+    padding-left: 30px
 }
 
 h2{
@@ -24,35 +28,8 @@ h2{
 body{
     font-family:Verdana;
 }
- 
-#tabela{
-    width:90%;
-    border:solid 1px;
-    text-align:left;
-    border-collapse:collapse;
-}
- 
-#tabela tbody tr{
-    border:solid 1px;
-    height:30px;
-    cursor:pointer;
-}
- 
-#tabela thead{
-    background:beige;
-}
- 
-#tabela thead th:nth-child(1){
-    width:100px;
-}
- 
-#tabela input{
-    color:navy;
-    width:100%;
-}
 
 #map {
-    height: 300px;
-    width: 500px;
-    /*border: #FA5858 Solid 3px;*/
+    height: 550px;
+    width: 600px;
 }
