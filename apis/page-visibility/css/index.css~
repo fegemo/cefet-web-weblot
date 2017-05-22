@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #F6E3CE;
+    background-color: #A9F5E1;
 }
 
 #cabecalho {
