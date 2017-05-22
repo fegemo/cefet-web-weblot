@@ -28,8 +28,6 @@ function exibeMapa(latitude, longitude){
 	});
 
 	var marker1, marker2, marker3;
-	//var icone = 'https://cdn1.iconfinder.com/data/icons/gpsmapicons/blue/gpsmapicons01.png';
-	//var icone = 'imagens/marcadorPersonalizado.png';
 
 	marker1 = new google.maps.Marker({
 		position: new google.maps.LatLng(-19.9379465, -44.0002333),
