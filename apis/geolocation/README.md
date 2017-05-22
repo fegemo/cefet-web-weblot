@@ -1,7 +1,9 @@
 # Geolocation API
 
 1) Interface utilizada para obter a localização do dispositivo.
-![alt text](http://imgur.com/a/17JsA)
+<p align="center">
+  <img src="http://imgur.com/a/17JsA"/>
+</p>
 
 2) Apresentação: https://1drv.ms/p/s!ArMCktTr1HmNhctSJWtqpMwBjHLGyQ 
 Exemplo: https://amandap11.github.io/cefet-web-weblot/apis/geolocation/
