@@ -1,4 +1,4 @@
-# Geolocation API
+﻿# Geolocation API
 
 1) Interface utilizada para obter a localização do dispositivo.
 
