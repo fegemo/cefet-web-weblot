@@ -8,76 +8,31 @@
 	<link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/geral.css">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link rel="shortcut icon" href="imagens/logo_transparente.ico" type="image/x-icon">
 
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-
 </head>
 <body>
-  
+
     <main class="mdl-layout__content">
-      <div class="page-content">
-        <span>
-          <img id="logo" src="imagens/logo_transparente.png" id="logotipo"/>
-        </span>
-        <span>
-          <div id="locais">
+        <div class="page-content">
+            <span>
+                <img id="logo" src="imagens/logo_transparente.png" id="logotipo"/>
+            </span>
+            <span>
+                <div id="locais">
+                    <h2>Sua localização:</h2>
+                    <div id="map"></div>
 
-            <h2>Sua localização:</h2>
-            <div id="map"></div>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6dBtvBzr_M5Dipxub_vr9qKoyaprYwg&callback=initMap">
+                    </script>
 
-            <script async defer
-		     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6dBtvBzr_M5Dipxub_vr9qKoyaprYwg&callback=initMap">
-	        </script>
-
-
-            <h2>Locais disponíveis mais próximos:</h2>
-              
-              <table id="tabela">
-                <thead>
-                    <tr>
-                        <th>País</th>
-                        <th>Cidade</th>
-                        <th>Endereço</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Brasil</td>
-                    <td>Belo Horizonte</td>
-                    <td>Av.Amazonas, 7000, Nova Gameleira</td>
-                </tr>
-                <tr>
-                    <td>Brasil</td>
-                    <td>Belo Horizonte</td>
-                    <td>Av.Amazonas, 5000, Gameleira</td>
-                </tr>            
-                <tr>
-                    <td>Brasil</td>
-                    <td>Belo Horizonte</td>
-                    <td>Av.Amazonas, 1500, Centro</td>
-                </tr>
-                <tr>
-                    <td>Brasil</td>
-                    <td>Belo Horizonte</td>
-                    <td>Rua Guaranis, 650, Centro</td>
-                </tr>
-                <tr>
-                    <td>Brasil</td>
-                    <td>Belo Horizonte</td>
-                    <td>Rua dos Tupis, 337, Centro</td>
-                </tr>            
-            </tbody>
-        </table>
-              
-          </div>
-        </span>
-        </span>
-      </div>
+                </div>
+            </span>
+        </div>
     </main>
-  </div>
-  <script src="js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
