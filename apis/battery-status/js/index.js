@@ -17,10 +17,16 @@ function updateBatteryStatus(battery) {
 	nivel.textContent = textoBateria;
 
     if (battery.charging){
+        nivel.classList.remove('bateriaBaixa');
         nivel.classList.remove('descarregando');
     } else {
-        nivel.classList.add('descarregando');
-    }
+        if (battery.level < 0.50){
+            nivel.classList.remove('descarregando');
+            nivel.classList.add('bateriaBaixa');
+        } else {
+            nivel.classList.add('descarregando');
+        }
+    }  
 }
 
 battery.then(function(battery) {
