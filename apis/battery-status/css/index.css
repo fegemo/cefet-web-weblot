@@ -1,0 +1,16 @@
+body {
+	margin: 0;
+	background-color: #F0FFF0;
+	text-align: center;
+}
+
+#bateria {
+	font-size: 200px;
+	background-color: blue;
+	color: white;
+}
+
+.descarregando {
+	background-color: orange;
+}
+

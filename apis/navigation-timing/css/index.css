@@ -1,0 +1,62 @@
+body {
+  background-color: #EFF5FB;
+  font-family: 'Indie Flower', cursive;
+}
+
+#logo {
+    width: 25%;
+    position: fixed;
+    top: 30%;
+    left: 5%;
+}
+
+.seminario {
+  margin: 0;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.conteudoCentralizado {
+  top: 50px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 50px; 
+  position: absolute; top: 20px; right: 150px;
+  font-family: 'Kaushan Script';
+  color: purple;
+}
+
+p {
+ font: arial 14px;
+}
+
+h2{
+ font: times;
+ font-size: 24px;
+ color: purple;
+ font-weight: normal;
+}
+
+#quemSomos{
+  position: absolute;  
+  right: 30px; 
+  top: 125px;
+  box-sizing: border-box;
+  width: 55%;
+  text-align: justify;
+}
+
+#foto1{
+ float: right;
+ width: 60%;
+ height: 150px;
+}
+
+.logotipos{
+  height: 100px;
+  width: 100px;
+}
+
