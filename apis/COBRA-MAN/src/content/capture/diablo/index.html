@@ -34,21 +34,21 @@
 
   <div id="container">
 
-    <h1 title="WebRTC samples homepage">Vejam este video duas vezes, que legal!!</h1>
+    <h1 title="WebRTC samples homepage">Aprendendo WebRTC, com portais!!</h1>
 
-    <video id="leftVideo" controls muted>
-      <source src="../../../video/chrome.webm" type="video/webm" />
-      <source src="../../../video/chrome.mp4" type="video/mp4" />
-      <p>This browser does not support the video element.</p>
-    </video>
+    <div id="blue-portal">
+      <video id="leftVideo" controls muted>
+        <source src="../../../video/chrome.mp4" type="video/mp4" />
+        <source src="../../../video/chrome.webm" type="video/webm" />
+        <p>This browser does not support the video element.</p>
+      </video>
+    </div>
 
-    <video id="rightVideo" autoplay controls></video>
+    <div id="orange-portal">
+      <video id="rightVideo" autoplay controls></video>
+    </div>
 
-    <p>This demo requires Firefox 47, or Chrome 53 with <strong>Experimental Web Platform features</strong> enabled from <tt>chrome://flags</tt>.</p>
-
-    <p>A stream is captured from the video element on the left using its <code>captureStream()</code> method and set as the <code>srcObject</code> of the video element on the right.</p>
-
-    <p>The <code>stream</code> variable are in global scope, so you can inspect them from the browser console.</p>
+    <p></p>
 
   </div>
 

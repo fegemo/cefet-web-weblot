@@ -18,7 +18,7 @@ var app = express();
 app.use(express.static('../'));
 
 app.listen(port, function() {
-  console.log('Listening on http://localhost:'+port);
+  console.log('Listening on http://localhost:'+port+'/src/content/capture/diablo/');
 });
 
 // pem.createCertificate({days: 1, selfSigned: true}, function(err, keys) {
