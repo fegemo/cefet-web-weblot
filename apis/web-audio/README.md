@@ -4,7 +4,7 @@ Oferece um mecanismo simples e poderoso para implementar e manipular conteúdo d
 - No MAC: *Utilizar Mozilla Firefox*
 - No Linux: Caso o Mozilla Firefox não carregue os áudios, abra o terminal, abra a pasta onde estão os arquivos, e dê o comando *python -m SimpleHTTPServer*. Em seguida, abra *http://localhost:8000* no Chrome.
 
-![](/images/screenshot.png)
+![](/apis/web-audio/images/screenshot.png)
 
 
 ## Links do Exemplo
