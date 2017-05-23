@@ -1,62 +1,67 @@
 body {
   background-color: #EFF5FB;
   font-family: 'Indie Flower', cursive;
-}
-
-#logo {
-    width: 25%;
-    position: fixed;
-    top: 30%;
-    left: 5%;
-}
-
-.seminario {
   margin: 0;
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-}
-
-.conteudoCentralizado {
-  top: 50px;
-  padding-bottom: 30px;
 }
 
 h1 {
-  font-size: 50px; 
-  position: absolute; top: 20px; right: 150px;
+  font-size: 60px; 
   font-family: 'Kaushan Script';
-  color: purple;
+  color: beige;
+  background-color: purple;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
 }
 
-p {
- font: arial 14px;
+#timao {
+  float: right;
+  width: 300px;
+  margin-right: 50px;
 }
 
-h2{
- font: times;
- font-size: 24px;
- color: purple;
- font-weight: normal;
+#reza {
+  float: right;
+  width: 70px;
+  margin-right: 500px;
+  margin-top: 30px;
 }
 
-#quemSomos{
-  position: absolute;  
-  right: 30px; 
-  top: 125px;
-  box-sizing: border-box;
-  width: 55%;
+#marujo {
+  float: right;
+  width: 100px;
+  margin-right: 950px;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: 'Times New Roman';
+  margin: 25px;
+}
+
+article {
+  font-family: 'Arial';
+  margin-left: 25px;
+  margin-right: 400px;
   text-align: justify;
 }
 
-#foto1{
- float: right;
- width: 60%;
- height: 150px;
+p {
+ font-family: 'Arial';
+ margin-left: 25px;
+ text-align: justify;
 }
 
-.logotipos{
-  height: 100px;
-  width: 100px;
+em {
+  font-size: 12px;
+  font-family: 'Arial';
+  margin-left: 25px;
 }
 
+#tempos {
+  box-sizing: border-box;
+  border: 2px solid;
+  width: 400px;
+  text-align: center;
+  margin: auto;
+}
