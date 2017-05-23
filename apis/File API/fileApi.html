@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exemplo FILE API</title>
+	<script src="fileApiScript.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="container">
+		<div class="separator">
+			<input id="inputImage" type="file" onchange="pegaArquivo(this.files)">
+			<div id="imgLocal"></div>
+		</div>
+		<div class="separator">
+			<input type="file" onchange="SelectAudio(this.files)" />
+			<div id="container"></div>
+		</div>
+	</div>
+</body>
+</html>

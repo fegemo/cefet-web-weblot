@@ -1,0 +1,24 @@
+	#container{
+		text-align: center;	
+	}
+
+	.separator{
+		margin: 40px;
+	}
+
+	input{
+		border : solid 1px #000000;
+		border-radius : 3px;
+		box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
+		font-size : 20px;
+		color : #ffffff;
+		padding : 1px 17px;
+		background : #5f6166;
+		background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5f6166), color-stop(100%,#00060a));
+		background : linear-gradient(top, #5f6166 0%, #00060a 100%);
+		filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f6166', endColorstr='#00060a',GradientType=0 );
+	}
+
+	body{
+		background-color: #F5F5F5;
+	}
