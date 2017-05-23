@@ -11,7 +11,7 @@ Oferece um mecanismo simples e poderoso para implementar e manipular conteúdo d
 
 [Link para o seminário](https://gmanaclaudia.github.io/web-audio/seminario/apresentacao.html#/)
 
-[Link para exemplo publicado](https://fegemo.github.io/cefet-web-weblot/apis/web-audio/)
+[Link para exemplo publicado](https://gmanaclaudia.github.io/cefet-web-weblot/apis/web-audio/)
 
 # Créditos
 
