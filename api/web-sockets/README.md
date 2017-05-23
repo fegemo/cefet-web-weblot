@@ -9,7 +9,7 @@ Exemplo de uso da API de _Web Sockets_ do HTML5 que:
 - Ambas as partes podem começar a enviar dados a qualquer momento.
 
 
-![](web-sockets/client/images/screenshot.png)
+![](client/images/screenshot.png)
 
 
 ## Links do Exemplo
