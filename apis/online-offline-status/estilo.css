@@ -1,0 +1,53 @@
+@-webkit-keyframes nuvens {
+  from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(images/nuvens.png);
+}
+
+#total {
+  position:relative;
+  width: 100%;
+  height: 1200px;
+  overflow:hidden;
+  margin: 0 auto;
+}
+
+#principal {
+  text-align: center;
+  font-size: 26px;
+  color: #000;
+}
+
+#conteudo {
+  width: 100%;
+	height: 1200px;
+  margin: 0 auto;
+	background: url(images/nuvens.png) repeat;
+  background-position: 0 0;
+	position:absolute;
+    top: 0;
+    left: 0;
+    z-index:-1;
+    -webkit-animation: 5s linear 0s infinite normal nuvens;
+}
+
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  text-align: center;
+  color: #363551;
+  padding: 10px;
+  border: 1px dotted white;
+  background-color: #85d3d2;
+  max-width: 500px;
+  max-height: 150px;
+  float: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
