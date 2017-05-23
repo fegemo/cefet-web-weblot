@@ -8,7 +8,7 @@
 
 body {
   background-image: url('background.jpg');
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Indie Flower', cursive, sans-serif;
   font-weight: 300;
 }
 
@@ -17,7 +17,7 @@ max-width: 100%;
 }
 
 body {
-font-family: 'Roboto', sans-serif;
+font-family: 'Indie Flower', cursive, sans-serif;
 margin: 0;
 padding: 1em;
 word-break: break-word;
@@ -46,7 +46,7 @@ div#links {
 }
 
 h1 {
-font-family: 'Roboto', sans-serif;
+font-family: 'Indie Flower', cursive, sans-serif;
 font-weight: 500;
 margin: 0 0 0.8em 0;
 padding: 0 0 0.2em 0;
@@ -80,7 +80,7 @@ strong {
 }
 
 textarea {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Indie Flower', cursive, sans-serif;
 }
 
 video {
