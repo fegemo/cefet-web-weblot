@@ -1,19 +1,71 @@
 body {
 	margin: 0;
-	background-color: #F0FFF0;
-	text-align: center;
+	background-color: #87CEEB;
 }
 
 #bateria {
-	font-size: 200px;
-	background-color: blue;
-	color: white;
+	font-size: 30px;
+	/* background-color: blue; */
+	color: black;
+	text-align: center;
+	width: 500px;
+	box-sizing: border-box;
+	border: 2px solid;
+	margin: auto;
+	margin-top: 50px;
+	padding-bottom: 30px;
 }
 
 .descarregando {
-	background-color: orange;
+	/* background-color: orange; */
 }
 
 .bateriaBaixa {
-	background-color: red;	
+	/* background-color: red; */	
+}
+
+#tempo{
+	font-size: 50px;
+	/* background-color: green; */
+	color: black;
+}
+
+h1 {
+	font-size: 70px;
+	color: aliceblue;
+	font-family: 'Calibri';
+	text-align: center;
+	background-color: mediumblue;
+	padding: 30px;
+	margin: 0;
+	border-bottom: 3px solid;
+}
+
+h2 {
+	font-size: 30px;
+	font-family: 'Times New Roman';
+	margin-left: 25px;
+	margin-top: 50px;
+}
+
+article {
+	font-family: 'Arial';
+	text-align: justify;
+	font-size: 20px;
+	margin-left: 25px;
+	margin-right: 400px;
+}
+
+#luta {
+	width: 250px;
+	float: right;
+	margin-right: 80px;
+}
+
+#imagem {
+	width: 30px;
+}
+
+p{
+	display: inline;
 }

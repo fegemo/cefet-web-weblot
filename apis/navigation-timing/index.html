@@ -3,69 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Navigation Timing API</title>
-
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-purple.min.css">
-	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-	<link rel="shortcut icon" href="imagens/logo_transparente.ico" type="image/x-icon">
-
 	<link rel="stylesheet" href="css/index.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-
 </head>
 <body>
 
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<header class="mdl-layout__header">
-			<div class="mdl-layout__header-row">
-				<div class="mdl-layout-spacer"></div>
-				<nav class="mdl-navigation mdl-layout--large-screen-only">
-					<a id="index" class="mdl-navigation__link" href="index.html">Início</a>
-					<a id="listaLocais" class="mdl-navigation__link" href="index.html">Onde doar?</a>
-					<a id="menuContato" class="mdl-navigation__link" href="index.html">Contato</a>
-				</nav>
-			</div>
-		</header> 
-		<div class="mdl-layout__drawer">
-			<span class="mdl-layout-title">Agasalhe +</span>
-			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link" href="index.html">Sou Doador - Login!</a>
-				<a class="mdl-navigation__link" href="index.html">Cadastre-se - Doador!</a>
-				<a class="mdl-navigation__link" href="index.html">Sou Ponto de Coleta - Login!</a>
-				<a class="mdl-navigation__link" href="index.html">Cadastre-se - Ponto de Coleta!</a>
-			</nav>
-		</div>
-		<main class="mdl-layout__content">
+	<h1>Navegue, ó marujo!</h1>
+	<div id="navegacao">
+		<img id="timao" src="imagens/timao.jpg">
+		<h3>O que é navegação? Pra que serve?</h3>
+		<article>
+			Navegação é a ciência, arte, prática ou tecnologia, de planejar e executar uma viagem de um ponto de partida até seu ponto de destino.
 
-			<div class="page-content">
-				<img id="foto1" src="imagens/foto1.png"/>
-				<span>
-					<img id="logo" src="imagens/logo_transparente.png" id="logotipo"/>
-				</span>
+			A principal atividade da navegação é a determinação da posição atual, para possível comparação com posições previstas ou desejadas.
 
-				<div id="quemSomos">
+			A invenção de aparelhos que permitem a determinação exata dessa posição, como a bússola, o sextante, o cronômetro, o radar, o rádio, e o GPS estão entre os maiores avanços científicos da humanidade.
 
-					<h2>Quem Somos?</h2>
-					<p>
-						O AGASALHE + é uma ferramenta onde você pode praticar a caridade doando agasalhos em pontos especificos de coleta e assim receber moedas virtuais que darão descontos na compra de produtos em lojas associadas.<br><br>
-					</p>
-					<h2>Como Funciona?</h2>
-					<p>
-						É um projeto de incentivo a doação de agasalhos, como camisas, camisetas, blusas de frio, calças, bermudas, shorts, calçados e outros. Assim, realize o seu cadastro de usuário e logo após faça o seu login, então poderá cadastrar as doações de peças que deseja e depois entrega-las nos pontos de coletas escolhidos. Esses agasalhos doados são classificados de acordo com o aparente estado de conservação: ruim, bom, novo, etc; pela vistoria no ponto de coleta e baseado nessa classificação os usuários ganham moedas virtuais.
-					</p>
-
-					<h2>Onde usar as moedas?</h2>
-					<p>
-						Contamos com lojas e empresas associadas onde você poderá comprar um produto e obter desconto utilizando suas moedas virtuais. Confira algumas das principais!
-					</p>
-
-				</div>
-			</div>
-		</main>
+			Outro fator crucial na navegação é a existência de mapas ou modelos similares.
+		</article>
+		<em>Fonte: https://pt.wikipedia.org/wiki/Navegação</em>
+		<img id="reza" src="imagens/rezando.png">
+		<h3>Temos um problema!!!</h3>
+		<p>
+			Os marujos perderam o mapa e não sabem aonde fica o tesouro!
+			Para ajudá-los eles rezaram e pediram aos deuses do Navigation Timizismo que os guiassem.
+		</p>
+		<img id="marujo" src="imagens/marujo.gif">
+		<h3>A solução \o/</h3>
+		<p>Os deuses ouviram as preces e mandaram as coordenadas do tesouro disfarçadas dentro de sua conexão Terra - Mundo Superior<br>
+		Será que os marujos vão descobrir?
+		</p><br>
 	</div>
-
+	<div id="tempos">
+		<h4>Conexão Terra - Mundo Superior</p>
+		<p id="tempoconectar"></p>
+		<p id="tempocarregar"></p>
+	</div>
 	<script type="text/javascript" src="js/index.js"></script>
 
 </body>
