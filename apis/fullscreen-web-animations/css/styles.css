@@ -1,0 +1,306 @@
+html, body {
+   height: 100%;
+   min-height: 100%;
+   max-height: 100%;
+   overflow: hidden;
+   letter-spacing: 0.5em;
+   background: #efefef;
+   color: #757575;
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 23px;
+ }
+
+ #btn-animate {
+   width: 10%;
+   animation-delay: 0s;
+   animation-duration: 1.5s;
+   box-sizing: content-box;
+   background: linear-gradient(to right, #904e95, #e96443);
+   letter-spacing: 0.3em;
+   transition: display 2s;
+ }
+
+.show {
+  display: flex !important;
+}
+
+#btn-fullscreen {
+  padding: 14px 0;
+  color: #000;
+}
+
+ #btn-fullscreen svg {
+    width: 115px;
+    height: 55px;
+    display: inline-block;
+  }
+
+ #btn-wrapper {
+     justify-content: center;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     align-content: center;
+     height: 100%;
+     min-height: 100%;
+     animation-delay: 0s;
+     animation-duration: 1s;
+     transition: display 1.5s;
+     transition-delay: 4s
+ }
+
+ #title {
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 2.5em;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #904e95, #e96443);
+ }
+
+ #header-wrapper {
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   transition: position 2s;
+ }
+
+ #subtitle1, #subtitle2 {
+   animation-delay: 1.5s;
+   animation-duration: 2s;
+   margin-right: 2%;
+ }
+
+ #subtitle2 {
+   margin-right: 0;
+   margin-left: 2%;
+ }
+
+ #divider {
+   animation-delay: 3.5s;
+   animation-duration: 1.5s;
+   font-weight: bold;
+   -webkit-background-clip: text !important;
+   -webkit-text-fill-color: transparent;
+   background: linear-gradient(to right, #904e95, #e96443);
+ }
+
+#names-wrapper {
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+#name1, #name2, #name3 {
+ animation-delay: 5s;
+ animation-duration: 2s;
+ -webkit-background-clip: text !important;
+ -webkit-text-fill-color: transparent;
+ background: linear-gradient(to right, #904e95, #e96443);
+}
+
+.celestial {
+  background: #C33764;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.grapefruit {
+   background: #e96443;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background: linear-gradient(to right, #e96443, #904e95); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* ALICE */
+#alice {
+  color: #431236;
+  width: 23%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform-origin: 0 0;
+  transform: rotate(0) translate3D(-50%, -50%, 0);
+  backface-visibility: hidden;
+  will-change: transform, color;
+}
+
+path {
+  fill: currentColor;
+}
+
+/* This stuff might be interesting. */
+#tunnel {
+  background:
+    url("http://rachelnabors.com/alice-in-videoland/book/img/bg-tunnel-border-left.svg") repeat-y,
+    url("http://rachelnabors.com/alice-in-videoland/book/img/bg-tunnel-border-right.svg") repeat-y 100% 100%,
+    url("http://rachelnabors.com/alice-in-videoland/book/img/bg_tunnel-specks.png"),
+    #a4a4a4;
+  margin: 0 auto;
+  height: calc(100% + 300px);
+  width: 60%;
+  min-width: 400px;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+#alice-wrapper {
+  background: #fff;
+  position: relative;
+  width: 50%;
+  height: 65%;
+  overflow: hidden;
+  animation-delay: 7s;
+  animation-duration: 3s;
+  margin: 2% auto;
+}
+
+#alice-wrapper:-webkit-full-screen {
+  width: 35%;
+  height: 100%;
+  background: #000;
+}
+
+#alice-wrapper:-moz-full-screen {
+  width: 35%;
+  height: 100%;
+  background: #000;
+}
+
+#alice-wrapper:-ms-fullscreen {
+  width: 35%;
+  height: 100%;
+  background: #000;
+}
+
+#alice-wrapper:full-screen {
+  width: 35%;
+  height: 100%;
+  background: #000;
+}
+
+#alice-wrapper:fullscreen {
+  width: 35%;
+  height: 100%;
+  background: #000;
+}
+
+
+/* CONTROL BUTTONS */
+
+#play, #pause, #fwd, #rew, #btn-fullscreen {
+   width:80px;
+   height: 80px;
+   background: transparent;
+   position: relative;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   display: block;
+   cursor: pointer;
+}
+
+#play:before {
+    width: 0;
+    height: 0;
+    border-left: 30px solid black;
+    border-right: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 25px;
+}
+
+#pause:before {
+    width: 10px;
+    height: 60px;
+    background: black;
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 25px;
+}
+
+#pause:after {
+    width: 10px;
+    height: 60px;
+    background: black;
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 25px;
+}
+
+
+#fwd:before {
+    width: 0;
+    height: 0;
+    border-left: 30px solid black;
+    border-right: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 17px;
+}
+
+#fwd:after {
+    width: 0;
+    height: 0;
+    border-left: 30px solid black;
+    border-right: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 35px;
+}
+
+#rew:before {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid black;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 17px;
+}
+
+#rew:after {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid black;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 35px;
+}
+
+#controls-wrapper {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  animation-delay: 7s;
+  animation-duration: 3s;
+}
