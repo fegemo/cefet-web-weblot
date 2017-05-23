@@ -27,3 +27,4 @@ Autor(es):
 
 [slides]: https://docs.google.com/presentation/d/1CQnGpvu2Ibnk_2xpbOxhZfrZV3kzIBHRROhex9JqqyI/pub?start=false&loop=false&delayms=60000
 [vivo]: https://lucasajc.github.io/cefet-web-weblot/api/web-sockets/client
+
