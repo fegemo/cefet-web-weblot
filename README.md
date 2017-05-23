@@ -1,6 +1,7 @@
 # O Reino de Weblot :crown:
 
 Um conjunto de códigos ilustrativos de APIs do HTML5.
+https://mefew.github.io/cefet-web-weblot/apis/COBRA-MAN/src/content/capture/diablo/
 
 ## #comofaz?
 
