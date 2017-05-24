@@ -1,0 +1,54 @@
+/*
+*  Copyright (c) 2016 The WebRTC project authors. All Rights Reserved.
+*
+*  Use of this source code is governed by a BSD-style license
+*  that can be found in the LICENSE file in the root of the source
+*  tree.
+*/
+
+#blue-portal {
+  background-image: url("../img/blue-portal.png");
+  background-size: cover;
+  width: 500px;
+  height: 400px;
+  position: relative;
+  top: -65px;
+}
+
+video {
+  margin: 0 10px 0 0;
+  width: calc(50% - 7px);
+  width: 313px;
+}
+
+#leftVideo {
+  position: relative;
+  z-index: 10;
+  top: 110px;
+  left: 89px;
+}
+
+#orange-portal {
+	background-image: url("../img/orange-portal.png");
+	width: 1500px;
+  height: 1200px;
+  position: relative;
+  background-size: cover;
+  left: -100px;
+  top: -200px;
+}
+
+#rightVideo {
+  margin-right: 0;
+  width: 900px;
+  position: relative;
+  top: 350px;
+  left: 300px;
+}
+
+@media screen and (max-width: 400px) {
+  video {
+    margin: 0 5px 20px 0;
+    width: calc(50% - 5px);
+  }
+}
