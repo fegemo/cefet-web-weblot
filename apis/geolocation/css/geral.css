@@ -1,0 +1,11 @@
+body {
+	background-color: #F7D358;
+	font-family: 'Indie Flower', cursive;
+}
+
+#logo {
+    width: 35%;
+    float: left;
+    padding-top: 15px;
+    padding-left: 30px
+}
