@@ -1,0 +1,11 @@
+{
+  "name": "html5-seminar",
+  "version": "1.0.0",
+  "description": "Seminário HTML5 - Programação Web - CEFET-MG",
+  "main": "index.js",
+  "dependencies": {
+    "web-animations-js": "^2.2.5"
+  },
+  "devDependencies": {},
+  "author": "Ana Carolina, Clynton, Luis Gustavo"
+}
