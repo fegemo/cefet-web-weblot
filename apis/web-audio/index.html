@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sir Fegemo's Disco </title>
+    <link rel="stylesheet" href="styles/estilos.css">
+    <link rel="shortcut icon" href="images/icone.png">
+    <link href="https://fonts.googleapis.com/css?family=Metamorphous" rel="stylesheet">
+  </head>
+  <body>
+  	<article class="conteudo">
+  		<h1> Sir Fegemo's Disco </h1>
+  		<h3> Ajude Sir Fegemo a mixar sua melodia para a musica sobre Agate Emi-Eli, o Quinto: </h3>
+      <div class="linha">
+        <button id="botaoPlay"> Tocar </button>
+        <button id="botaoPause"> Pausar </button>
+        <span class="volume"> Volume: <input type="range" id="volume" min="0.0" max="2.0" step="0.01"> </span>
+      </div>
+      <div class="linha"> <u>Bateria:</u> <br/>
+        <button id="botaoPlayBateria"> Tocar </button>
+        <button id="botaoPauseBateria"> Pausar </button>
+        <span class="volume">Volume: <input type="range" id="volumeBateria" min="0.0" max="2.0" step="0.01"> </span>
+      </div>
+      <div class="linha"> <u>Filtro Passa-Baixa:</u> <br/>
+        <button id="botaoPlayFiltro"> Adicionar Filtro </button>
+      </div>
+      <div class="linha"> <u>Oscilattor:</u> <br/>
+        <button id="botaoPlayOscilattor"> Tocar </button>
+        <button id="botaoStopOscilattor"> Pausar </button>
+         <span class="volume"> Frequencia:
+         <select id="frequencia">
+          <option value="200">200Hz</option>
+          <option value="400" selected>400Hz</option>
+          <option value="600">600Hz</option>
+          <option value="1000">1000Hz</option>
+          <option value="2000">2000Hz</option>
+        </select> </span>
+      </div>
+  		<img src="images/icone.png"/>
+  	</article>
+
+    <script src="scripts/audio.js" charset="utf-8"></script>
+  </body>
+</html>

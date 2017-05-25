@@ -1,0 +1,14 @@
+body {
+  overflow: hidden;
+  background-color: black;
+  background-image: url(./images/space.png);
+}
+
+h1, h3 {
+	color: yellow;
+	text-align: center;
+}
+
+.container {
+	text-align: center;	
+}
