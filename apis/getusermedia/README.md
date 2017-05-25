@@ -1,4 +1,4 @@
-##getUserMedia and Stream API
+## getUserMedia and Stream API
 
 Com o getUserMedia and Streams o HTML5 trouxe uma ferramenta poderosa de acesso ao hardware dos dipositivos, tudo isso feito sem precisar de agentes externos.
 
