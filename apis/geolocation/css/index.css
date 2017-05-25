@@ -1,0 +1,35 @@
+body {
+    background-color: #F7D358;
+    font-family: 'Indie Flower', cursive;
+}
+
+#logo {
+    width: 35%;
+    float: left;
+    padding-top: 15px;
+    padding-left: 30px
+}
+
+h2{
+    font-size: 30px;
+}
+
+#locais{
+    position: relative; 
+    width: 900px;
+    height: 100%;
+    left: 60px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body{
+    font-family:Verdana;
+}
+
+#map {
+    height: 550px;
+    width: 600px;
+}
