@@ -15,7 +15,7 @@ function updateBatteryStatus(battery) {
 	let nivelBateria = battery.level * 100;
     //let tempoBateriaCarregar = battery.chargingTime;
     //let tempoBateriaDescarregar = battery.dischargingTime;
-	let textoBateria = "Nível de bateria do guerreiro:" + nivelBateria + "%";
+	let textoBateria = "Nível de bateria do guerreiro: " + Math.floor(nivelBateria) + "%";
     //let textoTempoCarregar = tempoBateriaCarregar + "segundos";
     //let textoTempoDescarregar = tempoBateriaDescarregar + "segundos";
     let textoStatusCarregando = "Carregando forças...";
