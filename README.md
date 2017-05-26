@@ -14,7 +14,7 @@ O projeto (b) deve ser entregue como um _Pull Request_ (veja [[1]][using-pull-re
 1. fazer um _fork_;
 1. criar um _branch_ com nome 'ano/semestre' (e.g., `2017/01`);
 1. criar, dentro de `/api`, uma pasta com o nome da sua API de escolha (**nome em minúsculo,
-   sem acentos, trocando espaços por de hífens** - _e.g._, `/api/drag-and-drop/`) e colocar
+   sem acentos, trocando espaços por de hífens** - _e.g._, `/apis/drag-and-drop/`) e colocar
    seu código lá.
 
 Os membros de um mesmo grupo devem trabalhar no _fork_ criado por apenas 1 integrante, ou
@@ -26,11 +26,11 @@ seguir a mesma ideia e formato.
 
 ### O que deve conter
 
-Seu código deve conter uma ilustração simples, porém interessante, de uso da API
-escolhida. Procure separar os arquivos do código fonte em pastas
+Seu código deve conter uma ilustração simples, porém interessante, de uso **de cada API
+escolhida**. Procure separar os arquivos do código fonte em pastas
 (_e.g._, `styles`, `scripts`, `images` etc.).
 
-No diretório raiz do seu exemplo (_e.g._, `/api/drag-and-drop/`) deve haver um arquivo
+No diretório raiz de cada exemplo (_e.g._, `/apis/drag-and-drop/`) deve haver um arquivo
 `index.html` com a página inicial (e provavelmente única), que será a "porta de entrada"
 do exemplo.
 
