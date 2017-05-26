@@ -1,0 +1,67 @@
+body {
+  background-color: #EFF5FB;
+  font-family: 'Indie Flower', cursive;
+  margin: 0;
+}
+
+h1 {
+  font-size: 60px; 
+  font-family: 'Kaushan Script';
+  color: beige;
+  background-color: purple;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+#timao {
+  float: right;
+  width: 300px;
+  margin-right: 50px;
+}
+
+#reza {
+  float: right;
+  width: 70px;
+  margin-right: 500px;
+  margin-top: 30px;
+}
+
+#marujo {
+  float: right;
+  width: 100px;
+  margin-right: 950px;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: 'Times New Roman';
+  margin: 25px;
+}
+
+article {
+  font-family: 'Arial';
+  margin-left: 25px;
+  margin-right: 400px;
+  text-align: justify;
+}
+
+p {
+ font-family: 'Arial';
+ margin-left: 25px;
+ text-align: justify;
+}
+
+em {
+  font-size: 12px;
+  font-family: 'Arial';
+  margin-left: 25px;
+}
+
+#tempos {
+  box-sizing: border-box;
+  border: 2px solid;
+  width: 400px;
+  text-align: center;
+  margin: auto;
+}
