@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>getUserMedia Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+  <body>
+    <h1>GetVideo</h1>
+    <video id="video" autoplay="autoplay" controls="true"></video>
+    <div class="buttons-wrapper">
+      <button id="play" class="button-demo" href="#">Play</button>
+      <button id="stop" class="button-demo" href="#">Stop</button>
+    </div>
+    <span id="notSuported" class="hidden">API não suportada</span>
+    <span id="notSuported" class="hidden">Apenas vídeo suportado</span>
+    
+    <script>
+      var videoStream = null;
+      var video = document.getElementById("video");
+
+      // Test browser support
+      window.navigator = window.navigator || {};
+      navigator.getUserMedia = navigator.getUserMedia       ||
+                               navigator.webkitGetUserMedia ||
+                               navigator.mozGetUserMedia    ||
+                               null;
+
+      if (navigator.getUserMedia === null) {
+        document.getElementById('notSuported').classList.remove('hidden');
+        document.getElementById('play').setAttribute('disabled', 'disabled');
+        document.getElementById('stop').setAttribute('disabled', 'disabled');
+      } else {
+        // Opera <= 12.16 accepts the direct stream.
+        // More on this here: http://dev.opera.com/articles/view/playing-with-html5-video-and-getusermedia-support/
+        var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
+
+        // Opera <= 12.16 support video only.
+        var audioContext = window.AudioContext       ||
+                           window.webkitAudioContext ||
+                           null;
+        if (audioContext === null) {
+          document.getElementById('notSuported').classList.remove('hidden');
+        }
+
+        document.getElementById('play').addEventListener('click', function() {
+          // Capture user's audio and video source
+          navigator.getUserMedia({
+            video: true,
+            audio: true
+          },
+          function(stream) {
+            videoStream = stream;
+            // Stream the data
+            video.src = createSrc(stream);
+            video.play();
+          },
+          function(error) {
+            console.log("Video capture error: ", error.code);
+          });
+        });
+        document.getElementById('stop').addEventListener('click', function() {
+          // Pause the video
+          video.pause();
+          // Stop the stream
+          videoStream.stop();
+        });
+      }
+    </script>
+  </body>
+</html>
