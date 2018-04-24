@@ -11,18 +11,26 @@ cada API escolhida pelo grupo.
 O projeto (b) deve ser entregue como um _Pull Request_ (veja [[1]][using-pull-requests] e
 [[2]][creating-pull-requests]) neste repositório. Ou seja, um (01) membro do grupo deve:
 
-1. fazer um _fork_;
-1. criar um _branch_ com nome 'ano/semestre' (e.g., `2017/01`);
-1. criar, dentro de `/api`, uma pasta com o nome da sua API de escolha (**nome em minúsculo,
-   sem acentos, trocando espaços por de hífens** - _e.g._, `/apis/drag-and-drop/`) e colocar
-   seu código lá.
+1. Fazer um _fork_ deste repositório e dar permissão de escrita (commit/push) para todos os membros do grupo;
+   - Clicar no botão _fork_ e, depois, clicar no **Settings**
+1. Criar um _branch_ com nome 'ano/semestre' (e.g., `2018/01`);
+   ```
+   git branch 2018/01
+   ```
+   ou então (eu gosto mais, porque cria o _branch_ e já muda pra ele):
+   ```
+   git checkout -b 2018/01
+   ```
+1. Criar, **dentro da pasta `/apis`**, uma pasta com o nome da sua API de escolha (**nome em minúsculo,
+   sem acentos, trocando espaços por de hífens e sem o prefixo ou sufixo API** - _e.g._, `/apis/drag-and-drop/`) e colocar
+   seu código lá. Deve haver uma pasta dessa para cada API que você escolheu
 
 Os membros de um mesmo grupo devem trabalhar no _fork_ criado por apenas 1 integrante, ou
 seja, aquele que criou o _fork_ deve dar permissão de escrita ao(s) outro(s).
 
 Veja o projeto de exemplo que já está lá, sobre a API de _drag and drop_:
 [código fonte][drag-and-drop-code] e o [exemplo publicado][drag-and-drop-live]. Procure
-seguir a mesma ideia e formato.
+seguir a mesma ideia e formato (bonitão, criativão).
 
 ### O que deve conter
 
@@ -31,11 +39,12 @@ escolhida**. Procure separar os arquivos do código fonte em pastas
 (_e.g._, `styles`, `scripts`, `images` etc.).
 
 No diretório raiz de cada exemplo (_e.g._, `/apis/drag-and-drop/`) deve haver um arquivo
-`index.html` com a página inicial (e provavelmente única), que será a "porta de entrada"
+`index.html` com a página inicial (e provavelmente a única), que será a "porta de entrada"
 do exemplo.
 
 Além disso, crie um arquivo `README.md` (formato Markdown - veja [[3]][markdown] e
-[[4]][markdown-tutorial]) contendo pelo menos três seções:
+[[4]][markdown-tutorial]) para cada API escolhida contendo pelo menos três seções (a exemplo
+[README.md da API de drag and drop][drag-and-drop-readme]):
 
 1. API xyz
    - Breve descrição da API (uma linha)
@@ -45,7 +54,17 @@ Além disso, crie um arquivo `README.md` (formato Markdown - veja [[3]][markdown
    - **Link para exemplo vivo** (formato: https://fegemo.github.io/cefet-web-weblot/apis/PASTA_DO_SEU_PROJETO/)
 1. Créditos
    - **Indicação de quem são os autores**
-   - Texto dando a devida atribuição aos eventuais recursos de terceiros usados
+   - Texto dando a devida atribuição aos eventuais recursos de terceiros usados (imagens, música, código fonte etc.)
+
+## Enviando
+
+Como mencionado, o envio será via um _pull request_. Assim que você der o último `git push` para o seu _fork_,
+vá para a página do _fork_ no Github e clique em "Pull Request":
+
+![](https://i.imgur.com/Wb4k4Fb.png)
+
+Nessa tela, você deve escolher o seu _branch_ (`ano/semestre`) como origem e o _branch_ (`ano/semestre`) do repositório original como destino (e não o `master`).
+
 
 [enunciado]: https://github.com/fegemo/cefet-web/blob/master/assignments/seminar-html5/README.md#seminário---apis-do-html5
 [using-pull-requests]: https://help.github.com/articles/using-pull-requests/
@@ -54,3 +73,4 @@ Além disso, crie um arquivo `README.md` (formato Markdown - veja [[3]][markdown
 [markdown-tutorial]: https://guides.github.com/features/mastering-markdown/
 [drag-and-drop-code]: https://github.com/fegemo/cefet-web-weblot/tree/master/api/drag-and-drop/
 [drag-and-drop-live]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
+[drag-and-drop-readme]: https://github.com/fegemo/cefet-web-weblot/blob/master/apis/drag-and-drop/README.md
