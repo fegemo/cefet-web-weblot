@@ -71,6 +71,6 @@ Nessa tela, você deve escolher o seu _branch_ (`ano/semestre`) como origem e o 
 [creating-pull-requests]: https://help.github.com/articles/creating-a-pull-request/
 [markdown]: https://daringfireball.net/projects/markdown/
 [markdown-tutorial]: https://guides.github.com/features/mastering-markdown/
-[drag-and-drop-code]: https://github.com/fegemo/cefet-web-weblot/tree/master/api/drag-and-drop/
+[drag-and-drop-code]: https://github.com/fegemo/cefet-web-weblot/tree/master/apis/drag-and-drop/
 [drag-and-drop-live]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
 [drag-and-drop-readme]: https://github.com/fegemo/cefet-web-weblot/blob/master/apis/drag-and-drop/README.md
