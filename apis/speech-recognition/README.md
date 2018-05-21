@@ -30,3 +30,6 @@ Atribuições:
 [overlock-author]: https://plus.google.com/105287894980881814285/about
 [chewy-author]: https://profiles.google.com/sideshowfonts/about
 [monsters-author]: http://toshl.com
+
+
+https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API?hl=en

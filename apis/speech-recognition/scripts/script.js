@@ -207,7 +207,6 @@ $(document).ready(function(){
     final_span.innerHTML = '';
     interim_span.innerHTML = '';
     showInfo('info_allow');
-    showButtons('none');
     start_timestamp = event.timeStamp;
   });
 
