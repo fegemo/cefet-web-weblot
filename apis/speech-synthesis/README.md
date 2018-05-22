@@ -7,8 +7,8 @@ Exemplo de uso da API de _speech synthesis_ (síntese de voz) do HTML5.
 
 ## Links do Exemplo
 
-- Link para seminário: [slides de aula][https://docs.google.com/presentation/d/1eH0ozDE2Zp_5IDcHRHMi7KfF5q9hfmhI5DdXNhMgKLw/edit?usp=sharing]
-- Link para exemplo publicado: [página no GitHub][scripts]
+- Link para seminário: [slides de aula](https://docs.google.com/presentation/d/1eH0ozDE2Zp_5IDcHRHMi7KfF5q9hfmhI5DdXNhMgKLw/edit?usp=sharing)
+- Link para exemplo publicado: [página no GitHub](scripts)
 
 ## Créditos
 
@@ -20,5 +20,5 @@ Autor(es):
 
 Atribuições:
 
-- [Bootstrap][https://getbootstrap.com/], por Bootstrap Core Team
-- [Bootstrap-select][https://silviomoreto.github.io/bootstrap-select/], por Silvio Moreto
+- [Bootstrap](https://getbootstrap.com/), por Bootstrap Core Team
+- [Bootstrap-select](https://silviomoreto.github.io/bootstrap-select/), por Silvio Moreto
