@@ -7,8 +7,8 @@ Exemplo de uso da API de _speech recognition_ (reconhecimento de fala) do HTML5.
 
 ## Links do Exemplo
 
-- Link para seminário: [slides de aula][slides]
-- Link para exemplo publicado: [página no GitHub][vivo]
+- Link para seminário: [apresentação][slides]
+- Link para exemplo publicado: [página no GitHub][github]
 
 ## Créditos
 
@@ -16,20 +16,13 @@ Este trabalho foi realizado em 2018/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Laura de Bella (201322040354 &larr; ~~matrícula da graduação!!~~)
-2. Luis Carlos Cardoso ()
+1. Laura de Bella 
+2. Luis Carlos Cardoso 
 
 Atribuições:
 
-- Fonte Overlock, criada por [Dario Manuel Muhafara][overlock-author]
-- Fonte Chewy, criada por [_Sideshow Foundry_][chewy-author]
-- Imagens dos monstrinhos, da empresa [Toshl][monsters-author]®
+- Voice Driven Web Apps: Introduction to the Web Speech API, criada por [Glen Shires][example]
 
-[slides]: https://fegemo.github.io/cefet-web/classes/js5/#32
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
-[overlock-author]: https://plus.google.com/105287894980881814285/about
-[chewy-author]: https://profiles.google.com/sideshowfonts/about
-[monsters-author]: http://toshl.com
-
-
-https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API?hl=en
+[slides]: https://docs.google.com/presentation/d/1eH0ozDE2Zp_5IDcHRHMi7KfF5q9hfmhI5DdXNhMgKLw/edit?usp=sharing
+[github]: https://github.com/lauradebella/cefet-web-weblot/tree/2018/01/apis/speech-recognition
+[example]: https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API?hl=en
