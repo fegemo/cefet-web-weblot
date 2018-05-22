@@ -16,7 +16,8 @@ Este trabalho foi realizado em 2018/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Luis Carlos Cardoso Filho (201412040230 &larr; ~~matrícula da graduação!!~~)
+1. Laura de Bella
+2. Luis Carlos Cardoso
 
 Atribuições:
 
