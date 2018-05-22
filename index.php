@@ -1,1 +1,0 @@
-<?php header( 'Location: /apis/speech-recognition/index.html' ) ;  ?>
