@@ -10,24 +10,19 @@
 <body>
   <h1 class="center" id="headline">
   <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
-    Web Speech API</a> Demonstration</h1>
+    Web Speech API</a></h1>
   <div id="info">
-    <p id="info_start">Click on the microphone icon and begin speaking.</p>
-    <p id="info_speak_now">Speak now.</p>
-    <p id="info_no_speech">No speech was detected. You may need to adjust your
+    <p id="info_start">Clique no microfone e comece a falar</p>
+    <p id="info_speak_now">Fale agora</p>
+    <p id="info_no_speech">Nenhuma fala foi detectada. Cheque suas 
       <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
-        microphone settings</a>.</p>
+        configurações do microfone</a>.</p>
     <p id="info_no_microphone" style="display:none">
-      No microphone was found. Ensure that a microphone is installed and that
-      <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
-      microphone settings</a> are configured correctly.</p>
-    <p id="info_allow">Click the "Allow" button above to enable your microphone.</p>
-    <p id="info_denied">Permission to use microphone was denied.</p>
-    <p id="info_blocked">Permission to use microphone is blocked. To change,
-      go to chrome://settings/contentExceptions#media-stream</p>
-    <p id="info_upgrade">Web Speech API is not supported by this browser.
-       Upgrade to <a href="//www.google.com/chrome">Chrome</a>
-       version 25 or later.</p>
+      Nenhum microfone detectado.</p>
+    <p id="info_allow">Clique em "Autorizar" para autorizar a captura de audio do microfone.</p>
+    <p id="info_denied">Permissão negada para uso do microfone</p>
+    <p id="info_blocked">Permissão para uso do microfone está bloqueada. Para configurar, vá para chrome://settings/contentExceptions#media-stream</p>
+    <p id="info_upgrade">Web Speech API não é suportada por esse navegador.</p>
   </div>
   <div class="right">
     <button id="start_button">
@@ -40,13 +35,6 @@
   </div>
 
   <div class="center">
-    <div class="sidebyside" style="text-align:right">
-      <button id="copy_button" class="button">
-        Copy and Paste</button>
-      <div id="copy_info" class="info">
-        Press Control-C to copy text.<br>(Command-C on Mac.)
-      </div>
-    </div>
     <p>
     <div id="div_language">
       <select id="select_language" onchange="updateCountry()"></select>
