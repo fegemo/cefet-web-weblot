@@ -96,4 +96,4 @@ fetch('apis.json')
   .then(inicializaGaleria);
 
 const audioPlayerEl = document.querySelector('#audio .player');
-new MusicPlayer(audioPlayerEl, 'assets/tema.mp3', 'A Lenda do Herói', 'Castro Brothers').play();
+new MusicPlayer(audioPlayerEl, 'assets/tema.mp3', 'A Lenda do Herói', 'Castro Brothers');
