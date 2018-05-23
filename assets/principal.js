@@ -1,5 +1,6 @@
 import inicializaGaleria from './galeria.js';
 import html from './templating.js';
+import MusicPlayer from './player.js';
 
 const galleryEl = document.querySelector('main');
 
@@ -9,7 +10,7 @@ function preparaImagens(resultado) {
   const promessas = imagens.map(imagem => new Promise((resolver, rejeitar) => {
     const imagemForaDaTelaEl = document.createElement('img');
     imagemForaDaTelaEl.onload = () => {
-      const corMedia = ps.color.getImageAverageColor(imagemForaDaTelaEl).toStringRgba();
+      const corMedia = ps.color.getImageAverageColor(imagemForaDaTelaEl).toStringRgb();
       resolver({
         imagem,
         corMedia
@@ -42,7 +43,7 @@ function adicionaItemGaleria(apiInfo, i) {
           <img src="${apiInfo.screenshot}">
         </a>
       </div>
-      <div class="${par ? 'right' : 'left'} title" style="background-color: rgba(${apiInfo.corMedia})">
+      <div class="${par ? 'right' : 'left'} title" style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
         <div class="content">
           <h2>${apiInfo.nome}</h2>
           <p>${apiInfo.breveDescricao}</p>
@@ -61,7 +62,7 @@ function adicionaItemGaleria(apiInfo, i) {
         </div>
       </div>
 
-      <div class="${par ? 'left' : 'right'} tiles"  style="background-color: rgba(${apiInfo.corMedia})">
+      <div class="${par ? 'left' : 'right'} tiles"  style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
         <picture data-browser-name="Google Chrome" data-supported="${apiInfo.suporteDeNavegadores.chrome ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.chrome ? 'supported' : ''}">
           <img src="assets/icons/chrome.png">
         </picture>
@@ -93,3 +94,6 @@ fetch('apis.json')
   .then(preparaImagens)
   .then(preparaHTML)
   .then(inicializaGaleria);
+
+const audioPlayerEl = document.querySelector('#audio .player');
+new MusicPlayer(audioPlayerEl, 'assets/tema.mp3', 'A Lenda do Herói', 'Castro Brothers').play();

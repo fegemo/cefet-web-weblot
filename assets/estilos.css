@@ -1,11 +1,12 @@
 :root {
   --browser-icon-radius: 9px;
-  --main-color: cornflowerblue;
 }
 
 body {
   font-family: 'Neucha', cursive;
   margin: 0;
+  background: url(images/madeira.jpg);
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -14,14 +15,26 @@ h1, h2 {
 }
 
 header, footer {
-  background: var(--main-color);
   color: #fff;
   padding: 30px;
   text-align: center;
 }
 
+header {
+  background-image: url(images/taverna.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+
 header a, footer a {
   color: #fff;
+}
+
+footer {
+  background-image: url(images/papiro-cima.png), url(images/papiro.jpg);
+  background-repeat: repeat-x;
+  background-position-y: 0, 6px;
+  color: #5d4037;
 }
 
 @media (min-width: 768px) {
@@ -35,7 +48,7 @@ header h1, footer h1 {
   font-weight: 300;
 }
 
-header i.fa, footer i.fa {
+header i.fa.bounce, footer i.fa.bounce {
   font-size: 4em;
 }
 
@@ -329,24 +342,32 @@ a:visited {
 
 .content .authors a:hover,
 a:hover {
-  color: whitesmoke;
   text-decoration: none;
 }
 
 .content .authors a:active,
 a:active {
-  color: whitesmoke;
   text-decoration: underline;
 }
 
+.content .aurhots a:hover,
+.content .aurhots a:active {
+  color: whitesmoke;
+}
+
+a:hover,
+a:active {
+  color: black;
+}
 
 .lista-rodape {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .lista-rodape dt {
-  color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, .8);
   font-weight: bold;
 }
 
@@ -354,11 +375,14 @@ a:active {
   margin-left: 1em;
 }
 
-.lista-rodape dd:not(:last-of-type)::after {
-  content: "|";
+.lista-rodape dd:not(:last-of-type)::before {
+  content: "";
   display: inline-block;
   margin: 0 1em;
-  color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, .8);
+  border-right: 1px solid currentColor;
+  height: 100%;
+  float: right;
 }
 
 .lista-rodape i.fa {
