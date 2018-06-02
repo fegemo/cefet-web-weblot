@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url('https://i.annihil.us/u/prod/marvel/html_pages_assets/mu-sellpage-staging/images/bg-topper-desktop.jpg');
+    display: flex;
+    align-items: center;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+video {
+    width: 600px;
+    height: 300px;
+    background-color: black;
+}
+
+.mdl-button {
+    margin: 20px;
+}

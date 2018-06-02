@@ -11,11 +11,13 @@ let fetchCharacter
             let nameQuery = character ? `name=${character}&` : ''
             const resp = await fetch(`https://gateway.marvel.com:443/v1/public/characters?${nameQuery}ts=1&apikey=${key}&hash=f2e1443e68b8b9072cfc270f77933ba2`)
             const jsonResp = await resp.json();
-            console.log(jsonResp.data.results)
 
             const resultsDiv = document.querySelector('#results')
             while (resultsDiv.firstChild) {
                 resultsDiv.removeChild(resultsDiv.firstChild);
+            }
+            if(jsonResp.data.results.length == 0) {
+                alert('Personagem não encontrado')
             }
             jsonResp.data.results.forEach(character => {
                 const container = document.createElement('div')
