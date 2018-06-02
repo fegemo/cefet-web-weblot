@@ -19,6 +19,33 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Fullscreen API",
+      "breveDescricao": "API que possibilita a maximização de elementos HTML.",
+      "paginaInicial": "apis/full-screen-api",
+      "screenshot": "apis/full-screen-api/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
