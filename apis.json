@@ -45,9 +45,9 @@
     },
     {
       "nome": "getUserMedia/Stream API",
-      "breveDescricao": "Permite o acesso a streams de dados recebidos pela rede e processá-los de forma dinâmica",
-      "paginaInicial": "apis/stream/",
-      "screenshot": "apis/stream/images/screenshot.png",
+      "breveDescricao": "Permite o acesso a media streams recebidos por dispositivos de entrada de media externos",
+      "paginaInicial": "apis/getUserMedia/",
+      "screenshot": "apis/getUserMedia/images/screenshot.png",
       "desenvolvedores": [
         {
           "nome": "Lucas Viana",
