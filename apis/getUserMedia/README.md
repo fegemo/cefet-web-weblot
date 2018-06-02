@@ -1,6 +1,6 @@
-# _Fetch API_
+# _GetUserMedia/Stream API_
 
-Exemplo de uso da API de ***fetch*** do JS.
+Exemplo de uso da API de ***getUserMedia/Stream*** do JS.
 
 ![](images/screenshot.png)
 
@@ -19,5 +19,5 @@ Autor(es):
 1. Lucas Silvestre Viana (2005046102)
 1. Victor Balbo de Oliveira (201422040178)
 
-[doc]: https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
+[doc]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/getUserMedia/
