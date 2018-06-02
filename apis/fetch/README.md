@@ -16,8 +16,8 @@ Este trabalho foi realizado em 2018/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Lucas Silvestre Viana (2005046102)
+1. Lucas Silvestre Viana (201422040240)
 1. Victor Balbo de Oliveira (201422040178)
 
 [doc]: https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/fetch/

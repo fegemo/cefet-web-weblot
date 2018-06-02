@@ -16,7 +16,7 @@ Este trabalho foi realizado em 2018/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Lucas Silvestre Viana (2005046102)
+1. Lucas Silvestre Viana (201422040240)
 1. Victor Balbo de Oliveira (201422040178)
 
 [doc]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
