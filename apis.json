@@ -25,6 +25,10 @@
       "breveDescricao": "API que possibilita a maximização de elementos HTML.",
       "paginaInicial": "apis/full-screen-api",
       "screenshot": "apis/full-screen-api/img/screenshot.png",
+      "nome": "Pointer Lock API",
+      "breveDescricao": "API HTML que permite capturar elementos do mouse, esconde o cursor e adiciona eventos de acordo com sua movimentação",
+      "paginaInicial": "apis/Pointer-Lock",
+      "screenshot": "apis/Pointer-Lock/img/screenshot.png",
       "desenvolvedores": [
         {
           "nome": "André Luís Borges de Oliveira",
