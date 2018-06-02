@@ -20,4 +20,4 @@ Autor(es):
 1. Victor Balbo de Oliveira (201422040178)
 
 [doc]: https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/fetch/
+[vivo]: https://victorbalbo.github.io/cefet-fetch/

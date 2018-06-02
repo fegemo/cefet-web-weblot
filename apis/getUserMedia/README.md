@@ -20,4 +20,4 @@ Autor(es):
 1. Victor Balbo de Oliveira (201422040178)
 
 [doc]: https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/getUserMedia/
+[vivo]: https://victorbalbo.github.io/cefet-getUserMedia/
