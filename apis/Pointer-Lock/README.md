@@ -7,7 +7,7 @@ API HTML que permite capturar elementos do mouse, esconde o cursor e adiciona ev
 
 ## Links do Exemplo
 
-- Link para seminário: [clique aqui](andrelbol.github.io/Trabalhos-Web/Presentation)
+- Link para seminário: [clique aqui](andrelbol.github.io/Trabalhos-Web/Presentation/)
 - Link para exemplo publicado: [página no GitHub](https://github.com/andrelbol/cefet-web-weblot/tree/2018/01/apis/Pointer-Lock)
 
 ## Créditos
