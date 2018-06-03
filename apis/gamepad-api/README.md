@@ -4,7 +4,7 @@ Uma API para facilitar a utilização de diferentes controles em websites.
 
 ## Links do Exemplo
 - Link para seminário: [slides no Google Drive][slides]
-- Link para exemplo: [pagina no github]
+- Link para exemplo: [pagina no github][vivo]
 
 ## Créditos
 Este trabalho foi realizado em 2018/01 para a disciplina de Programação para Web do CEFET-MG no Campus II de Belo Horizonte.
@@ -27,3 +27,4 @@ Atribuições:
 [pesquisa]:http://beej.us/blog/data/javascript-gamepad/
 [pesquisa2]:https://developer.mozilla.org/pt-BR/
 [jedai]: https://github.com/fegemo
+
