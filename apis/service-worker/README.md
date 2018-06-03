@@ -19,5 +19,5 @@ Autor(es):
 1. Felipe Freitas
 1. Luis Nascimento
 
-[slides]: https://...
-[vivo]: https://...
+[slides]: https://sosistemassistemas.github.io/service-workers-seminar-presentation/
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/service-worker/
