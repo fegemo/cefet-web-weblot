@@ -26,4 +26,4 @@ Atribuições:
 [vivo]: https://fegemo.github.io/cefet-web-weblot/apis/gamepad-api/
 [pesquisa]:http://beej.us/blog/data/javascript-gamepad/
 [pesquisa2]:https://developer.mozilla.org/pt-BR/
-[jedai]: github.com/fegemo
+[jedai]: https://github.com/fegemo
