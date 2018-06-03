@@ -6,7 +6,7 @@ Exemplo de uso da API de _Service Worker_.
 
 ## Links do Exemplo
 
-- Link para seminário: [slides de aula][slides]
+- Link para seminário: [slides][slides]
 - Link para exemplo publicado: [página no GitHub][vivo]
 
 ## Créditos
