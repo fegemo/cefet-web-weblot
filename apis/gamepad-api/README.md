@@ -11,9 +11,9 @@ Este trabalho foi realizado em 2018/01 para a disciplina de Programação para W
 
 Autores:
 
-1.André Luís Borges de Oliveira
-1.André Perazio Givisiez Fonseca
-1.Thiago Magno Gomes
+1. André Luís Borges de Oliveira
+1. André Perazio Givisiez Fonseca
+1. Thiago Magno Gomes
 
 Atribuições:
 
