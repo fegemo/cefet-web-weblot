@@ -19,6 +19,33 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Service Worker API",
+      "breveDescricao": "Atua como um proxy entre a aplicação web e a rede.",
+      "paginaInicial": "apis/service-worker/",
+      "screenshot": "apis/service-worker/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Cosme Lopes",
+          "usuarioGithub": "cnlopes"
+        },
+        {
+          "nome": "Felipe Freitas",
+          "usuarioGithub": "felipefreitas"
+        },
+        {
+          "nome": "Luis Nascimento",
+          "usuarioGithub": "lcnascimento"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
