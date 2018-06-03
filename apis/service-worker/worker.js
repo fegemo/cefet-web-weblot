@@ -2,7 +2,7 @@ const cacheId = 'weblot-123';
 
 const offlinePage = 'offline.html';
 
-const offAssets = ['style.css'];
+const offAssets = ['styles/style.css'];
 
 offAssets.push(offlinePage);
 
