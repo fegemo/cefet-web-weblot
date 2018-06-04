@@ -2,7 +2,7 @@
 
 Exemplo de uso da API de _File API_ do HTML5.
 
-![](/filescreenshot.png)
+![](/creenshot.png)
 
 
 ## Links do Exemplo
