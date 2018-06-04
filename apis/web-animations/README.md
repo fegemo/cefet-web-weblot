@@ -7,7 +7,7 @@ Exemplo de uso da API de _Web Animations_ do HTML5.
 
 ## Links do Exemplo
 
-- Link para seminário: [slides de aula][slides]
+- Link para seminário: [slides do seminario][slides]
 - Link para exemplo publicado: [página no GitHub][vivo]
 
 ## Créditos
@@ -21,10 +21,8 @@ Autor(es):
 
 Atribuições:
 
-- Imagem do Bárbaro por Romchello @ Dreamstime.com
+- Imagem do Bárbaro por Romchello @ [autor-imagem][Dreamstime.com]
 
-[slides]: https://fegemo.github.io/cefet-web/classes/js5/#32
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
-[overlock-author]: https://plus.google.com/105287894980881814285/about
-[chewy-author]: https://profiles.google.com/sideshowfonts/about
-[monsters-author]: http://toshl.com
+[slides]: https://docs.google.com/presentation/d/1HTLPbH51Qvx8z51aVkfB4zosPdHgzBWdxIdeJdmlJbY/edit?usp=sharing
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/web-animations/
+[autor-imagem]: https://www.dreamstime.com/stock-illustration-vector-viking-warrior-two-axes-cartoon-illustration-barbarian-swinging-arms-isolated-white-background-image73441244
