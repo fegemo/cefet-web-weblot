@@ -2,7 +2,7 @@
 
 Exemplo de uso das APIs de _ambient light_, _proximity_ e _vibration_ do HTML5.
 
-![](images/example.png)
+![](image/example.png)
 
 ## Links do Exemplo
 
