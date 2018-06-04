@@ -19,6 +19,52 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Fetch API",
+      "breveDescricao": "Fornece uma interface para requisição de recursos na internet",
+      "paginaInicial": "apis/fetch/",
+      "screenshot": "apis/fetch/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Lucas Viana",
+          "usuarioGithub": "lcasviana"
+        },
+        {
+          "nome": "Victor Balbo",
+          "usuarioGithub": "victorbalbo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "getUserMedia/Stream API",
+      "breveDescricao": "Permite o acesso a media streams recebidos por dispositivos de entrada de media externos",
+      "paginaInicial": "apis/getUserMedia/",
+      "screenshot": "apis/getUserMedia/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Lucas Viana",
+          "usuarioGithub": "lcasviana"
+        },
+        {
+          "nome": "Victor Balbo",
+          "usuarioGithub": "victorbalbo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
