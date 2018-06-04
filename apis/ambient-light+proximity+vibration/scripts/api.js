@@ -10,8 +10,8 @@ let blueColor = 240;
 let luminosidade = 0;
 // Vibration API
 const NOTA = 100;
-let ni = new Audio('/audio/ni.mp3');
-let music = new Audio('/audio/spamalot_part11_brave SirRobin.mp3');
+let ni = new Audio('audio/ni.mp3');
+let music = new Audio('audio/spamalot_part11_brave SirRobin.mp3');
 let proximity = false;
 
 function alteraCorFundo() {
