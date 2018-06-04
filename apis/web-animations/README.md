@@ -7,21 +7,21 @@ Exemplo de uso da API de _Web Animations_ do HTML5.
 
 ## Links do Exemplo
 
-- Link para semin·rio: [slides de aula][slides]
-- Link para exemplo publicado: [p·gina no GitHub][vivo]
+- Link para semin√°rio: [slides de aula][slides]
+- Link para exemplo publicado: [p√°gina no GitHub][vivo]
 
-## CrÈditos
+## Cr√©ditos
 
-Este trabalho foi realizado em 2018/01 para a disciplina de ProgramaÁ„o para Web do CEFET-MG no Campus II de Belo Horizonte.
+Este trabalho foi realizado em 2018/01 para a disciplina de Programa√ß√£o para Web do CEFET-MG no Campus II de Belo Horizonte.
 
 Autor(es):
 
-1. Lauro CÈsar Jacques Santos(201412040213)
+1. Lauro C√©sar Jacques Santos(201412040213)
 2. Daniel Silva da Fonseca (201412040396)
 
-AtribuiÁıes:
+Atribui√ß√µes:
 
-- Imagem do B·rbaro por Romchello @ Dreamstime.com
+- Imagem do B√°rbaro por Romchello @ Dreamstime.com
 
 [slides]: https://fegemo.github.io/cefet-web/classes/js5/#32
 [vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
