@@ -2,13 +2,14 @@
 
 Exemplo de uso da API de _File API_ do HTML5.
 
-![](/creenshot.png)
+![](/screenshot.png)
 
 
 ## Links do Exemplo
 
-- Link para seminário: [slides de aula][slides]
+- Link para seminário: [slides do seminario][slides]
 - Link para exemplo publicado: [página no GitHub][vivo]
+
 
 ## Créditos
 
@@ -19,12 +20,5 @@ Autor(es):
 1. Lauro César Jacques Santos(201412040213)
 2. Daniel Silva da Fonseca (201412040396)
 
-Atribuições:
-
-- Imagem do Bárbaro por Romchello @ Dreamstime.com
-
-[slides]: https://fegemo.github.io/cefet-web/classes/js5/#32
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
-[overlock-author]: https://plus.google.com/105287894980881814285/about
-[chewy-author]: https://profiles.google.com/sideshowfonts/about
-[monsters-author]: http://toshl.com
+[slides]: https://docs.google.com/presentation/d/1HTLPbH51Qvx8z51aVkfB4zosPdHgzBWdxIdeJdmlJbY/edit?usp=sharing
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/web-animations/
