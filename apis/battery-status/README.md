@@ -25,9 +25,15 @@ Este trabalho foi realizado em 2018/01 para a disciplina de Programação para W
 * [W3 - Battery Status][battery-status]
 * [W3C - GitHub Pages][battery-gpages]
 * [MDN - GitHub Pages][battery-mdn]
+* [Netease Corporation - GIF fundo][gif]
+* [Imagem borda][borda]
+* [Personagem][personagem]
 
-[seminario]: https://github.com/viniciusvmda/cefet-web-weblot
-[vivo]: https://viniciusvmda.github.io/cefet-web-weblot/apis/battery-status/
+[seminario]: https://taisrs.github.io/cefet-web-seminario
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/battery-status/
 [battery-status]: https://www.w3.org/TR/battery-status/
 [battery-gpages]: https://w3c.github.io/battery/
 [battery-mdn]: https://developer.mozilla.org/pt-BR/docs/Web/API/Battery-Status
+[gif]: http://ly5282116.blog.163.com/blog/static/16183617920126111135221/
+[borda]: http://www.fazzarimultimedia.com/blog/wood-grain-border-png/
+[personagem]: https://craftpix.net/freebies/2d-fantasy-knight-free-sprite-sheets/
