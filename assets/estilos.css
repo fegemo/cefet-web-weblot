@@ -88,6 +88,15 @@ header .animated, footer .animated {
   text-shadow: 1px 1px #00000080;
 }
 
+.section .title.dark {
+  color: #000;
+  text-shadow: 1px 1px #ffffff80;
+}
+
+.section .title.dark h2 {
+  text-shadow: 1px 1px rgba(255, 255, 255, .5);
+}
+
 .section .middle {
   height: 100%;
 }
@@ -101,6 +110,12 @@ header .animated, footer .animated {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
   padding: 0.2em 0.4em;
+}
+
+.dark .content a:link,
+.dark .content a:visited {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .content a:hover,
