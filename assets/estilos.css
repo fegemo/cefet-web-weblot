@@ -68,9 +68,29 @@ header .animated, footer .animated {
   animation-fill-mode: both;
 }
 
+main.errored {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 2.25em;
+  color: white;
+  padding: 0.5em;
+  text-shadow: 1px 1px rgba(0, 0, 0, .25);
+}
+
 .section {
   width: 100%;
   position: relative;
+}
+
+.section.placeholder {
+  opacity: 0.7;
+}
+
+.section.placeholder > * {
+  height: 100%;
 }
 
 .section .left,
@@ -88,6 +108,15 @@ header .animated, footer .animated {
   text-shadow: 1px 1px #00000080;
 }
 
+.section .title.dark {
+  color: #000;
+  text-shadow: 1px 1px #ffffff80;
+}
+
+.section .title.dark h2 {
+  text-shadow: 1px 1px rgba(255, 255, 255, .5);
+}
+
 .section .middle {
   height: 100%;
 }
@@ -103,6 +132,12 @@ header .animated, footer .animated {
   padding: 0.2em 0.4em;
 }
 
+.dark .content a:link,
+.dark .content a:visited {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .content a:hover,
 .content a:active {
   color: darkblue;
@@ -110,6 +145,10 @@ header .animated, footer .animated {
 }
 
 @media (max-width: 480px) {
+  .section.placeholder {
+    height: 100vw;
+  }
+
   .section .tiles {
     display: flex;
     flex-direction: row;
@@ -122,6 +161,10 @@ header .animated, footer .animated {
 }
 
 @media (min-width: 480px) {
+  .section.placeholder {
+    height: 50vw;
+  }
+
   .section .left .content,
   .section .middle .content,
   .section .right .content {
@@ -143,6 +186,10 @@ header .animated, footer .animated {
 }
 
 @media (min-width: 768px) {
+  .section.placeholder {
+    height: 33vw;
+  }
+
   .section .left, .section .middle, .section .right {
     width: 33.33333%;
     left: 33.33%;

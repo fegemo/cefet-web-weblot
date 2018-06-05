@@ -11,10 +11,19 @@ function preparaImagens(resultado) {
   const promessas = imagens.map(imagem => new Promise((resolver, rejeitar) => {
     const imagemForaDaTelaEl = document.createElement('img');
     imagemForaDaTelaEl.onload = () => {
+      // determina qual é a "cor média" da imagem de exemplo da API
       const corMedia = ps.color.getImageAverageColor(imagemForaDaTelaEl).toStringRgb();
+      // dada a cor média que foi encontrada, verifica se deve aplicar um "tema"
+      // escuro, caso a cor média seja mais clara (para dar contraste)
+      // para tanto, levamos a cor média do espaço RGB para HSI, e olhamos
+      // para I (intensidade) pra ver se está mais para claro (>0.5) ou escuro
+      // (<0.5)
+      const usarTemaEscuro = toHSI(corMedia.split(','))[2] > 0.5;
+
       resolver({
         imagem,
-        corMedia
+        corMedia,
+        usarTemaEscuro
       });
     };
     imagemForaDaTelaEl.src = imagem;
@@ -25,7 +34,8 @@ function preparaImagens(resultado) {
     .then(imagensComCores => {
       resultado.apis = resultado.apis.map(api => {
         const estaImagemNoArrayComputado = imagensComCores.find(imgComCor => imgComCor.imagem === api.screenshot);
-        api.corMedia = estaImagemNoArrayComputado.corMedia
+        api.corMedia = estaImagemNoArrayComputado.corMedia;
+        api.usarTemaEscuro = estaImagemNoArrayComputado.usarTemaEscuro;
         return api;
       });
 
@@ -37,6 +47,7 @@ function preparaImagens(resultado) {
 
 function adicionaItemGaleria(yearSemester, apiInfo, i) {
   const par = i % 2 === 0;
+  const tema = apiInfo.usarTemaEscuro ? 'dark' : '';
   const novoElemento = html`
     <section class="section">
       <div class="middle" style="background-color: rgb(${apiInfo.corMedia})">
@@ -44,7 +55,7 @@ function adicionaItemGaleria(yearSemester, apiInfo, i) {
           <img src="${apiInfo.screenshot}">
         </a>
       </div>
-      <div class="${par ? 'right' : 'left'} title" style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
+      <div class="${par ? 'right' : 'left'} title ${tema}" style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
         <div class="content">
           <h2>${apiInfo.nome}</h2>
           <p>${apiInfo.breveDescricao}</p>
@@ -97,6 +108,7 @@ function preparaHTML(arquivoApis) {
 }
 
 function mostraErro(erro) {
+  galleryEl.classList.add('errored');
   galleryEl.innerHTML = `Deu erro!! Descrição: ${erro}`;
 }
 
