@@ -44,6 +44,33 @@
       }
     },
     {
+      "nome": "Fullscreen API",
+      "breveDescricao": "API que possibilita a maximização de elementos HTML.",
+      "paginaInicial": "apis/full-screen-api",
+      "screenshot": "apis/full-screen-api/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
       "nome": "getUserMedia/Stream API",
       "breveDescricao": "Permite o acesso a media streams recebidos por dispositivos de entrada de media externos",
       "paginaInicial": "apis/getUserMedia/",
@@ -56,6 +83,60 @@
         {
           "nome": "Victor Balbo",
           "usuarioGithub": "victorbalbo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Gamepad API",
+      "breveDescricao": "Uma API para facilitar a utilização de diferentes controles em websites.",
+      "paginaInicial": "apis/gamepad-api",
+      "screenshot": "apis/gamepad-api/images/Exemplo.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": false
+      }
+    },
+    {
+      "nome": "Pointer Lock API",
+      "breveDescricao": "Uma API que permite segurar o mouse para mantê-lo em sua posição.",
+      "paginaInicial": "apis/pointer-lock",
+      "screenshot": "apis/pointer-lock/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
         }
       ],
       "suporteDeNavegadores": {
