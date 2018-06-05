@@ -108,6 +108,7 @@ function preparaHTML(arquivoApis) {
 }
 
 function mostraErro(erro) {
+  galleryEl.classList.add('errored');
   galleryEl.innerHTML = `Deu erro!! Descrição: ${erro}`;
 }
 
