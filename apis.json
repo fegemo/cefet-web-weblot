@@ -2,6 +2,52 @@
   "semestre": "2018/01",
   "apis": [
     {
+      "nome": "Ambient Light API",
+      "breveDescricao": "Possibilita detectar a luminosidade do ambiente",
+      "paginaInicial": "apis/ambient-light+proximity+vibration/",
+      "screenshot": "apis/ambient-light+proximity+vibration/image/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "firefox": true
+      }
+    },
+    {
+      "nome": "Battery Status API",
+      "breveDescricao": "Possibilita detectar o status da bateria",
+      "paginaInicial": "apis/battery-status/",
+      "screenshot": "apis/battery-status/images/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true
+      }
+    },
+    {
       "nome": "Drag and Drop API",
       "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
       "paginaInicial": "apis/drag-and-drop/",
@@ -145,6 +191,54 @@
         "firefox": true,
         "edge": true,
         "opera": true
+      }
+    },
+    {
+      "nome": "Proximity API",
+      "breveDescricao": "Possibilita detectar, caso exista, a proximidade de um objeto",
+      "paginaInicial": "apis/ambient-light+proximity+vibration/",
+      "screenshot": "apis/ambient-light+proximity+vibration/image/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "firefox": true,
+        "edge": true
+      }
+    },
+    {
+      "nome": "Vibration API",
+      "breveDescricao": "Possibilita programar a vibração do aparelho",
+      "paginaInicial": "apis/ambient-light+proximity+vibration/",
+      "screenshot": "apis/ambient-light+proximity+vibration/image/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "firefox": true
       }
     },
     {
