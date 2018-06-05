@@ -1,0 +1,14 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-image: url(../images/Wood-Grain-Border.png),
+                      url(../images/893964526033150451.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover, cover;
+}
