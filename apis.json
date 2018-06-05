@@ -146,6 +146,33 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "WebVR API",
+      "breveDescricao": "Oferece suporte para expor dispositivos de realidade virtual para aplicativos da web",
+      "paginaInicial": "apis/webvr/",
+      "screenshot": "apis/webvr/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Nicolas Maduro",
+          "usuarioGithub": "nicolasamaduro"
+        },
+        {
+          "nome": "Renan Nascimento",
+          "usuarioGithub": "RenanNascimento"
+        },
+        {
+          "nome": "Thales Nascimento",
+          "usuarioGithub": "thales-nascimento"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": false,
+        "safari": false,
+        "firefox": true,
+        "edge": true,
+        "opera": false
+      }
     }
   ]
 }
