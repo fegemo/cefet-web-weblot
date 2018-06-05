@@ -1,6 +1,7 @@
 import inicializaGaleria from './galeria.js';
 import html from './templating.js';
 import MusicPlayer from './player.js';
+import { currifica } from './programacao-funcional.js';
 
 const galleryEl = document.querySelector('main');
 
@@ -34,11 +35,11 @@ function preparaImagens(resultado) {
   return promessaComImagensPreparadas;
 }
 
-function adicionaItemGaleria(apiInfo, i) {
+function adicionaItemGaleria(yearSemester, apiInfo, i) {
   const par = i % 2 === 0;
   const novoElemento = html`
     <section class="section">
-      <div class="middle">
+      <div class="middle" style="background-color: rgb(${apiInfo.corMedia})">
         <a href="${apiInfo.paginaInicial}" target="_blank">
           <img src="${apiInfo.screenshot}">
         </a>
@@ -47,26 +48,30 @@ function adicionaItemGaleria(apiInfo, i) {
         <div class="content">
           <h2>${apiInfo.nome}</h2>
           <p>${apiInfo.breveDescricao}</p>
-          <p>Demo: <a href="${apiInfo.paginaInicial}" target="_blank">${apiInfo.paginaInicial}</a></p>
+          <nav>
+            <i class="fa fa-file-text"></i> <a href="${apiInfo.paginaInicial}" target="_blank">Demonstração</a>
+            <i class="fa fa-code"></i> <a href="https://github.com/fegemo/cefet-web-weblot/tree/${yearSemester}/${apiInfo.paginaInicial}" target="_blank">Código</a>
+          </nav>
           <div class="authors">
             <h3>Autores:</h3>
-            <dl>
+            <ul>
               ${apiInfo.desenvolvedores.map(dev => html`
-                <dt>
+                <li>
                   <i class="fa fa-github-alt" aria-hidden="true"></i>
-                  @<a href="https://github.com/$${dev.usuarioGithub}">$${dev.usuarioGithub}</a></dt>
-                <dd>$${dev.nome}</dd>
+                  @<a href="https://github.com/$${dev.usuarioGithub}">$${dev.usuarioGithub}</a>
+                  <span class="author-name">$${dev.nome}</span>
+                </li>
               `)}
-            </dl>
+            </ul>
           </div>
         </div>
       </div>
 
       <div class="${par ? 'left' : 'right'} tiles"  style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
-        <picture data-browser-name="Google Chrome" data-supported="${apiInfo.suporteDeNavegadores.chrome ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.chrome ? 'supported' : ''}">
+        <picture data-browser-name="Chrome" data-supported="${apiInfo.suporteDeNavegadores.chrome ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.chrome ? 'supported' : ''}">
           <img src="assets/icons/chrome.png">
         </picture>
-        <picture data-browser-name="Mozilla Firefox" data-supported="${apiInfo.suporteDeNavegadores.firefox ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.firefox ? 'supported' : ''}">
+        <picture data-browser-name="Firefox" data-supported="${apiInfo.suporteDeNavegadores.firefox ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.firefox ? 'supported' : ''}">
           <img src="assets/icons/firefox.png">
         </picture>
         <picture data-browser-name="Edge" data-supported="${apiInfo.suporteDeNavegadores.edge ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.edge ? 'supported' : ''}">
@@ -75,25 +80,32 @@ function adicionaItemGaleria(apiInfo, i) {
         <picture data-browser-name="Safari" data-supported="${apiInfo.suporteDeNavegadores.safari ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.safari ? 'supported' : ''}">
           <img src="assets/icons/safari.png">
         </picture>
+        <picture data-browser-name="Opera" data-supported="${apiInfo.suporteDeNavegadores.opera ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.opera ? 'supported' : ''}">
+          <img src="assets/icons/opera.png">
+        </picture>
       </div>
     </section>`;
 
   galleryEl.innerHTML += novoElemento;
 }
 
-function preparaHTML(resultado) {
-  const apis = resultado.apis;
+function preparaHTML(arquivoApis) {
+  const listaDeApis = arquivoApis.apis;
 
   galleryEl.innerHTML = '';
-  apis.forEach(adicionaItemGaleria);
+  listaDeApis.forEach(currifica(adicionaItemGaleria, arquivoApis.semestre));
+}
 
+function mostraErro(erro) {
+  galleryEl.innerHTML = `Deu erro!! Descrição: ${erro}`;
 }
 
 fetch('apis.json')
   .then((resultado) => resultado.json())
   .then(preparaImagens)
   .then(preparaHTML)
-  .then(inicializaGaleria);
+  .then(inicializaGaleria)
+  .catch(mostraErro);
 
 const audioPlayerEl = document.querySelector('#audio .player');
 new MusicPlayer(audioPlayerEl, 'assets/tema.mp3', 'A Lenda do Herói', 'Castro Brothers');
