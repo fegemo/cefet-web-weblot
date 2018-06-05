@@ -90,6 +90,29 @@
       }
     },
     {
+      "nome": "File API",
+      "breveDescricao": "Provém informações sobre os arquivos e permite o javascript acessar o conteúdo destes",
+      "paginaInicial": "apis/file/",
+      "screenshot": "apis/file/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Daniel Silva da Fonseca",
+          "usuarioGithub": "daniel0547"
+        },
+        {
+          "nome": "Lauro César Jacques Santos",
+          "usuarioGithub": "laurocjs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
       "nome": "Fullscreen API",
       "breveDescricao": "API que possibilita a maximização de elementos HTML.",
       "paginaInicial": "apis/full-screen-api",
@@ -266,6 +289,29 @@
       "suporteDeNavegadores": {
         "chrome": true,
         "firefox": true
+      }
+    },
+    {
+      "nome": "Web Animations API",
+      "breveDescricao": "Possibilita animar elementos",
+      "paginaInicial": "apis/web-animations/",
+      "screenshot": "apis/web-animations/src/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Lauro César Jacques Santos",
+          "usuarioGithub": "laurocjs"
+        },
+        {
+          "nome": "Daniel Silva da Fonseca",
+          "usuarioGithub": "daniel0547"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": true,
+        "edge": false,
+        "opera": true
       }
     },
     {
