@@ -2,14 +2,14 @@
   "semestre": "2018/01",
   "apis": [
     {
-      "nome": "Drag and Drop API",
-      "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
-      "paginaInicial": "apis/drag-and-drop/",
-      "screenshot": "apis/drag-and-drop/images/screenshot.png",
+      "nome": "Page Visibility API",
+      "breveDescricao": "API de visibilidade de página deixa você saber quando uma página da web está visível ou em foco.",
+      "paginaInicial": "TP1/index.html",
+      "screenshot": "",
       "desenvolvedores": [
         {
-          "nome": "Flávio Coutinho",
-          "usuarioGithub": "fegemo"
+          "nome": "Vinicius Fonseca",
+          "usuarioGithub": "vinicius-omf"
         }
       ],
       "suporteDeNavegadores": {
@@ -19,6 +19,56 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "API Page Visibility",
+      "breveDescricao": "Quando voce entra e sai da aba começa a tocar uma musica e a mesma pausa ao trocar de aba"
+    },
+    {
+      "nome": "Geolocation API",
+      "breveDescricao": "A API geolocation permite que o usuário forneça sua localização a aplicativos web",
+      "paginaInicial": "TP1/index.html",
+      "screenshot": "",
+      "desenvolvedores": [
+        {
+          "nome": "Vinicius Fonseca",
+          "usuarioGithub": "vinicius-omf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Geolocation API",
+      "breveDescricao": "Api permite fornecer a localizaçao do usuário para preencher os campos de cidade e icone de tempo da página"
+    },
+    {
+      "nome": "Device Orientation API ",
+      "breveDescricao": "A API Device Orientation permite identificar rotaçoes do dispositivo",
+      "paginaInicial": "DeviceOrientation/index.html",
+      "screenshot": "",
+      "desenvolvedores": [
+        {
+          "nome": "Vinicius Fonseca",
+          "usuarioGithub": "vinicius-omf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Device Orientation API ",
+      "breveDescricao": "Um gatinho fofinho que gira conforme a rotação alfa do dispositivo"
     }
   ]
 }
