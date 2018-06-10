@@ -1,0 +1,34 @@
+.personagem {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.barbaro {
+  width: 500px;
+  height: 500px;
+  background-image: url(src/barbaro.png);
+  background-repeat: no-repeat;
+}
+
+.braco-esquerdo {
+  position: absolute;
+  width: 120px;
+  height: 150px;
+  background-image: url(src/machado.png);
+  background-repeat: no-repeat;
+  top: 3px;
+  left: 28px;
+  transform-origin: right bottom;
+}
+
+.braco-direito {
+  position: absolute;
+  width: 120px;
+  height: 150px;
+  background-image: url(src/machado-virado.png);
+  background-repeat: no-repeat;
+  top: 3px;
+  left: 220px;
+  transform-origin: left bottom;
+}

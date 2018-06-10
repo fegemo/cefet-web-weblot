@@ -2,6 +2,52 @@
   "semestre": "2018/01",
   "apis": [
     {
+      "nome": "Ambient Light API",
+      "breveDescricao": "Possibilita detectar a luminosidade do ambiente",
+      "paginaInicial": "apis/ambient-light+proximity+vibration/",
+      "screenshot": "apis/ambient-light+proximity+vibration/image/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "firefox": true
+      }
+    },
+    {
+      "nome": "Battery Status API",
+      "breveDescricao": "Possibilita detectar o status da bateria",
+      "paginaInicial": "apis/battery-status/",
+      "screenshot": "apis/battery-status/images/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true
+      }
+    },
+    {
       "nome": "Drag and Drop API",
       "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
       "paginaInicial": "apis/drag-and-drop/",
@@ -18,6 +64,312 @@
         "firefox": true,
         "edge": true,
         "opera": true
+      }
+    },
+    {
+      "nome": "Fetch API",
+      "breveDescricao": "Fornece uma interface para requisição de recursos na internet",
+      "paginaInicial": "apis/fetch/",
+      "screenshot": "apis/fetch/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Lucas Viana",
+          "usuarioGithub": "lcasviana"
+        },
+        {
+          "nome": "Victor Balbo",
+          "usuarioGithub": "victorbalbo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "File API",
+      "breveDescricao": "Provém informações sobre os arquivos e permite o javascript acessar o conteúdo destes",
+      "paginaInicial": "apis/file/",
+      "screenshot": "apis/file/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Daniel Silva da Fonseca",
+          "usuarioGithub": "daniel0547"
+        },
+        {
+          "nome": "Lauro César Jacques Santos",
+          "usuarioGithub": "laurocjs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Fullscreen API",
+      "breveDescricao": "API que possibilita a maximização de elementos HTML.",
+      "paginaInicial": "apis/full-screen-api",
+      "screenshot": "apis/full-screen-api/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "getUserMedia/Stream API",
+      "breveDescricao": "Permite o acesso a media streams recebidos por dispositivos de entrada de media externos",
+      "paginaInicial": "apis/getUserMedia/",
+      "screenshot": "apis/getUserMedia/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Lucas Viana",
+          "usuarioGithub": "lcasviana"
+        },
+        {
+          "nome": "Victor Balbo",
+          "usuarioGithub": "victorbalbo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Gamepad API",
+      "breveDescricao": "Uma API para facilitar a utilização de diferentes controles em websites.",
+      "paginaInicial": "apis/gamepad-api",
+      "screenshot": "apis/gamepad-api/images/Exemplo.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": false
+      }
+    },
+    {
+      "nome": "Pointer Lock API",
+      "breveDescricao": "Uma API que permite segurar o mouse para mantê-lo em sua posição.",
+      "paginaInicial": "apis/pointer-lock",
+      "screenshot": "apis/pointer-lock/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "André Luís Borges de Oliveira",
+          "usuarioGithub": "andrelbol"
+        },
+        {
+          "nome": "André Perazio Givisiez Fonseca",
+          "usuarioGithub": "andrepgfon"
+        },
+        {
+          "nome": "Thiago Magno Gomes",
+          "usuarioGithub": "thiagomg95"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Proximity API",
+      "breveDescricao": "Possibilita detectar, caso exista, a proximidade de um objeto",
+      "paginaInicial": "apis/ambient-light+proximity+vibration/",
+      "screenshot": "apis/ambient-light+proximity+vibration/image/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "firefox": true,
+        "edge": true
+      }
+    },
+    {
+      "nome": "Service Worker API",
+      "breveDescricao": "Atua como um proxy entre a aplicação web e a rede.",
+      "paginaInicial": "apis/service-worker/",
+      "screenshot": "apis/service-worker/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Cosme Lopes",
+          "usuarioGithub": "cnlopes"
+        },
+        {
+          "nome": "Felipe Freitas",
+          "usuarioGithub": "felipefreitas"
+        },
+        {
+          "nome": "Luis Nascimento",
+          "usuarioGithub": "lcnascimento"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Vibration API",
+      "breveDescricao": "Possibilita programar a vibração do aparelho",
+      "paginaInicial": "apis/ambient-light+proximity+vibration/",
+      "screenshot": "apis/ambient-light+proximity+vibration/image/example.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gabriel Pires",
+          "usuarioGithub": "bielmagal"
+        },
+        {
+          "nome": "Vinícius Magalhães",
+          "usuarioGithub": "viniciusvmda"
+        },
+        {
+          "nome": "Taís Rocha",
+          "usuarioGithub": "taisrs"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "firefox": true
+      }
+    },
+    {
+      "nome": "Web Animations API",
+      "breveDescricao": "Possibilita animar elementos",
+      "paginaInicial": "apis/web-animations/",
+      "screenshot": "apis/web-animations/src/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Lauro César Jacques Santos",
+          "usuarioGithub": "laurocjs"
+        },
+        {
+          "nome": "Daniel Silva da Fonseca",
+          "usuarioGithub": "daniel0547"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": true,
+        "edge": false,
+        "opera": true
+      }
+    },
+    {
+      "nome": "WebSocket API",
+      "breveDescricao": "Possibilita a conexão contínua entre Cliente e Servidor Web",
+      "paginaInicial": "apis/websocket/",
+      "screenshot": "apis/websocket/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Daniel Craviée",
+          "usuarioGithub": "craviee"
+        },
+        {
+          "nome": "Marco Antonio",
+          "usuarioGithub": "MarcoSants"
+        },
+        {
+          "nome": "Mateus Rocha",
+          "usuarioGithub": "MateusRocha000"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "ie": true,
+        "ios_safari": true,
+        "opera_mini": false,
+        "chrome_android": true,
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "WebVR API",
+      "breveDescricao": "Oferece suporte para expor dispositivos de realidade virtual para aplicativos da web",
+      "paginaInicial": "apis/webvr/",
+      "screenshot": "apis/webvr/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Nicolas Maduro",
+          "usuarioGithub": "nicolasamaduro"
+        },
+        {
+          "nome": "Renan Nascimento",
+          "usuarioGithub": "RenanNascimento"
+        },
+        {
+          "nome": "Thales Nascimento",
+          "usuarioGithub": "thales-nascimento"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": false,
+        "safari": false,
+        "firefox": true,
+        "edge": true,
+        "opera": false
       }
     },
     {
