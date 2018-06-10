@@ -67,12 +67,12 @@ $(document).ready(function(){
       select_language.options[i] = new Option(langs[i][0], i);
     }
     select_language.selectedIndex = 6;
-    updateCountry();
     select_dialect.selectedIndex = 6;
     showInfo('info_start');
 
 
-    function updateCountry() {
+
+    $(select_language).change(function(){
       for (var i = select_dialect.options.length - 1; i >= 0; i--) {
         select_dialect.remove(i);
       }
@@ -81,7 +81,7 @@ $(document).ready(function(){
         select_dialect.options.add(new Option(list[i][1], list[i][0]));
       }
       select_dialect.style.visibility = list[1].length == 1 ? 'hidden' : 'visible';
-    }
+    });
 
 
     var final_transcript = '';
