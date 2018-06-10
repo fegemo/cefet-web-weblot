@@ -46,8 +46,8 @@
     {
       "nome": "Speech Synthesis",
       "breveDescricao": "Possibilita o reconhecimento de texto para áudio",
-      "paginaInicial": "apis/speech-synhesis/",
-      "screenshot": "apis/speech-synhesis/images/screenshot.png",
+      "paginaInicial": "apis/speech-synthesis/",
+      "screenshot": "apis/speech-synthesis/images/screenshot.png",
       "desenvolvedores": [
         {
           "nome": "Laura de Bella",
@@ -65,6 +65,6 @@
         "edge": true,
         "opera": true
       }
-    },
+    }
   ]
 }
