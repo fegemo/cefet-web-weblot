@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<html>
+	<head>
+		<title>Inicial</title>
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<audio id="musica">
+			<source  src="audio/musica.mp3" type="audio/mpeg">
+		</audio>
+		
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Mundo do Clyto</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav">
+		      <li class="nav-item active">
+		        <a class="nav-link" onclick="irParaHome()" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" onclick="mostrarImagens()" href="#">Imagens</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" onclick="adicionarTexto()" href="#">Mudar Texto</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Fundo
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" onclick="mudarCorDeFundo(1)">Mostarda</a>
+		          <a class="dropdown-item" onclick="mudarCorDeFundo(2)">Ketchup</a>
+		          <a class="dropdown-item" onclick="mudarCorDeFundo(3)">Maionese</a>
+		        </div>
+		      </li>
+		   	  <li class="nav-item">
+		        <a class="nav-link" href="#">Cidade: <span id="cidade"></span></a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+
+
+
+		<div class="site">
+			<div class="row" id="conteudo">
+					<div id="titulo">
+						Lorem ipsum fermentum commodo laoreet
+						
+					</div>
+					<div id="texto">
+						Lorem ipsum fermentum commodo laoreet semper molestie convallis iaculis taciti, himenaeos vivamus tempus cubilia massa tristique sociosqu nec, diam porttitor euismod mollis euismod netus pellentesque sollicitudin. placerat interdum id aliquet condimentum nec suscipit eget praesent torquent tristique, vehicula potenti fusce class congue taciti magna volutpat. eleifend proin dolor dapibus enim mi vulputate interdum litora fusce, conubia sem vivamus tellus orci justo primis quam, suspendisse hendrerit in elit platea fermentum eleifend ut. sociosqu sapien etiam enim tempor inceptos pulvinar pellentesque curabitur eu, curabitur eget porta nostra lorem accumsan velit litora condimentum habitasse, taciti nisl dictumst metus ultricies scelerisque mi ante. 
+
+						Neque adipiscing potenti ultrices habitasse accumsan eget at ad donec hendrerit, risus mattis velit feugiat leo quisque conubia nostra praesent. porttitor fermentum nam a tristique porta vitae semper quam, habitant proin sollicitudin cursus lacinia semper purus sed orci, fames tellus placerat sed torquent suscipit porta. interdum elementum eget rhoncus euismod hac vehicula, vitae posuere felis venenatis tempor nullam gravida, velit arcu sociosqu quisque vestibulum. porttitor malesuada ornare netus donec quam semper vivamus platea lacinia, mauris consectetur diam dictumst placerat nulla elit rhoncus id, conubia blandit volutpat non dictumst pretium turpis sit. 
+
+						Imperdiet a litora donec interdum vulputate pulvinar sodales, senectus sit condimentum turpis aliquam felis quisque, aliquam sodales orci quam tempus nostra, aliquam lacus sociosqu mattis sodales praesent. diam nostra phasellus sollicitudin pretium inceptos maecenas, mattis volutpat nostra neque praesent nec et, elit ornare lobortis nostra facilisis. ullamcorper tempor venenatis ullamcorper rhoncus nulla ac potenti aenean tempus, vestibulum tellus fusce curae porttitor quis fermentum curae, tincidunt erat fames ad leo ut justo platea. venenatis proin lacinia fermentum curabitur est augue tristique sapien, libero sem netus nisi dictumst pharetra senectus et, massa tincidunt lacinia nunc iaculis molestie nullam. 
+
+					</div>		
+			</div>
+			<div id="personagem-chao">
+				<div class="row">
+					<div class="col-md-2">
+						<img id="tempoImagem" src="">
+					</div>
+					<div class="col-md-2 offset-md-8">
+						<button class="btn btn-dark "  id="btn-acoes"  data-toggle="popover"><i class="fa fa-caret-square-o-down"></i>
+						</button>
+						<button class="btn btn-info " id="btn-status"  data-toggle="popover"><i class="fa fa-child"></i>
+						</button>
+						<button class="btn btn-silver " id="btn-mudar-chao" onclick="mudarChao()" data-toggle="popover"><i class="fa fa-street-view"></i>
+						</button>
+						
+					</div>
+
+				</div>
+
+				<div class="row col-md-12">
+					<div id="personagem" class="parado" style="position: relative;"></div>
+				</div>
+				<div class="row col-md-12 chao1" id="chao">
+					
+				</div>
+			</div>
+			<div id="mudar-textos" style="display:none;">
+				<div class="container">
+				  <h2>Mudar textos:</h2>
+				  <form class="form-horizontal" action="/action_page.php">
+				    <div class="form-group">
+				      <label class="control-label col-sm-2" for="titulo-site">Título:</label>
+				      <div class="col-sm-10">
+				        <input type="email" class="form-control" id="titulo-site" placeholder="Digite o título" name="titulo-site">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-2" for="texto-site">Texto:</label>
+				      <div class="col-sm-10">          
+				        <textarea class="form-control" id="texto-site" placeholder="Digite o texto" name="texto-site"></textarea>
+				      </div>
+				    </div>
+				    <div class="form-group"> 
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <button onclick="salvarTextos()" class="btn btn-default">Salvar</button>
+					    </div>
+					 </div>
+				  </form>
+				</div>
+			</div>
+
+			<div style="display:none;">
+				<div id="conteudo-popover" class="row" style="padding: 5px;">
+						<div class="col-md-12">	
+							<label>FOME:</label>		
+							<div class="progress">
+							  <div id="barraFome" class="progress-bar  bg-danger" style="width:95%"></div>
+							</div>	
+							<label>SOLIDÃO:</label>				
+							<div class="progress">
+							  <div class="progress-bar bg-info" style="width:70%"></div>
+							</div>	
+							<label>TRISTEZA:</label>				
+							<div class="progress">
+							  <div class="progress-bar bg-warning" style="width:70%"></div>
+							</div>	
+							<label>SONO:</label>	
+							<div class="progress">
+							  <div class="progress-bar bg-success" style="width:70%"></div>
+							</div>
+						</div>
+
+					</div>
+			</div>
+
+			<div style="display:none;">
+				<div id="menu-acoes" class="row" style="padding: 5px;">
+						<div class="col-md-12" id="acoes">	
+							<div class="row">
+								<button class="btn btn-default" onclick="comerSanduiche()">Sanduíche</button>
+							</div>
+							<div class="row">
+								<button class="btn btn-default">Açao 2</button>
+							</div>
+							<div class="row">
+								<button class="btn btn-default">Açao 3</button>
+							</div>
+							<div class=row>
+								<button class="btn btn-default">Açao 4</button>
+							</div>
+							<div class="row">
+								<button class="btn btn-default">Açao 5</button>
+							</div>
+							<div class="row">
+								<button class="btn btn-default">Açao 6</button>
+							</div>
+						</div>
+
+					</div>
+			</div>
+		</div>
+			
+		<div id="galeria" style="display: none">
+          <img src="images/imagem1.jpg" id="slide">
+          <button id="anterior" class="controle" onclick="anteriorImagem(this)">Anterior</button>
+          <button id="proximo" class="controle" onclick="proximaImagem(this)">Próximo</button>
+        </div>		
+
+
+		<script type="text/javascript" src="scripts/jquery-3.3.1.min.js"></script>	
+		<script type="text/javascript" src="scripts/personagem.js"></script>
+	
+		<script type="text/javascript" src="scripts/popper.js"></script>	
+		<script type="text/javascript" src="scripts/bootstrap.min.js"></script>	
+		<script type="text/javascript" src="scripts/site.js"></script>
+		<script type="text/javascript" src="scripts/imagens.js"></script>
+	</body>
+</html>

@@ -19,6 +19,65 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Page Visibility API",
+      "breveDescricao": "API de visibilidade de página deixa você saber quando uma página da web está visível ou em foco.",
+      "paginaInicial": "apis/geo-cordinates-page-visibility/index.html",
+      "screenshot": "",
+      "desenvolvedores": [
+        {
+          "nome": "Vinicius Fonseca",
+          "usuarioGithub": "vinicius-omf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Geolocation API",
+      "breveDescricao": "A API geolocation permite que o usuário forneça sua localização a aplicativos web",
+      "paginaInicial": "apis/geo-cordinates-page-visibility/index.html",
+      "screenshot": "",
+      "desenvolvedores": [
+        {
+          "nome": "Vinicius Fonseca",
+          "usuarioGithub": "vinicius-omf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+      
+    {
+      "nome": "Device Orientation API ",
+      "breveDescricao": "A API Device Orientation permite identificar rotaçoes do dispositivo",
+      "paginaInicial": "apis/device-orientation/index.html",
+      "screenshot": "",
+      "desenvolvedores": [
+        {
+          "nome": "Vinicius Fonseca",
+          "usuarioGithub": "vinicius-omf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": true,
+        "edge": true,
+        "opera": false
+      }
     }
+
   ]
 }
