@@ -1,0 +1,32 @@
+.quadrado
+{
+	width: 25px;
+	height: 25px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.branco
+{
+	background-color: white;
+}
+
+.preto
+{
+	background-color: black;
+}
+
+.vermelho
+{
+	background-color: red;
+}
+
+.verde
+{
+	background-color: green;
+}
+
+.azul
+{
+	background-color: blue;
+}

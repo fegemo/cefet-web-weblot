@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fetch Api</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <script src="scripts/fetch.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+</head>
+<body>
+    <div class="form mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Busca personagem Marvel</h2>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="character">
+            <label class="mdl-textfield__label" for="character">Personagem...</label>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="fetchCharacter()">Fetch</button>
+    </div>
+    <div id="results" class="results mdl-card mdl-shadow--2dp">
+    </div>
+</body>
+</html>
