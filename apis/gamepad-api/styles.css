@@ -1,0 +1,62 @@
+meter::-webkit-meter-optimum-value {
+  box-shadow: 0 5px 5px -5px #999 inset;
+  background-image: linear-gradient(#0CE8C0, #00E7FF, #0C99E8 );
+  background-size: 100% 100%;
+}
+
+meter:nth-child(1)::before, meter:nth-child(2)::before  {
+  content : "Analógico Esquerdo";
+}
+meter:nth-child(1)::after  {
+  content : "Horizontal";
+}
+meter:nth-child(2)::after  {
+  content : "Vertical";
+}
+meter:nth-child(3)::before, meter:nth-child(4)::before  {
+  content : "Analógico Direito";
+}
+meter:nth-child(3)::after  {
+  content : "Horizontal";
+}
+meter:nth-child(4)::after  {
+  content : "Vertical";
+}
+
+h1,h2{
+  font-family: impact;
+  letter-spacing: 1px;
+  color: limegreen;
+  text-shadow: 0 0 2px black, 1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;
+}
+
+.buttons, .axes {
+  padding: 1em;
+}
+/*meter*/.axis {
+  min-width: 200px;
+  margin: 1em;
+}
+.button {
+  padding: 1.5em;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-image: radial-gradient(#A4FFED, #68FFE3);
+  background-size: 0% 0%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.pressed {
+  border: 1px solid red;
+}
+#ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: red;
+  background-image: -webkit-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+  background-image: -moz-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+  background-image: -ms-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+  background-image: radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  position: relative;
+}

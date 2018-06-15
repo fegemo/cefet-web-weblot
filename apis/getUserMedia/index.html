@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GetUserMedia Api</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/style.css" />
+    <script src="./scripts/stream.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div>
+            <video id="webcamVideo" autoplay></video>
+            <video id="savedVideo" autoplay></video>
+        </div>
+        <div>
+            <button id="recordButton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="startRecording()">Gravar</button>
+            <button id="stopButton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="stopRecording()">Parar</button>
+        </div>
+    </div>
+</body>
+</html>

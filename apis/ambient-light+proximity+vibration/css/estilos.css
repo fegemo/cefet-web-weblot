@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+}
+
+body {
+  margin: 2% 5% 2% 5%;
+  background-color: rgb(255,255,240);
+  background-image: url('../image/texture.png');
+  background-repeat: repeat;
+  font-size: 1.8em;
+}
+
+h1 {
+  font-size: 1.7em;
+  text-align: center;
+  font-family: 'MedievalSharp', cursive;
+  color: black;
+  background-image: -webkit-linear-gradient(blue, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.02em black;
+}
+
+p {
+  font-size: 1.2em;
+  font-family: 'MedievalSharp', cursive;
+  text-align: justify;
+}

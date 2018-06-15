@@ -1,0 +1,78 @@
+#knight-box {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+}
+
+#knight {
+    width: 227px;
+    height: 209px;
+    background: url('../images/knight-idle-right.png');
+    animation: play 1s steps(7) infinite;
+}
+
+#knight.idle-right {
+    background: url('../images/knight-idle-right.png');
+    animation: play 1s steps(7) infinite;
+}
+
+#knight.idle-left {
+    background: url('../images/knight-idle-left.png');
+    animation: play 1s steps(7) infinite;
+}
+
+#knight.run-right {
+    background: url('../images/knight-run-right.png');
+    animation: play 0.5s steps(7) infinite;
+}
+
+#knight.run-left {
+    background: url('../images/knight-run-left.png');
+    animation: play 0.5s steps(7) infinite;
+}
+
+#knight.walk-right {
+    background: url('../images/knight-walk-right.png');
+    animation: play 0.8s steps(7) infinite;
+}
+
+#knight.walk-left {
+    background: url('../images/knight-walk-left.png');
+    animation: play 0.8s steps(7) infinite;
+}
+
+#knight.attack-right {
+    background: url('../images/knight-attack-right.png');
+    animation: play 0.6s steps(7) infinite;
+}
+
+#knight.attack-left {
+    background: url('../images/knight-attack-left.png');
+    animation: play 0.6s steps(7) infinite;
+}
+
+#knight.hurt-right {
+    background: url('../images/knight-hurt-right.png');
+    animation: play 2.4s steps(7) infinite;
+}
+
+#knight.hurt-left {
+    background: url('../images/knight-hurt-left.png');
+    animation: play 2.4s steps(7) infinite;
+}
+
+#knight.die-right {
+    background: url('../images/knight-die-right.png');
+    animation: play 3s steps(7);
+    animation-fill-mode: forwards;
+}
+
+#knight.die-left {
+    background: url('../images/knight-die-left.png');
+    animation: play 3s steps(7);
+    animation-fill-mode: forwards;
+}
+
+@keyframes play {
+   100% { background-position: -700% 0; }
+}
