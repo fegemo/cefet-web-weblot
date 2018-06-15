@@ -428,6 +428,52 @@
         "edge": true,
         "opera": false
       }
+    },
+    {
+      "nome": "Speech Recognition",
+      "breveDescricao": "Possibilita o reconhecimento de voz para texto",
+      "paginaInicial": "apis/speech-recognition/",
+      "screenshot": "apis/speech-recognition/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Laura de Bella",
+          "usuarioGithub": "lauradebella"
+        },
+        {
+          "nome": "Luis Carlos Cardoso",
+          "usuarioGithub": "luisccf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "edge": false,
+        "opera": false
+      }
+    },
+    {
+      "nome": "Speech Synthesis",
+      "breveDescricao": "Possibilita o reconhecimento de texto para áudio",
+      "paginaInicial": "apis/speech-synthesis/",
+      "screenshot": "apis/speech-synthesis/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Laura de Bella",
+          "usuarioGithub": "lauradebella"
+        },
+        {
+          "nome": "Luis Carlos Cardoso",
+          "usuarioGithub": "luisccf"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
