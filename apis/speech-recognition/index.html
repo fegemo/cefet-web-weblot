@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Web Speech API Demo</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <h1 class="center" id="headline">Web Speech API</h1>
+  <div id="info">
+    <p id="info_start">Clique no microfone e comece a falar</p>
+    <p id="info_speak_now">Fale agora</p>
+    <p id="info_no_speech">Nenhuma fala foi detectada. Cheque suas 
+      <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+        configurações do microfone</a>.</p>
+    <p id="info_no_microphone" style="display:none">
+      Nenhum microfone detectado.</p>
+    <p id="info_allow">Clique em "Autorizar" para autorizar a captura de audio do microfone.</p>
+    <p id="info_denied">Permissão negada para uso do microfone</p>
+    <p id="info_blocked">Permissão para uso do microfone está bloqueada. Para configurar, vá para chrome://settings/contentExceptions#media-stream</p>
+    <p id="info_upgrade">Web Speech API não é suportada por esse navegador.</p>
+  </div>
+  <div class="right">
+    <button id="start_button">
+      <img id="start_img" src="images/mic.gif" alt="Start"></button>
+  </div>
+  <div id="results">
+    <span id="final_span" class="final"></span>
+    <span id="interim_span" class="interim"></span>
+    <p>
+  </div>
+
+  <div class="center">
+    <p>
+    <div id="div_language">
+      <select id="select_language"></select>
+      &nbsp;&nbsp;
+      <select id="select_dialect"></select>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scripts/script.js"></script>
+  </body>
+</html>
