@@ -19,6 +19,60 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "File API",
+      "breveDescricao": "Possibilita o acesso à arquivos locais selecionados pelo usuário",
+      "paginaInicial": "apis/file/",
+      "screenshot": "apis/file/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Ana Luiza Sanches",
+          "usuarioGithub": "analuizatrz"
+        },
+        {
+          "nome": "Gabriela",
+          "usuarioGithub": "gabiapple"
+        },
+        {
+          "nome": "Matheus Martins",
+          "usuarioGithub": "airak"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Speech Recognition API",
+      "breveDescricao": "Possibilita a entrada por fala em um navegador",
+      "paginaInicial": "apis/speech-recognition/",
+      "screenshot": "apis/speech-recognition/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Ana Luiza Sanches",
+          "usuarioGithub": "analuizatrz"
+        },
+        {
+          "nome": "Gabriela",
+          "usuarioGithub": "gabiapple"
+        },
+        {
+          "nome": "Matheus Martins",
+          "usuarioGithub": "airak"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "edge": false,
+        "opera": true
+      }
     }
   ]
 }
