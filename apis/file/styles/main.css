@@ -1,0 +1,29 @@
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+	background-color: #6495ed;
+	background-image: linear-gradient(to bottom right, #6495ed, #0b275b);
+    /* font-family: 'Overlock', sans-serif; */
+    color:white;
+}
+textarea {
+    margin-top: 2em;
+    margin-bottom: 2em;
+	display: block;
+    width: 100%;
+    height: 40em;
+    text-align: center;
+    overflow: auto;
+    resize: none;
+    border: none;
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.5);  
+    
+}
