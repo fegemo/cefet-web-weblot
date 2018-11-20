@@ -17,8 +17,8 @@ Este trabalho foi realizado em 2018/02 para a disciplina de Programação para W
 Autor(es):
 
 1. Ana Luiza Sanches (201512040169)
-1. Gabriela (~~matrícula da graduação!!~~)
-1. Matheus Martins (~~matrícula da graduação!!~~)
+1. Gabriela Ramalho (201412040256)
+1. Matheus Martins (201222040107)
 
 Atribuições:
 
