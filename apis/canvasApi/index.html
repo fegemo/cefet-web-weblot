@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>MegaMan Canvas</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <script>
+  // emit non-blocking beacon to record client-side event
+  function reportEvent(event) {
+    var data = JSON.stringify({
+      event: "Atirei o pau no gato, tô Mas o gato, tô tô Não morreu, reu, reu",
+      time: performance.now()
+    });
+    navigator.sendBeacon('http://terrivel.herokuapp.com/monster', data);
+  }
+
+ </script>
+</head>
+
+<body>
+    <div class="plate">
+  <p class="script"><span>O</span></p>
+  <p class="shadow text3">Reino</p>
+  <p class="shadow text1">de</p>
+  <p class="shadow text3">Weblot</p>
+  <p class="script"><span>👑</span></p>
+</div>
+<div>
+  <p class="conto">Megaman a pedido do forte e atrapalhado <strong>Agáte Êmi-Éli, o Quinto</strong> iniciou uma aventura pelas terras do senhor feudal  <strong>Django O Livre</strong> .</p>
+  <p  class="conto">Inumerás foram as peripécias ocorridas durante sua jornada, porem Megaman ainda não pode retornar para o reino de Weblot e por isso as escreveu em um pacote. Cabe a <strong>você</strong> fazer com que suas histórias virem lendas através das cantigas de Sir Hasan. O lorde TCP aguarda ansioso suas cartas.</p>
+</div>
+
+ 
+   <div class='btn-cont'>
+  <a class='btn' href='#' onclick='reportEvent(this)'>
+    ENVIAR CANTIGA
+    <span class='line-1'></span>
+    <span class='line-2'></span>
+    <span class='line-3'></span>
+    <span class='line-4'></span>
+  </a>
+</div>
+
+    <div>
+        <div>
+            <canvas id="canvas" width="1500" height="540" style="background:rgb(255,255,255)">
+            </canvas>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/desenhar_megaman.js"></script>
+</body>
+
+</html>

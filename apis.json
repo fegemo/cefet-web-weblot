@@ -1,5 +1,5 @@
 {
-  "semestre": "2018/01",
+  "semestre": "2018/02",
   "apis": [
     {
       "nome": "Drag and Drop API",
@@ -10,6 +10,59 @@
         {
           "nome": "Flávio Coutinho",
           "usuarioGithub": "fegemo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Canvas API",
+      "breveDescricao": "Possibilita a criação de elementos e iterações graficas",
+      "paginaInicial": "apis/canvasApi/",
+      "screenshot": "apis/canvasApi/images/canvasApi.png",
+      "desenvolvedores": [
+        {
+          "nome": "Augusto Monteiro",
+          "usuarioGithub": "augustomontc"
+        },
+        {
+          "nome": "Fabricio Fraga",
+          "usuarioGithub": "ffrezende"
+        },
+        {
+          "nome": "Leonardo Tereza",
+          "usuarioGithub": "leonardoctereza"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Beacon API",
+      "breveDescricao": "Possibilita a requisição assincrona.",
+      "paginaInicial": "apis/beaconApi/",
+      "desenvolvedores": [
+        {
+          "nome": "Augusto Monteiro",
+          "usuarioGithub": "augustomontc"
+        },
+        {
+          "nome": "Fabricio Fraga",
+          "usuarioGithub": "ffrezende"
+        },
+        {
+          "nome": "Leonardo Tereza",
+          "usuarioGithub": "leonardoctereza"
         }
       ],
       "suporteDeNavegadores": {
