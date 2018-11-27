@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "MedievalSharp";
+  src: url("../fonts/MedievalSharp.ttf")
+}
+
+html {
+  background: url('../images/old-paper.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+}
+
+.pageIcon {
+  height: 2.3em;
+  float: left;
+  margin-right: 0.5em;
+}
+
+.availability {
+  margin-bottom: 2em;
+}
+
+.output {
+  background-color: #f0f0f0;
+  border-radius: 0.75em;
+  display: block;
+  margin-top: 2em;
+  padding: 0.5em;
+}
+
+#status {
+  margin: .5em 0;
+  font-style: italic;
+}
+
+#log {
+  margin: .5em 0;
+  white-space: pre-wrap;
+}
+
+#status:empty, #log:empty, #content:empty {
+  display: none;
+}
+
+.highlight {
+  border-radius: 0.75em;
+  border: 1px solid #f0f0f0;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+#chest {
+  width: 47px;
+  height: 38px;
+  background: url('../images/psdx-sheet-chest.png') left top;
+  transform: scale(2);
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.animate {
+  animation: play 0.8s steps(4);
+  pointer-events: none;
+}
+
+@keyframes play {
+  100% { background-position-x: -188px; }
+}
+
+#loja, #output {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: fit-content;
+  padding: 0 10px 0 10px;
+}
+
+@media (min-width: 768px) {
+  #loja, #output {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+
+  .output {
+    margin-top: 0;
+  }
+  
+  #listcontents {
+    float: right !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.output input {
+  width: 100%;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#container img {
+  width: 80px;
+  height: 80px;
+}
+
+.medieval {
+  font-family: "MedievalSharp";
+  color: darkred;
+}
+
+#contents {
+  font-family: monospace;
+}
+
+#commands button {
+  margin-top: 3px;
+}
+
+#listcontents {
+  float: left;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Exemplo mostrando Service Worker postMessage().">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Service Worker</title>   
+    
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <body>
+    <div id="loja" class="medieval">
+      <h1>Baú de itens do Agáte Êmi-Éli, o Quinto</h1>
+      <div id="chest"></div>
+      <div id="inventory">
+        <h2>Inventário</h2>
+        <div id="container"></div>
+      </div>
+    </div>
+    <div id="output" class="output">
+      <div id="content">
+        <div id="status"></div>
+        <div id="commands" style="display: none">
+          <div>
+            <label for="url">URL do resurso:</label>
+            <input id="url" type="text">
+            <button id="add">Adicionar ao Cache</button>
+            <button id="delete">Remover do Cache</button>
+            <button id="listcontents">Mostrar Cache</button>
+          </div>
+          <ul id="contents"></ul>
+        </div>        
+      </div>
+      <pre id="log"></pre>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
