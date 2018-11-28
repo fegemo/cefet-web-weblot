@@ -19,6 +19,60 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Online Offline Status API",
+      "breveDescricao": "Verifica se o navegador possui ou não acesso a Internet.",
+      "paginaInicial": "apis/online-offline-status/",
+      "screenshot": "apis/online-offline-status/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Daniel Lopes",
+          "usuarioGithub": "DanielPBL"
+        },
+        {
+          "nome": "Vitor Lemos",
+          "usuarioGithub": "Vitorlsilveira"
+        },
+        {
+          "nome": "Guilherme Borges",
+          "usuarioGithub": "guilhermetbc"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Service Worker API",
+      "breveDescricao": "Atua como um proxy entre a aplicação web e a rede.",
+      "paginaInicial": "apis/service-worker/",
+      "screenshot": "apis/service-worker/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Daniel Lopes",
+          "usuarioGithub": "DanielPBL"
+        },
+        {
+          "nome": "Vitor Lemos",
+          "usuarioGithub": "Vitorlsilveira"
+        },
+        {
+          "nome": "Guilherme Borges",
+          "usuarioGithub": "guilhermetbc"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
