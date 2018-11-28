@@ -19,6 +19,60 @@
         "edge": true,
         "opera": true
       }
+    },
+	{
+      "nome": "Geolocation API",
+      "breveDescricao": "Possibilita a localização do usuário em tempo real",
+      "paginaInicial": "apis/geolocation/",
+      "screenshot": "apis/geolocation/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Luiz Flávio Costa de Lima",
+          "usuarioGithub": "costadelima"
+        },
+		{
+          "nome": "Samuel Cury",
+          "usuarioGithub": "curysamuel"
+        },
+		{
+          "nome": "Natalia Natsumy",
+          "usuarioGithub": "nnatsumy"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+	{
+      "nome": "Gamepad API",
+      "breveDescricao": "Possibilita conexão de controles de jogos com a web",
+      "paginaInicial": "apis/gamepad/",
+      "screenshot": "apis/gamepad/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Luiz Flávio Costa de Lima",
+          "usuarioGithub": "costadelima"
+        },
+		{
+          "nome": "Samuel Cury",
+          "usuarioGithub": "curysamuel"
+        },
+		{
+          "nome": "Natalia Natsumy",
+          "usuarioGithub": "nnatsumy"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }

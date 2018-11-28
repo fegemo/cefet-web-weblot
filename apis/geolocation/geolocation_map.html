@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Gelocalização</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <p>Clique para encontrar sua localização.</p>
+
+<button onclick="getLocation()">Encontre</button>
+    <div id="map"></div>
+    <script>
+      var map;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(initMap);
+    } else { 
+        x.innerHTML = "Geolocalização não suportada";}
+    };
+
+      function initMap(position) {
+        var coordinates = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: coordinates,
+          mapTypeId: 'roadmap'
+        });
+        var marker = new google.maps.Marker({
+            position: coordinates,
+            tile: 'Sua localização',
+            map: map
+        });
+      
+      };
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ&callback=initMap">
+    </script>
+  </body>
+</html>
