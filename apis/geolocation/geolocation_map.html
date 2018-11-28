@@ -20,19 +20,23 @@
     </style>
   </head>
   <body>
-  <p>Clique <a href="geolocation_map.html"> aqui</a> para ver o mapa.</p>
+    <p><a href="index.html" id="voltar">Voltar</a></p>
+    <p>Se você está pronto para ver o mapa clique no botão abaixo:<img src='images/mapa.png'></p>
   
 
-<button onclick="getLocation()">Encontrar!</button>
+    <button onclick="getLocation()">Ver mapa</button>
+
     <div id="map"></div>
     <script>
+      
+
       var map;
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(initMap);
-    } else { 
-        x.innerHTML = "Geolocalização não suportada";}
-    };
+      function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(initMap);
+        } else { 
+            x.innerHTML = "Geolocalização não suportada";}
+      };
 
       function initMap(position) {
         var coordinates = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);

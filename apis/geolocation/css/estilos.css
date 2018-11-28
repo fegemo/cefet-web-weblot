@@ -13,3 +13,15 @@ button{
   font-family: "Times New Roman";
   font-size: 28px;
 }
+img{
+  position: fixed;
+  height: 200px;
+  width: 200px;
+}
+
+#voltar{
+  margin-left: 5px;
+  color: #FF530D;
+  font-family: "Times New Roman";
+  font-size: 12px;
+}
