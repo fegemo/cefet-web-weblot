@@ -8,7 +8,7 @@
 
 		<p>Clique para encontrar seu tesouro.</p>
 		<button onclick="getLocation()">Encontrar!</button>
-		<p>Clique <a href="geolocation_map.html"> aqui </a> para ver o mapa.</p>
+		<p>Clique <a href="geolocation_map.html"> aqui</a> para ver o mapa.</p>
 		<p id="demo"></p>
 
 		<script>
@@ -36,7 +36,7 @@
 			    var img_url_3 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=600x300&maptype=hybrid&sensor=false&&markers=color:green%7Clabel:S%7Csize:large%7C" + latlon + 
 			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
 
-			    x.innerHTML = "<img src='"+img_url+"'>" + "<br><img src='"+img_url_2+"'>" +  "<br><img src='"+img_url_3+"'>" + "<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "<br><img src='images/tesouro.PNG'>";
+			    x.innerHTML = "<br><img src='images/tesouro.PNG'><h1>Parabéns você achou o tesouro!</h1>" + "<br><img src='"+img_url+"'>" + "<br><img src='"+img_url_2+"'>" +  "<br><img src='"+img_url_3+"'>" + "<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
 			}
 
 		</script>
