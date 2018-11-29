@@ -1,6 +1,6 @@
 # _Web Audio API_
 
-Exemplo de uso da API de _web gl_ (biblioteca gráfica) do HTML5.
+Exemplo de uso da API de _web audio_ (biblioteca sistema de controle de áudio) do HTML5.
 
 ![](images/web-audio.png)
 
@@ -20,11 +20,11 @@ Autor:
 
 Atribuições:
 
-- Fonte [Mozilla][mozilla-author]
-- Fonte [Web GL Samples][samples-author]
+- Fonte [MDN ingles][mdn1-author]
+- Fonte [MDN português][mdn2-author]
 
 [slides]: https://slides.com/danielgoncalves-3/web-audio-api/#/
 [vivo]: https://github.com/dangon1/cefet-web-weblot/tree/2018/02/apis/web-gl
-[mozilla-author]: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL
-[samples-author]: http://webglsamples.org/
+[mdn1-author]: https://developer.mozilla.org/pt-BR/docs/Web/API/API_Web_Audio
+[mdn2-author]: http://webglsamples.org/
 
