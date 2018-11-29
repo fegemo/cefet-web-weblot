@@ -27,13 +27,13 @@
 			    var latlon = position.coords.latitude + "," + position.coords.longitude;
 
 
-			    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&&markers=color:blue%7Clabel:C%7C" + latlon + 
+			    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&markers=color:blue%7Clabel:C%7C" + latlon + 
 			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
 
-			    var img_url_2 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=18&size=400x300&maptype=satellite&sensor=false&&markers=color:red%7C" + latlon + 
+			    var img_url_2 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=18&size=400x300&maptype=satellite&markers=color:red%7C" + latlon + 
 			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
 
-			    var img_url_3 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=600x300&maptype=hybrid&sensor=false&&markers=color:green%7Clabel:S%7Csize:large%7C" + latlon + 
+			    var img_url_3 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=600x300&maptype=hybrid&markers=color:green%7Clabel:S%7Csize:large%7C" + latlon + 
 			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
 
 			    x.innerHTML = "<br><img src='images/tesouro.jpg' id='tesouro'><h1>Muito bem, achou o tesouro!</h1>" + "<br><img src='"+img_url+"'>" + "<br><img src='"+img_url_2+"'>" +  "<br><img src='"+img_url_3+"'>" + "<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
