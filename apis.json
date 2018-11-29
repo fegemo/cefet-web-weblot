@@ -24,7 +24,7 @@
       "nome": "Web GL API",
       "breveDescricao": "Possibilita criação de efeitos e animações em HTML",
       "paginaInicial": "apis/web-gl/",
-      "screenshot": "apis/web-gl/images/screenshot.png",
+      "screenshot": "apis/web-gl/field/images/field.png",
       "desenvolvedores": [
         {
           "nome": "Daniel Gonçalves",
