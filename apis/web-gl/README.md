@@ -14,7 +14,7 @@ Exemplo de uso da API de _web gl_ (biblioteca gráfica) do HTML5.
 
 Este trabalho foi realizado em 2018/02 para a disciplina de Programação para Web do CEFET-MG no Campus II de Belo Horizonte.
 
-Autor(es):
+Autor:
 
 1. Daniel de Aguiar Gonçalves (201222040158)
 
