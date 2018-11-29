@@ -20,7 +20,7 @@ Autor(es):
 
 Atribuições:
 
-- Fonte [Mozilla] [mozilla-author]
+- Fonte [Mozilla][mozilla-author]
 - Fonte [Web GL Samples][samples-author]
 - Imagens dos monstrinhos, da empresa [Toshl][monsters-author]®
 
