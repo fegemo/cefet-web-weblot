@@ -8,7 +8,7 @@
 	<body>
 		
 
-		<p id="demo"></p>
+		<p id="demo">Por favor, conecte um gamepad.</p>
 		<p id="msg"></p>
 
 		<script>
@@ -26,7 +26,7 @@
 	  			gameLoop();
 	  		});
 			window.addEventListener("gamepaddisconnected", function(e) {
-	  			tag.innerHTML = e.gamepad.id + " Disconnected.";
+	  			tag.innerHTML = e.gamepad.id + " Disconnected.<br>Por favor, conecte um gamepad.";
 			});
 
 
