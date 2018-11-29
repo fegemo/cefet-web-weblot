@@ -1,4 +1,4 @@
-# _Drag and Drop API_
+# _Beacon API_
 
 Exemplo de uso da API _Beacon_.
 
