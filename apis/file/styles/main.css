@@ -18,12 +18,14 @@ textarea {
     margin-bottom: 2em;
 	display: block;
     width: 100%;
-    height: 40em;
+    height: 35em;
     text-align: center;
     overflow: auto;
     resize: none;
     border: none;
     background: transparent;
     background-color: rgba(255, 255, 255, 0.5);  
-    
+}
+h1{
+    font-family: 'Luckiest Guy', cursive;
 }
