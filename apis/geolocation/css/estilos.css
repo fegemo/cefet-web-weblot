@@ -13,10 +13,13 @@ button{
   font-family: "Times New Roman";
   font-size: 28px;
 }
-img{
-  position: fixed;
+#tesouro{
   height: 200px;
   width: 200px;
+}
+#mapa{
+  height: 100px;
+  width: 100px;
 }
 
 #voltar{
