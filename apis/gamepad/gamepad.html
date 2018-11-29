@@ -4,7 +4,7 @@
 		<title>API Gamepad</title>
 	</head>
 	<body>
-		
+
 
 		<p id="demo"></p>
 		<script>
@@ -14,7 +14,7 @@
 
 			var x = document.getElementById("demo");
 			window.addEventListener("gamepadconnected", function(e) {
-		
+
 	  			x.innerHTML = "Gamepad connected at index " + e.gamepad.index + ":" + e.gamepad.id + " and " + e.gamepad.buttons.length + " buttons. <p> Pressiona a seguinte sequencia para desbloquear o personagem: <br><img src='images/buttons.jpg' id'='buttons'></p>";
 	  			gamepad = e.gamepad;
 	  			window.setInterval(function(){gameLoop()}, 1000);
@@ -30,7 +30,7 @@
 			  }
 			  return b == 1.0;
 			}
-			
+
 			function gameLoop() {
 			  if (!gamepad)
 			    return;
@@ -42,47 +42,44 @@
 			    x.innerHTML = 'Pressionou quadrado';
 			    console.log('pressed 0')
 			  } else if (buttonPressed(gamepad.buttons[1])) {
-			  	
-			    x.innerHTML = 'Pressionou bola';
+
+			    x.innerHTML = 'Pressionou X';
 			    console.log('pressed 1');
 			  }else  if(buttonPressed(gamepad.buttons[2])) {
-			    x.innerHTML = 'Pressionou X';
+			    x.innerHTML = 'Pressionou bola';
 			    console.log('pressed 2');
 			  } else if(buttonPressed(gamepad.buttons[3])) {
 			    x.innerHTML = 'Pressionou triangulo';
 			    console.log('pressed 3');
 			  }else if(buttonPressed(gamepad.buttons[4])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou L1';
 			    console.log('pressed 4');
 			  }else if(buttonPressed(gamepad.buttons[5])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou R1';
 			    console.log('pressed 5');
 			  }else if(buttonPressed(gamepad.buttons[6])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou L2';
 			    console.log('pressed 6');
 			  }else if(buttonPressed(gamepad.buttons[7])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou R2';
 			    console.log('pressed 7');
 			  }else if(buttonPressed(gamepad.buttons[8])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou share';
 			    console.log('pressed 8');
 			  }else if(buttonPressed(gamepad.buttons[9])) {
-			    x.innerHTML = 'Pressionou quadrado';
-			    console.log('pressed 9');
-			  }else if(buttonPressed(gamepad.buttons[9])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou options';
 			    console.log('pressed 9');
 			  }else if(buttonPressed(gamepad.buttons[10])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou L3';
 			    console.log('pressed 10');
 			  }else if(buttonPressed(gamepad.buttons[11])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou R3';
 			    console.log('pressed 11');
 			  }else if(buttonPressed(gamepad.buttons[12])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou home';
 			    console.log('pressed 12');
 			  }else if(buttonPressed(gamepad.buttons[13])) {
-			    x.innerHTML = 'Pressionou quadrado';
+			    x.innerHTML = 'Pressionou touchpad';
 			    console.log('pressed 13');
 			  }else if(buttonPressed(gamepad.buttons[14])) {
 			    x.innerHTML = 'Pressionou quadrado';
@@ -98,7 +95,7 @@
 			    console.log('pressed 17');
 			  }
 			  var start = rAF(gameLoop);
-			  
+
 			};
 
 		</script>
