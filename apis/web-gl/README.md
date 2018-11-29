@@ -22,7 +22,6 @@ Atribuições:
 
 - Fonte [Mozilla][mozilla-author]
 - Fonte [Web GL Samples][samples-author]
-- Imagens dos monstrinhos, da empresa [Toshl][monsters-author]®
 
 [slides]: https://slides.com/danielgoncalves-3/html5-web-gl/live#/
 [vivo]: https://github.com/dangon1/cefet-web-weblot/tree/2018/02/apis/web-gl
