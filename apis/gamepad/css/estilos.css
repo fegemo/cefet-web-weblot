@@ -11,3 +11,12 @@
   width: 100px;
   height: 100px;
 }
+p{
+	font-size: 18px;
+}
+#msg{
+	position: relative;
+	margin-left: 1000px;
+	margin-top: -120px;
+	font-size: 18px;
+}
