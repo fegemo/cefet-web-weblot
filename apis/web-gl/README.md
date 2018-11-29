@@ -2,7 +2,7 @@
 
 Exemplo de uso da API de _web gl_ (biblioteca gráfica) do HTML5.
 
-![](field/images/field.png)
+![](field/images/field.jpg)
 
 
 ## Links do Exemplo
@@ -12,20 +12,20 @@ Exemplo de uso da API de _web gl_ (biblioteca gráfica) do HTML5.
 
 ## Créditos
 
-Este trabalho foi realizado em 2015/01 para a disciplina de Programação para Web do CEFET-MG no Campus II de Belo Horizonte.
+Este trabalho foi realizado em 2018/02 para a disciplina de Programação para Web do CEFET-MG no Campus II de Belo Horizonte.
 
 Autor(es):
 
-1. Flávio Roberto dos Santos Coutinho (2005046102 &larr; ~~matrícula da graduação!!~~)
+1. Daniel de Aguiar Gonçalves (201222040158)
 
 Atribuições:
 
-- Fonte Overlock, criada por [Dario Manuel Muhafara][overlock-author]
-- Fonte Chewy, criada por [_Sideshow Foundry_][chewy-author]
+- Fonte [Mozilla] [mozilla-author]
+- Fonte [Web GL Samples][samples-author]
 - Imagens dos monstrinhos, da empresa [Toshl][monsters-author]®
 
 [slides]: https://slides.com/danielgoncalves-3/html5-web-gl/live#/
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
-[overlock-author]: https://plus.google.com/105287894980881814285/about
-[chewy-author]: https://profiles.google.com/sideshowfonts/about
-[monsters-author]: http://toshl.com
+[vivo]: https://github.com/dangon1/cefet-web-weblot/tree/2018/02/apis/web-gl
+[mozilla-author]: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL
+[samples-author]: http://webglsamples.org/
+
