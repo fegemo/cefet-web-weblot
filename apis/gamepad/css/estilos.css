@@ -1,0 +1,13 @@
+#death{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 200px;
+  bottom: 1px;
+
+}
+#vader{
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
