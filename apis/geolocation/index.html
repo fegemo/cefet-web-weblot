@@ -6,14 +6,34 @@
 	</head>
 	<body>
 
-		<p>Deseja encontrar seu tesouro?</p>
-		<button onclick="getLocation()">Encontrar!</button>
-		<p>Clique <a href="geolocation_map.html"> aqui</a> para ver o mapa.</p>
+		<form name="myForm" action="javascript:checkSolution();" method="post">
+    <div>
+        <label for="solucao">Para liberar o tesouro desvende o enigma.
+        	<br>Solucione: 20*2+4/8*2-34?</label>
+        <input type="text" id="solucao" />
+    </div>
+    <div class="button">
+        <button type="submit">Solucionar</button>
+    </div>
+</form>
+		<p id="map"></p>
 		<p id="demo"></p>
 
 		<script>
 			var x = document.getElementById("demo");
+			var map = document.getElementById("map");
 
+
+			function checkSolution(argument) {
+				var x = document.forms["myForm"]["solucao"].value;
+				if (x==7){
+					map.innerHTML = "Clique <a href='geolocation_map.html'> aqui</a> para ver o mapa."
+					getLocation()
+				}
+				else{
+					alert("Infelizmente, você não foi capaz de desvendar o enigma.");
+				}
+			}
 			function getLocation() {
 			    if (navigator.geolocation) {
 			        navigator.geolocation.watchPosition(showPosition);

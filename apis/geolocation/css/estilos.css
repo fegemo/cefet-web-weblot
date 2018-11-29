@@ -1,7 +1,7 @@
 /*body{
   background: url("../imagens/fundo.png");
 }*/
-p{
+form, p{
   margin-left: 20px;
   color: #FF530D;
   font-family: "Times New Roman";
