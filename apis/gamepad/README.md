@@ -1,7 +1,7 @@
 # _Gamepad API_
 
 Exemplo de uso da API de _gamepad_ do HTML5.
-
+Funcionamento no Mozilla Firefox!
 ![](images/screenshot.png)
 
 
