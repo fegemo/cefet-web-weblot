@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplo File API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="js-fileapi-wrapper upload-btn">
+      <div class="upload-btn__txt">Escolha os arquivos</div>
+      <input id="botao" name="files" type="file" multiple />
+    </div>
+    <div id="images"></div>
+
+    <script src="FileAPI.min.js"></script>
+
+    <script>
+      var botao = document.getElementById("botao");
+
+      FileAPI.event.on(botao, "change", function(evt) {
+        var files = FileAPI.getFiles(evt);
+        FileAPI.filterFiles(
+          files,
+          function(file, info) {
+            if (/^image/.test(file.type)) {
+              return info.width >= 320 && info.height >= 240;
+            }
+            return false;
+          },
+          function(files, rejected) {
+            if (files.length) {
+              FileAPI.each(files, function(file) {
+                FileAPI.Image(file)
+                  .preview(100)
+                  .get(function(err, img) {
+                    images.appendChild(img);
+                  });
+              });
+
+              FileAPI.upload({
+                url: "./ctrl.php",
+                files: { images: files }
+              });
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

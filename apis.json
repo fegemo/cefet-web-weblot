@@ -1,4 +1,4 @@
-{
+({
   "semestre": "2018/01",
   "apis": [
     {
@@ -19,6 +19,61 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "MINHA API",
+      "breveDescricao": "MINHA DESCRIÇÃO... etc."
     }
   ]
-}
+},
+{
+  "semestre": "2018/02",
+  "apis": [
+    {
+      "nome": "File API",
+      "breveDescricao": "Possibilita ler e obter informações de arquivos no navegador usando a capacidade de processamento do cliente",
+      "paginaInicial": "apis/file-api/",
+      "screenshot": "apis/file-api/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Emanoel",
+          "usuarioGithub": "emanoel-bruno"
+        },
+        {
+          "nome": "Rodolfo",
+          "usuarioGithub": "rodosilfer"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Speech Synthesis API",
+      "breveDescricao": "Possibilita transformar texto em audio no navegador usando a capacidade de processamento do cliente",
+      "paginaInicial": "apis/speech-synthesis/",
+      "screenshot": "apis/speech-synthesis/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Emanoel",
+          "usuarioGithub": "emanoel-bruno"
+        },
+        {
+          "nome": "Rodolfo",
+          "usuarioGithub": "rodosilfer"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]
+})
