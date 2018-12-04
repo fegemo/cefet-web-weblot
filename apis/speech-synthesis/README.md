@@ -20,7 +20,7 @@ Autor(es):
 
 Atribuições:
 
-- Ferramenas para facilitar visualização da API [MDN][mdn]
+- Informações sobre API [MDN][mdn]
 
 [slides]: https://prezi.com/view/HHIXo86Ux47SYbSZb7kw/
 [vivo]: https://fegemo.github.io/cefet-web-weblot/apis/speech-synthesis/
