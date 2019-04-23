@@ -13,13 +13,13 @@ O projeto (b) deve ser entregue como um _Pull Request_ (veja [[1]][using-pull-re
 
 1. Fazer um _fork_ deste repositório e dar permissão de escrita (commit/push) para todos os membros do grupo;
    - Clicar no botão _fork_ e, depois, clicar no **Settings**
-1. Criar um _branch_ com nome 'ano/semestre' (e.g., `2018/02`);
+1. Criar um _branch_ com nome 'ano/semestre' (e.g., `2019/02`);
    ```
-   git branch 2018/02
+   git branch 2019/02
    ```
    ou então (eu gosto mais, porque cria o _branch_ e já muda pra ele):
    ```
-   git checkout -b 2018/02
+   git checkout -b 2019/02
    ```
 1. Criar, **dentro da pasta `/apis`**, uma pasta com o nome da sua API de escolha (**nome em minúsculo,
    sem acentos, trocando espaços por de hífens e sem o prefixo ou sufixo API** - _e.g._, `/apis/drag-and-drop/`) e colocar
@@ -29,7 +29,7 @@ O projeto (b) deve ser entregue como um _Pull Request_ (veja [[1]][using-pull-re
    da API de drag'n'drop e fazer da mesma forma:
    ```json
    {
-     "semestre": "2018/01",
+     "semestre": "2019/01",
      "apis": [
        {
          "nome": "Drag and Drop API",

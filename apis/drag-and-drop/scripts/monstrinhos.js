@@ -1,33 +1,53 @@
-var dragTarget = document.getElementById('dnd-target'),
-    draggables = document.getElementsByClassName('dnd-draggable');
+const dragTargetEl = document.getElementById('dnd-target');
+const draggables = document.getElementsByClassName('dnd-draggable');
 
-for (var i = 0; i < draggables.length; i++) {
-  draggables[i].addEventListener('dragstart', function(e) {
+for (let draggableEl of draggables) {
+  // coloca um evento 'dragstart' em cada elemento arrastável
+  draggableEl.addEventListener('dragstart', e => {
+    // assim que um elemento começa a ser arrastdo,
+    // é necessário definir que "informação" (dado) ele
+    // está transportando. Neste caso, apenas uma string
+    // com o próprio id do elemento
     e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', this.id);
+    e.dataTransfer.setData('text/plain', e.currentTarget.id);
   });
 }
 
-dragTarget.addEventListener('dragover', function(e) {
+// o elemento que pode receber itens arrastáveis deve
+// tratar o evento 'dragover'
+dragTargetEl.addEventListener('dragover', e => {
   e.preventDefault();
-  this.classList.add('dnd-over');
+
+  // assim que o alvo receber um elemento sobrevoando nele,
+  // colocamos uma classe nele pra mostrar ao usuário que
+  // ele pode soltar o arrastável aqui
+  e.currentTarget.classList.add('dnd-over');
   e.dataTransfer.dropEffect = 'move';
 });
 
-
-dragTarget.addEventListener('dragenter', function(e) {
+// o elemento alvo deve tratar também o evento 'dragenter'
+dragTargetEl.addEventListener('dragenter', e => {
   e.preventDefault();
-  this.classList.add('dnd-over');
+  e.currentTarget.classList.add('dnd-over');
 });
 
-dragTarget.addEventListener('dragleave', function() {
-  this.classList.remove('dnd-over');
+// o elemento alvo deve tratar o 'dragleave'
+dragTargetEl.addEventListener('dragleave', e => {
+  // tira a classe que indicava que o usuário poderia
+  // soltar o item aqui no alvo
+  e.currentTarget.classList.remove('dnd-over');
 });
 
-dragTarget.addEventListener('drop', function(e) {
+// o alvo deve tratar o evento 'drop', chamado quando o
+// usuário solta um item arrastável nele
+dragTargetEl.addEventListener('drop', e => {
   e.preventDefault();
-  var el = document.getElementById(e.dataTransfer.getData('text/plain'));
-  this.appendChild(el);
+
+  // pega o elemento HTML que foi solto aqui e o coloca
+  // dentro do alvo, além de colocar uma classe que vai
+  // pôr uma animação no bichinho
+  const el = document.getElementById(e.dataTransfer.getData('text/plain'));
+  e.currentTarget.appendChild(el);
   el.classList.add('dnd-destroying');
-  dragTarget.classList.remove('dnd-over');
+  dragTargetEl.classList.remove('dnd-over');
 });
