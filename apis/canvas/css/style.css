@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.funcs{
+    position: absolute;
+    top: 0;
+    left: 900px;
+    margin: 5px;
+
+}
+
+.funcs ul {
+    list-style-type: none;
+}
+
+.funcs ul button,input {
+    width: 80px;
+    height: 30px;
+    margin-bottom: 15px;
+}
