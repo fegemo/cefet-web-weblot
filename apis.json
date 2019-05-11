@@ -19,6 +19,25 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Canvas",
+      "breveDescricao": "Possibilita desenhar no HTML",
+      "paginaInicial": "apis/canvas/",
+      "screenshot": "apis/canvas/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Pedro Castro",
+          "usuarioGithub": "pedrohlcastro"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
