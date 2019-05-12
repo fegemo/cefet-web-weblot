@@ -1,7 +1,10 @@
+import {SceneCreator} from "./SceneCreator.js";
+
 const NEAR = 0.1;
-const FAR = 1000;
+const FAR = 500;
 const INITIAL_ANGLE = 60;
 
+let debugMode = false;
 
 class World {
 	constructor (){		
@@ -9,22 +12,43 @@ class World {
 	    this.height = window.innerHeight;
 	    this.aspect = this.width/this.height;
 
-		this.scene = new THREE.Scene();
+	    this.container = document.querySelector('#container');
+	    this.container.innerHTML = '';		
 
 		//set camera (viewAngle, aspectRatio, near, far)//
 		this.camera = new THREE.PerspectiveCamera(60, this.aspect, NEAR, FAR);
+		
+		this.scene = new THREE.Scene();
 
-		this.renderer = new THREE.WebGLRenderer();
+		this.renderer = new THREE.WebGLRenderer({antialias: true});
 		this.renderer.setSize(this.width, this.height);
-		document.body.appendChild(this.renderer.domElement);	
+    	this.container.appendChild(this.renderer.domElement);			
 
-		this.setSceneObjects();
+    	this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+ 		//new THREE.OrbitControls( camera, renderer.domElement );
+		this.setScene();
 
-		this.vrhandler = new WebVRHandler(NEAR, FAR);
+		if (typeof VRFrameData === "undefined") {
+			this.active = false;
+			console.error("WebVR not supported");
+			return;
+	    }
 
+	    this.active = true;
+	    this.firstVRFrame = false;
+	    
+	    this.vr = {
+			display: null,
+			frameData: new VRFrameData()
+	    };
+	
 		requestAnimationFrame(() => this.update());
+		
+		this.getDisplays();
 
-		window.addEventListener('resize', () => this.resize);
+	    window.addEventListener("vrdisplayactivate", () => this.activateVR());
+	    window.addEventListener("vrdisplaydeactivate", () => this.deactivateVR());
+		window.addEventListener("resize", () => this.resize());
 	}
 
 	resize(){
@@ -32,7 +56,7 @@ class World {
 	    this.height = window.innerHeight;
 	    this.aspect = this.width/this.height;
 
-    	this.renderer.setSize(this._width, this._height);
+    	this.renderer.setSize(this.width, this.height);
 
 	    if (!this.camera) { 
 	      return;
@@ -41,80 +65,167 @@ class World {
 	    this.camera.aspect = this.aspect;
 	    this.camera.updateProjectionMatrix();
 	}
+	
+	setScene(){	
+		this.objects = [];	
+    	let sceneCreator = new SceneCreator();
+    	let environment = {
+    		scene: this.scene,
+    		objects: this.objects
+    	}
+    	sceneCreator.createScene(environment);
+    	
+		this.camera.position.set(0, 5, 0);
+		this.controls.update();
+	}	
+
+	getDisplays(){
+		navigator.getVRDisplays().then(displays => {
+			//Filter down to devices that can present.
+			displays = displays.filter(display => display.capabilities.canPresent);
+
+			//If there are no devices available, quit out.
+			if (displays.length === 0) {
+				console.error("No device available is able to present");
+				return;
+			}
+
+			//Store the first display we find. A more production-ready version should
+			//allow the user to choose from their available displays.
+			this.vr.display = displays[0];
+			this.vr.display.depthNear = NEAR;
+			this.vr.display.depthFar = FAR;
+		
+			this.createPresentationButton();
+		});
+	}
+
+	getPresent(){
+		this.vr.display.requestPresent([{
+	    	source: this.renderer.domElement
+	    }])
+	    .catch(e => {
+	    	console.error("Unable to init VR: ${e}");
+	    });
+	}
+
+	createPresentationButton () {
+	    this.button = document.createElement("button");
+	    this.button.classList.add("vr-toggle");
+	    this.button.textContent = "Enable VR";
+	    this.button.addEventListener("click", () => this.toggleVR());
+	    document.body.appendChild(this.button);
+	}
+
+	activateVR () {	    
+	    if (!this.vr.display) {
+	      return;
+	    }
+	    this.getPresent();	
+	    this.button.textContent = "Disable VR";
+	} 
+
+	deactivateVR () {
+	    if (!this.vr.display) {
+	      return;
+	    }
+
+	    if (!this.vr.display.isPresenting) {
+	      return;
+	    }
+
+	    this.vr.display.exitPresent();
+	    this.button.textContent = "Enable VR";	    
+	}
+
+	toggleVR () {		
+	    if (this.vr.display.isPresenting) {
+	      return this.deactivateVR();
+	    }
+
+    	return this.activateVR();
+  	}
 
 	update(){
-		//rotacionando o cubo//
-		this.objects[0].rotation.x += 0.01;
-		this.objects[0].rotation.y += 0.01;
-
 		this.render();
-		
 	}
 
-	render(){
-		let status = this.vrhandler.render();
-  		 
-  		if (status == true){
-  			// Use the VR display's in-built rAF (which can be a diff refresh rate to
-	    	// the default browser one).
-  			this.vrhandler.vr.display.requestAnimationFrame(() => this.update);
-  			// Call submitFrame to ensure that the device renders the latest image from
-		    // the WebGL context.
-		    this.vrhandler.vr.display.submitFrame();
-		    
-  		}  	
-  		else if(status == false){ //there's no vr to render//
-  			 //Ensure that we switch everything back to auto for non-VR mode//
+	render(){		
+	    if (this.active == false || !(this.vr.display && this.vr.display.isPresenting)) {  			
+		    this.resize(); //Ensure that we switch everything back to auto for non-VR mode//
 		    this.renderer.autoClear = true;
 		    this.scene.matrixAutoUpdate = true;
+
   			this.renderer.render(this.scene, this.camera);
-	  		requestAnimationFrame(() => this.update);
-	  		
-  		}	
-  		else {//it's the first frame//
-  			this.vrhandler.vr.display.requestAnimationFrame(() => this.update);  
-  			
-  		}
-  		
+	  		requestAnimationFrame(() => this.update());	 
+
+	    }
+	    else if (this.firstVRFrame) {
+	    	this.firstVRFrame = false;
+	    	this.vr.display.requestAnimationFrame(() => this.update());
+	    }
+	    else {  		  		
+  			const EYE_WIDTH = this.width * 0.5;
+		    const EYE_HEIGHT = this.height;
+
+		    //Get all the latest data from the VR headset and dump it into frameData//
+		    this.vr.display.getFrameData(this.vr.frameData);
+
+		    //Disable autoupdating because these values will be coming from the//
+		    //frameData data directly//
+		    this.scene.matrixAutoUpdate = false;
+
+		    //Make sure not to clear the renderer automatically, because we will need//
+		    //to render it ourselves twice, once for each eye//
+		    this.renderer.autoClear = false;
+
+		    //Clear the canvas manually//
+		    this.renderer.clear();
+
+		    //Left eye//
+		    let leftEyeParameters = {
+		    	x: 0,
+				y: 0,
+				w: EYE_WIDTH,
+				h: EYE_HEIGHT	    	
+		    }
+		    this.renderEye(this.vr.frameData.leftViewMatrix, this.vr.frameData.leftProjectionMatrix, leftEyeParameters);	
+
+	    	//Ensure that left eye calcs aren't going to interfere with right eye ones//
+	    	this.renderer.clearDepth();
+
+		    //Right eye//
+		    let rightEyeParameters = {
+		    	x: EYE_WIDTH,
+				y: 0,
+				w: EYE_WIDTH,
+				h: EYE_HEIGHT	    	
+		    }
+		    this.renderEye(this.vr.frameData.rightViewMatrix, this.vr.frameData.rightProjectionMatrix, rightEyeParameters);
+
+		    // Use the VR display's in-built rAF (which can be a diff refresh rate to
+		    // the default browser one).
+		    this.vr.display.requestAnimationFrame(() => this.update());
+
+		    // Call submitFrame to ensure that the device renders the latest image from
+		    // the WebGL context.
+		    this.vr.display.submitFrame();		  			
+		}
 	}
 
-	setSceneObjects(){
-		this.objects = [];
+	renderEye (viewMatrix, projectionMatrix, viewport) {
+		// Set the left or right eye half//
+		this.renderer.setViewport(viewport.x, viewport.y, viewport.w, viewport.h);
 
-		let geometry = new THREE.BoxGeometry(1, 1, 1);
-		let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-		this.objects[0] = new THREE.Mesh(geometry, material);
-		this.scene.add(this.objects[0]);
+		// Update the scene and camera matrices.
+		this.camera.projectionMatrix.fromArray(projectionMatrix);
+		this.scene.matrix.fromArray(viewMatrix);
 
-		this.camera.position.z = 5;
+		// Tell the scene to update (otherwise it will ignore the change of matrix).
+		this.scene.updateMatrixWorld(true);
+		this.renderer.render(this.scene, this.camera);
 	}
 
 }
 
-/* createMeshes () {
-    const WIDTH = 1;
-    const HEIGHT = 1;
-    const DEPTH = 1;
-
-    // Box.
-    const boxGeometry = new THREE.BoxGeometry(WIDTH, HEIGHT, DEPTH);
-    const boxMaterial = new THREE.MeshNormalMaterial();
-
-    this._box = new THREE.Mesh(boxGeometry, boxMaterial);
-    this._box.position.z = -5;
-
-    // Room.
-    const roomGeometry = new THREE.BoxGeometry(10, 2, 10, 10, 2, 10);
-    const roomMaterial = new THREE.MeshBasicMaterial({
-      wireframe: true,
-      opacity: 0.3,
-      transparent: true,
-      side: THREE.BackSide
-    });
-    const room = new THREE.Mesh(roomGeometry, roomMaterial);
-
-    room.position.z = -5;
-
-    this._scene.add(this._box);
-    this._scene.add(room);
-  }*/
+let world = new World();

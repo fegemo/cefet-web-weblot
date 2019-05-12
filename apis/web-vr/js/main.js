@@ -1,5 +1,1 @@
 
-
-
-let world = new World();
-
