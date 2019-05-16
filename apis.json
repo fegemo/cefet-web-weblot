@@ -19,6 +19,44 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Speech Recognition API",
+      "breveDescricao": "Possibilita o reconhecimento de voz",
+      "paginaInicial": "apis/speech-recognition-web-animations/",
+      "screenshot": "apis/drag-and-drop/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Flávio Coutinho",
+          "usuarioGithub": "fegemo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Web Animations API",
+      "breveDescricao": "Possibilita a configuração e execução de animações",
+      "paginaInicial": "apis/speech-recognition-web-animations/",
+      "screenshot": "apis/drag-and-drop/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Flávio Coutinho",
+          "usuarioGithub": "fegemo"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
