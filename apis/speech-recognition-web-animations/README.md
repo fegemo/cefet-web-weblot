@@ -7,7 +7,7 @@ Exemplo de uso da Web Animations API e do Speech Recognition API, ambas do HTML5
 
 ## Links do Exemplo
 
-- Link para seminário: [slides de aula][slides]
+- Link para seminário: [Apresentação][slides]
 - Link para exemplo publicado: [página no GitHub][vivo]
 
 ## Créditos
