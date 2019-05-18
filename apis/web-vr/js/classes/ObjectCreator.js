@@ -3,17 +3,19 @@ export class ObjectCreator {
 		this.loader = new THREE.TextureLoader();
 		this.path = './images/';
 
-		this.grassUpTexture = this.loader.load(this.path + 'grass.jpg');
+		this.grassTopTexture = this.loader.load(this.path + 'grass.jpg');
 		this.grassSideTexture = this.loader.load(this.path + 'grass-side.jpg');
 		this.grassBottomTexture = this.loader.load(this.path + 'earth.jpg');
+
 		this.waterTexture = this.loader.load(this.path + 'water.png');
 		this.earthTexture = this.loader.load(this.path + 'earth.jpg');
 		this.cloudTexture = this.loader.load(this.path + 'cloud.png');
 		this.sandTexture = this.loader.load(this.path + 'sand.jpg');
 		this.rockTexture = this.loader.load(this.path + 'rock.jpg');
-		this.treeTrunkUpTexture = this.loader.load(this.path + 'tree-trunk-up.jpg');
+
+		this.treeTrunkTopTexture = this.loader.load(this.path + 'tree-trunk-top.jpg');
 		this.treeTrunkSideTexture = this.loader.load(this.path + 'tree-trunk-side.jpg');
-		this.treeTrunkBottomTexture = this.loader.load(this.path + 'tree-trunk-up.jpg');
+		this.treeTrunkBottomTexture = this.loader.load(this.path + 'tree-trunk-top.jpg');
 		this.treeLeafTexture = this.loader.load(this.path + 'tree-leaf.png');
 	}
 
@@ -21,7 +23,7 @@ export class ObjectCreator {
 		let materials =  [
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassSideTexture,  side: THREE.DoubleSide}), //right
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassSideTexture,  side: THREE.DoubleSide}), //left
-			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassUpTexture, side: THREE.DoubleSide}), //top
+			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassTopTexture, side: THREE.DoubleSide}), //top
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassBottomTexture, side: THREE.DoubleSide}), //bottom
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassSideTexture,  side: THREE.DoubleSide}), //front
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.grassSideTexture,  side: THREE.DoubleSide}) //side
@@ -30,37 +32,43 @@ export class ObjectCreator {
 		return new THREE.Mesh(geometry, materials);
 	}
 
-	createSimpleCube(texture){
+	createSimpleTextureCube(texture, scale){
 		let material = new THREE.MeshBasicMaterial({color: 0xffffff, map: texture, side: THREE.DoubleSide});
-		let geometry = new THREE.BoxGeometry(1, 1, 1);
+		let geometry = new THREE.BoxGeometry(scale.x, scale.y, scale.z);
+		return new THREE.Mesh(geometry, material);
+	}
+
+	createSimpleColorCube(color, scale){
+		let material = new THREE.MeshBasicMaterial({color: color, side: THREE.DoubleSide});
+		let geometry = new THREE.BoxGeometry(scale.x, scale.y, scale.z);
 		return new THREE.Mesh(geometry, material);
 	}
 
 	createWaterCube(){
-		return createSimpleCube(this.waterTexture);
+		return createSimpleTextureCube(this.waterTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createEarthCube(){
-		return createSimpleCube(this.earthTexture);
+		return createSimpleTextureCube(this.earthTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createCloudCube(){
-		return createSimpleCube(this.cloudTexture);
+		return createSimpleTextureCube(this.cloudTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createSandCube(){
-		return createSimpleCube(this.sandTexture);
+		return createSimpleTextureCube(this.sandTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createRockCube(){
-		return createSimpleCube(this.rockTexture);
+		return createSimpleTextureCube(this.rockTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createTreeTrunkCube(){
 		let materials =  [
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkSideTexture,  side: THREE.DoubleSide}), //right
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkSideTexture,  side: THREE.DoubleSide}), //left
-			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkUpTexture, side: THREE.DoubleSide}), //top
+			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkTopTexture, side: THREE.DoubleSide}), //top
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkBottomTexture, side: THREE.DoubleSide}), //bottom
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkSideTexture,  side: THREE.DoubleSide}), //front
 			new THREE.MeshBasicMaterial({color: 0xffffff, map: this.treeTrunkSideTexture,  side: THREE.DoubleSide}) //side
@@ -70,7 +78,7 @@ export class ObjectCreator {
 	}
 
 	createTreeLeafCube(){
-		return createSimpleCube(this.treeLeafTexture);
+		return createSimpleTextureCube(this.treeLeafTexture, {x: 1, y: 1, z: 1});
 	}
 
 }

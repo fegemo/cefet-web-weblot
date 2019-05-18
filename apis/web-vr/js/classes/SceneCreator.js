@@ -6,25 +6,43 @@ export class SceneCreator{
 	}
 
 	createScene(environment){
+		this.createSkyBox(environment);
+
 		let position = new THREE.Vector3(0,0,0);
-		this.createCenteredWhole(environment, position, 30, 30, 3, 5);
-		
-		position = new THREE.Vector3(10,1,0);
-		this.createCenteredMountain(environment, position, 5, 10, 2, 1);
+		this.createCenteredWhole(environment, position, 40, 40, 4, 4);
 		
 		position = new THREE.Vector3(20,1,5);
 		this.createCenteredMountain(environment, position, 15, 25, 3, 2);		
 
-		let roomGeometry = new THREE.BoxGeometry(5, 1, 10);
-    	let roomMaterial = new THREE.MeshBasicMaterial({
-	      wireframe: true,
-	      opacity: 0.3,
-	      transparent: true,
-	      side: THREE.BackSide
-	    });
-    	let room = new THREE.Mesh(roomGeometry, roomMaterial);
+		this.createRandomBlocks(environment);
 
-    	environment.scene.add(room);
+		this.createLake(environment);
+
+	}
+
+	createSkyBox(environment){
+		let skybox = this.objectCreator.createSimpleColorCube("#94bcfc", {x: 50, y: 50, z: 40});
+		environment.scene.add(skybox);
+		environment.objects.push(skybox); 
+	}
+
+	createRandomBlocks(environment){
+
+	}
+
+	createLake(environment, position, baseWidht, baseDepth, height, layerSpace){
+		for(let y=0; y<height; y++){
+			for(let x=0; x<(baseWidht-(layerSpace*2)*y); x++){
+				for(let z=0; z<(baseDepth-(layerSpace*2)*y); z++){
+					let waterCube = this.objectCreator.createWaterCube();
+					waterCube.position.set( (firstLayer.x+layerSpace*y) + x,
+											firstLayer.y - y,
+											(firstLayer.z+layerSpace*y) + z );					
+					environment.scene.add(waterCube);
+					environment.objects.push(waterCube); 
+				}
+			}
+		}
 	}
 
 	createCenteredMountain(environment, position, baseWidht, baseDepth, height, layerSpace){

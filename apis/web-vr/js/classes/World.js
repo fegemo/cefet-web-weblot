@@ -1,4 +1,5 @@
 import {SceneCreator} from "./SceneCreator.js";
+import {FirstPersonControls} from "./FirstPersonControls.js";
 
 const NEAR = 0.1;
 const FAR = 500;
@@ -25,7 +26,7 @@ class World {
     	this.container.appendChild(this.renderer.domElement);			
 
     	this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
- 		//new THREE.OrbitControls( camera, renderer.domElement );
+    	this.setFirstPerson();
 		this.setScene();
 
 		if (typeof VRFrameData === "undefined") {
@@ -76,8 +77,13 @@ class World {
     	sceneCreator.createScene(environment);
     	
 		this.camera.position.set(0, 5, 0);
+		this.camera.lookAt(5, 5, 5);
 		this.controls.update();
 	}	
+
+	setFirstPerson(){
+		this.firstPersonControls = new FirstPersonControls();
+	}
 
 	getDisplays(){
 		navigator.getVRDisplays().then(displays => {
@@ -110,11 +116,11 @@ class World {
 	}
 
 	createPresentationButton () {
-	    this.button = document.createElement("button");
-	    this.button.classList.add("vr-toggle");
-	    this.button.textContent = "Enable VR";
-	    this.button.addEventListener("click", () => this.toggleVR());
-	    document.body.appendChild(this.button);
+	    this.vrButton = document.createElement("button");
+	    this.vrButton.classList.add("vr-toggle");
+	    this.vrButton.textContent = "Enable VR";
+	    this.vrButton.addEventListener("click", () => this.toggleVR());
+	    document.body.appendChild(this.vrButton);
 	}
 
 	activateVR () {	    
@@ -122,7 +128,9 @@ class World {
 	      return;
 	    }
 	    this.getPresent();	
-	    this.button.textContent = "Disable VR";
+	    this.controls.enabled = false;
+	    this.firstPersonControls.enabled = true;
+	    this.vrButton.textContent = "Disable VR";
 	} 
 
 	deactivateVR () {
@@ -135,19 +143,23 @@ class World {
 	    }
 
 	    this.vr.display.exitPresent();
-	    this.button.textContent = "Enable VR";	    
+	    this.controls.enabled = true;
+	    this.firstPersonControls.enabled = false;
+	    this.vrButton.textContent = "Enable VR";	    
 	}
 
 	toggleVR () {		
 	    if (this.vr.display.isPresenting) {
 	      return this.deactivateVR();
 	    }
-
     	return this.activateVR();
   	}
 
 	update(){
 		this.render();
+		if(this.firstPersonControls.enabled){
+			this.firstPersonControls.update();
+		}
 	}
 
 	render(){		
