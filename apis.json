@@ -22,19 +22,23 @@
     },
     {
       "nome": "Speech Recognition API",
-      "breveDescricao": "Possibilita o reconhecimento de voz",
+      "breveDescricao": "Possibilita o reconhecimento de voz, transformando audio em texto",
       "paginaInicial": "apis/speech-recognition-web-animations/",
-      "screenshot": "apis/drag-and-drop/images/screenshot.png",
+      "screenshot": "apis/speech-recognition-web-animations/img/screenshot.png",
       "desenvolvedores": [
         {
-          "nome": "Flávio Coutinho",
-          "usuarioGithub": "fegemo"
+          "nome": "Juliane Guedes",
+          "usuarioGithub": "JuGP"
+        },
+          {
+          "nome": "Ana Paula Victoy",
+          "usuarioGithub": "AnaVictoy"
         }
       ],
       "suporteDeNavegadores": {
         "chrome": true,
-        "safari": true,
-        "firefox": true,
+        "safari": false,
+        "firefox": false,
         "edge": true,
         "opera": true
       }
@@ -43,18 +47,22 @@
       "nome": "Web Animations API",
       "breveDescricao": "Possibilita a configuração e execução de animações",
       "paginaInicial": "apis/speech-recognition-web-animations/",
-      "screenshot": "apis/drag-and-drop/images/screenshot.png",
+      "screenshot": "apis/speech-recognition-web-animations/img/screenshot.png",
       "desenvolvedores": [
         {
-          "nome": "Flávio Coutinho",
-          "usuarioGithub": "fegemo"
+          "nome": "Juliane Guedes",
+          "usuarioGithub": "JuGP"
+        },
+          {
+          "nome": "Ana Paula Victoy",
+          "usuarioGithub": "AnaVictoy"
         }
       ],
       "suporteDeNavegadores": {
         "chrome": true,
         "safari": true,
         "firefox": true,
-        "edge": true,
+        "edge": false,
         "opera": true
       }
     }
