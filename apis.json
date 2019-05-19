@@ -19,6 +19,26 @@
         "edge": true,
         "opera": true
       }
+    },
+        {
+      "nome": "Web Audio API",
+      "breveDescricao": " O API do web audio que permite alterações do audio a partir de nodos para filtrar,comprimir,etc",
+      "paginaInicial": "apis/web-audio-API/",
+      "screenshot": "apis/web-audio-API/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Arthur de Freitas Abeilice e Pedro Belisario",
+          "usuarioGithub": "afa7789 e pbelisiaro"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
+
   ]
 }
