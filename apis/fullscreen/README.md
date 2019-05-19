@@ -5,6 +5,5 @@
    - **Link Seminário**: https://github.com/liberioafonso/seminario-html5
    - **Link do exemplo**: https://github.com/liberioafonso/cefet-web-weblot/tree/2019/01/apis/fullscreen/
 1. Créditos
-   - **Autores**: Libério Afonso e Guilherme Medeiros
-   
-   - **Material Utilizado**:https://developer.mozilla.org/pt-BR/docs/Web/API/Fullscreen_API
+   - **Autores**: Libério Afonso e Guilherme Medeiros   
+   - **Material Utilizado**: https://developer.mozilla.org/pt-BR/docs/Web/API/Fullscreen_API
