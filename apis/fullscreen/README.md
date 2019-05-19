@@ -2,8 +2,8 @@
    - A API de tela cheia fornece uma maneira fácil para o conteúdo da web para ser apresentado usando a tela inteira do usuário
    ![screenshot](img/screenshot.png)
 1. Links do Exemplo
-   - **Link para seus _slides_ do seminário**
-   - **Link para exemplo vivo** (formato: https://fegemo.github.io/cefet-web-weblot/apis/PASTA_DO_SEU_PROJETO/)
+   - **Link Seminário**: https://github.com/liberioafonso/seminario-html5
+   - **Link do exemplo**: https://github.com/liberioafonso/cefet-web-weblot/tree/2019/01/apis/fullscreen/
 1. Créditos
-   - **Indicação de quem são os autores**
-   - Texto dando a devida atribuição aos eventuais recursos de terceiros usados (imagens, música, código fonte etc.)
+   - **Autores**: Libério Afonso e Guilherme Medeiros
+   - **Material Utilizado**:https://developer.mozilla.org/pt-BR/docs/Web/API/Fullscreen_API
