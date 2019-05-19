@@ -1,4 +1,4 @@
-1. FullscreenAPI
+1. Fullscreen API
    - A API de tela cheia fornece uma maneira fácil para o conteúdo da web para ser apresentado usando a tela inteira do usuário
    ![screenshot](img/screenshot.png)
 1. Links do Exemplo
