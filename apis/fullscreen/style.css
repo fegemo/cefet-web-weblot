@@ -1,0 +1,83 @@
+body {
+  background-image: url('img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Aetherius";
+}
+#content{
+  margin: 8% auto;
+  max-width: 1000px;
+  min-width: 100px;
+  width: 30%;
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-image-slice: 25 25 25 25 fill; 
+  border-image-width: 20px 20px 20px 20px;
+  border-image-outset: 5px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("img/border.png");
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+h2 {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'DarksSkyrimFont';
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+button {
+  display: inline-table;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  font-size: 12px;
+  padding: 0.4rem 0.8em;
+  color: #696969;
+  background:  rgba(0,0,0,0.9);
+  border: 2px solid #696969;
+  border-radius: 8px;
+  /* topo | direita | inferior | esquerda */
+  margin: 0.5em 0.25rem 0;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+}
+
+button:active {
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+img {
+  max-width: 100%;
+  max-height: 800px;
+}
+
+img:-webkit-full-screen {
+  max-width: none;
+}
+
+img:-moz-full-screen {
+  max-width: none;
+}
+
+img:-ms-fullscreen {
+  max-width: none;
+}
+
+img:full-screen {
+  max-width: none;
+}
+
+img:fullscreen {
+  max-width: none;
+}
