@@ -1,4 +1,4 @@
-1. FullscreenAPI
+1. Geolocation API
    - A API geolocation permite que o usuário forneça sua localização a aplicativos web se ele desejar. Por questões de privacidade, o usuário é perguntado se permite fornecer informações de localização.
    ![screenshot](img/screenshot.png)
 1. Links do Exemplo
