@@ -19,6 +19,29 @@
         "edge": true,
         "opera": true
       }
+    },
+     {
+      "nome": "WebVR API",
+      "breveDescricao": "Possibilita criar experiências em realidade virtual para aplicações web.",
+      "paginaInicial": "apis/web-vr/",
+      "screenshot": "apis/web-vr/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Sarah Rodrigues",
+          "usuarioGithub": "sarahrms"
+        },
+        {
+        	"nome": "Luiza Souza",
+        	"usuarioGithub": "luizaas"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": false,
+        "safari": false,
+        "firefox": true,
+        "edge": false,
+        "opera": false
+      }
     }
   ]
 }

@@ -13,10 +13,8 @@
 //    Zoom - middle mouse, or mousewheel / touch: two-finger spread or squish
 //    Pan - right mouse, or left mouse + ctrl/meta/shiftKey, or arrow keys / touch: two-finger move
 
-THREE.OrbitControls = function ( object, domElement ) {
-
+THREE.OrbitControls = function(object, domElement){
 	this.object = object;
-
 	this.domElement = ( domElement !== undefined ) ? domElement : document;
 
 	// Set to false to disable this control
@@ -87,23 +85,17 @@ THREE.OrbitControls = function ( object, domElement ) {
 	//
 
 	this.getPolarAngle = function () {
-
 		return spherical.phi;
-
 	};
 
 	this.getAzimuthalAngle = function () {
-
 		return spherical.theta;
-
 	};
 
 	this.saveState = function () {
-
 		scope.target0.copy( scope.target );
 		scope.position0.copy( scope.object.position );
 		scope.zoom0 = scope.object.zoom;
-
 	};
 
 	this.reset = function () {
@@ -118,12 +110,10 @@ THREE.OrbitControls = function ( object, domElement ) {
 		scope.update();
 
 		state = STATE.NONE;
-
 	};
 
 	// this method is exposed, but perhaps it would be better if we can make it private...
 	this.update = function () {
-
 		var offset = new THREE.Vector3();
 
 		// so camera.up is the orbit axis
@@ -133,8 +123,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 		var lastPosition = new THREE.Vector3();
 		var lastQuaternion = new THREE.Quaternion();
 
-		return function update() {
-
+		return function update(){
 			var position = scope.object.position;
 
 			offset.copy( position ).sub( scope.target );

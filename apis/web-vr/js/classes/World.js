@@ -1,5 +1,4 @@
 import {SceneCreator} from "./SceneCreator.js";
-import {FirstPersonControls} from "./FirstPersonControls.js";
 
 const NEAR = 0.1;
 const FAR = 500;
@@ -13,8 +12,8 @@ class World {
 	    this.height = window.innerHeight;
 	    this.aspect = this.width/this.height;
 
-	    this.container = document.querySelector('#container');
-	    this.container.innerHTML = '';		
+	    this.container = document.querySelector("#container");
+	    this.container.innerHTML = "";		
 
 		//set camera (viewAngle, aspectRatio, near, far)//
 		this.camera = new THREE.PerspectiveCamera(60, this.aspect, NEAR, FAR);
@@ -26,7 +25,9 @@ class World {
     	this.container.appendChild(this.renderer.domElement);			
 
     	this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
-    	this.setFirstPerson();
+    	this.controls.enabled = true;
+    	this.controls.enableDamping = true;
+
 		this.setScene();
 
 		if (typeof VRFrameData === "undefined") {
@@ -71,19 +72,22 @@ class World {
 		this.objects = [];	
     	let sceneCreator = new SceneCreator();
     	let environment = {
+    		camera: this.camera,
     		scene: this.scene,
-    		objects: this.objects
+    		objects: this.objects,
     	}
     	sceneCreator.createScene(environment);
     	
+    	let light = new THREE.DirectionalLight(0x002288);
+		light.position.set(0, 45, 0);
+		this.scene.add(light);
+
+		light = new THREE.AmbientLight(0x222222);
+		this.scene.add(light);
+
 		this.camera.position.set(0, 5, 0);
-		this.camera.lookAt(5, 5, 5);
 		this.controls.update();
 	}	
-
-	setFirstPerson(){
-		this.firstPersonControls = new FirstPersonControls();
-	}
 
 	getDisplays(){
 		navigator.getVRDisplays().then(displays => {
@@ -128,8 +132,6 @@ class World {
 	      return;
 	    }
 	    this.getPresent();	
-	    this.controls.enabled = false;
-	    this.firstPersonControls.enabled = true;
 	    this.vrButton.textContent = "Disable VR";
 	} 
 
@@ -143,8 +145,6 @@ class World {
 	    }
 
 	    this.vr.display.exitPresent();
-	    this.controls.enabled = true;
-	    this.firstPersonControls.enabled = false;
 	    this.vrButton.textContent = "Enable VR";	    
 	}
 
@@ -157,9 +157,6 @@ class World {
 
 	update(){
 		this.render();
-		if(this.firstPersonControls.enabled){
-			this.firstPersonControls.update();
-		}
 	}
 
 	render(){		

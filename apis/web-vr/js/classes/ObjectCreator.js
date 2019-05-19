@@ -32,6 +32,13 @@ export class ObjectCreator {
 		return new THREE.Mesh(geometry, materials);
 	}
 
+	createTransparentTextureCube(texture, scale){
+		let material = new THREE.MeshBasicMaterial({color: 0xffffff, map: texture, side: THREE.DoubleSide, 
+			transparent: true, opacity: 0.5});
+		let geometry = new THREE.BoxGeometry(scale.x, scale.y, scale.z);
+		return new THREE.Mesh(geometry, material);
+	}
+
 	createSimpleTextureCube(texture, scale){
 		let material = new THREE.MeshBasicMaterial({color: 0xffffff, map: texture, side: THREE.DoubleSide});
 		let geometry = new THREE.BoxGeometry(scale.x, scale.y, scale.z);
@@ -45,23 +52,26 @@ export class ObjectCreator {
 	}
 
 	createWaterCube(){
-		return createSimpleTextureCube(this.waterTexture, {x: 1, y: 1, z: 1});
+		let material = new THREE.MeshBasicMaterial({color: 0xffffff, map: this.waterTexture, side: THREE.DoubleSide, 
+			transparent: true, opacity: 0.25});
+		let geometry = new THREE.BoxGeometry(1, 1, 1);
+		return new THREE.Mesh(geometry, material);
 	}
 
 	createEarthCube(){
-		return createSimpleTextureCube(this.earthTexture, {x: 1, y: 1, z: 1});
+		return this.createSimpleTextureCube(this.earthTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createCloudCube(){
-		return createSimpleTextureCube(this.cloudTexture, {x: 1, y: 1, z: 1});
+		return this.createTransparentTextureCube(this.cloudTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createSandCube(){
-		return createSimpleTextureCube(this.sandTexture, {x: 1, y: 1, z: 1});
+		return this.createSimpleTextureCube(this.sandTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createRockCube(){
-		return createSimpleTextureCube(this.rockTexture, {x: 1, y: 1, z: 1});
+		return this.createSimpleTextureCube(this.rockTexture, {x: 1, y: 1, z: 1});
 	}
 
 	createTreeTrunkCube(){
@@ -78,7 +88,7 @@ export class ObjectCreator {
 	}
 
 	createTreeLeafCube(){
-		return createSimpleTextureCube(this.treeLeafTexture, {x: 1, y: 1, z: 1});
+		return this.createTransparentTextureCube(this.treeLeafTexture, {x: 1, y: 1, z: 1});
 	}
 
 }
