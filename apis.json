@@ -38,6 +38,52 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "File",
+      "breveDescricao": "Possibilita carregar e mostrar informações detalhadas de arquivos",
+      "paginaInicial": "apis/file/",
+      "screenshot": "apis/file/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Larissa Bicalho",
+          "usuarioGithub": "larissabicalho"
+        },
+        {
+          "nome": "Vinícius Silveira",
+          "usuarioGithub": "silveiravinicius"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Web App Manifest",
+      "breveDescricao": "Arquivo JSON que possibilita comunicar o browser sobre a aplicação web e como ela deveria se comportar no dispositivo móvel ou desktop do usuário",
+      "paginaInicial": "apis/web-app-manifest/",
+      "screenshot": "apis/web-app-manifest/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Larissa Bicalho",
+          "usuarioGithub": "larissabicalho"
+        },
+        {
+          "nome": "Vinícius Silveira",
+          "usuarioGithub": "silveiravinicius"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "edge": true,
+        "opera": false
+      }
     }
   ]
 }
