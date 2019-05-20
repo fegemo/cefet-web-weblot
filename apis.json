@@ -103,6 +103,94 @@
         "edge": true,
         "opera": true
       }
+    }, 
+    {
+      "nome": "Fullscreen API",
+      "breveDescricao": "Possibilita colocar elementos no modo fullscreen",
+      "paginaInicial": "apis/fullscreen/",
+      "screenshot": "apis/fullscreen/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Liberio Afonso",
+          "usuarioGithub": "liberioafonso"
+        }, {
+          "nome": "Guilherme Medeiros",
+          "usuarioGithub": "MrMed"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    }, 
+    {
+      "nome": "Geolocation API",
+      "breveDescricao": "Possibilita pegar o local atual do computador",
+      "paginaInicial": "apis/geolocation/",
+      "screenshot": "apis/geolocation/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Liberio Afonso",
+          "usuarioGithub": "liberioafonso"
+        }, {
+          "nome": "Guilherme Medeiros",
+          "usuarioGithub": "MrMed"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    }, 
+    {
+      "nome": "Navigation Timming API",
+      "breveDescricao": "Fornece dados que podem ser usados para medir a performance de um website",
+      "paginaInicial": "apis/navigation-timming/",
+      "screenshot": "apis/navigation-timming/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Liberio Afonso",
+          "usuarioGithub": "liberioafonso"
+        }, {
+          "nome": "Guilherme Medeiros",
+          "usuarioGithub": "MrMed"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    }, 
+    {
+      "nome": "Page Visibility API",
+      "breveDescricao": "Deixa você saber quando uma página da web está visível ou em foco",
+      "paginaInicial": "apis/page-visibility/",
+      "screenshot": "apis/page-visibility/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Liberio Afonso",
+          "usuarioGithub": "liberioafonso"
+        }, {
+          "nome": "Guilherme Medeiros",
+          "usuarioGithub": "MrMed"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }
   ]
 }
