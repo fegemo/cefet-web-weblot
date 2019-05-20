@@ -2,7 +2,7 @@
 
 Exemplo de uso da API de _webgl_ do HTML5.
 
-![](images/screenshot.png)
+![](images/screenshot.PNG)
 
 
 ## Links
