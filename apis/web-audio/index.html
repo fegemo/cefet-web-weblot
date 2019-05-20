@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Audio API Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="sobrepor-tudo" class='tela'></div>
+	<main>
+		<header>
+			<h1 id='hqq'>Modifique o Som <br> do Bardo Abeilisario</h1>
+		</header>
+
+		<p id="controls">
+
+			<br>
+  			<!-------------<input checked id="usoNodo1" type="checkbox" onclick="usoNodo(1);" >----------------->
+		
+			<input type="range" id="volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
+			<datalist id="gain-vals">
+				<option value="0" label="min">
+				<option value="2" label="max">
+			</datalist>
+			<label for="volume">VOL</label>
+			<br>
+			<!-----<input checked id="usoNodo2" type="checkbox" onclick="usoNodo(2);" >----------------->
+			<button  id="compressor-button" data-active="true">Add compression</button>
+			<br>
+			<button  id="distortion-button" data-active="true">Add distortion</button>
+			<br>
+			<button  id="reverb-button" data-active="true">Add reverb</button>
+			<br>
+			<button  id="delay-button-decrease" data-active="true"> <<-1 </button>
+			<button  id="delay-button" data-active="true">Add Delay</button>
+			<span id="delay-value" > 1 </span>
+			<button  id="delay-button-increase" data-active="true"> +1>> </button>
+			<br>
+			<button  id="play-button" data-playing="false" role="switch" aria-checked="false">
+				Play
+			</button>
+		</p>
+		<audio src="musica-medieval.mp3"> </audio>
+	</main>
+</body>
+
+<!------------------------------------------------------------------>
+ <script src="scripts/bardoJavescript.js"></script> 
+
+</html>
