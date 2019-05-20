@@ -22,7 +22,7 @@ Autores:
 Atribuições:
 
 - MDN File Doc [Link][mdn-link]
-- MOKUJI—collection of notes by Zac Fukuda [Link][mokuji-link]
+- MOKUJI: collection of notes by Zac Fukuda [Link][mokuji-link]
 
 [slides]: https://drive.google.com/open?id=1Rgj1jiePudbVQtuaz9k7twZlx4Wl0KS9leQtBIns5lc
 [vivo]: https://silveiravinicius.github.io/cefet-web-weblot-file/
