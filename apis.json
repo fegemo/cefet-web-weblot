@@ -21,28 +21,10 @@
       }
     },
     {
-      "nome": "Canvas",
-      "breveDescricao": "Possibilita desenhar no HTML",
-      "paginaInicial": "apis/canvas/",
-      "screenshot": "apis/canvas/images/screenshot.png",
-      "desenvolvedores": [
-        {
-          "nome": "Pedro Castro",
-          "usuarioGithub": "pedrohlcastro"
-        }
-      ],
-      "suporteDeNavegadores": {
-        "chrome": true,
-        "safari": true,
-        "firefox": true,
-        "edge": true,
-        "opera": true
-      }
-    },
-    {"nome": "WebGL API",
-      "breveDescricao": " ",
+      "nome": "WebGL API",
+      "breveDescricao": "WebGL é uma API do JavaScript para renderizar gráficos 3D e 2D dentro de um navegador web compatível sem o uso de plug-ins.",
       "paginaInicial": "apis/webgl/",
-      "screenshot": "apis/webgl/img/screenshot.png",
+      "screenshot": "apis/webgl/images/screenshot.png",
       "desenvolvedores": [
         {
           "nome": "Guilherme Botelho",
