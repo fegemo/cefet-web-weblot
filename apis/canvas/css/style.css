@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to left top, #629d97, #2393a2, #0085b3, #0072bd, #4d58b6);
+}
+
+.funcs{
+    position: absolute;
+    top: 0;
+    left: 900px;
+    margin: 5px;
+    margin-top: 5%;
+}
+
+#canvas {
+    background-color: white;
+    border:15px solid #629D97;
+}
+.funcs ul {
+    list-style-type: none;
+}
+
+.funcs ul button,input {
+    width: 120px;
+    height: 30px;
+}
+.funcs ul li {
+    margin-bottom: 8px; 
+}

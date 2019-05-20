@@ -2,6 +2,25 @@
     "semestre": "2019/01",
     "apis": [
         {
+            "nome": "Drag and Drop API",
+            "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
+            "paginaInicial": "apis/drag-and-drop/",
+            "screenshot": "apis/drag-and-drop/images/screenshot.png",
+            "desenvolvedores": [
+                {
+                    "nome": "Flávio Coutinho",
+                    "usuarioGithub": "fegemo"
+                }
+            ],
+            "suporteDeNavegadores": {
+                "chrome": true,
+                "safari": true,
+                "firefox": true,
+                "edge": true,
+                "opera": true
+            }
+        },
+        {
             "nome": "GamePad API",
             "breveDescricao": "Possibilita o uso de joystick em site HTML5",
             "paginaInicial": "apis/gamepad-battery-vibration/",
@@ -29,7 +48,7 @@
             "breveDescricao": "Posibilita a ativação de vibração do dispositivo",
             "paginaInicial": "apis/gamepad-battery-vibration/",
             "screenshot": "apis/gamepad-battery-vibration/img/screenshot.png",
-             "desenvolvedores": [
+            "desenvolvedores": [
                 {
                     "nome": "Jonathan Candido da silva Rodrigues",
                     "usuarioGithub": "jonathancsr",
@@ -53,21 +72,21 @@
             "paginaInicial": "apis/gamepad-battery-vibration/",
             "screenshot": "apis/gamepad-battery-vibration/img/screenshot.png",
             "desenvolvedores": [
-              {
-                "nome": "Jonathan Candido da silva Rodrigues",
-                "usuarioGithub": "jonathancsr",
-                "nome": "João Soares de Matos Neto",
-                "usuarioGithub": "fegemo",
-                "nome": "Raylander Frois Lopes",
-                "usuarioGithub": "raylander96"
-              }
+                {
+                    "nome": "Jonathan Candido da silva Rodrigues",
+                    "usuarioGithub": "jonathancsr",
+                    "nome": "João Soares de Matos Neto",
+                    "usuarioGithub": "fegemo",
+                    "nome": "Raylander Frois Lopes",
+                    "usuarioGithub": "raylander96"
+                }
             ],
             "suporteDeNavegadores": {
-              "chrome": true,
-              "safari": false,
-              "firefox": true,
-              "edge": false,
-              "opera": false
+                "chrome": true,
+                "safari": false,
+                "firefox": true,
+                "edge": false,
+                "opera": false
             }
         }
     ]
