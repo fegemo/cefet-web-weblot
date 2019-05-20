@@ -38,6 +38,71 @@
         "edge": true,
         "opera": true
       }
+    },
+    {
+      "nome": "Speech Recognition API",
+      "breveDescricao": "Possibilita o reconhecimento de voz, transformando audio em texto",
+      "paginaInicial": "apis/speech-recognition-web-animations/",
+      "screenshot": "apis/speech-recognition-web-animations/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Juliane Guedes",
+          "usuarioGithub": "JuGP"
+        },
+        {
+          "nome": "Ana Paula Victoy",
+          "usuarioGithub": "AnaVictoy"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "edge": true,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Web Animations API",
+      "breveDescricao": "Possibilita a configuração e execução de animações",
+      "paginaInicial": "apis/speech-recognition-web-animations/",
+      "screenshot": "apis/speech-recognition-web-animations/img/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Juliane Guedes",
+          "usuarioGithub": "JuGP"
+        },
+        {
+          "nome": "Ana Paula Victoy",
+          "usuarioGithub": "AnaVictoy"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": false,
+        "opera": true
+      }
+    },
+    {
+      "nome": "Web Audio API",
+      "breveDescricao": " O API do web audio que permite alterações do audio a partir de nodos para filtrar,comprimir,etc",
+      "paginaInicial": "apis/web-audio/",
+      "screenshot": "apis/web-audio/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Arthur de Freitas Abeilice e Pedro Belisario",
+          "usuarioGithub": "afa7789 e pbelisiaro"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
     }, 
     {
       "nome": "Fullscreen API",

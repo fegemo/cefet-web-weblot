@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+
+html{
+	scroll-behavior: hidden;
+}
+
+h1{
+	font-family: 'Baloo Bhai', cursive;
+	text-shadow: -0px 0 white, 0 0px white, 2px 0 white, 0 -2px white;
+	color:orange;
+}
+
+.shake{
+  position: relative;
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes shake {
+  0% {left: 0; top: 0}
+  1% {left: -3px; top: 1px}
+  2% {left: 5px; top:-1px}
+  3% {left: -8px; top:4px}
+  4% {left: 8px; top:-6px}
+  5% {left: -5px; top:2px}
+  6% {left: 3px; top:5px}
+  7% {left: -2px; top:-1px}
+  8% {left: 0; top:0}
+}
+
+
+body{scroll-behavior: hidden;
+    background-image: url('https://thumbs.gfycat.com/PowerlessAngelicDrafthorse-small.gif');
+    background-position: center center;
+	background-size: cover;
+    background-repeat:no-repeat;    
+	background-color: black;
+	background-attachment:fixed;
+    padding:0;
+    margin:0;
+}
+
+.tela{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	pointer-events:none;
+	top:-20px;
+}
+
+.telaPreta{
+	background-color: black;
+    -moz-transition: all 0.4s ease-out;  /* FF4+ */
+    -o-transition:  all 0.4s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all 0.4s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all 0.4s ease-out;  /* IE10? */
+    transition: all 0.4s ease-out; 
+	opacity: 0.8; 
+}
+
+header{
+    text-align: center;
+}
+
+.bubble {
+	display: block;
+	float: left;
+	z-index : 2;
+	position : absolute;
+	border-radius : 50%;
+}
+
+#controls {
+    text-align: center;
+}
+
+button{
+	border-radius: 5px;
+    font-size: 16pt;
+}	
+
+button:hover{
+	transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=range] {
+	cursor: pointer;
+	border-radius: 46px;
+}
+
+input[type=range]:hover{
+	transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+@-webkit-keyframes roll {
+    from { -webkit-transform: rotate(0deg) }
+    to   { -webkit-transform: rotate(360deg) }
+}
+
+@-moz-keyframes roll {
+    from { -moz-transform: rotate(0deg) }
+    to   { -moz-transform: rotate(360deg) }
+}
+
+@keyframes roll {
+    from { transform: rotate(0deg) }
+    to   { transform: rotate(360deg) }
+}
+
+.rollar{
+    -moz-animation-name: roll;
+    -moz-animation-duration: 6s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-name: roll;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+html,body,div,iframe {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   overflow: hidden;
+}
+
+iframe {
+   width: 100%;
+   border: 0;
+}
