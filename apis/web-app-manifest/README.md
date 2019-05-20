@@ -22,7 +22,9 @@ Autores:
 Atribuições:
 
 - MDN Web App Manifest Doc [Link][mdn-link]
+- James Johnson: A Simple Progressive Web App Tutorial [Link][progressive-link]
 
 [slides]: https://drive.google.com/open?id=1Rgj1jiePudbVQtuaz9k7twZlx4Wl0KS9leQtBIns5lc
 [vivo]:https://silveiravinicius.github.io/cefet-web-weblot-web-app-manifest/
 [mdn-link]:https://developer.mozilla.org/en-US/docs/Web/Manifest
+[progressive-link]: https://medium.com/james-johnson/a-simple-progressive-web-app-tutorial-f9708e5f2605
