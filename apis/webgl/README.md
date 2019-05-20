@@ -5,10 +5,10 @@ Exemplo de uso da API de _webgl_ do HTML5.
 ![](images/screenshot.png)
 
 
-## Links do Exemplo
+## Links
 
 - Link para seminário: [slides de aula][slides]
-- Link para exemplo publicado: [página no GitHub][vivo]
+- Link para apresentação: [página no GitHub][slide]
 
 ## Créditos
 
@@ -17,17 +17,13 @@ Este trabalho foi realizado em 2019/01 para a disciplina de Programação para W
 Autor(es):
 
 1. Guilherme Henrique Campos Botelho (201322040125 &larr; ~~matrícula da graduação!!~~)
-2.
-3.
+2. Marcos Tiago Ferreira Henriques (201412040108 &larr; ~~matrícula da graduação!!~~)
+3. Gabriel Vasconcelos Martins (201312040289 &larr; ~~matrícula da graduação!!~~)
 
 Atribuições:
 
-- Fonte Overlock, criada por [Dario Manuel Muhafara][overlock-author]
-- Fonte Chewy, criada por [_Sideshow Foundry_][chewy-author]
-- Imagens dos monstrinhos, da empresa [Toshl][monsters-author]®
+- Javascript 3D library [three]
 
-[slides]: https://fegemo.github.io/cefet-web/classes/js5/#32
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
-[overlock-author]: https://plus.google.com/105287894980881814285/about
-[chewy-author]: https://profiles.google.com/sideshowfonts/about
-[monsters-author]: http://toshl.com
+[slides]: https://fegemo.github.io/cefet-web/classes/js5/#51
+[slide]: https://marcostiagofh.github.io/seminario-apresentacao-impressjs/
+[three]: https://threejs.org/
