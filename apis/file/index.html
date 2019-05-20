@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Files API</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Drop & Upload Files</h1>
+        <div class="dropZoneBox">
+            <div id="dropZone">Drop files here to upload</div>
+            <h6>Upload Status</h6>
+            <table id="progressTable">
+                <tr>
+                    <th><b><span id="progress">000</span>%</b></th>
+                    <td><div class="progressBar"><div id="progressBar"></div></div><button id="abortButton" onclick="abortRead();"><span></span></button></td>
+                </tr>
+            </table>
+        </div><!-- .dropZoneContainer -->
+        <output id="output"></output>
+    </div><!-- .wrapper -->
+
+    <section id="descricoes"></section>
+
+
+    <script src="js/script.js"></script>
+    <audio src="assets/song.mp3" autoplay loop="0" controls></audio>
+</body>
+
+</html>
