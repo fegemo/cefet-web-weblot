@@ -29,4 +29,4 @@ Atribuições:
 
 [slides]: https://prezi.com/view/tbxj2oWPCbFtlnIuXPBN/
 [sprites]: https://www.gameart2d.com/freebies.html
-[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/gamePad-Vibration-BatteryStatus/
+[vivo]: https://fegemo.github.io/cefet-web-weblot/apis/gamepad-battery-vibration/
