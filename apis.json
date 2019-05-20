@@ -1,24 +1,74 @@
 {
-  "semestre": "2019/01",
-  "apis": [
-    {
-      "nome": "Drag and Drop API",
-      "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
-      "paginaInicial": "apis/drag-and-drop/",
-      "screenshot": "apis/drag-and-drop/images/screenshot.png",
-      "desenvolvedores": [
+    "semestre": "2019/01",
+    "apis": [
         {
-          "nome": "Flávio Coutinho",
-          "usuarioGithub": "fegemo"
+            "nome": "GamePad API",
+            "breveDescricao": "Possibilita o uso de joystick em site HTML5",
+            "paginaInicial": "apis/gamepad-battery-vibration/",
+            "screenshot": "apis/gamepad-battery-vibration/img/screenshot.png",
+            "desenvolvedores": [
+                {
+                    "nome": "Jonathan Candido da silva Rodrigues",
+                    "usuarioGithub": "jonathancsr",
+                    "nome": "João Soares de Matos Neto",
+                    "usuarioGithub": "fegemo",
+                    "nome": "Raylander Frois Lopes",
+                    "usuarioGithub": "raylander96"
+                }
+            ],
+            "suporteDeNavegadores": {
+                "chrome": true,
+                "safari": true,
+                "firefox": true,
+                "edge": true,
+                "opera": true
+            }
+        },
+        {
+            "nome": "Vibration API",
+            "breveDescricao": "Posibilita a ativação de vibração do dispositivo",
+            "paginaInicial": "apis/gamepad-battery-vibration/",
+            "screenshot": "apis/gamepad-battery-vibration/img/screenshot.png",
+             "desenvolvedores": [
+                {
+                    "nome": "Jonathan Candido da silva Rodrigues",
+                    "usuarioGithub": "jonathancsr",
+                    "nome": "João Soares de Matos Neto",
+                    "usuarioGithub": "fegemo",
+                    "nome": "Raylander Frois Lopes",
+                    "usuarioGithub": "raylander96"
+                }
+            ],
+            "suporteDeNavegadores": {
+                "chrome": true,
+                "safari": false,
+                "firefox": true,
+                "edge": false,
+                "opera": true
+            }
+        },
+        {
+            "nome": "Battery Status API",
+            "breveDescricao": "Posibilita adicionar eventos de acordo com o status da bateria do dispositivo",
+            "paginaInicial": "apis/gamepad-battery-vibration/",
+            "screenshot": "apis/gamepad-battery-vibration/img/screenshot.png",
+            "desenvolvedores": [
+              {
+                "nome": "Jonathan Candido da silva Rodrigues",
+                "usuarioGithub": "jonathancsr",
+                "nome": "João Soares de Matos Neto",
+                "usuarioGithub": "fegemo",
+                "nome": "Raylander Frois Lopes",
+                "usuarioGithub": "raylander96"
+              }
+            ],
+            "suporteDeNavegadores": {
+              "chrome": true,
+              "safari": false,
+              "firefox": true,
+              "edge": false,
+              "opera": false
+            }
         }
-      ],
-      "suporteDeNavegadores": {
-        "chrome": true,
-        "safari": true,
-        "firefox": true,
-        "edge": true,
-        "opera": true
-      }
-    }
-  ]
+    ]
 }
