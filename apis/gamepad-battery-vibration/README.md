@@ -20,7 +20,7 @@ Este trabalho foi realizado em 2019/01 para a disciplina de Programação para W
 Autor(es):
 
 1. Jonathan Candido da silva Rodrigues (201612040268)
-2. João Soares de Matos Neto ()
+2. João Soares de Matos Neto (201513040541)
 3. Raylander Frois Lopes (201612040101)
 
 Atribuições:
