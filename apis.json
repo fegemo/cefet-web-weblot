@@ -42,7 +42,7 @@
     {"nome": "WebGL API",
       "breveDescricao": " ",
       "paginaInicial": "apis/webgl/",
-      "screenshot": "apis/webgl/images/screenshot.png",
+      "screenshot": "apis/webgl/img/screenshot.png",
       "desenvolvedores": [
         {
           "nome": "Guilherme Botelho",
