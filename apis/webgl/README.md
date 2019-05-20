@@ -16,9 +16,9 @@ Este trabalho foi realizado em 2019/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Guilherme Henrique Campos Botelho (201322040125 &larr; ~~matrícula da graduação!!~~)
-2. Marcos Tiago Ferreira Henriques (201412040108 &larr; ~~matrícula da graduação!!~~)
-3. Gabriel Vasconcelos Martins (201312040289 &larr; ~~matrícula da graduação!!~~)
+1. Guilherme Henrique Campos Botelho (201322040125)
+2. Marcos Tiago Ferreira Henriques (201412040108)
+3. Gabriel Vasconcelos Martins (201312040289)
 
 Atribuições:
 
