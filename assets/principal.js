@@ -4,10 +4,24 @@ import MusicPlayer from './player.js';
 import { currifica } from './programacao-funcional.js';
 
 const galleryEl = document.querySelector('main');
+const progressoEl = document.querySelector('#progresso-carregamento');
+const progresso = {
+  imagensBaixadas: 0,
+  totalImagens: null,
+  get valor() {
+    return Math.ceil(this.imagensBaixadas / this.totalImagens * 100);
+  }
+};
 
+function notificaImagemBaixada() {
+  progresso.imagensBaixadas++;
+  progressoEl.value = progresso.valor;
+  progressoEl.style.setProperty('--value', progresso.valor + '%');
+}
 
 function preparaImagens(resultado) {
   const imagens = resultado.apis.map(api => api.screenshot);
+  progresso.totalImagens = imagens.length;
   const promessas = imagens.map(imagem => new Promise((resolver, rejeitar) => {
     const imagemForaDaTelaEl = document.createElement('img');
     imagemForaDaTelaEl.onload = () => {
@@ -20,8 +34,12 @@ function preparaImagens(resultado) {
       // (<0.5)
       const usarTemaEscuro = toHSI(corMedia.split(','))[2] > 0.5;
 
+      // atualiza o progresso porque esta imagem foi baixada (promessa cumprida)
+      notificaImagemBaixada();
+
       resolver({
-        imagem,
+        urlImagem: imagem,
+        elementoImagem: imagemForaDaTelaEl,
         corMedia,
         usarTemaEscuro
       });
@@ -29,13 +47,14 @@ function preparaImagens(resultado) {
     imagemForaDaTelaEl.src = imagem;
   }));
 
-
   const promessaComImagensPreparadas = Promise.all(promessas)
     .then(imagensComCores => {
       resultado.apis = resultado.apis.map(api => {
-        const estaImagemNoArrayComputado = imagensComCores.find(imgComCor => imgComCor.imagem === api.screenshot);
+        const estaImagemNoArrayComputado = imagensComCores.find(imgComCor => imgComCor.urlImagem === api.screenshot);
         api.corMedia = estaImagemNoArrayComputado.corMedia;
         api.usarTemaEscuro = estaImagemNoArrayComputado.usarTemaEscuro;
+        api.slug = api.nome.toLowerCase().replace(/\s+/g, '-');
+        api.elementoImagem = estaImagemNoArrayComputado.elementoImagem;
         return api;
       });
 
@@ -51,8 +70,8 @@ function adicionaItemGaleria(yearSemester, apiInfo, i) {
   const novoElemento = html`
     <section class="section">
       <div class="middle" style="background-color: rgb(${apiInfo.corMedia})">
-        <a href="${apiInfo.paginaInicial}" target="_blank">
-          <img src="${apiInfo.screenshot}">
+        <a href="${apiInfo.paginaInicial}" target="_blank" id="${apiInfo.slug}">
+          <img>
         </a>
       </div>
       <div class="${par ? 'right' : 'left'} title ${tema}" style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
@@ -69,7 +88,7 @@ function adicionaItemGaleria(yearSemester, apiInfo, i) {
               ${apiInfo.desenvolvedores.map(dev => html`
                 <li>
                   <i class="fa fa-github-alt" aria-hidden="true"></i>
-                  @<a href="https://github.com/$${dev.usuarioGithub}">$${dev.usuarioGithub}</a>
+                  <a href="https://github.com/$${dev.usuarioGithub}">$${dev.usuarioGithub}</a>
                   <span class="author-name">$${dev.nome}</span>
                 </li>
               `)}
@@ -98,6 +117,8 @@ function adicionaItemGaleria(yearSemester, apiInfo, i) {
     </section>`;
 
   galleryEl.innerHTML += novoElemento;
+  galleryEl.querySelector(`#${apiInfo.slug}`)
+    .replaceChild(apiInfo.elementoImagem, galleryEl.querySelector(`#${apiInfo.slug} img`));
 }
 
 function preparaHTML(arquivoApis) {
@@ -109,7 +130,8 @@ function preparaHTML(arquivoApis) {
 
 function mostraErro(erro) {
   galleryEl.classList.add('errored');
-  galleryEl.innerHTML = `Deu erro!! Descrição: ${erro}`;
+  galleryEl.innerHTML = `Deu erro!! Descrição: <pre>${erro}</pre>`;
+  console.error(erro);
 }
 
 fetch('apis.json')
