@@ -286,9 +286,9 @@
       ],
       "suporteDeNavegadores": {
         "chrome": true,
-        "safari": true,
+        "safari": false,
         "firefox": true,
-        "edge": true,
+        "edge": false,
         "opera": true
       }
     },
@@ -371,6 +371,33 @@
         "firefox": true,
         "edge": false,
         "opera": false
+      }
+    },
+    {
+      "nome": "Service Worker API e Push Notification API",
+      "breveDescricao": "Possibilitam a criação de experiências offline eficientes, com o recebimento de mensagens enviadas de um servidor a aplicações web, indepententemente dela estar em primeiro plano.",
+      "paginaInicial": "apis/push-service-worker/",
+      "screenshot": "apis/push-service-worker/src/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Daniele Lima",
+          "usuarioGithub": "limadani"
+        },
+        {
+          "nome": "Daniela Lourenço",
+          "usuarioGithub": "DanielaLourenco"
+        },
+        {
+          "nome": "Eduardo Humberto",
+          "usuarioGithub": "eduhumb"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": true,
+        "edge": false,
+        "opera": true
       }
     }
   ]
