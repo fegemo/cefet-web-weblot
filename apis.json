@@ -93,7 +93,7 @@
       "nome": "WebVR API",
       "breveDescricao": "Possibilita criar experiências em realidade virtual para aplicações web.",
       "paginaInicial": "apis/web-vr/",
-      "screenshot": "apis/web-vr/images/screenshot.png",
+      "screenshot": "apis/web-vr/images/screenshot.jpg",
       "desenvolvedores": [
         {
           "nome": "Sarah Rodrigues",
@@ -139,7 +139,7 @@
       "nome": "Geolocation API",
       "breveDescricao": "Possibilita pegar o local atual do computador",
       "paginaInicial": "apis/geolocation/",
-      "screenshot": "apis/geolocation/img/screenshot.png",
+      "screenshot": "apis/geolocation/img/screenshot.jpg",
       "desenvolvedores": [
         {
           "nome": "Liberio Afonso",
@@ -162,7 +162,7 @@
       "nome": "Navigation Timming API",
       "breveDescricao": "Fornece dados que podem ser usados para medir a performance de um website",
       "paginaInicial": "apis/navigation-timming/",
-      "screenshot": "apis/navigation-timming/img/screenshot.png",
+      "screenshot": "apis/navigation-timming/img/screenshot.jpg",
       "desenvolvedores": [
         {
           "nome": "Liberio Afonso",
@@ -185,7 +185,7 @@
       "nome": "Page Visibility API",
       "breveDescricao": "Deixa você saber quando uma página da web está visível ou em foco",
       "paginaInicial": "apis/page-visibility/",
-      "screenshot": "apis/page-visibility/img/screenshot.png",
+      "screenshot": "apis/page-visibility/img/screenshot.jpg",
       "desenvolvedores": [
         {
           "nome": "Liberio Afonso",
