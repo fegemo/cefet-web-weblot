@@ -73,8 +73,12 @@
       "screenshot": "apis/web-audio/images/screenshot.png",
       "desenvolvedores": [
         {
-          "nome": "Arthur de Freitas Abeilice e Pedro Belisario",
-          "usuarioGithub": "afa7789 e pbelisiaro"
+          "nome": "Arthur de Freitas Abeilice",
+          "usuarioGithub": "afa7789"
+        },
+        {
+          "nome": "Pedro Belisario",
+          "usuarioGithub": "pbelisiaro"
         }
       ],
       "suporteDeNavegadores": {
