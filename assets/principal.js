@@ -2,6 +2,7 @@ import inicializaGaleria from './galeria.js';
 import html from './templating.js';
 import MusicPlayer from './player.js';
 import { currifica } from './programacao-funcional.js';
+import { ordenaAlfabeticamente } from './ordenacao.js';
 
 const galleryEl = document.querySelector('main');
 const progressoEl = document.querySelector('#progresso-carregamento');
@@ -128,6 +129,11 @@ function preparaHTML(arquivoApis) {
   listaDeApis.forEach(currifica(adicionaItemGaleria, arquivoApis.semestre));
 }
 
+function ordenaAPIs(resultado) {
+  resultado.apis = ordenaAlfabeticamente(resultado.apis, 'nome');
+  return Promise.resolve(resultado);
+}
+
 function mostraErro(erro) {
   galleryEl.classList.add('errored');
   galleryEl.innerHTML = `Deu erro!! Descrição: <pre>${erro}</pre>`;
@@ -135,7 +141,8 @@ function mostraErro(erro) {
 }
 
 fetch('apis.json')
-  .then((resultado) => resultado.json())
+  .then(resultado => resultado.json())
+  .then(ordenaAPIs)
   .then(preparaImagens)
   .then(preparaHTML)
   .then(inicializaGaleria)
