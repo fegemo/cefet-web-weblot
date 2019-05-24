@@ -10,6 +10,7 @@ html,
   margin: 0;
   padding: 0;
   width: 100%;
+  background-image: url(../mario.jpg);
 }
 
 /* Center the content in the browser window */
