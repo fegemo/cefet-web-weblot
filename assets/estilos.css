@@ -105,19 +105,24 @@ main.errored {
   color: #fff;
   box-sizing: border-box;
   left: 0;
+  transform: translateX(0);
   text-align: center;
   overflow: hidden;
-  transition: 0.3s ease-in-out all;
-  text-shadow: 1px 1px #00000080;
+  transition: 0.3s ease-in-out transform, 0.3s ease-in-out opacity;
+  text-shadow: 1px 1px #0008;
+}
+
+.section .middle {
+  overflow: hidden !important;
 }
 
 .section .title.dark {
   color: #000;
-  text-shadow: 1px 1px #ffffff80;
+  text-shadow: 1px 1px #fff8;
 }
 
 .section .title.dark h2 {
-  text-shadow: 1px 1px rgba(255, 255, 255, .5);
+  text-shadow: 1px 1px #fff8;
 }
 
 .section .middle {
@@ -161,6 +166,10 @@ main.errored {
   .section .tiles .browser {
     width: calc(100% / 5 - 1%);
   }
+
+  .section {
+    margin-bottom: 1em;
+  }
 }
 
 @media (min-width: 480px) {
@@ -184,8 +193,7 @@ main.errored {
     width: 50%;
     font-size: 0.9em;
     overflow-y: auto;
-    left: 0;
-    float: left;
+    transform: translateX(0);
     position: absolute;
   }
 }
@@ -197,7 +205,7 @@ main.errored {
 
   .section .left, .section .middle, .section .right {
     width: 33.33333%;
-    left: 33.33%;
+    transform: translateX(100%);
   }
 }
 
@@ -208,17 +216,17 @@ main.errored {
 }
 
 .section.animate .left {
-  left: 0;
+  transform: translateX(0);
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
   .section.animate .title.left,
   .section.animate .title.right {
-    left: 50%;
+    transform: translateX(100%);
   }
 
   .section.animate .tiles {
-    left: 0;
+    transform: translateX(0);
     z-index: 3;
     display: flex;
     justify-content: flex-end;
@@ -235,23 +243,21 @@ main.errored {
     height: auto;
   }
 
-  .section.animate .tiles .browser img {
-  }
 }
 
 @media (min-width: 768px) {
   .section.animate .left {
-    left: 0;
+      transform: translateX(0);
   }
 }
 
 .section.animate .right {
-  left: 0;
+  transform: translateX(0);
 }
 
 @media (min-width: 768px) {
   .section.animate .right {
-    left: 66.66%;
+    transform: translateX(200%);
   }
 }
 
@@ -266,6 +272,7 @@ main.errored {
 
 .section .title p {
   line-height: 1.55em;
+  margin-top: 0;
   margin-bottom: 0.75em;
 }
 
@@ -302,16 +309,12 @@ main.errored {
   transition: 0.3s ease-in-out all;
   overflow: hidden;
   border-radius: var(--browser-icon-radius);
-  -webkit-filter: none;
-  -moz-filter: none;
-  -o-filter: none;
+  filter: none;
 }
 
 .browser:not(.supported) {
-  opacity: 0.85;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
+  opacity: 0.75;
+  filter: grayscale(100%);
 }
 
 .browser > img {
@@ -430,6 +433,10 @@ main.errored {
   width: auto;
 }
 
+.authors h3 {
+  margin: 0.5em 0;
+}
+
 .authors .author-name {
   margin-left: 1em;
   overflow: hidden;
@@ -523,4 +530,25 @@ a:active {
 ::-ms-fill {
   background-color: cornflowerblue;
   border: 0;
+}
+
+
+/* barras de rolagem */
+body ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body ::-webkit-scrollbar-track {
+  background: #fff6;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background-color: #000038;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+body * {
+  scrollbar-width: thin;
+  scrollbar-color: #000038 #fff6;
 }
