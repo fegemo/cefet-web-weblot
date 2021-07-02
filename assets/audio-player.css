@@ -1,13 +1,24 @@
+#audio-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
 
 #audio {
   position: absolute;
-  right: -126px;
+  right: 0;
+  transform: translateX(126px);
   top: 32vh;
+  pointer-events: all;
   transition: all 200ms ease-out;
 }
 
 #audio:hover {
-  right: -15px;
+  transform: translateX(15px);
 }
 
 .player {
@@ -114,6 +125,8 @@
   background-repeat: no-repeat;
   background-size: 80px;
   background-image: url(images/lenda-do-heroi.png);
+  animation: rotation 3s infinite linear;
+  animation-play-state: paused;
 }
 
 .player .control-panel.active .album-art {
@@ -123,8 +136,7 @@
 }
 
 .player .control-panel.active .album-art::before {
-  animation: rotation 3s infinite linear;
-  -webkit-animation: rotation 3s infinite linear;
+  animation-play-state: running;
   animation-fill-mode: forwards;
 }
 
