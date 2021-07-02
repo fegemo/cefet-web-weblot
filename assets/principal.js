@@ -134,6 +134,12 @@ function ordenaAPIs(resultado) {
   return Promise.resolve(resultado);
 }
 
+function atualizaSemestre(resultado) {
+  const semestreEls = document.querySelectorAll('.semestre');
+  semestreEls.forEach(el => el.innerHTML = resultado.semestre);
+  return Promise.resolve(resultado);
+}
+
 function mostraErro(erro) {
   galleryEl.classList.add('errored');
   galleryEl.innerHTML = `Deu erro!! Descrição: <pre>${erro}</pre>`;
@@ -142,6 +148,7 @@ function mostraErro(erro) {
 
 fetch('apis.json')
   .then(resultado => resultado.json())
+  .then(atualizaSemestre)
   .then(ordenaAPIs)
   .then(preparaImagens)
   .then(preparaHTML)
