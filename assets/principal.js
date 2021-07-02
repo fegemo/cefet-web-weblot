@@ -58,19 +58,22 @@ function adicionaItemGaleria(yearSemester, apiInfo) {
 
       <div class="tiles" style="background-color: rgba(${apiInfo.corMedia}, 0.75)">
         <picture data-browser-name="Chrome" data-supported="${apiInfo.suporteDeNavegadores.chrome ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.chrome ? 'supported' : ''}">
-          <img src="assets/icons/chrome.png" alt="Ícone do navegador Google Chrome">
+          <img src="assets/icons/chrome.webp" alt="Ícone do navegador Google Chrome">
         </picture>
         <picture data-browser-name="Firefox" data-supported="${apiInfo.suporteDeNavegadores.firefox ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.firefox ? 'supported' : ''}">
-          <img src="assets/icons/firefox.png" alt="Ícone do navegador Firefox">
+          <img src="assets/icons/firefox.webp" alt="Ícone do navegador Firefox">
         </picture>
         <picture data-browser-name="Edge" data-supported="${apiInfo.suporteDeNavegadores.edge ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.edge ? 'supported' : ''}">
-          <img src="assets/icons/edge.png" alt="Ícone do navegador Edge">
+          <img src="assets/icons/edge.webp" alt="Ícone do navegador Edge">
+        </picture>
+        <picture data-browser-name="IE" data-supported="${apiInfo.suporteDeNavegadores.edge ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.ie ? 'supported' : ''}">
+          <img src="assets/icons/ie.webp" alt="Ícone do navegador Internet Explorer">
         </picture>
         <picture data-browser-name="Safari" data-supported="${apiInfo.suporteDeNavegadores.safari ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.safari ? 'supported' : ''}">
-          <img src="assets/icons/safari.png" alt="Ícone do navegador Safari">
+          <img src="assets/icons/safari.webp" alt="Ícone do navegador Safari">
         </picture>
         <picture data-browser-name="Opera" data-supported="${apiInfo.suporteDeNavegadores.opera ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.opera ? 'supported' : ''}">
-          <img src="assets/icons/opera.png" alt="Ícone do navegador Opera">
+          <img src="assets/icons/opera.webp" alt="Ícone do navegador Opera">
         </picture>
       </div>`
 

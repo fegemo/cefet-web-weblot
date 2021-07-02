@@ -14,7 +14,8 @@
       "chrome": true,
       "safari": false,
       "firefox": true,
-      "edge": false,
+      "ie": false,
+      "edge": true,
       "opera": true
     }
   }
