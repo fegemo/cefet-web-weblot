@@ -3,7 +3,10 @@
     "nome": "Drag and Drop API",
     "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
     "paginaInicial": "apis/drag-and-drop/",
-    "screenshot": "apis/drag-and-drop/images/screenshot.png",
+    "screenshot": {
+      "caminho": "apis/drag-and-drop/images/screenshot.png",
+      "textoAlternativo": "Uma página com 2 monstrinhos em uma jaula e outros 3 fora com os dizeres 'Prenda os Monstrinhos'"
+    },
     "desenvolvedores": [
       {
         "nome": "Flávio Coutinho",

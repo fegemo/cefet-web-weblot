@@ -104,6 +104,7 @@ function mostraErro(erro) {
 function processaImagem(imagem) {
   progresso.totalImagens++
   const imagemForaDaTelaEl = document.createElement('img')
+  imagemForaDaTelaEl.alt = imagem.textoAlternativo
   const promessaImagem = new Promise((resolver, rejeitar) => {
     imagemForaDaTelaEl.onload = () => {
       // determina qual é a "cor média" da imagem de exemplo da API
@@ -119,7 +120,6 @@ function processaImagem(imagem) {
       notificaImagemBaixada();
   
       resolver({
-        urlImagem: imagem,
         elementoImagem: imagemForaDaTelaEl,
         corMedia,
         usarTemaEscuro
@@ -127,7 +127,7 @@ function processaImagem(imagem) {
     }
   })
   
-  imagemForaDaTelaEl.src = imagem
+  imagemForaDaTelaEl.src = imagem.caminho
   return promessaImagem
 }
 
