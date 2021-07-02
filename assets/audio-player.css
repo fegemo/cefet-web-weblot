@@ -85,6 +85,7 @@
   width: 245px;
   height: 80px;
   z-index: 5;
+  box-shadow: 4px 4px 4px #0008;
 }
 
 .player .control-panel .album-art {
