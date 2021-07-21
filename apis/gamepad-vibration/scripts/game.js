@@ -1,74 +1,184 @@
+import { GameEngine } from './engine.js'
+
+const GMSTATE = {
+    MENU: 0,
+    INGAME: 1,
+    MAPPER: 2
+}
+
 class Game {
-    #canvas
-    #ctx
-    #assets
+    #engine
+    #gameState
+    #context
+    #gamepadConnected
 
     constructor() {
-        this.#canvas = document.querySelector('canvas')
-        this.#ctx = this.#canvas.getContext('2d');
-
-        this.loadAssets()
-        this.setUpCanvasSize()
-        this.setUpLoops()
+        this.#engine = new GameEngine(this.init, this.updateLoop, this.drawLoop)
+        this.#engine.loadAssets([['title', 'images/output/title.png']])
+        this.#engine.loadMusics(['B\'z-Into_Free'])
+        this.#engine.run()
     }
 
-    loadAssets() {
-        this.#assets = {}
-
-        const load = (src) => {
-            const img = new Image()
-            img.src = src
-            return img
-        }
-
-        const assets = [['title', 'images/output/title.png']]
-        for (const [assetName, assetPath] of assets) {
-            this.#assets[assetName] = load(assetPath)
-        }
-    }
-
-    setUpCanvasSize() {
-        this.#ctx.canvas.width = window.innerWidth
-        this.#ctx.canvas.height = window.innerHeight
-    
-        window.addEventListener('resize', e => {
-            this.#ctx.canvas.width = e.target.innerWidth
-            this.#ctx.canvas.height = e.target.innerHeight
+    init = () => {
+        this.#gameState = GMSTATE.INGAME
+        window.addEventListener('gamepadconnected', e => {
+            if (e.gamepad.index==0) {
+                const gp = navigator.getGamepads()[e.gamepad.index]
+                console.log('Gamepad connected at index %d: %s. %d buttons, %d axes.',
+                    gp.index, gp.id,
+                    gp.buttons.length, gp.axes.length)
+                this.#gamepadConnected = true
+                console.log(this.getGamepadInput())
+            }
         })
+        this.ingameInit(this.#engine.musics['B\'z-Into_Free'])
     }
 
-    setUpLoops() {
-        const loop = () => {
-            this.gameLoop()
-            this.drawLoop()
-            window.requestAnimationFrame(loop)
+    updateLoop = (dt) => {
+        switch(this.#gameState) {
+            case GMSTATE.INGAME:
+                this.ingameUpdateLoop(dt)
+                break
         }
-        window.requestAnimationFrame(loop)
     }
 
-
-    // loops
-    gameLoop() {
-        // game logic goes here
+    drawLoop = (dt) => {
+        switch(this.#gameState) {
+            case GMSTATE.INGAME:
+                this.ingameDrawLoop(dt)
+                break
+        }
     }
 
-    drawLoop() {
+    // ========================================= ingame state
+    ingameInit = (music) => {
+        const createLane = (color) => ({
+            color: color,
+            pressed: false
+        })
+        this.#context = {
+            currentMusic: music,
+            play: false,
+            startCountdown: -1,
+            lanes: [
+                createLane('rgb(0,0,200)'),
+                createLane('rgb(0,200,0)'),
+                createLane('rgb(200,0,0)'),
+                createLane('rgb(0,200,200)'),
+            ]
+        }
+
+        // current workaround to play audio
+        window.addEventListener('gamepadconnected', () => !this.#context.play && this.#context.startCountdown <= 0 && this.startMusicCountdown())
+    }
+
+    ingameUpdateLoop = (dt) => {
+        const input = this.getGamepadInput()
+        this.#context.startCountdown = Math.max(0, this.#context.startCountdown - dt)
+        
+        // ds4
+        this.#context.lanes[0].pressed = input[6] // l2
+        this.#context.lanes[1].pressed = input[4] // l1
+        this.#context.lanes[2].pressed = input[5] // r1
+        this.#context.lanes[3].pressed = input[7] // r2
+    }
+
+    ingameDrawLoop = (dt) => {
+        const { ctx } = this.#engine
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const laneHeight = canvasHeight * 0.95
+        const { startCountdown, play, lanes, currentMusic } = this.#context
+
         this.drawBg()
-        this.drawTitle()
+
+        if (startCountdown > 0) {
+            this.drawCountdown()
+        }
+
+        for(const index in lanes) {
+            this.drawLane(lanes[index], index)
+        }
+
+        if (play) {
+            for(const note of currentMusic.mapping) {
+                if (note.getY(laneHeight) <= canvasHeight)
+                this.drawNote(note)
+            }
+        }
     }
 
     // helpers
-    drawBg() {
-        this.#ctx.fillStyle = 'rgb(30, 33, 34)'
-        this.#ctx.fillRect(0, 0, this.#ctx.canvas.width, this.#ctx.canvas.height)
+    getGamepadInput() {
+        let buttons = []
+        if (this.#gamepadConnected) {
+            buttons = navigator.getGamepads()[0].buttons.map(b => b.pressed)
+        }
+        return buttons
     }
 
-    drawTitle() {
-        const [ctx, title] = [this.#ctx, this.#assets.title]
-        const [imgWidth, imgHeight] = [title.width/2, title.height/2]
+    startMusicCountdown = () => {
+        this.#context.startCountdown = 3000
+        setTimeout(() => {
+            this.#context.currentMusic.play()
+            this.#context.play = true
+        }, this.#context.startCountdown)
+    }
+
+    drawCountdown = () => {
+        const { ctx } = this.#engine
+        const { startCountdown } = this.#context
+        
+        ctx.font = '80px arial'
+        ctx.fillStyle = 'blue'
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.fillText(String(Math.ceil(startCountdown/1000)),
+            ctx.canvas.width/2, ctx.canvas.height/2)
+    }
+
+    drawLane = (lane, index) => {
+        const { ctx } = this.#engine
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const lowerPadding = canvasHeight * 0.05
+        const [ width, height ] = [ canvasWidth/9, canvasHeight - lowerPadding ]
+        const [ x, y ] = [ canvasWidth/9 + canvasWidth/9 * (2*index), canvasHeight - lowerPadding ]
+        
+        const gradient = ctx.createLinearGradient(x,y,  x,y - height)
+        const color = lane.pressed ? lane.color.replace('200', '255') : lane.color
+        gradient.addColorStop(0, color)
+        gradient.addColorStop(0.25, color)
+        gradient.addColorStop(1, 'rgba(255,255,255, 0)')
+
+        ctx.fillStyle = gradient
+        ctx.fillRect(x, y, width, -height)
+    }
+
+    drawNote = (note) => {
+        const { ctx } = this.#engine
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const laneHeight = canvasHeight * 0.95
+
+        ctx.fillStyle = "yellow"
+        const xSpace = canvasWidth/9
+        ctx.fillRect(xSpace + xSpace * (2*note.lane), laneHeight - 1.5 * note.getOffset(),
+            xSpace, 100)
+    }
+
+    drawBg = () => {
+        const { ctx } = this.#engine
+
+        ctx.fillStyle = 'black'
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+    }
+
+    // ========================================= ingame state
+    drawTitle = () => {
+        const [ ctx, title ] = [ this.#engine.ctx, this.#engine.assets.title ]
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const [ imgWidth, imgHeight ] = [ title.width/2, title.height/2 ]
 
         ctx.drawImage(title,
-            ctx.canvas.width/2 - imgWidth/2, ctx.canvas.height/2 - imgHeight/2 + 15*Math.sin(Date.now()*0.0025),
+            canvasWidth/2 - imgWidth/2, canvasHeight/2 - imgHeight/2 + 15 * Math.sin(Date.now() * 0.0025),
             imgWidth, imgHeight)
     }
 }
