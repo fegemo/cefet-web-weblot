@@ -1,11 +1,6 @@
 import Music from './music.js'
 
 export class GameEngine {
-    canvas
-    ctx
-    assets
-    lastupd
-
     /**
      * @param {List[]} assetList - ['name', 'path']
      * @param {Function} init - () => {}
@@ -16,6 +11,9 @@ export class GameEngine {
         this.updateLoop = updateLoop
         this.drawLoop = drawLoop
         this.init = init
+        this.lastupd = -1
+        this.musics = {}
+        this.assets = {}
 
         this.canvas = document.querySelector('canvas')
         this.ctx = this.canvas.getContext('2d')

@@ -1,7 +1,8 @@
 import { GameEngine } from './engine.js'
+import { Lane, fillRoundRect } from './utils.js'
 
 const GMSTATE = {
-    MENU: 0,
+    LOADING: 0,
     INGAME: 1,
     MAPPER: 2
 }
@@ -12,7 +13,10 @@ class Game {
     #context
     #gamepadConnected
 
-    constructor() {
+    constructor(acceptance = 10, spd = 0.5) {
+        this.acceptance = acceptance
+        this.spd = spd
+
         this.#engine = new GameEngine(this.init, this.updateLoop, this.drawLoop)
         this.#engine.loadAssets([['title', 'images/output/title.png']])
         this.#engine.loadMusics(['B\'z-Into_Free'])
@@ -20,22 +24,38 @@ class Game {
     }
 
     init = () => {
-        this.#gameState = GMSTATE.INGAME
         window.addEventListener('gamepadconnected', e => {
             if (e.gamepad.index==0) {
                 const gp = navigator.getGamepads()[e.gamepad.index]
-                console.log('Gamepad connected at index %d: %s. %d buttons, %d axes.',
-                    gp.index, gp.id,
-                    gp.buttons.length, gp.axes.length)
                 this.#gamepadConnected = true
-                console.log(this.getGamepadInput())
+                // console.log('Gamepad connected at index %d: %s. %d buttons, %d axes.',
+                //     gp.index, gp.id,
+                //     gp.buttons.length, gp.axes.length)
+                // console.log(this.getGamepadInput())
             }
         })
-        this.ingameInit(this.#engine.musics['B\'z-Into_Free'])
+        this.setState(GMSTATE.LOADING)
+    }
+
+    setState(state) {
+        this.#gameState = state
+        switch(this.#gameState) {
+            case GMSTATE.LOADING:
+                break
+            case GMSTATE.INGAME:
+                this.ingameInit(this.#engine.musics['B\'z-Into_Free'])
+                break
+        }
     }
 
     updateLoop = (dt) => {
         switch(this.#gameState) {
+            case GMSTATE.LOADING:
+                const allMusicsReady = Object.keys(this.#engine.musics).reduce((acc, k) => acc && this.#engine.musics[k].isReady(), true)
+                if (allMusicsReady) {
+                    this.setState(GMSTATE.INGAME)
+                }
+                break
             case GMSTATE.INGAME:
                 this.ingameUpdateLoop(dt)
                 break
@@ -44,6 +64,8 @@ class Game {
 
     drawLoop = (dt) => {
         switch(this.#gameState) {
+            case GMSTATE.LOADING:
+                break
             case GMSTATE.INGAME:
                 this.ingameDrawLoop(dt)
                 break
@@ -52,35 +74,49 @@ class Game {
 
     // ========================================= ingame state
     ingameInit = (music) => {
-        const createLane = (color) => ({
-            color: color,
-            pressed: false
-        })
         this.#context = {
             currentMusic: music,
             play: false,
             startCountdown: -1,
+            hits: 0,
             lanes: [
-                createLane('rgb(0,0,200)'),
-                createLane('rgb(0,200,0)'),
-                createLane('rgb(200,0,0)'),
-                createLane('rgb(0,200,200)'),
+                new Lane(115,181,100),
+                new Lane(243,231,60),
+                new Lane(207,67,49),
+                new Lane(49,171,220)
             ]
         }
+        // clean notes
+        music.setNotesStroke(false)
 
         // current workaround to play audio
-        window.addEventListener('gamepadconnected', () => !this.#context.play && this.#context.startCountdown <= 0 && this.startMusicCountdown())
+        window.addEventListener('gamepadconnected', () => (
+            !this.#context.play
+            && this.#context.startCountdown <= 0
+            && this.startMusicCountdown()
+        ))
     }
 
     ingameUpdateLoop = (dt) => {
         const input = this.getGamepadInput()
         this.#context.startCountdown = Math.max(0, this.#context.startCountdown - dt)
         
-        // ds4
+        // update lanes - ds4 mapping
         this.#context.lanes[0].pressed = input[6] // l2
         this.#context.lanes[1].pressed = input[4] // l1
         this.#context.lanes[2].pressed = input[5] // r1
         this.#context.lanes[3].pressed = input[7] // r2
+
+        // check for stroke hits
+        for(const note of this.#context.currentMusic.mapping) {
+            if (this.#context.lanes[note.lane].pressed
+                    && !note.stroke
+                    && Math.abs(note.getOffset())*this.spd <= this.acceptance) {
+                note.stroke = true
+                this.#context.hits++
+                console.log('hit')
+            }
+        }
     }
 
     ingameDrawLoop = (dt) => {
@@ -96,19 +132,21 @@ class Game {
         }
 
         for(const index in lanes) {
-            this.drawLane(lanes[index], index)
+            lanes[index].draw(ctx, index)
         }
 
         if (play) {
             for(const note of currentMusic.mapping) {
-                if (note.getY(laneHeight) <= canvasHeight)
-                this.drawNote(note)
+                if (laneHeight - note.getOffset() <= canvasHeight && !note.stroke) {
+                    note.draw(ctx, laneHeight, this.spd, this.acceptance)
+                }
             }
+            this.drawHitCount()
         }
     }
 
     // helpers
-    getGamepadInput() {
+    getGamepadInput = () => {
         let buttons = []
         if (this.#gamepadConnected) {
             buttons = navigator.getGamepads()[0].buttons.map(b => b.pressed)
@@ -129,45 +167,29 @@ class Game {
         const { startCountdown } = this.#context
         
         ctx.font = '80px arial'
-        ctx.fillStyle = 'blue'
+        ctx.fillStyle = 'white'
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         ctx.fillText(String(Math.ceil(startCountdown/1000)),
             ctx.canvas.width/2, ctx.canvas.height/2)
     }
 
-    drawLane = (lane, index) => {
+    drawHitCount = () => {
         const { ctx } = this.#engine
-        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
-        const lowerPadding = canvasHeight * 0.05
-        const [ width, height ] = [ canvasWidth/9, canvasHeight - lowerPadding ]
-        const [ x, y ] = [ canvasWidth/9 + canvasWidth/9 * (2*index), canvasHeight - lowerPadding ]
+        const { hits } = this.#context
         
-        const gradient = ctx.createLinearGradient(x,y,  x,y - height)
-        const color = lane.pressed ? lane.color.replace('200', '255') : lane.color
-        gradient.addColorStop(0, color)
-        gradient.addColorStop(0.25, color)
-        gradient.addColorStop(1, 'rgba(255,255,255, 0)')
-
-        ctx.fillStyle = gradient
-        ctx.fillRect(x, y, width, -height)
-    }
-
-    drawNote = (note) => {
-        const { ctx } = this.#engine
-        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
-        const laneHeight = canvasHeight * 0.95
-
-        ctx.fillStyle = "yellow"
-        const xSpace = canvasWidth/9
-        ctx.fillRect(xSpace + xSpace * (2*note.lane), laneHeight - 1.5 * note.getOffset(),
-            xSpace, 100)
+        ctx.font = '80px arial'
+        ctx.fillStyle = 'white'
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.fillText(String(hits),
+            ctx.canvas.width/11, ctx.canvas.height/2)
     }
 
     drawBg = () => {
         const { ctx } = this.#engine
 
-        ctx.fillStyle = 'black'
+        ctx.fillStyle = 'rgb(34,37,38)'
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     }
 
