@@ -11,21 +11,24 @@ export class Lane {
         return `rgba(${this.r + offset}, ${this.g + offset}, ${this.b + offset}, ${this.a})`
     }
 
-    draw(ctx, index) {
+    draw(ctx, index, laneHeight=100) {
         const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
-        const lowerPadding = canvasHeight * 0.05
-        const [ width, height ] = [ canvasWidth/11, canvasHeight - lowerPadding ]
-        const [ x, y ] = [ 2*canvasWidth/11 + canvasWidth/11 * (2*index), canvasHeight - lowerPadding ]
+        const cellWidth = canvasWidth/11
+
+        const width = cellWidth
+        const radius = width/4
+        const height = laneHeight
+
+        const [ x, y ] = [ 2*cellWidth + (2*index)*cellWidth, -radius ]
         
-        const gradient = ctx.createLinearGradient(x,y,  x,y - height)
+        const gradient = ctx.createLinearGradient(x,y+height,  x,y)
         const color = this.getColor(this.pressed ? 50 : 0)
         gradient.addColorStop(0, color)
         gradient.addColorStop(0.25, color)
         gradient.addColorStop(1, 'rgba(255,255,255, 0)')
 
         ctx.fillStyle = gradient
-        const radius = width/4
-        fillRoundRect(ctx, x, y-height-radius, width, height+radius, radius)
+        fillRoundRect(ctx, x, y, width, height, radius)
     }
 }
 

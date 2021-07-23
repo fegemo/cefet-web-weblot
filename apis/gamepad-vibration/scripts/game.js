@@ -18,7 +18,12 @@ class Game {
         this.spd = spd
 
         this.#engine = new GameEngine(this.init, this.updateLoop, this.drawLoop)
-        this.#engine.loadAssets([['title', 'images/output/title.png']])
+        this.#engine.loadAssets([
+            ['cross', 'images/ButtonCross.svg'],
+            ['circle', 'images/ButtonCircle.svg'],
+            ['triangle', 'images/ButtonTriangle.svg'],
+            ['square', 'images/ButtonSquare.svg']
+        ])
         this.#engine.loadMusics(['B\'z-Into_Free'])
         this.#engine.run()
     }
@@ -80,10 +85,10 @@ class Game {
             startCountdown: -1,
             hits: 0,
             lanes: [
-                new Lane(115,181,100),
-                new Lane(243,231,60),
-                new Lane(207,67,49),
-                new Lane(49,171,220)
+                new Lane(49,171,220), // blue - cross
+                new Lane(207,67,49), // red - circle
+                new Lane(115,181,100), // green - triangle
+                new Lane(243,231,60) // yellow - square
             ]
         }
         // clean notes
@@ -102,10 +107,10 @@ class Game {
         this.#context.startCountdown = Math.max(0, this.#context.startCountdown - dt)
         
         // update lanes - ds4 mapping
-        this.#context.lanes[0].pressed = input[6] // l2
-        this.#context.lanes[1].pressed = input[4] // l1
-        this.#context.lanes[2].pressed = input[5] // r1
-        this.#context.lanes[3].pressed = input[7] // r2
+        this.#context.lanes[0].pressed = input[6] || input[0] // l2 || ✕
+        this.#context.lanes[1].pressed = input[4] || input[1] // l1 || ◯
+        this.#context.lanes[2].pressed = input[5] || input[3] // r1 || △
+        this.#context.lanes[3].pressed = input[7] || input[2] // r2 || ☐
 
         // check for stroke hits
         for(const note of this.#context.currentMusic.mapping) {
@@ -127,20 +132,31 @@ class Game {
 
         this.drawBg()
 
+        // lanes
+        for(const index in lanes) {
+            lanes[index].draw(ctx, index, laneHeight)
+        }
+
+        // buttons
+        this.drawButton(this.#engine.assets['cross'], 0, laneHeight)
+        this.drawButton(this.#engine.assets['circle'], 1, laneHeight)
+        this.drawButton(this.#engine.assets['triangle'], 2, laneHeight)
+        this.drawButton(this.#engine.assets['square'], 3, laneHeight)
+
+        // countdow
         if (startCountdown > 0) {
             this.drawCountdown()
         }
 
-        for(const index in lanes) {
-            lanes[index].draw(ctx, index)
-        }
-
         if (play) {
+            // notes
             for(const note of currentMusic.mapping) {
                 if (laneHeight - note.getOffset() <= canvasHeight && !note.stroke) {
                     note.draw(ctx, laneHeight, this.spd, this.acceptance)
                 }
             }
+
+            // hit count
             this.drawHitCount()
         }
     }
@@ -184,6 +200,17 @@ class Game {
         ctx.textBaseline = 'middle'
         ctx.fillText(String(hits),
             ctx.canvas.width/11, ctx.canvas.height/2)
+    }
+
+    drawButton(asset, lane, laneHeight) {
+        const ctx = this.#engine.ctx
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+    
+        const cellWidth = canvasWidth/11
+        const [ width, height ] = [ cellWidth/2, cellWidth/2 ]
+        ctx.drawImage(asset,
+            2*cellWidth + 2*lane*cellWidth + width/2, laneHeight-height,
+            width, height)
     }
 
     drawBg = () => {
