@@ -1,4 +1,5 @@
 import { GameEngine } from './engine.js'
+import { Note } from './music.js'
 import { Lane, fillRoundRect } from './utils.js'
 
 const GMSTATE = {
@@ -13,16 +14,19 @@ class Game {
     #context
     #gamepadConnected
     #musicName
+    #activateMapper
 
     /**
-     * @param {*} musicName - Music to be loaded
-     * @param {*} acceptance - Note height/hitbox
-     * @param {*} spd - Note speed
+     * @param {String} musicName - Music to be loaded
+     * @param {Number} acceptance - Note height/hitbox
+     * @param {Number} spd - Note speed
+     * @param {Boolean} activateMapper - Initiate game in mapper mode
      */
-    constructor(musicName = 'B\'z-Into_Free', acceptance = 15, spd = 0.5) {
+    constructor(musicName = 'B\'z-Into_Free', acceptance = 15, spd = 0.5, activateMapper = false) {
         this.#musicName = musicName
         this.acceptance = acceptance
         this.spd = spd
+        this.#activateMapper = activateMapper
 
         this.#engine = new GameEngine(this.init, this.updateLoop, this.drawLoop)
         this.#engine.loadAssets([
@@ -52,19 +56,27 @@ class Game {
             case GMSTATE.INGAME:
                 this.ingameInit(this.#engine.musics[this.#musicName])
                 break
+            case GMSTATE.MAPPER:
+                this.mapperInit(this.#engine.musics[this.#musicName])
+                break
         }
     }
 
     updateLoop = (dt) => {
         switch(this.#gameState) {
             case GMSTATE.LOADING:
-                const allMusicsReady = Object.keys(this.#engine.musics).reduce((acc, k) => acc && this.#engine.musics[k].isReady(), true)
-                if (allMusicsReady) {
-                    this.setState(GMSTATE.INGAME)
+                if (this.#engine.allSoundsLoaded()) {
+                    if (this.#activateMapper)
+                        this.setState(GMSTATE.MAPPER)
+                    else
+                        this.setState(GMSTATE.INGAME)
                 }
                 break
             case GMSTATE.INGAME:
                 this.ingameUpdateLoop(dt)
+                break
+            case GMSTATE.MAPPER:
+                this.mapperUpdateLoop(dt)
                 break
         }
     }
@@ -75,6 +87,9 @@ class Game {
                 break
             case GMSTATE.INGAME:
                 this.ingameDrawLoop(dt)
+                break
+            case GMSTATE.MAPPER:
+                this.mapperDrawLoop(dt)
                 break
         }
     }
@@ -116,9 +131,6 @@ class Game {
 
         // check for stroke hits
         for(const note of this.#context.currentMusic.mapping) {
-            if(note.time === 15000) {
-                console.log('offset ' + String(note.getOffset()) + '  height ' + String(note.getHeight(this.spd, this.acceptance)))
-            }
             if (this.#context.lanes[note.lane].pressed
                     && !note.stroke
                     && note.isNearLaneEnd(this.spd, this.acceptance)) {
@@ -141,12 +153,6 @@ class Game {
             lanes[index].draw(ctx, index, laneHeight)
         }
 
-        // buttons
-        this.drawButton(this.#engine.assets['cross'], 0, laneHeight)
-        this.drawButton(this.#engine.assets['circle'], 1, laneHeight)
-        this.drawButton(this.#engine.assets['triangle'], 2, laneHeight)
-        this.drawButton(this.#engine.assets['square'], 3, laneHeight)
-
         // countdow
         if (startCountdown > 0) {
             this.drawCountdown()
@@ -163,6 +169,12 @@ class Game {
             // hit count
             this.drawHitCount()
         }
+
+        // buttons
+        this.drawButton(this.#engine.assets['cross'], 0, laneHeight)
+        this.drawButton(this.#engine.assets['circle'], 1, laneHeight)
+        this.drawButton(this.#engine.assets['triangle'], 2, laneHeight)
+        this.drawButton(this.#engine.assets['square'], 3, laneHeight)
     }
 
     // helpers
@@ -224,16 +236,92 @@ class Game {
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     }
 
-    // ========================================= ingame state
-    drawTitle = () => {
-        const [ ctx, title ] = [ this.#engine.ctx, this.#engine.assets.title ]
-        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
-        const [ imgWidth, imgHeight ] = [ title.width/2, title.height/2 ]
+    // ========================================= mapper state
+    mapperInit = (music) => {
+        music.mapping = []
+        this.#context = {
+            currentMusic: music,
+            startCountdown: -1,
+            play: false,
+            lanes: [
+                new Lane(49,171,220), // blue - cross
+                new Lane(207,67,49), // red - circle
+                new Lane(115,181,100), // green - triangle
+                new Lane(243,231,60) // yellow - square
+            ]
+        }
 
-        ctx.drawImage(title,
-            canvasWidth/2 - imgWidth/2, canvasHeight/2 - imgHeight/2 + 15 * Math.sin(Date.now() * 0.0025),
-            imgWidth, imgHeight)
+        // current workaround to play audio
+        window.addEventListener('gamepadconnected', () => (
+            !this.#context.play
+            && this.#context.startCountdown <= 0
+            && this.startMusicCountdown()
+        ))
+
+        // export mapping
+        music.audio.addEventListener('ended', () => {
+            console.log(this.#context.notes)
+        })
+    }
+
+    mapperUpdateLoop = (dt) => {
+        const input = this.getGamepadInput()
+        const { currentMusic, play, lanes } = this.#context
+
+        // update countdown
+        this.#context.startCountdown = Math.max(0, this.#context.startCountdown - dt)
+        
+        // update lanes - ds4 mapping
+        this.#context.lanes[0].pressed = input[6] || input[0] // l2 || ✕
+        this.#context.lanes[1].pressed = input[4] || input[1] // l1 || ◯
+        this.#context.lanes[2].pressed = input[5] || input[3] // r1 || △
+        this.#context.lanes[3].pressed = input[7] || input[2] // r2 || ☐
+
+        // create note
+        const time = Date.now() - currentMusic.start
+        if (play) {
+            for(const index in lanes) {
+                const lane = lanes[index]
+                if(lane.pressed) {
+                    currentMusic.appendNote(new Note(time, Number(index), currentMusic))
+                    // console.log('new note ' + newNote + ' #notes ' + String(this.#context.notes.length))
+                }
+            }
+        }
+    }
+
+    mapperDrawLoop = (dt) => {
+        const { ctx } = this.#engine
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const laneHeight = canvasHeight * 0.90
+        const { currentMusic, startCountdown, lanes } = this.#context
+
+        this.drawBg()
+
+        // lanes
+        for(const index in lanes) {
+            lanes[index].draw(ctx, index, laneHeight)
+        }
+        
+        // notes
+        for(const note of currentMusic.mapping) {
+            const offset = Date.now() - (currentMusic.start + note.time)
+            if (offset <= 2*canvasHeight) {
+                note.drawReverse(ctx, laneHeight, this.spd, this.acceptance)
+            }
+        }
+
+        // buttons
+        this.drawButton(this.#engine.assets['cross'], 0, laneHeight)
+        this.drawButton(this.#engine.assets['circle'], 1, laneHeight)
+        this.drawButton(this.#engine.assets['triangle'], 2, laneHeight)
+        this.drawButton(this.#engine.assets['square'], 3, laneHeight)
+
+        // countdown
+        if (startCountdown > 0) {
+            this.drawCountdown()
+        }
     }
 }
 
-const game = new Game('Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza')
+const game = new Game('Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza', 15, 0.5, false)

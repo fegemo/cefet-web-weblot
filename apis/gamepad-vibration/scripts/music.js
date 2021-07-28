@@ -37,6 +37,11 @@ export default class Music {
             }
         }
     }
+
+    appendNote(note) {
+        if (this.isReady())
+            this.mapping = this.mapping.concat(note)
+    }
 }
 
 export class Note {
@@ -47,7 +52,7 @@ export class Note {
         this.stroke = false
     }
 
-    // from 1 to 0
+    // from 0 to -offset
     getOffset() {
         return (this.music.start + this.time) - Date.now()
     }
@@ -69,6 +74,20 @@ export class Note {
         const radius = Math.min(cellWidth, noteHeight)/2
         fillRoundRect(ctx,
             2*cellWidth + cellWidth * (2*this.lane), laneHeight - spd * this.getOffset() - noteHeight/2, // center vertically
+            cellWidth, noteHeight, radius)
+    }
+
+    drawReverse(ctx, laneHeight, spd, acceptance) {
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+
+        ctx.fillStyle = "yellow"
+
+        const cellWidth = canvasWidth/11
+        const noteHeight = acceptance / spd // same size of acceptance
+        const radius = Math.min(cellWidth, noteHeight)/2
+        const offset = Date.now() - (this.music.start + this.time)
+        fillRoundRect(ctx,
+            2*cellWidth + cellWidth * (2*this.lane), laneHeight - spd * offset - noteHeight/2, // center vertically
             cellWidth, noteHeight, radius)
     }
 }

@@ -46,6 +46,10 @@ export class GameEngine {
         }
     }
 
+    allSoundsLoaded() {
+        return Object.keys(this.musics).reduce((acc, k) => acc && this.musics[k].isReady(), true)
+    }
+
     run() {
         this.setUpCanvasSize()
         this.setUpLoops()
