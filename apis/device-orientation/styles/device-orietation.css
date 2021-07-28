@@ -1,0 +1,62 @@
+:root {
+    --canvas-width: 300px;
+    --canvas-height: 500px;
+    --ball-size: 20px;
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#canvas {
+    position: relative;
+    width : var(--canvas-width);
+    height: var(--canvas-height);
+    border: 1px solid indigo;
+    background-color: #D8BFD8;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+#ball {
+    position: absolute;
+    top   : calc(var(--canvas-height)/2 - var(--ball-size)/2);
+    left  : calc(var(--canvas-width)/2 - var(--ball-size)/2);
+    width : var(--ball-size);
+    height: var(--ball-size);
+    background: indigo;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+#output p {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#acceptOrientation {
+    border: 2px solid indigo;
+    background-color: white;
+    color: indigo;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 300px;
+    font-weight: bold;
+}
+
+#result {
+    display: none;
+}
