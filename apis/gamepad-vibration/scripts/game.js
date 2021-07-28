@@ -1,6 +1,6 @@
 import { GameEngine } from './engine.js'
 import { Note } from './music.js'
-import { Lane, fillRoundRect } from './utils.js'
+import { Lane, lerp } from './utils.js'
 
 const GMSTATE = {
     LOADING: 0,
@@ -33,7 +33,8 @@ class Game {
             ['cross', 'images/ButtonCross.svg'],
             ['circle', 'images/ButtonCircle.svg'],
             ['triangle', 'images/ButtonTriangle.svg'],
-            ['square', 'images/ButtonSquare.svg']
+            ['square', 'images/ButtonSquare.svg'],
+            [musicName, `musics/${musicName}.png`]
         ])
         this.#engine.loadSounds([musicName])
         this.#engine.run()
@@ -101,12 +102,17 @@ class Game {
             play: false,
             startCountdown: -1,
             hits: 0,
+            
             lanes: [
                 new Lane(49,171,220), // blue - cross
                 new Lane(207,67,49), // red - circle
                 new Lane(115,181,100), // green - triangle
                 new Lane(243,231,60) // yellow - square
-            ]
+            ],
+
+            bgOffset: { x: 0, y: 0 },
+            bgScale: 1,
+            hitShakeIntensity: 50
         }
         // clean notes
         music.setNotesStroke(false)
@@ -129,6 +135,11 @@ class Game {
         this.#context.lanes[2].pressed = input[5] || input[3] // r1 || △
         this.#context.lanes[3].pressed = input[7] || input[2] // r2 || ☐
 
+        // reset bg Offset and Scale
+        this.#context.bgOffset.x = lerp(this.#context.bgOffset.x, 0, 0.35)
+        this.#context.bgOffset.y = lerp(this.#context.bgOffset.y, 0, 0.35)
+        this.#context.bgScale = lerp(this.#context.bgScale, 1, 0.1)
+
         // check for stroke hits
         for(const note of this.#context.currentMusic.mapping) {
             if (this.#context.lanes[note.lane].pressed
@@ -136,6 +147,10 @@ class Game {
                     && note.isNearLaneEnd(this.spd, this.acceptance)) {
                 note.stroke = true
                 this.#context.hits++
+
+                this.#context.bgOffset.x = this.#context.hitShakeIntensity*(Math.random()-0.5)
+                this.#context.bgOffset.y = this.#context.hitShakeIntensity*(Math.random()-0.5)
+                this.#context.bgScale = 1.2 + 0.2*(Math.random())
             }
         }
     }
@@ -147,6 +162,8 @@ class Game {
         const { startCountdown, play, lanes, currentMusic } = this.#context
 
         this.drawBg()
+        this.drawBgImage(this.#engine.assets[this.#musicName])
+        this.drawBg('rgba(34,37,38, 0.75)')
 
         // lanes
         for(const index in lanes) {
@@ -229,11 +246,36 @@ class Game {
             width, height)
     }
 
-    drawBg = () => {
+    drawBg = (color = 'rgb(34,37,38)') => {
         const { ctx } = this.#engine
 
-        ctx.fillStyle = 'rgb(34,37,38)'
+        ctx.fillStyle = color
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+    }
+
+    drawBgImage = (img) => {
+        const { ctx } = this.#engine
+        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const { bgOffset, bgScale } = this.#context
+        
+        let imgWidth = img.width
+        let imgHeight = img.height
+        if (canvasHeight > canvasWidth) {
+            imgHeight = canvasHeight
+            imgWidth = imgHeight * img.width/img.height
+        } else {
+            imgWidth = canvasWidth
+            imgHeight = imgWidth * img.height/img.width
+        }
+        imgWidth *= 1.2 * bgScale
+        imgHeight *= 1.2 * bgScale
+
+        const xfloating = 10 * Math.sin(Date.now() * 0.0030)
+        const yfloating = 15 * Math.sin(Date.now() * 0.0025)
+
+        ctx.drawImage(img,
+            canvasWidth/2 - imgWidth/2 + xfloating + bgOffset.x, canvasHeight/2 - imgHeight/2 + yfloating + bgOffset.y,
+            imgWidth, imgHeight)
     }
 
     // ========================================= mapper state

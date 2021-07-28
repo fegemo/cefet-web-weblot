@@ -61,3 +61,7 @@ export function fillRoundRect (ctx, x, y, width, height, radius = 5) {
     ctx.closePath();
     ctx.fill();
 }
+
+export function lerp(a,b,t) {
+    return a + t*(b-a)
+}
