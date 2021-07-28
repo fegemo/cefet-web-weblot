@@ -1,3 +1,10 @@
+# ToDo
+- [ ] (File API) Mudar texto do botão quando o arquivo já tiver carregado (mostrar nome do arquivo)
+- [ ] (Battery API) Mudar background para vermelho e colocar alerta de usuário avisando ("Conecte seu carregador ou você poderá perder seu arquivo salvo!")
+- [ ] (Web Criptography) Janela inicial pedindo pro usuário colocar uma senha, fazer o hash dessa senha e colocar no localStorage.
+- [ ] (Web Criptography) Salvar o arquivo criptografado no localStorage.
+
+
 # _Drag and Drop API_
 
 Exemplo de uso da API de _drag and drop_ (arrastar e soltar) do HTML5. Veja o arquivo [`script/monstrinhos.js`][js] para detalhes.
