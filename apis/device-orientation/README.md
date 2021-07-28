@@ -2,10 +2,10 @@
 
 Exemplo de uso da API de _device orientation_ do HTML5. Veja o arquivo [`script/device-orientation.js`][js] para detalhes.
 
-![Exemplo do uso da API em um dispositivo IOS e Android usando o DevTools do Chrome](images/screenshot.png)
+![Exemplo do uso da API em um dispositivo IOS e Android usando o DevTools do Chrome](images/iphone-device-orientation.webp)
 
 - Link para exemplo publicado: [página no GitHub][vivo]
-
+- Teste no seu celular: https://device-orientation-46286.web.app/
 
 ## Créditos
 
