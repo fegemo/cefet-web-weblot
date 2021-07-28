@@ -11,12 +11,18 @@ export class Lane {
         return `rgba(${this.r + offset}, ${this.g + offset}, ${this.b + offset}, ${this.a})`
     }
 
+    getRadius(canvasWidth) {
+        const cellWidth = canvasWidth/11
+        const laneWidth = cellWidth
+        return laneWidth/4
+    }
+
     draw(ctx, index, laneHeight=100) {
         const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
         const cellWidth = canvasWidth/11
 
         const width = cellWidth
-        const radius = width/4
+        const radius = this.getRadius(canvasWidth)
         const height = laneHeight
 
         const [ x, y ] = [ 2*cellWidth + (2*index)*cellWidth, -radius ]
@@ -28,7 +34,7 @@ export class Lane {
         gradient.addColorStop(1, 'rgba(255,255,255, 0)')
 
         ctx.fillStyle = gradient
-        fillRoundRect(ctx, x, y, width, height, radius)
+        fillRoundRect(ctx, x, y, width, height+radius, radius)
     }
 }
 

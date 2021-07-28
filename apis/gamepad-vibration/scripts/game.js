@@ -12,8 +12,15 @@ class Game {
     #gameState
     #context
     #gamepadConnected
+    #musicName
 
-    constructor(acceptance = 10, spd = 0.5) {
+    /**
+     * @param {*} musicName - Music to be loaded
+     * @param {*} acceptance - Note height/hitbox
+     * @param {*} spd - Note speed
+     */
+    constructor(musicName = 'B\'z-Into_Free', acceptance = 15, spd = 0.5) {
+        this.#musicName = musicName
         this.acceptance = acceptance
         this.spd = spd
 
@@ -24,19 +31,14 @@ class Game {
             ['triangle', 'images/ButtonTriangle.svg'],
             ['square', 'images/ButtonSquare.svg']
         ])
-        this.#engine.loadMusics(['B\'z-Into_Free'])
+        this.#engine.loadSounds([musicName])
         this.#engine.run()
     }
 
     init = () => {
         window.addEventListener('gamepadconnected', e => {
             if (e.gamepad.index==0) {
-                const gp = navigator.getGamepads()[e.gamepad.index]
                 this.#gamepadConnected = true
-                // console.log('Gamepad connected at index %d: %s. %d buttons, %d axes.',
-                //     gp.index, gp.id,
-                //     gp.buttons.length, gp.axes.length)
-                // console.log(this.getGamepadInput())
             }
         })
         this.setState(GMSTATE.LOADING)
@@ -48,7 +50,7 @@ class Game {
             case GMSTATE.LOADING:
                 break
             case GMSTATE.INGAME:
-                this.ingameInit(this.#engine.musics['B\'z-Into_Free'])
+                this.ingameInit(this.#engine.musics[this.#musicName])
                 break
         }
     }
@@ -114,12 +116,14 @@ class Game {
 
         // check for stroke hits
         for(const note of this.#context.currentMusic.mapping) {
+            if(note.time === 15000) {
+                console.log('offset ' + String(note.getOffset()) + '  height ' + String(note.getHeight(this.spd, this.acceptance)))
+            }
             if (this.#context.lanes[note.lane].pressed
                     && !note.stroke
-                    && Math.abs(note.getOffset())*this.spd <= this.acceptance) {
+                    && note.isNearLaneEnd(this.spd, this.acceptance)) {
                 note.stroke = true
                 this.#context.hits++
-                console.log('hit')
             }
         }
     }
@@ -127,7 +131,7 @@ class Game {
     ingameDrawLoop = (dt) => {
         const { ctx } = this.#engine
         const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
-        const laneHeight = canvasHeight * 0.95
+        const laneHeight = canvasHeight * 0.90
         const { startCountdown, play, lanes, currentMusic } = this.#context
 
         this.drawBg()
@@ -151,7 +155,7 @@ class Game {
         if (play) {
             // notes
             for(const note of currentMusic.mapping) {
-                if (laneHeight - note.getOffset() <= canvasHeight && !note.stroke) {
+                if (Math.abs(laneHeight - note.getOffset()) <= 1.5*canvasHeight && !note.stroke) {
                     note.draw(ctx, laneHeight, this.spd, this.acceptance)
                 }
             }
@@ -209,7 +213,7 @@ class Game {
         const cellWidth = canvasWidth/11
         const [ width, height ] = [ cellWidth/2, cellWidth/2 ]
         ctx.drawImage(asset,
-            2*cellWidth + 2*lane*cellWidth + width/2, laneHeight-height,
+            2*cellWidth + 2*lane*cellWidth + width/2, laneHeight-height/2,
             width, height)
     }
 
@@ -232,4 +236,4 @@ class Game {
     }
 }
 
-const game = new Game()
+const game = new Game('Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza')

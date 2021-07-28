@@ -33,7 +33,7 @@ export class GameEngine {
         }
     }
 
-    loadMusics(musicList = []) {
+    loadSounds(musicList = []) {
         this.musics = {}
 
         const load = (musicName) => {

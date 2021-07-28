@@ -52,12 +52,20 @@ export class Note {
         return (this.music.start + this.time) - Date.now()
     }
 
+    getHeight(spd, acceptance) {
+        return acceptance / spd
+    }
+
+    isNearLaneEnd(spd, acceptance) {
+        return Math.abs(this.getOffset()) <= this.getHeight(spd, acceptance)
+    }
+
     draw(ctx, laneHeight, spd, acceptance) {
         const [ canvasWidth ] = [ ctx.canvas.width, ctx.canvas.height ]
 
         ctx.fillStyle = "yellow"
         const cellWidth = canvasWidth/11
-        const noteHeight = acceptance / spd // same size of acceptance
+        const noteHeight = this.getHeight(spd, acceptance) // same size of acceptance
         const radius = Math.min(cellWidth, noteHeight)/2
         fillRoundRect(ctx,
             2*cellWidth + cellWidth * (2*this.lane), laneHeight - spd * this.getOffset() - noteHeight/2, // center vertically
