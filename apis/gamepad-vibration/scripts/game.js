@@ -42,6 +42,7 @@ class Game {
 
     init = () => {
         window.addEventListener('gamepadconnected', e => {
+            
             if (e.gamepad.index==0) {
                 this.#gamepadConnected = true
             }
@@ -118,7 +119,7 @@ class Game {
         music.setNotesStroke(false)
 
         // current workaround to play audio
-        window.addEventListener('gamepadconnected', () => (
+        window.addEventListener('gamepadconnected', (e) => (
             !this.#context.play
             && this.#context.startCountdown <= 0
             && this.startMusicCountdown()
@@ -147,7 +148,7 @@ class Game {
                     && note.isNearLaneEnd(this.spd, this.acceptance)) {
                 note.stroke = true
                 this.#context.hits++
-
+                this.vibrateGamepad(200, 0.8, 0.8);
                 this.#context.bgOffset.x = this.#context.hitShakeIntensity*(Math.random()-0.5)
                 this.#context.bgOffset.y = this.#context.hitShakeIntensity*(Math.random()-0.5)
                 this.#context.bgScale = 1.2 + 0.2*(Math.random())
@@ -203,8 +204,18 @@ class Game {
         return buttons
     }
 
-    startMusicCountdown = () => {
+    getGamepad = () => navigator.getGamepads()[0]
+    vibrateGamepad = (duration, weakMagnitude = 1.0, strongMagnitude = 1.0) => {
+        return this.getGamepad().vibrationActuator.playEffect("dual-rumble", {
+            startDelay: 0,
+            duration: duration,
+            weakMagnitude: weakMagnitude,
+            strongMagnitude: strongMagnitude})
+    }
+
+    startMusicCountdown = () => { 
         this.#context.startCountdown = 3000
+        this.vibrateGamepad(500)
         setTimeout(() => {
             this.#context.currentMusic.play()
             this.#context.play = true
