@@ -1,6 +1,7 @@
 import { GameEngine } from './engine.js'
 import { Note } from './music.js'
 import { Lane, lerp } from './utils.js'
+import { InitialMenu } from './initial-menu.js'
 
 const GMSTATE = {
     LOADING: 0,
@@ -8,7 +9,10 @@ const GMSTATE = {
     MAPPER: 2
 }
 
-class Game {
+
+
+
+export class Game {
     #engine
     #gameState
     #context
@@ -119,12 +123,23 @@ class Game {
         music.setNotesStroke(false)
 
         // current workaround to play audio
-        window.addEventListener('gamepadconnected', (e) => (
-            !this.#context.play
-            && this.#context.startCountdown <= 0
-            && this.startMusicCountdown()
-        ))
+        const initialMenu = new InitialMenu()
+        initialMenu.handleMouseEvents().then(() => {this.startGame()})
+        window.addEventListener('gamepadconnected', (e) => 
+        {
+            initialMenu.handleMenuGamepadEvents().then(() => {this.startGame()})
+        }
+ 
+        )
     }
+
+    
+    startGame = () => {
+        !this.#context.play
+        && this.#context.startCountdown <= 0
+        && this.startMusicCountdown()
+    }
+
 
     ingameUpdateLoop = (dt) => {
         const input = this.getGamepadInput()
@@ -206,14 +221,17 @@ class Game {
 
     getGamepad = () => navigator.getGamepads()[0]
     vibrateGamepad = (duration, weakMagnitude = 1.0, strongMagnitude = 1.0) => {
-        return this.getGamepad().vibrationActuator.playEffect("dual-rumble", {
+        const gamepad = this.getGamepad();
+        if(!gamepad) return null;
+        return getGamepad.vibrationActuator.playEffect("dual-rumble", {
             startDelay: 0,
             duration: duration,
             weakMagnitude: weakMagnitude,
             strongMagnitude: strongMagnitude})
     }
 
-    startMusicCountdown = () => { 
+    startMusicCountdown = () => {
+        document.querySelector(`.popup`).style.opacity = 0;
         this.#context.startCountdown = 3000
         this.vibrateGamepad(500)
         setTimeout(() => {

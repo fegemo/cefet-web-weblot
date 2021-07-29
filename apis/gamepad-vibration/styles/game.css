@@ -61,12 +61,12 @@ h1 {
   font-size: 1.5rem;
 }
 
-.popup ul li:hover {
+.popup ul li:hover, .selected {
   transition: outline-color 100ms ease-in;
   cursor: pointer;
   outline: 4px solid #74b665;
 }
-.popup ul li:hover img {
+.popup ul li:hover img, .popup .selected > img {
   opacity: 1;
   transition: opacity 200ms ease-in;
 }
