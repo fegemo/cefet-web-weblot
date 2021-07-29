@@ -124,10 +124,10 @@ export class Game {
 
         // current workaround to play audio
         const initialMenu = new InitialMenu()
-        initialMenu.handleMouseEvents().then(() => {this.startGame()})
+        initialMenu.handleMouseEvents().then((choosen_music) => {this.startGame()})
         window.addEventListener('gamepadconnected', (e) => 
         {
-            initialMenu.handleMenuGamepadEvents().then(() => {this.startGame()})
+            initialMenu.handleMenuGamepadEvents().then((choosen_music) => {this.startGame()})
         }
  
         )
@@ -223,7 +223,7 @@ export class Game {
     vibrateGamepad = (duration, weakMagnitude = 1.0, strongMagnitude = 1.0) => {
         const gamepad = this.getGamepad();
         if(!gamepad) return null;
-        return getGamepad.vibrationActuator.playEffect("dual-rumble", {
+        return gamepad.vibrationActuator.playEffect("dual-rumble", {
             startDelay: 0,
             duration: duration,
             weakMagnitude: weakMagnitude,
