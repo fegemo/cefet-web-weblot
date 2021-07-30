@@ -5,33 +5,36 @@
     <link rel="stylesheet" href="styles/game.css" />
   </head>
   <body>
-    <div class="bg"></div>
-
-    <div class="popup">
-      <h1>Bem vindo ao HTML Hero</h1>
-      <h2>Escolha a música</h2>
-      <ul>
-        <li
-          data-music-name="Super_Mario_Bros_Theme"
-          id="music1"
-        >
-          <img
-            src="musics/Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza.png"
-            alt="Music picture"
-          /><span class="music-name">Super Mario Theme</span>
-        </li>
-        <li data-music-name="B'z-Into_Free" id="music2">
-          <img src="musics/B'z-Into_Free.png" alt="Music picture" /><span
-            class="music-name"
-            >B'z / Into Free</span
+    <div id="home-content">
+      <div class="popup">
+        <h1>Bem vindo ao HTML Hero</h1>
+        <h2>Escolha a música</h2>
+        <ul>
+          <li
+            data-music-name="Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza"
+            id="music1"
           >
-        </li>
-      </ul>
-      <p class="press-to-start hide">
-        PRESSIONE <img src="images/ButtonCross.svg" alt="Button Cross" /> PARA
-        INICIAR
-      </p>
+            <img
+              src="musics/Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza.png"
+              alt="Music picture"
+            /><span class="music-name"
+              >Super Mario Sunshine - Delfino Plaza</span
+            >
+          </li>
+          <li data-music-name="B'z-Into_Free" id="music2">
+            <img src="musics/B'z-Into_Free.png" alt="Music picture" /><span
+              class="music-name"
+              >B'z / Into Free</span
+            >
+          </li>
+        </ul>
+        <p class="press-to-start hide">
+          PRESSIONE <img src="images/ButtonCross.svg" alt="Button Cross" /> PARA
+          INICIAR
+        </p>
+      </div>
     </div>
+
     <canvas>
       <p>Canvas not supported :V</p>
     </canvas>

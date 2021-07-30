@@ -232,7 +232,7 @@ export class Game {
   };
 
   startMusicCountdown = () => {
-    document.querySelector(`.popup`).style.opacity = 0;
+    document.querySelector('#home-content').style.display = 'none';
     this.#context.startCountdown = 3000;
     this.vibrateGamepad(500);
     setTimeout(() => {
