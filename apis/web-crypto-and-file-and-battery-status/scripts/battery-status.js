@@ -41,7 +41,15 @@ navigator.getBattery().then(function (battery) {
         updateDischargingInfo();
     });
     function updateDischargingInfo() {
-        dischargingTime = battery.dischargingTime + " seconds";
+        console.log(battery.dischargingTime)
+        let hours = Math.trunc(battery.dischargingTime / 3600);
+        let minutes = Math.trunc(((battery.dischargingTime / 3600) - hours) * 60);
+        let seconds = Math.trunc(((((battery.dischargingTime / 3600) - hours) * 60) - minutes) * 60);
+        dischargingTime = "Não é possível estimar.";
+
+        if (battery.dischargingTime !== Infinity) {
+            dischargingTime = `${hours}h${minutes}min${seconds}s`;
+        }
         console.log("Battery discharging time: "
             + battery.dischargingTime + " segundos");
     }
