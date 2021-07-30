@@ -41,7 +41,6 @@ export class InitialMenu {
         } else if (currentStart != oldStart) {
           oldStart = currentStart;
           if (currentStart) {
-            document.querySelector('.bg').style.display = 'none';
             resolve(musics[CURRENT_MUSIC - 1]);
           }
         }
@@ -56,7 +55,6 @@ export class InitialMenu {
         .forEach((node) => {
           node.addEventListener('click', () => {
             CURRENT_MUSIC = +node.id.replace('music', '');
-            document.querySelector('.bg').style.display = 'none';
             resolve(musics[CURRENT_MUSIC - 1]);
           });
         });

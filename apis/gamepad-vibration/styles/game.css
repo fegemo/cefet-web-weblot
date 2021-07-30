@@ -15,17 +15,6 @@ body {
   overflow: hidden;
 }
 
-.bg {
-  background: url('../images/home-bg.png');
-  filter: blur(8px);
-  -webkit-filter: blur(3px);
-  min-height: 100vh;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 h1,
 h2,
 p {
