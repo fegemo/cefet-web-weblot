@@ -75,16 +75,21 @@ input[type="file"] {
 }
 
 .energy{
-    border-radius: 50%;
+    border-radius: 50px;
     border: 2px double rgba(219, 185, 64, 255);
     position: absolute;
     top: 50px;
     left:50px;
-    color: blue;
+   
+    text-align: right;
 
 }
+.energy>p{
+    text-align: right;
+ color: blueviolet;
+}
 .energy>img{
-    border-radius: 50%;
+    border-radius: 100%;
     border: 2px double rgba(219, 185, 64, 255);
     width: 300px;
     
