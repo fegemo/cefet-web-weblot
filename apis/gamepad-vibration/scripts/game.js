@@ -1,7 +1,7 @@
-import { GameEngine } from "./engine.js";
-import { Note } from "./music.js";
-import { Lane, lerp } from "./utils.js";
-import { InitialMenu } from "./initial-menu.js";
+import { GameEngine } from './engine.js';
+import { Note } from './music.js';
+import { Lane, lerp } from './utils.js';
+import { InitialMenu } from './initial-menu.js';
 
 const GMSTATE = {
   LOADING: 0,
@@ -13,8 +13,6 @@ export class Game {
   #engine;
   #gameState;
   #context;
-  #touch;
-  #gamepadConnected;
   #musicName;
   #activateMapper;
 
@@ -37,10 +35,10 @@ export class Game {
 
     this.#engine = new GameEngine(this.init, this.updateLoop, this.drawLoop);
     this.#engine.loadAssets([
-      ["cross", "images/ButtonCross.svg"],
-      ["circle", "images/ButtonCircle.svg"],
-      ["triangle", "images/ButtonTriangle.svg"],
-      ["square", "images/ButtonSquare.svg"],
+      ['cross', 'images/ButtonCross.svg'],
+      ['circle', 'images/ButtonCircle.svg'],
+      ['triangle', 'images/ButtonTriangle.svg'],
+      ['square', 'images/ButtonSquare.svg'],
       [musicName, `musics/${musicName}.png`],
     ]);
     this.#engine.loadSounds([musicName]);
@@ -48,29 +46,7 @@ export class Game {
   }
 
   init = () => {
-    window.addEventListener("gamepadconnected", (e) => {
-      if (e.gamepad.index == 0) {
-        this.#gamepadConnected = true;
-      }
-    });
-    window.addEventListener("touchstart", (e) => {
-      if (e) {
-        this.#touch = e.touches[0];
-      }
-    });
     this.setState(GMSTATE.LOADING);
-  };
-
-  vibrate = () => {
-    navigator.vibrate =
-      navigator.vibrate ||
-      navigator.webkitVibrate ||
-      navigator.mozVibrate ||
-      navigator.msVibrate;
-
-    if (navigator.vibrate) {
-      navigator.vibrate(100);
-    }
   };
 
   setState(state) {
@@ -131,6 +107,7 @@ export class Game {
         new Lane(115, 181, 100), // green - triangle
         new Lane(243, 231, 60), // yellow - square
       ],
+      kbInput: [false, false, false, false], // one per lane
 
       bgOffset: { x: 0, y: 0 },
       bgScale: 1,
@@ -139,16 +116,9 @@ export class Game {
     // clean notes
     music.setNotesStroke(false);
 
-    // current workaround to play audio
-    const initialMenu = new InitialMenu();
-    initialMenu.handleMouseEvents().then((choosen_music) => {
-      this.startGame();
-    });
-    window.addEventListener("gamepadconnected", (e) => {
-      initialMenu.handleMenuGamepadEvents().then((choosen_music) => {
-        this.startGame();
-      });
-    });
+    this.setupKeyboardListeners(this.#context.lanes);
+
+    this.startGame();
   };
 
   startGame = () => {
@@ -158,29 +128,44 @@ export class Game {
   };
 
   ingameUpdateLoop = (dt) => {
-    const input = this.getGamepadInput();
+    const gamepadInput = this.getGamepadInput();
+    const keyboardInput = this.#context.kbInput;
+
     this.#context.startCountdown = Math.max(
       0,
       this.#context.startCountdown - dt
     );
 
     // update lanes - ds4 mapping
-    this.#context.lanes[0].pressed = input[6] || input[0]; // l2 || ✕
-    this.#context.lanes[1].pressed = input[4] || input[1]; // l1 || ◯
-    this.#context.lanes[2].pressed = input[5] || input[3]; // r1 || △
-    this.#context.lanes[3].pressed = input[7] || input[2]; // r2 || ☐
+    this.#context.lanes[0].pressed = gamepadInput[6] || gamepadInput[0] || keyboardInput[0]; // l2 || ✕
+    this.#context.lanes[1].pressed = gamepadInput[4] || gamepadInput[1] || keyboardInput[1]; // l1 || ◯
+    this.#context.lanes[2].pressed = gamepadInput[5] || gamepadInput[3] || keyboardInput[2]; // r1 || △
+    this.#context.lanes[3].pressed = gamepadInput[7] || gamepadInput[2] || keyboardInput[3]; // r2 || ☐
 
     // reset bg Offset and Scale
     this.#context.bgOffset.x = lerp(this.#context.bgOffset.x, 0, 0.35);
     this.#context.bgOffset.y = lerp(this.#context.bgOffset.y, 0, 0.35);
     this.#context.bgScale = lerp(this.#context.bgScale, 1, 0.1);
 
-    // check for stroke hits
+    this.#context.misses = 0;
     for (const note of this.#context.currentMusic.mapping) {
+      const noteIsPressed = this.#context.lanes[note.lane].pressed;
+      const noteIsNearLaneEnd = note.isNearLaneEnd(this.spd, this.acceptance);
+
+      // count for misses
       if (
-        this.#context.lanes[note.lane].pressed &&
+        !note.stroke
+        && note.getOffset() < 0
+        && !noteIsNearLaneEnd
+      ) {
+        this.#context.misses += 1;
+      }
+      
+      // check for stroke hits
+      if (
+        noteIsPressed &&
         !note.stroke &&
-        note.isNearLaneEnd(this.spd, this.acceptance)
+        noteIsNearLaneEnd
       ) {
         note.stroke = true;
         this.#context.hits++;
@@ -202,7 +187,10 @@ export class Game {
 
     this.drawBg();
     this.drawBgImage(this.#engine.assets[this.#musicName]);
-    this.drawBg("rgba(34,37,38, 0.75)");
+    this.drawBg('rgba(34,37,38, 0.75)');
+
+    // hit count
+    this.drawHitCount();
 
     // lanes
     for (const index in lanes) {
@@ -224,19 +212,32 @@ export class Game {
           note.draw(ctx, laneHeight, this.spd, this.acceptance);
         }
       }
-
-      // hit count
-      this.drawHitCount();
     }
 
     // buttons
-    this.drawButton(this.#engine.assets["cross"], 0, laneHeight);
-    this.drawButton(this.#engine.assets["circle"], 1, laneHeight);
-    this.drawButton(this.#engine.assets["triangle"], 2, laneHeight);
-    this.drawButton(this.#engine.assets["square"], 3, laneHeight);
+    this.drawButton(this.#engine.assets['cross'], 0, laneHeight);
+    this.drawButton(this.#engine.assets['circle'], 1, laneHeight);
+    this.drawButton(this.#engine.assets['triangle'], 2, laneHeight);
+    this.drawButton(this.#engine.assets['square'], 3, laneHeight);
   };
 
-  getTouch = () => {
+  // helpers
+  setupKeyboardListeners = () => {
+    window.addEventListener('keydown', e => {
+      if (['a', 'z'].includes(e.key)) this.#context.kbInput[0] = true
+      if (['s', 'd', 'x'].includes(e.key)) this.#context.kbInput[1] = true
+      if (['k', 'j', 'n'].includes(e.key)) this.#context.kbInput[2] = true
+      if (['l', 'm',].includes(e.key)) this.#context.kbInput[3] = true
+    });
+    window.addEventListener('keyup', e => {
+      if (['a', 'z'].includes(e.key)) this.#context.kbInput[0] = false
+      if (['s', 'd', 'x'].includes(e.key)) this.#context.kbInput[1] = false
+      if (['k', 'j', 'n'].includes(e.key)) this.#context.kbInput[2] = false
+      if (['l', 'm',].includes(e.key)) this.#context.kbInput[3] = false
+    });
+  };
+
+   getTouch = () => {
     let buttons = [false, false, false, false];
     const { ctx } = this.#engine;
     const canvasWidth = ctx.canvas.width;
@@ -257,15 +258,16 @@ export class Game {
     return buttons;
   };
 
-  // helpers
   getGamepadInput = () => {
     let buttons = [];
-    if (this.#gamepadConnected) {
-      buttons = navigator.getGamepads()[0].buttons.map((b) => b.pressed);
-    } else if (this.#touch) {
+    const gamepad = navigator.getGamepads()[0]
+    if (gamepad) {
+      buttons = gamepad.buttons.map((b) => b.pressed);
+    }else if (this.#touch) {
       buttons = this.getTouch();
       this.#touch = null;
     }
+
     return buttons;
   };
 
@@ -273,7 +275,7 @@ export class Game {
   vibrateGamepad = (duration, weakMagnitude = 1.0, strongMagnitude = 1.0) => {
     const gamepad = this.getGamepad();
     if (!gamepad) return null;
-    return gamepad.vibrationActuator.playEffect("dual-rumble", {
+    return gamepad.vibrationActuator.playEffect('dual-rumble', {
       startDelay: 0,
       duration: duration,
       weakMagnitude: weakMagnitude,
@@ -282,7 +284,7 @@ export class Game {
   };
 
   startMusicCountdown = () => {
-    document.querySelector(`.popup`).style.opacity = 0;
+    document.querySelector('#home-content').style.display = 'none';
     this.#context.startCountdown = 3000;
     this.vibrateGamepad(500);
     setTimeout(() => {
@@ -295,10 +297,10 @@ export class Game {
     const { ctx } = this.#engine;
     const { startCountdown } = this.#context;
 
-    ctx.font = "80px arial";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
+    ctx.font = '80px arial';
+    ctx.fillStyle = 'white';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     ctx.fillText(
       String(Math.ceil(startCountdown / 1000)),
       ctx.canvas.width / 2,
@@ -308,13 +310,28 @@ export class Game {
 
   drawHitCount = () => {
     const { ctx } = this.#engine;
-    const { hits } = this.#context;
+    const { hits, misses, play } = this.#context;
+    const totalHits = this.#context.currentMusic.mapping.length;
+    const cellWidth = ctx.canvas.width / 11;
 
-    ctx.font = "80px arial";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(String(hits), ctx.canvas.width / 11, ctx.canvas.height / 2);
+    const x = cellWidth;
+    const y = ctx.canvas.height / 2;
+
+    ctx.font = '80px arial';
+    ctx.fillStyle = 'white';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(hits, x,y);
+    
+    const progressWidth = cellWidth;
+    const progressHeight = 10;
+    ctx.fillStyle = 'rgb(34,37,38)';
+    ctx.fillRect(x-progressWidth/2,y+40, progressWidth, progressHeight);
+    ctx.fillStyle = 'grey';
+    const missesPercent = play ? (1 - misses/totalHits) : 1;
+    ctx.fillRect(x-progressWidth/2,y+40, progressWidth*missesPercent, progressHeight);
+    ctx.fillStyle = 'white';
+    ctx.fillRect(x-progressWidth/2,y+40, progressWidth*hits/totalHits, progressHeight);
   };
 
   drawButton(asset, lane, laneHeight) {
@@ -332,7 +349,7 @@ export class Game {
     );
   }
 
-  drawBg = (color = "rgb(34,37,38)") => {
+  drawBg = (color = 'rgb(34,37,38)') => {
     const { ctx } = this.#engine;
 
     ctx.fillStyle = color;
@@ -383,19 +400,12 @@ export class Game {
       ],
     };
 
-    // current workaround to play audio
-    window.addEventListener(
-      "gamepadconnected",
-      () =>
-        !this.#context.play &&
-        this.#context.startCountdown <= 0 &&
-        this.startMusicCountdown()
-    );
-
     // export mapping
-    music.audio.addEventListener("ended", () => {
-      console.log(this.#context.notes);
+    music.audio.addEventListener('ended', () => {
+      console.log(this.#context.currentMusic.mapping.map(note => ({time: note.time, lane: note.lane})));
     });
+
+    this.startGame();
   };
 
   mapperUpdateLoop = (dt) => {
@@ -416,16 +426,18 @@ export class Game {
 
     // create note
     const time = Date.now() - currentMusic.start;
-    if (play) {
-      for (const index in lanes) {
-        const lane = lanes[index];
-        if (lane.pressed) {
-          currentMusic.appendNote(new Note(time, Number(index), currentMusic));
-          // console.log('new note ' + newNote + ' #notes ' + String(this.#context.notes.length))
+        if (play) {
+            for(const index in lanes) {
+                const lane = lanes[index];
+                if(lane.pressed && !lane.lastPressed) {
+                    lane.lastPressed = true;
+                    currentMusic.appendNote(new Note(time, Number(index), currentMusic));
+                } else if(!lane.pressed) {
+                    lane.lastPressed = false;
+                }
+            }
         }
-      }
-    }
-  };
+    };
 
   mapperDrawLoop = (dt) => {
     const { ctx } = this.#engine;
@@ -449,10 +461,10 @@ export class Game {
     }
 
     // buttons
-    this.drawButton(this.#engine.assets["cross"], 0, laneHeight);
-    this.drawButton(this.#engine.assets["circle"], 1, laneHeight);
-    this.drawButton(this.#engine.assets["triangle"], 2, laneHeight);
-    this.drawButton(this.#engine.assets["square"], 3, laneHeight);
+    this.drawButton(this.#engine.assets['cross'], 0, laneHeight);
+    this.drawButton(this.#engine.assets['circle'], 1, laneHeight);
+    this.drawButton(this.#engine.assets['triangle'], 2, laneHeight);
+    this.drawButton(this.#engine.assets['square'], 3, laneHeight);
 
     // countdown
     if (startCountdown > 0) {
@@ -461,9 +473,13 @@ export class Game {
   };
 }
 
-const game = new Game(
-  "Dominic_Ninmark-Super_Mario_Sunshine_-_Delfino_Plaza",
-  15,
-  0.5,
-  false
-);
+const initialMenu = new InitialMenu();
+const MAPPER_MODE = false;
+initialMenu.handleMouseEvents().then((musicName) => {
+  const game = new Game(musicName, 25, 0.5, MAPPER_MODE);
+});
+window.addEventListener('gamepadconnected', (e) => {
+  initialMenu.handleMenuGamepadEvents().then((musicName) => {
+    const game = new Game(musicName, 25, 0.5, MAPPER_MODE);
+  });
+});
