@@ -1,4 +1,4 @@
-# _Drag and Drop API_
+# _Web App Manifest_
 
 Exemplo de uso da API de _drag and drop_ (arrastar e soltar) do HTML5. Veja o arquivo [`script/monstrinhos.js`][js] para detalhes.
 

@@ -1,6 +1,7 @@
 {
   "semestre": "20XX/SS",
   "pastas": [
-    "drag-and-drop"
+    "drag-and-drop",
+    "web-app-manifest"
   ]
 }

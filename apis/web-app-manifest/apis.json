@@ -1,0 +1,36 @@
+[
+    {
+      "nome": "Web App Manifest",
+      "breveDescricao": "O manifesto do aplicativo web fornece informações sobre uma aplicação (como nome, autor, icone, e descrição) em um arquivo de texto. O propósito do manifesto é instalar aplicações web na tela inicial de um aparelho, propiciando aos usuários um acesso mais rápido.",
+      "paginaInicial": "apis/web-app-manifest/",
+      "screenshot": {
+        "caminho": "apis/drag-and-drop/images/screenshot.png", 
+        "textoAlternativo": "Uma página com 2 monstrinhos em uma jaula e outros 3 fora com os dizeres 'Prenda os Monstrinhos'"
+      },
+      "desenvolvedores": [
+        {
+          "nome": "Arthur Novaes, Tiago Araujo, Heloisa Toledo, Bernard Menezes",
+          "usuarioGithub": "artmonova, tiago0022, helotoledo, Bernard2254"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "ie": false,
+        "edge": true,
+        "opera": false,
+        "safari on iOS": true,
+        "opera mini": false,
+        "android browser": true,
+        "opera mobile": true,
+        "chrome for android": true,
+        "firefox for android": true,
+        "uc browser for android": true,
+        "samsung internet": true,
+        "qq browser": true,
+        "baidu browser": true,
+        "kaios browser": false
+      }
+    }
+  ]
