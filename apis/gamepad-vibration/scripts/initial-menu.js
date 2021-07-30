@@ -1,4 +1,4 @@
-const MUSICS = 2;
+const MUSICS = 4;
 let CURRENT_MUSIC = 1;
 const musicsUlEl = document.querySelector('.popup > ul ');
 const musicsLiEls = Array.from(musicsUlEl.childNodes).filter(
