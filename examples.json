@@ -1,7 +1,8 @@
 {
-  "semestre": "20XX/SS",
-  "pastas": [
-    "drag-and-drop",
-    "web-app-manifest"
-  ]
+    "semestre": "2021/01",
+    "pastas": [
+        "drag-and-drop",
+        "pointer-lock",
+        "web-app-manifest"
+    ]
 }
