@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,8 @@
 html,
 body {
   min-height: 100vh;
-  font-family: 'Quicksand', sans-serif;
+  touch-action: manipulation;
+  font-family: "Quicksand", sans-serif;
 }
 
 body {
@@ -61,12 +62,14 @@ h1 {
   font-size: 1.5rem;
 }
 
-.popup ul li:hover, .selected {
+.popup ul li:hover,
+.selected {
   transition: outline-color 100ms ease-in;
   cursor: pointer;
   outline: 4px solid #74b665;
 }
-.popup ul li:hover img, .popup .selected > img {
+.popup ul li:hover img,
+.popup .selected > img {
   opacity: 1;
   transition: opacity 200ms ease-in;
 }
