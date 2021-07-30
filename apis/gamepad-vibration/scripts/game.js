@@ -344,7 +344,7 @@ export class Game {
 
     // export mapping
     music.audio.addEventListener('ended', () => {
-      console.log(json.parse(this.#context.currentMusic.mapping));
+      console.log(this.#context.notes);
     });
   };
 
