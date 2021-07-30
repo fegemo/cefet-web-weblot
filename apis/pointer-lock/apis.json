@@ -8,7 +8,7 @@
     },
     "desenvolvedores": [{
         "nome": "Arthur Novaes",
-        "usuarioGithub": "artmonova"
+        "usuarioGithub": "armonova"
     }, {
         "nome": "Bernard Menezes",
         "usuarioGithub": "Bernard2254"
@@ -27,4 +27,4 @@
         "edge": true,
         "opera": true
     }
-}] 
+}]

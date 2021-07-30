@@ -40,4 +40,4 @@ function updatePosition(e) {
     }
     imagemEl.style.left = `${x}px`;
     imagemEl.style.top = `${y}px`;
-} 
+}
