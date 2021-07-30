@@ -80,13 +80,14 @@ input[type="file"] {
     position: absolute;
     top: 50px;
     left:50px;
-   
-    text-align: right;
+   background-color: lightcyan;
+    width: 300px;
 
 }
-.energy>p{
-    text-align: right;
- color: blueviolet;
+.energy>div{
+    color: blueviolet;
+background-color: w;
+
 }
 .energy>img{
     border-radius: 100%;
