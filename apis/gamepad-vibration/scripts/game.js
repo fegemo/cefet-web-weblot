@@ -507,12 +507,15 @@ export class Game {
 
 const initialMenu = new InitialMenu();
 const MAPPER_MODE = false;
+let game = null;
 initialMenu.handleMouseEvents().then((musicName) => {
-  const game = new Game(musicName, 25, 0.5, MAPPER_MODE);
+  if (!game)
+    game = new Game(musicName, 25, 0.5, MAPPER_MODE);
 });
 
 window.addEventListener("gamepadconnected", (e) => {
   initialMenu.handleMenuGamepadEvents().then((musicName) => {
-    const game = new Game(musicName, 25, 0.5, MAPPER_MODE);
+    if (!game)
+      game = new Game(musicName, 25, 0.5, MAPPER_MODE);
   });
 });
