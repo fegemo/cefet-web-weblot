@@ -1,0 +1,30 @@
+[{
+    "nome": "Pointer Lock API",
+    "breveDescricao": "Possibilita travar o cursor na tela",
+    "paginaInicial": "apis/pointer-lock/",
+    "screenshot": {
+        "caminho": "apis/pointer-lock/images/screenshot.webp",
+        "textoAlternativo": "Uma página onde clicando na área destacada, o mouse fica travado e o Coutinho segue o movimento do cursor do usuário"
+    },
+    "desenvolvedores": [{
+        "nome": "Arthur Novaes",
+        "usuarioGithub": "artmonova"
+    }, {
+        "nome": "Bernard Menezes",
+        "usuarioGithub": "Bernard2254"
+    }, {
+        "nome": "Heloísa Toledo",
+        "usuarioGithub": "helotoledo"
+    }, {
+        "nome": "Tiago Araújo",
+        "usuarioGithub": "tiago0022"
+    }],
+    "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "ie": false,
+        "edge": true,
+        "opera": true
+    }
+}] 
