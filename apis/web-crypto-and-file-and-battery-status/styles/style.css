@@ -6,6 +6,10 @@ html, body {
     margin: 0px;
     min-height: 100vh;
     background-color: lightblue;
+    
+}
+body{
+    background-image: url("../images/balloons.jpg");
 }
 
 .container{
@@ -22,7 +26,7 @@ header {
     text-align: center;
     font-family: 'Tourney', cursive;
     grid-area: header;
-    color: blue;
+    color: pink;
     font-style: italic;
 }
 
@@ -72,6 +76,7 @@ input[type="file"] {
 .set-alert-color{
     background-color: red;
     color: white;
+    background-image: url("../images/flash.jpg");
 }
 
 .energy{
