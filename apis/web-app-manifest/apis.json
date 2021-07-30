@@ -7,12 +7,19 @@
         "caminho": "apis/web-app-manifest/images/screenshot.webp",
         "textoAlternativo": "Tela para mostrar a API Web App Manifest funcionando - Olhar em inspecionar > Application > Manifest"
       },
-      "desenvolvedores": [
-        {
-          "nome": "Arthur Novaes, Tiago Araujo, Heloisa Toledo, Bernard Menezes",
-          "usuarioGithub": "coutinhos"
-        }
-      ],
+      "desenvolvedores": [{
+        "nome": "Arthur Novaes",
+        "usuarioGithub": "armonova"
+        }, {
+            "nome": "Bernard Menezes",
+            "usuarioGithub": "Bernard2254"
+        }, {
+            "nome": "Heloísa Toledo",
+            "usuarioGithub": "helotoledo"
+        }, {
+            "nome": "Tiago Araújo",
+            "usuarioGithub": "tiago0022"
+        }],
       "suporteDeNavegadores": {
         "chrome": true,
         "safari": false,
