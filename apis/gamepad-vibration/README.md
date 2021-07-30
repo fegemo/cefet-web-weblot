@@ -1,6 +1,6 @@
 # _Gamepad API e Vibration API_
 
-Exemplo de uso da API de _gamepad_ e _vibration_ do HTML5. Veja o arquivo [`script/game.js`][js] para detalhes.
+Exemplo de uso das APIs de _gamepad_ e _vibration_ do HTML5. Veja o arquivo [`script/game.js`][js] para detalhes.
 
 ![Uma página com notas a serem tocadas no tempo correto, estilo guitar herro](images/screenshot.png)
 
@@ -21,8 +21,14 @@ Autor(es):
 
 Atribuições:
 
-- Asset XYZ, criado por [Fulano][fulano-author]
+- Imagens dos botões, criado por [Rodrigo D. Moreira][rodrigodm-author]
+- Músicas Delfino Plaza [Eurobeat remix] / Wii Shop Channel [Eurobeat remix] e imagem de fundo, criados por [Dominic Ninmark][dominicnmk-author]
+- Música Among Us [Trap remix] e imagem de fundo, criados por [Leonz][leonz-author]
+- Música Super Mario Bros Theme e imagem de fundo, criados por [Nintendo][nintendo-author]
 
 [js]: scripts/game.js
 [vivo]: https://fegemo.github.io/cefet-web-weblot/apis/gamepad-vibration/
-[fulano-author]: https://plus.google.com/105287894980881814285/about
+[rodrigodm-author]: https://github.com/rodrigodmoreira
+[dominicnmk-author]: https://www.youtube.com/user/NitroFlasher
+[leonz-author]: https://www.youtube.com/channel/UCjGfaP-eiT-XGeCRjGM9fGQ
+[nintendo-author]: https://www.nintendo.pt/

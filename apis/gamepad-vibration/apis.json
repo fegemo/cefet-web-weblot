@@ -1,0 +1,37 @@
+[
+    {
+      "nome": "Gamepad and Vibration API",
+      "breveDescricao": "Possibilita o acesso à gamepads e outros controles; Permite acesso ao hardware de vibração de dispositivos móveis.",
+      "paginaInicial": "apis/gamepad-vibration/",
+      "screenshot": {
+        "caminho": "apis/gamepad-vibration/images/screenshot.png",
+        "textoAlternativo": "Uma página com pistas e notas musicais a serem tocadas."
+      },
+      "desenvolvedores": [
+        {
+            "nome": "Antônio A. D. Sousa",
+            "usuarioGithub": "antonioaads"
+        }, {
+          "nome": "Guilherme G. Giacomin",
+          "usuarioGithub": "eusougz"
+        }, {
+            "nome": "Matheus S. Coelho",
+            "usuarioGithub": "matheusdscoelho"
+        }, {
+            "nome": "Rodrigo D. Moreira",
+            "usuarioGithub": "rodrigodmoreira"
+        }, {
+            "nome": "Uriel B. Braga",
+            "usuarioGithub": "urielbra"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "ie": false,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]
