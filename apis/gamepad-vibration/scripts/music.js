@@ -66,21 +66,32 @@ export class Note {
     }
 
     draw(ctx, laneHeight, spd, acceptance) {
-        const [ canvasWidth ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const canvasWidth = ctx.canvas.width
 
-        ctx.fillStyle = "yellow"
+        // outside
+        ctx.shadowColor = '#1a1e1a'
+        ctx.shadowBlur = 10
+
+        ctx.fillStyle = 'white'
+        
         const cellWidth = canvasWidth/11
         const noteHeight = this.getHeight(spd, acceptance) // same size of acceptance
+        const x = 2*cellWidth + cellWidth * (2*this.lane)
+        const y = laneHeight - spd * this.getOffset() - noteHeight/2
         const radius = Math.min(cellWidth, noteHeight)/2
+
         fillRoundRect(ctx,
-            2*cellWidth + cellWidth * (2*this.lane), laneHeight - spd * this.getOffset() - noteHeight/2, // center vertically
+            x, y, // center vertically
             cellWidth, noteHeight, radius)
+
+        ctx.shadowColor = 'transparent'
+        ctx.shadowBlur = 0
     }
 
     drawReverse(ctx, laneHeight, spd, acceptance) {
-        const [ canvasWidth, canvasHeight ] = [ ctx.canvas.width, ctx.canvas.height ]
+        const canvasWidth = ctx.canvas.width
 
-        ctx.fillStyle = "yellow"
+        ctx.fillStyle = 'yellow'
 
         const cellWidth = canvasWidth/11
         const noteHeight = acceptance / spd // same size of acceptance

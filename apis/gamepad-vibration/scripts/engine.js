@@ -11,7 +11,8 @@ export class GameEngine {
     this.updateLoop = updateLoop;
     this.drawLoop = drawLoop;
     this.init = init;
-    this.lastupd = -1;
+    this.lastUupd = -1;
+    this.lastDUpd = -1;
     this.musics = {};
     this.assets = {};
 
@@ -81,22 +82,33 @@ export class GameEngine {
   }
 
   setUpLoops() {
-    this.lastupd = Date.now();
-    const loop = () => {
-      const now = Date.now();
-      const dt = now - this.lastupd; // ms
-      this.lastupd = now;
-
-      this.#updateLoop(dt);
-      this.#drawLoop(dt);
-
-      window.requestAnimationFrame(loop);
-    };
-
     if (this.init) {
       this.init();
     }
-    window.requestAnimationFrame(loop);
+
+    // UPDATE LOOP
+    const uLoop = () => {
+      const now = Date.now();
+      const dt = now - this.lastUupd; // ms
+      this.lastUupd = now;
+
+      this.#updateLoop(dt);
+
+      window.requestAnimationFrame(uLoop);
+    };
+    setTimeout(uLoop, 1000/30);
+
+    // DRAW LOOP
+    const dLoop = () => {
+      const now = Date.now();
+      const dt = now - this.lastDUpd; // ms
+      this.lastDUpd = now;
+
+      this.#drawLoop(dt);
+
+      window.requestAnimationFrame(dLoop);
+    };
+    window.requestAnimationFrame(dLoop);
   }
 
   // loops
