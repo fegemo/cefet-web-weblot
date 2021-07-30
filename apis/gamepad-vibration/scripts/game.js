@@ -344,7 +344,7 @@ export class Game {
 
     // export mapping
     music.audio.addEventListener('ended', () => {
-      console.log(this.#context.notes);
+      console.log(json.parse(this.#context.currentMusic.mapping));
     });
   };
 
@@ -366,16 +366,19 @@ export class Game {
 
     // create note
     const time = Date.now() - currentMusic.start;
-    if (play) {
-      for (const index in lanes) {
-        const lane = lanes[index];
-        if (lane.pressed) {
-          currentMusic.appendNote(new Note(time, Number(index), currentMusic));
-          // console.log('new note ' + newNote + ' #notes ' + String(this.#context.notes.length))
+        if (play) {
+            for(const index in lanes) {
+                const lane = lanes[index];
+                if(lane.pressed && !lane.lastPressed) {
+                    lane.lastPressed = true;
+                    currentMusic.appendNote(new Note(time, Number(index), currentMusic));
+                    // console.log('new note ' + newNote + ' #notes ' + String(this.#context.notes.length))
+                } else if(!lane.pressed) {
+                    lane.lastPressed = false;
+                }
+            }
         }
-      }
-    }
-  };
+    };
 
   mapperDrawLoop = (dt) => {
     const { ctx } = this.#engine;
@@ -413,10 +416,10 @@ export class Game {
 
 const initialMenu = new InitialMenu();
 initialMenu.handleMouseEvents().then((musicName) => {
-  const game = new Game(musicName, 15, 0.5, false);
+  const game = new Game(musicName, 15, 0.5);
 });
 window.addEventListener('gamepadconnected', (e) => {
   initialMenu.handleMenuGamepadEvents().then((musicName) => {
-    const game = new Game(musicName, 15, 0.5, false);
+    const game = new Game(musicName, 15, 0.5);
   });
 });
