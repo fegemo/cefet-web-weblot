@@ -15,6 +15,17 @@ body {
   overflow: hidden;
 }
 
+.bg {
+  background: url('../images/home-bg.png');
+  filter: blur(8px);
+  -webkit-filter: blur(3px);
+  min-height: 100vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1,
 h2,
 p {
@@ -28,7 +39,6 @@ h1 {
 .popup {
   position: fixed;
   width: 400px;
-  height: 400px;
   background-color: #fcfcfc;
   right: 50%;
   top: 50%;
@@ -39,6 +49,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
+  box-shadow: 0 0 20px #0000003a;
 }
 
 .popup ul {
@@ -61,12 +72,14 @@ h1 {
   font-size: 1.5rem;
 }
 
-.popup ul li:hover, .selected {
+.popup ul li:hover,
+.selected {
   transition: outline-color 100ms ease-in;
   cursor: pointer;
   outline: 4px solid #74b665;
 }
-.popup ul li:hover img, .popup .selected > img {
+.popup ul li:hover img,
+.popup .selected > img {
   opacity: 1;
   transition: opacity 200ms ease-in;
 }
@@ -88,4 +101,20 @@ h1 {
 }
 .popup ul li .music-name {
   flex: 1;
+}
+
+.popup .press-to-start {
+  font-weight: bold;
+  color: #31abdc;
+  display: flex;
+  column-gap: 8px;
+  transition: opacity 250ms ease-in;
+}
+.popup .press-to-start img {
+  width: 20px;
+  height: 20px;
+}
+
+.hide {
+  opacity: 0;
 }
