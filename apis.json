@@ -1,0 +1,40 @@
+{
+  "semestre": "2021/01",
+  "apis": [
+    {
+      "nome": "WebSockets API",
+      "breveDescricao": "Permite abrir uma sessão de comunicação bidirecional entre o navegador e um servidor",
+      "paginaInicial": "apis/websockets/",
+      "screenshot": "apis/websockets/images/screenshot.png",
+      "desenvolvedores": [
+        {
+          "nome": "Gustavo Zille",
+          "usuarioGithub": "guszille"
+        },
+        {
+          "nome": "Pierre Vieira",
+          "usuarioGithub": "PierreVieira"
+        },
+        {
+          "nome": "Marcos Xavier",
+          "usuarioGithub": "MarcosXavier93"
+        },
+        {
+          "nome": "Samuel Felipe",
+          "usuarioGithub": "Samuel1s"
+        },
+        {
+          "nome": "Vinícius França",
+          "usuarioGithub": "viniciusfdev"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]
+}
