@@ -19,7 +19,7 @@ else {
 
 function startLoggingMIDIInput(midiAccess) {
     midiAccess.inputs.forEach( input => {
-        input.onmidimessage = onAlesisNitroMeshMessage;
+        input.onmidimessage = getPianoMIDIMessage;
     });
 }
 
@@ -30,39 +30,6 @@ function onAlesisNitroMeshMessage(event) {
     if (type != 248 && note && velocity != 0) {
         console.log(note);
     }
-}
-
-function pianoNotes(note) {
-    const pianoNotesDict = {
-        // 48 até 72
-        48: 'low_c',
-        49: 'low_c#',
-        50: 'low_d',
-        51: 'low_d#',
-        52: 'low_e',
-        53: 'low_f',
-        54: 'low_f#',
-        55: 'low_g',
-        56: 'low_g#',
-        57: 'low_a',
-        58: 'low_a#',
-        59: 'low_b',
-        60: 'middle_c',
-        61: 'c#',
-        62: 'd',
-        63: 'd#',
-        64: 'e',
-        65: 'f',
-        66: 'f#',
-        67: 'g',
-        68: 'g#',
-        69: 'a',
-        70: 'a#',
-        71: 'b',
-        72: 'high_c'
-    };
-
-    return pianoNotesDict[note];
 }
 
 function AlesisNitroMeshNotes(note) {
