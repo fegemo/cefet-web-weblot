@@ -6,5 +6,5 @@ loginButtonEl.addEventListener('click', _ => {
     if (name || name !== '') {
         setUserName(name)
     }
-    window.location.href = 'chat.html'
+    window.location.href = 'client/chat.html'
 })
