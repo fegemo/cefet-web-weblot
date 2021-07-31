@@ -128,6 +128,10 @@ export class Game {
     this.setupKeyboardListeners(this.#context.lanes);
 
     this.startGame();
+
+    music.audio.addEventListener("ended", () => {
+      setTimeout(() => document.location.reload(), 3000)
+    });
   };
 
   startGame = () => {
@@ -162,16 +166,23 @@ export class Game {
 
     this.#context.misses = 0;
     for (const note of this.#context.currentMusic.mapping) {
-      const noteIsPressed = this.#context.lanes[note.lane].pressed;
       const noteIsNearLaneEnd = note.isNearLaneEnd(this.spd, this.acceptance);
-
+      
       // count for misses
       if (!note.stroke && note.getOffset() < 0 && !noteIsNearLaneEnd) {
         this.#context.misses += 1;
+        continue
       }
+
+      if(!this.#context.lanes[note.lane].pressed && this.#context.lanes[note.lane].lastPressed){
+        this.#context.lanes[note.lane].lastPressed = false;
+      }
+
+      const noteIsPressed = this.#context.lanes[note.lane].pressed && !this.#context.lanes[note.lane].lastPressed;
 
       // check for stroke hits
       if (noteIsPressed && !note.stroke && noteIsNearLaneEnd) {
+        this.#context.lanes[note.lane].lastPressed = true;
         note.stroke = true;
         this.#context.hits++;
         this.vibrateGamepad(200, 0.8, 0.8);

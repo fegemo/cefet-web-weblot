@@ -95,9 +95,8 @@ export class GameEngine {
 
       this.#updateLoop(dt);
 
-      window.requestAnimationFrame(uLoop);
     };
-    setTimeout(uLoop, 1000/30);
+    setInterval(uLoop, 30);
 
     // DRAW LOOP
     const dLoop = () => {
