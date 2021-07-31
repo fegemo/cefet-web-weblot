@@ -1,14 +1,16 @@
+import { encrypt, hex } from "./util-crypto.js"
 export { activateFileHandling }
 
 const fileEl = document.querySelector("#file");
 const titleEl = document.querySelector("header");
 
-function activateFileHandling(){   
+function activateFileHandling(hashedPassword){   
 
     fileEl.addEventListener("change", e => {
         cleanSubtitles();
         insertInfo();
-        storeFile();
+        storeFileTemporarily();
+        encryptFile(hashedPassword);
     });
 }
 
@@ -36,7 +38,7 @@ function insertInfo(){
     titleEl.appendChild(sizeEl);
 }
 
-function storeFile(){
+function storeFileTemporarily(){
     const fileReader = new FileReader();
     const selectedFile = fileEl.files[0];
     
@@ -57,4 +59,16 @@ function storeFile(){
 function changeButtonText(){
     const labelEl = document.querySelector("label");
     labelEl.innerHTML = "Arquivo salvo!";    
+}
+
+async function encryptFile(password){
+    const fileText = sessionStorage.getItem("file");
+    const mode = "AES-GCM";
+    const length = 256;
+    const initializationVector = 12;
+    
+    const encryptedText = await encrypt(fileText, password, mode, length, initializationVector);
+    encryptedText.cipherText = hex(encryptedText.cipherText);
+    console.log(encryptedText.cipherText)
+    sessionStorage.setItem("file", JSON.stringify(encryptedText));
 }

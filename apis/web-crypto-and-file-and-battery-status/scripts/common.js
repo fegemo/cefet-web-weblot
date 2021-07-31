@@ -46,22 +46,20 @@ function showBattery() {
 window.setInterval(showBattery, 1000);
 
 
-// file upload
-activateFileHandling();
-
-
-// password insertion
+// password insertion and file upload
 const submitEl = document.querySelector("#submit");
 const sections = document.querySelectorAll("section");
-submitEl.addEventListener("click", e => {
-    handlePassword().then(hashedPassword => {
-        try{
-            sessionStorage.setItem("password", hex(hashedPassword));
-        }
-        catch(e){
-            console.error("Error: ", e);
-        }
+submitEl.addEventListener("click", initializeApplication);
 
+async function initializeApplication(){
+    const hashedPassword = await handlePassword();
+    activateFileHandling();
+    
+    try {
+        sessionStorage.setItem("password", hex(hashedPassword));        
         sections.forEach(element => element.classList.toggle("password-input"));
-    });
-});
+    }
+    catch(e){
+        return e;
+    }
+}
