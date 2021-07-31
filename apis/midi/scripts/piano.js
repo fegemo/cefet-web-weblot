@@ -1,0 +1,1 @@
+const piano = document.querySelector('#piano');
