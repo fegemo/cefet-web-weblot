@@ -1,15 +1,17 @@
-import { WebSocketServer } from 'ws';
+import WebSocket, { WebSocketServer } from "ws";
 
-const wss = new WebSocketServer({  port: 4040 });
-const connections = []
+const wss = new WebSocketServer({ port: 4040 });
 
-wss.on('connection', function connection(ws) {
-  ws.on('message', onMessage);
-  connections.push(ws);
+wss.on("connection", function connection(wsc) {
+  console.log("Receive connection!")
+  wsc.on("message", (message) => onMessage(message, wsc));
 });
 
-function onMessage(message) {
-  console.log('Message received at ', Date.now());
-  connections.forEach((ws) => ws.send(message));
+function onMessage(message, wsc) {
+  console.log("Message received at ", Date.now());
+  wss.clients.forEach(function each(client) {
+    if (wsc !== client && client.readyState === WebSocket.OPEN) {
+      client.send(message.toString("utf8"));
+    }
+  });
 }
-

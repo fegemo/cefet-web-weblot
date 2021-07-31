@@ -1,7 +1,7 @@
-const user = {name: 'Anonymous'}
+const key = 'UserName'
 export const setUserName = (name) => {
-    user.name = name
+    localStorage.setItem(key, name)
 }
 export const getUserName = () => {
-    return user.name
+    return localStorage.getItem(key)
 }
