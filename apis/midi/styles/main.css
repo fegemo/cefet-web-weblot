@@ -1,0 +1,37 @@
+:root {
+    --background_color: #222;
+    --text_color: #cccccc;
+}
+
+html {
+    margin:0;
+    background: var(--background_color);
+    min-height: 100vh;
+}
+
+h1, h2, #loading {
+    text-align: center;
+    font-size: 3em;
+    font-family: "Comic Sans MS", sans-serif;
+    color: var(--text_color);
+    margin-top: 1em;
+}
+
+span {
+    color: var(--background_color);
+    text-align: center;
+    display: block;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+/* section {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    font-family: "Comic Sans MS", sans-serif;
+    color: var(--text_color);
+} */
+
+section.hidden {
+    display: none;
+}

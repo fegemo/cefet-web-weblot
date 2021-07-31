@@ -1,27 +1,6 @@
 :root {
   --altura_piano: 18.875em;
   --laltura_piano: 66em;
-  --background_color: #222;
-}
-
-html {
-  margin:0;
-  background: var(--background_color);
-  min-height: 100vh;
-}
-
-h1 {
-  text-align: center;
-  font-size: 3em;
-  font-family: "Comic Sans MS", sans-serif;
-  color: #cccccc;
-}
-
-span {
-  color: var(--background_color);
-  text-align: center;
-  display: block;
-  font-family: "Comic Sans MS", sans-serif;
 }
 
 ul {
