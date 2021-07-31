@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Web Sockets</title>
+    <link rel="stylesheet" href="style/index.css">
+    <title>Web Socket Chat - Login</title>
 </head>
 <body>
     <main>
-        <h1>WebSockets Demo</h1>
-        <p id="status">Connecting...</p>
-        <ul id="messages"></ul>
-        <form id="message-form" action="#" method="post">
-            <label for="message"></label><textarea id="message" placeholder="Write your message here..." required></textarea>
-            <button type="submit">Send Message</button>
-            <button type="button" id="close">Close Connection</button>
-        </form>
+        <p>Give your name: <label for="user-name"></label>
+            <input type="text" id="user-name">
+            <button id="login-button" type="submit">Login</button></p>
     </main>
-    <script type="module" src="src/src.js"></script>
+    <script type="module" src="src/open-chat.js"></script>
 </body>
 </html>
