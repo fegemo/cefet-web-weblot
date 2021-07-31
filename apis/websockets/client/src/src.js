@@ -1,7 +1,7 @@
 import {socketStatus, messagesList, form, messageField, closeBtn} from "./elements.js"
 
 function getWebSocket() {
-    return new WebSocket('wss://echo.websocket.org')
+    return new WebSocket("ws://localhost:4040");
 }
 
 function getOnError() {
@@ -18,8 +18,9 @@ function getOnOpen() {
 }
 
 function getOnMessage() {
-    return function (event) {
-        const message = event.data
+    return async function (event) {
+        console.log(event)
+        const message = await event.data.text();
         messagesList.innerHTML += '<li class="received"><span>Received:</span>' + message + '</li>'
     }
 }
