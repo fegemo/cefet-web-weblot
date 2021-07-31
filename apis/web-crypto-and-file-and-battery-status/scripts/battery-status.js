@@ -21,14 +21,14 @@ navigator.getBattery().then(function (battery) {
     }
     updateAllBatteryInfo();
 
-    battery.addEventListener('chargingchange', function () {
+    battery.addEventListener("chargingchange", function () {
         updateChargeInfo();
     });
     function updateChargeInfo() {
         chargingStatus = battery.charging ? "Sim" : "Não";
     }
 
-    battery.addEventListener('levelchange', function () {
+    battery.addEventListener("levelchange", function () {
         updateLevelInfo();
     });
     function updateLevelInfo() {
@@ -37,7 +37,7 @@ navigator.getBattery().then(function (battery) {
             + battery.level * 100 + "%");
     }
 
-    battery.addEventListener('dischargingtimechange', function () {
+    battery.addEventListener("dischargingtimechange", function () {
         updateDischargingInfo();
     });
     function updateDischargingInfo() {
