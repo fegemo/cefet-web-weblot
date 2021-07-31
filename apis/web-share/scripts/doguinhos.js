@@ -15,6 +15,24 @@ document.getElementById('change-button').addEventListener('click', async (ev) =>
   await updateDoguinhoImage();
 });
 
+document.getElementById('share-button').addEventListener('click', async (ev) => {
+  let doguinhoImage = document.getElementById("doguinho");
+  console.log(doguinhoImage.src);
+
+  if (navigator.share) {
+    navigator.share({
+      title: 'Download doguinho image',
+      url: doguinhoImage.src
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+  } else {
+    alert('Seu navegador não suporta esse tipo de compartilhamento! :(');
+  }
+});
+
+
 
 updateDoguinhoImage();
 
