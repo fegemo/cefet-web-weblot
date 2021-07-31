@@ -23,7 +23,7 @@ function getOnMessage() {
     return async function (event) {
         console.log(event);
         const { content, sender } = JSON.parse(event.data);
-        messagesListEl.innerHTML += `<li class="received"><span><b>${sender}:</b></span>${content}</li>`
+        messagesListEl.innerHTML += `<li class="received"><span><b>${sender}</b></span><br>${content}</li>`
     }
 }
 
@@ -39,7 +39,7 @@ function getOnSubmit(socket, sender) {
         e.preventDefault()
         const content = messageFieldEl.value
         socket.send(JSON.stringify({ content, sender }));
-        messagesListEl.innerHTML += `<li class="sent"><span><b>${sender}:</b></span>${content}</li>`
+        messagesListEl.innerHTML += `<li class="sent"><span><b>${sender}</b></span><br>${content}</li>`
         messageFieldEl.value = ''
 
         return false
