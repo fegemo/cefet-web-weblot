@@ -45,7 +45,7 @@ function storeFile(){
         const fileText  =  evt.target.result;
 
         try{
-            window.localStorage.setItem("file", fileText);
+            window.sessionStorage.setItem("file", fileText);
             changeButtonText();
         }
         catch(e){

@@ -9,6 +9,9 @@ html, body {
 }
 body{
     background-image: url("../images/balloons.jpg");
+    font-family: 'Tourney', cursive;
+    color: pink;
+    font-weight: bold;
 }
 
 .container{
@@ -41,7 +44,7 @@ section {
     position: relative;
 }
 
-label {
+#input-file-label {
     display: inline-block;
     border: 1px solid tomato;
     border-radius: 50px;
@@ -82,7 +85,7 @@ input[type="file"] {
     border-radius: 50px;
     border: 2px double rgba(219, 185, 64, 255);
     position: absolute;
-    top: 50px;
+    top: 100px;
     left:50px;
    background-color: lightcyan;
     width: 300px;
@@ -96,4 +99,16 @@ input[type="file"] {
     border-radius: 100%;
     border: 2px double rgba(219, 185, 64, 255);
     width: 300px;
+}
+
+.password-input {
+    visibility: hidden;
+}
+
+input[type="submit"] {
+    background-color: blue;
+    font-family: 'Tourney', cursive;
+    color: pink;
+    font-weight: bold;
+    margin: 10px
 }

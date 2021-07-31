@@ -1,5 +1,7 @@
 import { batteryInfo } from "./battery-status.js"
 import { activateFileHandling } from "./file-upload.js"
+import { hex } from "./util-crypto.js"
+import { handlePassword } from "./input-password.js"
 
 // battery 
 let batteryH1El = document.querySelector("#battery");
@@ -46,3 +48,20 @@ window.setInterval(showBattery, 1000);
 
 // file upload
 activateFileHandling();
+
+
+// password insertion
+const submitEl = document.querySelector("#submit");
+const sections = document.querySelectorAll("section");
+submitEl.addEventListener("click", e => {
+    handlePassword().then(hashedPassword => {
+        try{
+            sessionStorage.setItem("password", hex(hashedPassword));
+        }
+        catch(e){
+            console.error("Error: ", e);
+        }
+
+        sections.forEach(element => element.classList.toggle("password-input"));
+    });
+});
