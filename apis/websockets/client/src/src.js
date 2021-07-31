@@ -1,4 +1,5 @@
-import {socketStatus, messagesList, form, messageField, closeBtn} from "./elements.js"
+import {socketStatusEl, messagesListEl, formEl, messageFieldEl, closeButtonEl} from "./elements.js"
+import {getUserName} from "./user.js";
 
 function getWebSocket() {
     return new WebSocket("ws://localhost:4040");
@@ -12,8 +13,9 @@ function getOnError() {
 
 function getOnOpen() {
     return function (event) {
-        socketStatus.innerHTML = 'Connected to: ' + event.currentTarget.url
-        socketStatus.className = 'open'
+        socketStatusEl.innerHTML = 'Connected to: ' + event.currentTarget.url
+        socketStatusEl.className = 'open'
+        setUserTitle()
     };
 }
 
@@ -21,14 +23,14 @@ function getOnMessage() {
     return async function (event) {
         console.log(event)
         const message = await event.data.text();
-        messagesList.innerHTML += '<li class="received"><span>Received:</span>' + message + '</li>'
+        messagesListEl.innerHTML += '<li class="received"><span>Received:</span>' + message + '</li>'
     }
 }
 
 function getOnClose() {
     return function () {
-        socketStatus.innerHTML = 'Disconnected from WebSocket.'
-        socketStatus.className = 'closed'
+        socketStatusEl.innerHTML = 'Disconnected from WebSocket.'
+        socketStatusEl.className = 'closed'
     }
 }
 
@@ -37,16 +39,16 @@ function getOnSubmit(socket) {
         e.preventDefault()
 
         // Retrieve the message from the textarea.
-        const message = messageField.value
+        const message = messageFieldEl.value
 
         // Send the message through the WebSocket.
         socket.send(message)
 
         // Add the message to the messages list.
-        messagesList.innerHTML += '<li class="sent"><span>Sent:</span>' + message + '</li>'
+        messagesListEl.innerHTML += '<li class="sent"><span>Sent:</span>' + message + '</li>'
 
         // Clear out the message field.
-        messageField.value = ''
+        messageFieldEl.value = ''
 
         return false
     }
@@ -59,6 +61,12 @@ function getOnClick(socket) {
         socket.close()
         return false
     }
+}
+
+function setUserTitle() {
+    const userTitle = document.querySelector('.welcome-title')
+    const name = getUserName()
+    userTitle.innerHTML = `${name}`
 }
 
 window.onload = function () {
@@ -79,8 +87,8 @@ window.onload = function () {
     socket.onclose = getOnClose()
 
     // Send a message when the form is submitted.
-    form.onsubmit = getOnSubmit(socket)
+    formEl.onsubmit = getOnSubmit(socket)
 
     // Close the WebSocket connection when the close button is clicked.
-    closeBtn.onclick = getOnClick(socket)
+    closeButtonEl.onclick = getOnClick(socket)
 }
