@@ -1,6 +1,7 @@
 import { batteryInfo } from "./battery-status.js"
+import { activateFileHandling } from "./file-upload.js"
 
-
+// battery 
 let batteryH1El = document.querySelector("#battery");
 let bodyEl = document.querySelector("body");
 let imgEnergyEl = document.querySelector(".energy>img");
@@ -26,7 +27,6 @@ function showBattery() {
         pEl.innerHTML = `${batteryHeaderValues[i - 1]}: ${batteryListValues[i - 1]}`
     }
 
-    console.log(chargingStatus)
     if (chargingStatus === "Não") {
         batteryH1El.classList.remove("battery-charging");
         batteryH1El.classList.add("battery-discharging");
@@ -44,3 +44,5 @@ function showBattery() {
 window.setInterval(showBattery, 1000);
 
 
+// file upload
+activateFileHandling();
