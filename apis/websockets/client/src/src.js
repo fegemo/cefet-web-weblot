@@ -19,9 +19,9 @@ function getOnOpen() {
 
 function getOnMessage() {
     return async function (event) {
-        console.log(event)
-        const message = await event.data.text();
-        messagesList.innerHTML += '<li class="received"><span>Received:</span>' + message + '</li>'
+        console.log(event);
+        const { content, sender } = JSON.parse(event.data);
+        messagesList.innerHTML += `<li class="received"><span><b>${sender}:</b></span>${content}</li>`
     }
 }
 
@@ -32,20 +32,12 @@ function getOnClose() {
     }
 }
 
-function getOnSubmit(socket) {
+function getOnSubmit(socket, sender) {
     return function (e) {
         e.preventDefault()
-
-        // Retrieve the message from the textarea.
-        const message = messageField.value
-
-        // Send the message through the WebSocket.
-        socket.send(message)
-
-        // Add the message to the messages list.
-        messagesList.innerHTML += '<li class="sent"><span>Sent:</span>' + message + '</li>'
-
-        // Clear out the message field.
+        const content = messageField.value
+        socket.send(JSON.stringify({ content, sender }));
+        messagesList.innerHTML += `<li class="sent"><span><b>${sender}:</b></span>${content}</li>`
         messageField.value = ''
 
         return false
@@ -55,13 +47,12 @@ function getOnSubmit(socket) {
 function getOnClick(socket) {
     return function (e) {
         e.preventDefault()
-        // Close the WebSocket.
         socket.close()
         return false
     }
 }
 
-window.onload = function () {
+window.onload = function (sender) {
 
     // Create a new WebSocket.
     const socket = getWebSocket()
@@ -79,7 +70,7 @@ window.onload = function () {
     socket.onclose = getOnClose()
 
     // Send a message when the form is submitted.
-    form.onsubmit = getOnSubmit(socket)
+    form.onsubmit = getOnSubmit(socket, "Vinicius")
 
     // Close the WebSocket connection when the close button is clicked.
     closeBtn.onclick = getOnClick(socket)
