@@ -2,7 +2,9 @@
     --html-background-color: #333;
     --button-submit-background-color: #86b32d;
     --button-submit-border-color: #5d7d1f;
-    --sent-background-color: #F7F7F7;
+    --sent-background-color: #DCF8C6;
+    --receive-background-color: #F8F8F8; 
+    --sent-color: #81D2E5;
     --border-text-area-color: #D9D9D9;
     --text-area-border-shadow-color: rgba(0, 0, 0, 0.1);
 }
