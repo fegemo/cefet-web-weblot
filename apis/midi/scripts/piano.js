@@ -1,6 +1,7 @@
 let midi = null;
 let output = null;
 
+const piano = Synth.createInstrument(`piano`);
 const loadingScreen = document.querySelector('#loading');
 const pianoScreen = document.querySelector('#piano');
 const histogramScreen = document.querySelector('#histogram');
@@ -61,10 +62,26 @@ function startLoggingMIDIInput(midiAccess) {
     });
 }
 
+function synthInput(pianoNote){
+    let note, octave;
+    if (pianoNote.startsWith('low')) {
+        octave = 3;
+    } else if (pianoNote.startsWith('high')) {
+        octave = 5;
+    }
+    else {
+        octave = 4;
+    }
+    note = pianoNote.replace('low_', '').replace('high_', '').replace('middle_', '').replace('s', '#').toUpperCase()
+    return {'note': note, 'octave': octave};
+}
+
 function handlePianoKeyDown(pianoNote) {
     const pianoNoteElement = document.querySelector(`#${pianoNote}`)
     pianoNoteElement.classList.add('active');
     notesPressTimestamp[pianoNote] = Date.now();
+    const input = synthInput(pianoNote);
+    piano.play(input.note, input.octave, 1);
 }
 
 function handlePianoKeyUp(pianoNote) {
@@ -73,8 +90,7 @@ function handlePianoKeyUp(pianoNote) {
     const keyTimePressed = currentTimestamp - (notesPressTimestamp[pianoNote] ?? currentTimestamp);
     notesHistogram[pianoNote] = notesHistogram[pianoNote] + keyTimePressed;
     pianoNoteElement.classList.remove('active');
-    renderNotesHistogramChart()
-
+    renderNotesHistogramChart();
 }
 
 /**

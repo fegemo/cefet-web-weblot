@@ -1,8 +1,7 @@
 let currentChart;
 
 function renderNotesHistogramChart() {
-
-  const labels = Object.keys(notesHistogram);
+  const labels = Object.keys(notesHistogram).map(note => PIANO_NOTE_NAME[note])
 
   const data = {
     labels,
