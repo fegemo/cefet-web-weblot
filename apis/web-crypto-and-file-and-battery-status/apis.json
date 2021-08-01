@@ -1,10 +1,10 @@
 [
   {
     "nome": "web crypto and file and battery status",
-    "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
+    "breveDescricao": "Possibilita encriptar arquivos no Session Storage do navegador e exibe informações de tempo em função do nível de carga da bateria.",
     "paginaInicial": "apis/web-crypto-and-file-and-battery-status/",
     "screenshot": {
-      "caminho": "apis/web-crypto-and-file-and-battery-status/images/balloons.jpg",
+      "caminho": "apis/web-crypto-and-file-and-battery-status/images/web-crypto-and-file-and-battery-status.webp",
       "textoAlternativo": "aaa"
     },
     "desenvolvedores": [
@@ -24,10 +24,10 @@
     "suporteDeNavegadores": {
       "chrome": true,
       "safari": false,
-      "firefox": true,
+      "firefox": false,
       "ie": false,
-      "edge": true,
-      "opera": true
+      "edge": false,
+      "opera": false
     }
   }
 ]
