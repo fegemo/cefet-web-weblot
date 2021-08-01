@@ -102,12 +102,40 @@ canvas{
 #draw-style{
     position: absolute;
     top: 100px;
-    width: 250px;
+    left: 3%;
+    width: 150px;
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    border: 20px solid grey;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px gray;
 }
 
-#draw-style > p{
-    align-self: flex-end;
+.draw-type{
+    padding: 10px 10px;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    width: 150px;
+    align-self: center;
+}
+
+.draw-type:hover{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+.draw-type-active{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+.colors-item:hover{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+.colors-item-active{
+    background-color: rgb(52, 52, 61);
+    color: white;
 }

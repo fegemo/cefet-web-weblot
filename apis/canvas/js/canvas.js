@@ -5,7 +5,7 @@ let canvas,
     snapshot,
     fillBox;
 
-let drawType = "polygon";
+let drawType = "line";
 
 function getCanvasCoordinates(event) {
     let x = event.clientX - canvas.getBoundingClientRect().left,
@@ -29,6 +29,13 @@ function drawLine(position) {
     context.stroke();
 }
 
+function clearLine(position) {
+    context.beginPath();
+    context.clearRect(dragStartLocation.x, dragStartLocation.y, position.x, position.y);
+    context.stroke();
+    
+}
+
 function drawCircle(position) {
     let radius = Math.sqrt(Math.pow((dragStartLocation.x - position.x), 2) + Math.pow((dragStartLocation.y - position.y), 2));
     context.beginPath();
@@ -50,7 +57,6 @@ function drawPolygon(position, sides, angle) {
     for (index = 1; index < sides; index++) {
         context.lineTo(coordinates[index].x, coordinates[index].y);
     }
-
     context.closePath();
 }
 
@@ -69,6 +75,9 @@ function draw(position, shape) {
     }
     if (shape === "triangle") {
         drawPolygon(position, 3, Math.PI / 4);
+    }
+    if (shape === "clear"){
+        clearLine(position);
     }
     if (fillBox.checked) {
         context.fill();
@@ -101,13 +110,13 @@ function dragStop(event) {
 }
 
 function init() {
-    canvas = document.getElementById("canvas");
+    canvas = document.querySelector("#canvas");
     context = canvas.getContext('2d');
-    context.strokeStyle = 'green';
-    context.fillStyle = 'red';
+    context.strokeStyle = 'black';
+    context.fillStyle = 'black';
     context.lineWidth = 4;
     context.lineCap = 'round';
-    fillBox = document.getElementById("fillBox");
+    fillBox = document.querySelector("#fillBox");
 
     canvas.addEventListener('mousedown', dragStart, false);
     canvas.addEventListener('mousemove', drag, false);

@@ -10,24 +10,25 @@
 </head>
 
 <body>
-    <canvas id="canvas" width="600" height="600"></canvas>
+    <canvas id="canvas" width="600" height="500"></canvas>
 
     <div id="draw-style">
         <p><label>Fill: <input id="fillBox" type="checkbox" checked="checked"></label></p>
-        <button type="button" class="draw-type" value='line'><label>Line: </label></p>
-        <button type="button" class="draw-type" value='polygon'><label>Polygon: </label></p>
-        <button type="button" class="draw-type" value='triangle'><label>Triangle: </label></p>
-        <button type="button" class="draw-type" value='square'><label>Square: </label></p>
-        <button type="button" class="draw-type" value='circle'><label>Circle: </label></p>
+        <button id="dt1" type="button" class="draw-type draw-type-active" value="line">Line: </button>
+        <button id="dt2" type="button" class="draw-type" value="polygon">Polygon: </button>
+        <button id="dt3" type="button" class="draw-type" value="triangle">Triangle: </button>
+        <button id="dt4" type="button" class="draw-type" value="square">Square: </button>
+        <button id="dt5" type="button" class="draw-type" value="circle">Circle: </button>
+        <button id="dt6" type="button" class="draw-type" value="clear">Clear</button>
     </div>
 
     <form id="colors-controls">
-        <button type="button" class="colors-item" value='black' ><div id="black-color"></div> <p><label> Black <input id="black-c" type="radio" name="color" value="black"></label></p></button>
-        <button type="button" class="colors-item" value='red'><div id="red-color"></div> <p><label> Red <input id="red-c" type="radio" name="color" value="red"></label></p></button>
-        <button type="button" class="colors-item" value='blue'><div id="blue-color"></div> <p><label> Blue <input id="blue-c" type="radio" name="color" value="blue"></label></p></button>
-        <button type="button" class="colors-item" value='green'><div id="green-color"></div> <p><label> Green <input id="green-c" type="radio" name="color" value="green"></label></p></button>
-        <button type="button" class="colors-item" value='pink'><div id="pink-color"></div> <p><label> Pink <input id="pink-c" type="radio" name="color" value="pink"></label></p></button>
-        <button type="button" class="colors-item" value='yellow'><div id="yellow-color"></div> <p><label> Yellow <input id="yellow-c" type="radio" name="color" value="yellow"></label></p></button>
+        <button id="bnt-bkc" type="button" class="colors-item colors-item-active" value="black" ><div id="black-color"></div>Black</button>
+        <button id="bnt-rc" type="button" class="colors-item" value="red"><div id="red-color"></div>Red</button>
+        <button id="bnt-bc" type="button" class="colors-item" value="blue"><div id="blue-color"></div>Blue</button>
+        <button id="bnt-fc" type="button" class="colors-item" value="green"><div id="green-color"></div>Green</button>
+        <button id="bnt-pc" type="button" class="colors-item" value="pink"><div id="pink-color"></div>Pink</button>
+        <button id="bnt-yc" type="button" class="colors-item" value="yellow"><div id="yellow-color"></div>Yellow</button>
     </form>
 
 
