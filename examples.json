@@ -5,6 +5,7 @@
     "device-orientation",
     "drag-and-drop",
     "gamepad-vibration",
+    "geolocation",
     "pointer-lock",
     "web-app-manifest",
     "websockets"
