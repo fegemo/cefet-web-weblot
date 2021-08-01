@@ -14,7 +14,8 @@ function activateFileHandling(hashedPassword){
     fileEl.addEventListener("change", e => {
         cleanSubtitles();
         insertInfo();
-        storeFileTemporarily().then( result => encryptFile(hashedPassword));        
+        //storeFileTemporarily();
+        storeFile(hashedPassword);        
     });
 
     downloadFileEl.addEventListener("click", e => {
@@ -70,11 +71,33 @@ function changeButtonText(){
     labelEl.innerHTML = "Arquivo salvo!";    
 }
 
-async function encryptFile(password){
-    const fileText = sessionStorage.getItem("file");
-    console.log("Texto puro codificado: ", fileText);    
+async function storeFile(password){
+
+    const fileReader = new FileReader();
+    const selectedFile = fileEl.files[0];
     
-    const encryptedText = await encrypt(fileText, password, mode, length, initializationVector);    
+    fileReader.readAsText(selectedFile);
+    fileReader.onload = async function(evt){
+        const fileText  =  evt.target.result;
+
+        try{                  
+            const encryptedObject = await encryptFile(fileText, password);
+        
+            console.log(encryptedObject);
+                  
+            sessionStorage.setItem("file", JSON.stringify(encryptedObject));
+            changeButtonText();
+        }
+        catch(e){
+            console.error("Error: ", e);
+        }
+    };
+}
+
+async function encryptFile(file, password){
+    console.log("Texto puro codificado: ", file);    
+            
+    const encryptedText = await encrypt(file, password, mode, length, initializationVector);    
     console.log("Texto criptografado: ", encryptedText);
 
     const encryptedObject = {
@@ -83,8 +106,8 @@ async function encryptFile(password){
     }
 
     console.log(encryptedObject);
-          
-    sessionStorage.setItem("file", JSON.stringify(encryptedObject));
+
+    return encryptedObject;
 }
 
 async function decryptFile(password){
