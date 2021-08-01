@@ -1,0 +1,37 @@
+[
+    {
+      "nome": "Device Orientation API",
+      "breveDescricao": "Detectar que lado do dispositivo está virado para cima e como o dispositivo está girando",
+      "paginaInicial": "apis/device-orientation/",
+      "screenshot": {
+        "caminho": "apis/device-orientation/images/iphone-device-orientation.webp",
+        "textoAlternativo": "Dispositivo Iphone simulando um angulo de beta e gamma"
+      },
+      "desenvolvedores": [
+        {
+          "nome": "Clara Marques",
+          "usuarioGithub": "ClaraMarques"
+        },
+        {
+          "nome": "Nicolas Rezende",
+          "usuarioGithub": "nicolas-rezende"
+        },
+        {
+          "nome": "Rodrigo Gomes Moreira da Silva",
+          "usuarioGithub": "rgomesms"
+        },
+        {
+          "nome": "Lucca Miranda",
+          "usuarioGithub": "luckened"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": true,
+        "ie": false,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]

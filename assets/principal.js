@@ -66,7 +66,7 @@ function adicionaItemGaleria(yearSemester, apiInfo) {
         <picture data-browser-name="Edge" data-supported="${apiInfo.suporteDeNavegadores.edge ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.edge ? 'supported' : ''}">
           <img src="assets/icons/edge.webp" alt="Ícone do navegador Edge">
         </picture>
-        <picture data-browser-name="IE" data-supported="${apiInfo.suporteDeNavegadores.edge ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.ie ? 'supported' : ''}">
+        <picture data-browser-name="IE" data-supported="${apiInfo.suporteDeNavegadores.ie ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.ie ? 'supported' : ''}">
           <img src="assets/icons/ie.webp" alt="Ícone do navegador Internet Explorer">
         </picture>
         <picture data-browser-name="Safari" data-supported="${apiInfo.suporteDeNavegadores.safari ? '👍' : '👎'}" class="browser ${apiInfo.suporteDeNavegadores.safari ? 'supported' : ''}">

@@ -1,0 +1,32 @@
+[
+    {
+      "nome": "Web App Manifest",
+      "breveDescricao": "O manifesto do aplicativo web fornece informações sobre uma aplicação (como nome, autor, icone, e descrição) em um arquivo de texto. O propósito do manifesto é instalar aplicações web na tela inicial de um aparelho, propiciando aos usuários um acesso mais rápido.",
+      "paginaInicial": "apis/web-app-manifest/",
+      "screenshot": {
+        "caminho": "apis/web-app-manifest/images/screenshot.webp",
+        "textoAlternativo": "Tela para mostrar a API Web App Manifest funcionando - Olhar em inspecionar > Application > Manifest"
+      },
+      "desenvolvedores": [{
+        "nome": "Arthur Novaes",
+        "usuarioGithub": "armonova"
+        }, {
+            "nome": "Bernard Menezes",
+            "usuarioGithub": "Bernard2254"
+        }, {
+            "nome": "Heloísa Toledo",
+            "usuarioGithub": "helotoledo"
+        }, {
+            "nome": "Tiago Araújo",
+            "usuarioGithub": "tiago0022"
+        }],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": false,
+        "ie": false,
+        "edge": true,
+        "opera": false
+      }
+    }
+  ]
