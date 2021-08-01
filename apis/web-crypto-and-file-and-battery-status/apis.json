@@ -1,11 +1,78 @@
 [
   {
-    "nome": "web crypto and file and battery status",
-    "breveDescricao": "Possibilita encriptar arquivos no Session Storage do navegador e exibe informações de tempo em função do nível de carga da bateria.",
+ 
+    "nome": "Web Crypto API",
+    "breveDescricao": "Possibilita encriptar e decriptar arquivos.",
     "paginaInicial": "apis/web-crypto-and-file-and-battery-status/",
     "screenshot": {
-      "caminho": "apis/web-crypto-and-file-and-battery-status/images/web-crypto-and-file-and-battery-status.webp",
-      "textoAlternativo": "aaa"
+      "caminho": "apis/web-crypto-and-file-and-battery-status/images/cripto.webp",
+      "textoAlternativo": "Uma página com um fundo de céu azul e balõezinhos soltos neste céu e uma caixa de texto para o usuário inserir uma senha e um botão para confirmação da criptografia do arquivo e um título ao alto da página -'Esconda seu arquivo no navegador!"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Aritana Noara",
+        "usuarioGithub": "aritana"
+      },
+      {
+        "nome": "Gabriel Negreiros",
+        "usuarioGithub": "GabrielNegreirosLima"
+      },
+      {
+        "nome": "Yan Sirianni",
+        "usuarioGithub": "yansirianni"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": false,
+      "edge": true,
+      "opera": true
+    }
+
+  }
+  ,
+  {
+    "nome": "File API",
+    "breveDescricao": "Possibilita selecionar arquivos e ler seu conteúdo.",
+    "paginaInicial": "apis/web-crypto-and-file-and-battery-status/",
+    "screenshot": {
+      "caminho": "apis/web-crypto-and-file-and-battery-status/images/file.webp",
+      "textoAlternativo": "Uma página com um fundo de céu azul e balõezinhos soltos neste céu e um botão para o usuário inserir um arquivo e um título ao alto da página -'Esconda seu arquivo no navegador!"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Aritana Noara",
+        "usuarioGithub": "aritana"
+      },
+      {
+        "nome": "Gabriel Negreiros",
+        "usuarioGithub": "GabrielNegreirosLima"
+      },
+      {
+        "nome": "Yan Sirianni",
+        "usuarioGithub": "yansirianni"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": false,
+      "edge": true,
+      "opera": true
+    }
+
+  },
+   
+  {
+    "nome": "Battery Status API",
+    "breveDescricao": "Possibilita obter e então exibir dados do sistema de carregamento da bateria do dispositivo.",
+    "paginaInicial": "apis/web-crypto-and-file-and-battery-status/",
+    "screenshot": {
+      "caminho": "apis/web-crypto-and-file-and-battery-status/images/battery.webp",
+      "textoAlternativo": "Uma página com um fundo de céu azul e balõezinhos soltos neste céu e uma caixa com o status do sistema de carregamento da bateria, como nível e se está a carregar, e um título ao alto da página -'Esconda seu arquivo no navegador!"
     },
     "desenvolvedores": [
       {
@@ -29,5 +96,6 @@
       "edge": false,
       "opera": false
     }
+
   }
 ]
