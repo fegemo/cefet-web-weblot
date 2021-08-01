@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <title>Web Sockets</title>
+</head>
+<body>
+    <main>
+        <h1 class="welcome-title">WebSockets</h1>
+        <p id="status">Connecting...</p>
+        <ul id="messages"></ul>
+        <form id="message-form" action="#" method="post">
+            <label for="message"></label><textarea id="message" placeholder="Write your message here..." required></textarea>
+            <button type="submit">Send Message</button>
+            <button type="button" id="close">Close Connection</button>
+        </form>
+    </main>
+    <script type="module" src="src/src.js"></script>
+</body>
+</html>
