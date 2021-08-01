@@ -46,7 +46,7 @@ function insertInfo(){
     titleEl.appendChild(mimeEl);
     titleEl.appendChild(sizeEl);
 
-    fileName = selectedFile.name;
+    fileName = selectedFile.name.split(".")[0];
 }
 
 function changeButtonText(){
