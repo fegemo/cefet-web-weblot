@@ -3,6 +3,7 @@ let output = null;
 
 const loadingScreen = document.querySelector('#loading');
 const pianoScreen = document.querySelector('#piano');
+const histogramScreen = document.querySelector('#histogram');
 
 const notesPressTimestamp = {};
 
@@ -35,6 +36,7 @@ function onMIDISuccess(midiAccess) {
         startLoggingMIDIInput(midiAccess);
         loadingScreen.classList.add('hidden');
         pianoScreen.classList.remove('hidden');
+        histogramScreen.classList.remove('hidden');
     }
     else {
         loadingScreen.innerHTML = 'Nenhum dispositivo MIDI foi detectado :(';
