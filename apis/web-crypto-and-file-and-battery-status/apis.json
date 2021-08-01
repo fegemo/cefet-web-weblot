@@ -23,12 +23,23 @@
       }
     ],
     "suporteDeNavegadores": {
-      "chrome": true,
-      "safari": true,
-      "firefox": true,
-      "ie": false,
-      "edge": true,
-      "opera": true
+        "IE":false,
+        "Edge":true,
+        "Firefox":true,
+        "Chrome":true,
+        "Safari":true,
+        "Opera":true,
+        "Safari on iOS":true,
+        "Opera Mini":false,
+        "Android Browser":true,
+        "Opera Mobile":true,
+        "Chrome for Android":true,
+        "Firefox for Android":true,
+        "UC Browser for Android":true,
+        "Samsung Internet":true,
+        "QQ Browser":true,
+        "Baidu Browser":true,
+        "KaiOS Browser":true
     }
 
   }
@@ -56,12 +67,23 @@
       }
     ],
     "suporteDeNavegadores": {
-      "chrome": true,
-      "safari": true,
-      "firefox": true,
-      "ie": false,
-      "edge": true,
-      "opera": true
+        "IE":false,
+        "Edge":true,
+        "Firefox":true,
+        "Chrome":true,
+        "Safari":true,
+        "Opera":true,
+        "Safari on iOS":true,
+        "Opera Mini":false,
+        "Android Browser":true,
+        "Opera Mobile":true,
+        "Chrome for Android":true,
+        "Firefox for Android":true,
+        "UC Browser for Android":true,
+        "Samsung Internet":true,
+        "QQ Browser":true,
+        "Baidu Browser":true,
+        "KaiOS Browser":true
     }
 
   },
@@ -89,12 +111,23 @@
       }
     ],
     "suporteDeNavegadores": {
-      "chrome": true,
-      "safari": false,
-      "firefox": false,
-      "ie": false,
-      "edge": false,
-      "opera": false
+        "IE":false,
+        "Edge":true,
+        "Firefox":false,
+        "Chrome":true,
+        "Safari":false,
+        "Opera":true,
+        "Safari on iOS":false,
+        "Opera Mini":false,
+        "Android Browser":true,
+        "Opera Mobile":true,
+        "Chrome for Android":true,
+        "Firefox for Android":false,
+        "UC Browser for Android":true,
+        "Samsung Internet":true,
+        "QQ Browser":true,
+        "Baidu Browser":true,
+        "KaiOS Browser":true
     }
 
   }
