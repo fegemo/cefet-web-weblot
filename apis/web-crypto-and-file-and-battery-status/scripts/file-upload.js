@@ -56,8 +56,7 @@ async function storeFileTemporarily(){
         const fileText  =  evt.target.result;
 
         try{
-            sessionStorage.setItem("file", fileText);
-            sessionStorage.setItem("file2", fileText);
+            sessionStorage.setItem("file", fileText);            
             changeButtonText();
         }
         catch(e){
@@ -121,6 +120,5 @@ async function decryptFile(password){
     console.log(cryptedText);
       
     const file = await decrypt(cryptedText, password, mode, length);  
-    console.log("File", file);  
-    sessionStorage.setItem("file3", file);
+    console.log("File", file);      
 }
