@@ -63,8 +63,13 @@ function startLoggingMIDIInput(midiAccess) {
     const piano_note_element = document.querySelector(`#${piano_note}`)
     switch (command) {
         case 144: // note on
-            if (piano_note && velocity) {
-                piano_note_element.classList.add('active');
+            if (piano_note) {
+                if (velocity) {
+                    piano_note_element.classList.add('active');
+                } else {
+                    // some keyboards also log velocity = 0 for note off
+                    piano_note_element.classList.remove('active');
+                }
             }
             break;
         case 128: // note off
