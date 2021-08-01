@@ -1,8 +1,8 @@
 let midi = null;
 let output = null;
 
-const loading_screen = document.querySelector('#loading');
-const piano_screen = document.querySelector('#piano');
+const loadingScreen = document.querySelector('#loading');
+const pianoScreen = document.querySelector('#piano');
 
 // First, let's validate if the browser has support to the API
 
@@ -10,7 +10,7 @@ if (navigator.requestMIDIAccess) {
     navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
 }
 else {
-    loading_screen.innerHTML = 'Seu navegador não tem suporte ao Web MIDI API :(';
+    loadingScreen.innerHTML = 'Seu navegador não tem suporte ao Web MIDI API :(';
 }
 
 // If it has, let's try to sync the MIDI device
@@ -25,11 +25,11 @@ function onMIDISuccess(midiAccess) {
     output = midiAccess.outputs.values().next().value;
     if (output) {
         startLoggingMIDIInput(midiAccess);
-        loading_screen.classList.add('hidden');
-        piano_screen.classList.remove('hidden');
+        loadingScreen.classList.add('hidden');
+        pianoScreen.classList.remove('hidden');
     }
     else {
-        loading_screen.innerHTML = 'Nenhum dispositivo MIDI foi detectado :(';
+        loadingScreen.innerHTML = 'Nenhum dispositivo MIDI foi detectado :(';
     }    
 }
 
@@ -38,7 +38,7 @@ function onMIDISuccess(midiAccess) {
  * @param {string} message is the error message
  */
 function onMIDIFailure(message) {
-    loading_screen.innerHTML = `Erro ao conectar ao dispositivo MIDI: ${message}`;
+    loadingScreen.innerHTML = `Erro ao conectar ao dispositivo MIDI: ${message}`;
 }
 
 /**
@@ -59,30 +59,30 @@ function startLoggingMIDIInput(midiAccess) {
     let command = message.data[0];
     let note = message.data[1];
     let velocity = message.data[2];
-    let piano_note = pianoNotes(note);
-    const piano_note_element = document.querySelector(`#${piano_note}`)
+    let pianoNote = pianoNotes(note);
+    const pianoNoteElement = document.querySelector(`#${pianoNote}`)
     switch (command) {
         case 144: // note on
-            if (piano_note) {
+            if (pianoNote) {
                 if (velocity) {
-                    piano_note_element.classList.add('active');
+                    pianoNoteElement.classList.add('active');
                 } else {
                     // some keyboards also log velocity = 0 for note off
-                    piano_note_element.classList.remove('active');
+                    pianoNoteElement.classList.remove('active');
                 }
             }
             break;
         case 128: // note off
-            piano_note_element.classList.remove('active');
+            pianoNoteElement.classList.remove('active');
             break;
     }
 }
 
 // Let's also play some notes on the Piano when the user clicks on the interface!
 
-const piano_keys = document.querySelectorAll('#piano ul li');
+const pianoKeys = document.querySelectorAll('#piano ul li');
 
-for (let key of piano_keys){
+for (let key of pianoKeys){
     const note = pianoValues(key.id);
     const velocity = 60;
     key.addEventListener('mouseover', (event) => {
