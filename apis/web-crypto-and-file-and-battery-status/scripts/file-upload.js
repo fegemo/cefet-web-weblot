@@ -1,8 +1,13 @@
-import { encrypt, hex } from "./util-crypto.js"
+import { decrypt, encrypt, arrayBufferToBase64, base64ToArrayBuffer } from "./util-crypto.js"
 export { activateFileHandling }
 
 const fileEl = document.querySelector("#file");
 const titleEl = document.querySelector("header");
+const downloadFileEl = document.querySelector("#decrypto");
+
+const mode = "AES-GCM";
+const length = 256;
+const initializationVector = 12;
 
 function activateFileHandling(hashedPassword){   
 
@@ -11,6 +16,10 @@ function activateFileHandling(hashedPassword){
         insertInfo();
         storeFileTemporarily();
         encryptFile(hashedPassword);
+    });
+
+    downloadFileEl.addEventListener("click", e => {
+        decryptFile(hashedPassword);
     });
 }
 
@@ -47,7 +56,8 @@ function storeFileTemporarily(){
         const fileText  =  evt.target.result;
 
         try{
-            window.sessionStorage.setItem("file", fileText);
+            sessionStorage.setItem("file", fileText);
+            sessionStorage.setItem("file2", fileText);
             changeButtonText();
         }
         catch(e){
@@ -63,12 +73,32 @@ function changeButtonText(){
 
 async function encryptFile(password){
     const fileText = sessionStorage.getItem("file");
-    const mode = "AES-GCM";
-    const length = 256;
-    const initializationVector = 12;
+    console.log(fileText);    
     
-    const encryptedText = await encrypt(fileText, password, mode, length, initializationVector);
-    encryptedText.cipherText = hex(encryptedText.cipherText);
-    console.log(encryptedText.cipherText)
-    sessionStorage.setItem("file", JSON.stringify(encryptedText));
+    const encryptedText = await encrypt(fileText, password, mode, length, initializationVector);    
+    console.log(encryptedText);
+
+    const encryptedObject = {
+        cipherText: arrayBufferToBase64(encryptedText.cipherText),
+        iv: encryptedText.iv
+    }
+
+    console.log(encryptedObject);
+          
+    sessionStorage.setItem("file", JSON.stringify(encryptedObject));
+}
+
+async function decryptFile(password){
+    const cryptedObject = JSON.parse(sessionStorage.getItem("file"));        
+    console.log(cryptedObject);
+
+    const cryptedText = {
+        cipherText: base64ToArrayBuffer(cryptedObject.cipherText),
+        iv: new Uint8Array(Object.values(cryptedObject.iv))
+    }
+    console.log(cryptedText);
+      
+    const file = await decrypt(cryptedText, password, mode, length);  
+    console.log(file);  
+    sessionStorage.setItem("file3", file);
 }

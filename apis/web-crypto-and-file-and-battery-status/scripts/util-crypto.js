@@ -1,4 +1,4 @@
-export { hex, genEncryptionKey, encrypt, decrypt }
+export { hex, genEncryptionKey, encrypt, decrypt, arrayBufferToBase64, base64ToArrayBuffer}
 
 // Following code taken from the link below 
 // https://webbjocke.com/javascript-web-encryption-and-hashing-with-the-crypto-api/
@@ -43,6 +43,28 @@ async function decrypt (encrypted, password, mode, length) {
     };
     const key = await genEncryptionKey(password, mode, length);
     const decrypted = await crypto.subtle.decrypt(algo, key, encrypted.cipherText);
+
+    console.log(decrypted);
     
     return new TextDecoder().decode(decrypted);
+}
+
+function arrayBufferToBase64( buffer ) {
+	var binary = '';
+	var bytes = new Uint8Array( buffer );
+	var len = bytes.byteLength;
+	for (var i = 0; i < len; i++) {
+		binary += String.fromCharCode( bytes[ i ] );
+	}
+	return window.btoa( binary );
+}
+
+function base64ToArrayBuffer(base64) {
+    var binary_string =  window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array( len );
+    for (var i = 0; i < len; i++)        {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes.buffer;
 }
