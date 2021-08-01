@@ -23,7 +23,6 @@ function activateFileHandling(hashedPassword){
     });
 }
 
-
 function cleanSubtitles(){
     const subtitles = document.querySelectorAll("h2");
     subtitles.forEach(subtitleEl => {
@@ -45,24 +44,6 @@ function insertInfo(){
     titleEl.appendChild(nameEl);
     titleEl.appendChild(mimeEl);
     titleEl.appendChild(sizeEl);
-}
-
-async function storeFileTemporarily(){
-    const fileReader = new FileReader();
-    const selectedFile = fileEl.files[0];
-    
-    fileReader.readAsText(selectedFile);
-    fileReader.onload = evt => {
-        const fileText  =  evt.target.result;
-
-        try{
-            sessionStorage.setItem("file", fileText);            
-            changeButtonText();
-        }
-        catch(e){
-            console.error("Error: ", e);
-        }
-    };
 }
 
 function changeButtonText(){
