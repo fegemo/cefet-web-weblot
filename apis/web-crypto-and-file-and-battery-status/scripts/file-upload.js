@@ -3,23 +3,23 @@ export { activateFileHandling }
 
 const fileEl = document.querySelector("#file");
 const titleEl = document.querySelector("header");
+const downloadFileEl = document.querySelector("#decrypto");
 
 const mode = "AES-GCM";
 const length = 256;
 const initializationVector = 12;
 
-function activateFileHandling(hashedPassword){   
-    const downloadFileEl = document.querySelector("#decrypto");
+function activateFileHandling(hashedPassword){       
 
     fileEl.addEventListener("change", e => {
         cleanSubtitles();
         insertInfo();
-        //storeFileTemporarily();
         storeFile(hashedPassword);        
     });
 
-    downloadFileEl.addEventListener("click", e => {
-        decryptFile(hashedPassword);
+    downloadFileEl.addEventListener("click", async function(e){
+        const data = await decryptFile(hashedPassword);
+        downloadFile(data);
     });
 }
 
@@ -120,5 +120,20 @@ async function decryptFile(password){
     console.log(cryptedText);
       
     const file = await decrypt(cryptedText, password, mode, length);  
-    console.log("File", file);      
+    console.log("File", file); 
+    
+    return file;
+}
+
+function downloadFile(data){
+    console.log('down');
+    console.log(typeof(data));
+    let myFile = new File([data], "data.txt", {
+        type:"text/plain"
+    });
+    let url = URL.createObjectURL(myFile);
+    let a = document.createElement("a");
+    a.href = url;
+    a.setAttribute("download","data.txt");
+    a.click();
 }
