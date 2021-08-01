@@ -1,16 +1,24 @@
 [
   {
-    "nome": "Drag and Drop API",
+    "nome": "web crypto and file and battery status",
     "breveDescricao": "Possibilita o arraste de elementos HTML em cima de outros",
-    "paginaInicial": "apis/drag-and-drop/",
+    "paginaInicial": "apis/web-crypto-and-file-and-battery-status/",
     "screenshot": {
-      "caminho": "apis/drag-and-drop/images/screenshot.png",
-      "textoAlternativo": "Uma página com 2 monstrinhos em uma jaula e outros 3 fora com os dizeres 'Prenda os Monstrinhos'"
+      "caminho": "apis/web-crypto-and-file-and-battery-status/images/balloons.jpg",
+      "textoAlternativo": "aaa"
     },
     "desenvolvedores": [
       {
-        "nome": "Flávio Coutinho",
-        "usuarioGithub": "fegemo"
+        "nome": "Aritana Noara",
+        "usuarioGithub": "aritana"
+      },
+      {
+        "nome": "Gabriel Negreiros",
+        "usuarioGithub": "GabrielNegreirosLima"
+      },
+      {
+        "nome": "Yan Sirianni",
+        "usuarioGithub": "yansirianni"
       }
     ],
     "suporteDeNavegadores": {

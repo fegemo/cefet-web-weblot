@@ -20,7 +20,9 @@ Este trabalho foi realizado em 2015/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Flávio Roberto dos Santos Coutinho (2005046102 &larr; ~~ainda lembro a matrícula da graduação!!~~)
+1. Aritana Noara Costa Santos (201522040307)
+2. Gabriel Negreiros Lima (201612040276)
+3. Yan Victor Sirianni Azevedo (201712040200)
 
 Atribuições:
 
