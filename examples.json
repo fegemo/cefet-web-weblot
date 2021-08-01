@@ -1,0 +1,12 @@
+{
+  "semestre": "2021/01",
+  "pastas": [
+    "custom-elements",
+    "device-orientation",
+    "drag-and-drop",
+    "gamepad-vibration",
+    "pointer-lock",
+    "web-app-manifest",
+    "websockets"
+  ]
+}

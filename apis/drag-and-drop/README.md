@@ -1,14 +1,11 @@
 # _Drag and Drop API_
 
-Exemplo de uso da API de _drag and drop_ (arrastar e soltar) do HTML5.
+Exemplo de uso da API de _drag and drop_ (arrastar e soltar) do HTML5. Veja o arquivo [`script/monstrinhos.js`][js] para detalhes.
 
-![](images/screenshot.png)
+![Uma página com 2 monstrinhos em uma jaula e outros 3 fora com os dizeres 'Prenda os Monstrinhos'](images/screenshot.png)
 
-
-## Links do Exemplo
-
-- Link para seminário: [slides de aula][slides]
 - Link para exemplo publicado: [página no GitHub][vivo]
+
 
 ## Créditos
 
@@ -16,7 +13,7 @@ Este trabalho foi realizado em 2015/01 para a disciplina de Programação para W
 
 Autor(es):
 
-1. Flávio Roberto dos Santos Coutinho (2005046102 &larr; ~~matrícula da graduação!!~~)
+1. Flávio Roberto dos Santos Coutinho (2005046102 &larr; ~~ainda lembro a matrícula da graduação!!~~)
 
 Atribuições:
 
@@ -24,8 +21,8 @@ Atribuições:
 - Fonte Chewy, criada por [_Sideshow Foundry_][chewy-author]
 - Imagens dos monstrinhos, da empresa [Toshl][monsters-author]®
 
-[slides]: https://fegemo.github.io/cefet-web/classes/js5/#32
+[js]: scripts/monstrinhos.js
 [vivo]: https://fegemo.github.io/cefet-web-weblot/apis/drag-and-drop/
 [overlock-author]: https://plus.google.com/105287894980881814285/about
 [chewy-author]: https://profiles.google.com/sideshowfonts/about
-[monsters-author]: http://toshl.com
+[monsters-author]: https://toshl.com
