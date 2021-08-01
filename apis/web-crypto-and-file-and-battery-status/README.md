@@ -1,6 +1,6 @@
 # _Web file encryption with battery status_
 
-Exemplo de uso da API de _Web file encryption with battery status_ (criptografia de arquivo apresentando o status da bateria do dispositivo) do HTML5. Veja o arquivo [`scripts/common.js`][js] para detalhes.
+Exemplo de uso da API de _Web file encryption with battery status_ (criptografia de arquivo e exibe o status da bateria do dispositivo) do HTML5. Veja o arquivo [`scripts/common.js`][js] para detalhes.
 
 ![Uma página com um fundo de céu azul e balõezinhos soltos neste céu e uma caixa de texto para o usuário inserir uma senha e um botão para confirmação e um título ao alto da página -'Esconda seu arquivo no navegador!', há também um botão que aparece após a confirmação, que ao clicá-lo o usuário poderá inserir um arquivo na página, e há lateralmente um quadrado com informações sobre o status da bateria. Se a o dispositivo for desconectado do ponto de energia, o fundo da página muda do céu azul para um céu escuro, com relâmpagos](images/web-crypto-and-file-and-battery-status.webp)
 
