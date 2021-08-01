@@ -68,3 +68,13 @@ aside#speak-indicator.on {
 aside#speak-indicator:not(.on) {
     background: radial-gradient(red 60%, transparent 70%);
 }
+
+aside#languages {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.flag-icon {
+    margin: 5px;
+}
