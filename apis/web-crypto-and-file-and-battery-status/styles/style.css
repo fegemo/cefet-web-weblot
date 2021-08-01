@@ -86,6 +86,7 @@ input[type="file"] {
 .set-alert-color{
     background-color: red;
     color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
     background-image: url("../images/flash.jpg");
 }
 
@@ -116,6 +117,7 @@ input[type="file"] {
 
 #password-box{ 
     font-family: 'Indie Flower', cursive;  
+    color: red;
     font-size: 24px;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
