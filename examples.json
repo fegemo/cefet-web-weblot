@@ -2,6 +2,13 @@
   "semestre": "2021/01",
   "pastas": [
     "drag-and-drop",
-    "midi"
+    "custom-elements",
+    "device-orientation",
+    "drag-and-drop",
+    "gamepad-vibration",
+    "midi",
+    "pointer-lock",
+    "web-app-manifest",
+    "websockets"
   ]
 }

@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "WebSockets API",
+    "breveDescricao": "Permite abrir uma sessão de comunicação bidirecional entre o navegador e um servidor",
+    "paginaInicial": "apis/websockets/",
+    "screenshot": {
+      "caminho": "apis/websockets/images/screenshot.png",
+      "textoAlternativo": "Uma página de chat com a lista de mensagem recebidas e uma caixa de entrada para enviar mensagens"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Gustavo Zille",
+        "usuarioGithub": "guszille"
+      },
+      {
+        "nome": "Pierre Vieira",
+        "usuarioGithub": "PierreVieira"
+      },
+      {
+        "nome": "Marcos Xavier",
+        "usuarioGithub": "MarcosXavier93"
+      },
+      {
+        "nome": "Samuel Felipe",
+        "usuarioGithub": "Samuel1s"
+      },
+      {
+        "nome": "Vinícius França",
+        "usuarioGithub": "viniciusfdev"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": true,
+      "edge": true,
+      "opera": true
+    }
+  }
+]
