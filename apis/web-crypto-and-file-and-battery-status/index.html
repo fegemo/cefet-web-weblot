@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,28 +8,30 @@
   <link rel="stylesheet" href="styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
+
 <body>
   <main class="container">
     <header>
       <h1 class="battery-charging" id="battery">Esconda seu arquivo no navegador!</h1>
     </header>
-    <section class="energy password-input">    
+    <section class="energy password-input">
       <div>
         <p>status</p>
         <p>level</p>
         <p>chargingTime</p>
-      </div> 
-      <img src="images/energy-on.jpg"  alt="imagem de uma lâmpada acesa representar a energia conecatada">
-   </section>
+      </div>
+      <img src="images/energy-on.jpg" alt="imagem de uma lâmpada acesa representar a energia conecatada">
+    </section>
     <section id="file-box" class="password-input">
       <div class="wrapper">
         <label id="input-file-label">Inserir arquivo!
           <input type="file" name="file" id="file">
         </label>
+        <button id="decrypto">Baixar arquivo</button>
       </div>
     </section>
     <section id="password-box">
-      <label> Insira sua senha: 
+      <label> Insira sua senha:
         <input type="password" name="password" id="password">
       </label>
       <input id="submit" type="submit" value="Pronto">
@@ -36,4 +39,5 @@
   </main>
   <script type="module" src="scripts/common.js"></script>
 </body>
+
 </html>
