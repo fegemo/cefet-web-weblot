@@ -43,7 +43,7 @@ async function decrypt (encrypted, password, mode, length) {
     };
     const key = await genEncryptionKey(password, mode, length);
     const decrypted = await crypto.subtle.decrypt(algo, key, encrypted.cipherText);
-
+    
     console.log(decrypted);
     
     return new TextDecoder().decode(decrypted);

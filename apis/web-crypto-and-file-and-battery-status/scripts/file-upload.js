@@ -3,19 +3,18 @@ export { activateFileHandling }
 
 const fileEl = document.querySelector("#file");
 const titleEl = document.querySelector("header");
-const downloadFileEl = document.querySelector("#decrypto");
 
 const mode = "AES-GCM";
 const length = 256;
 const initializationVector = 12;
 
 function activateFileHandling(hashedPassword){   
+    const downloadFileEl = document.querySelector("#decrypto");
 
     fileEl.addEventListener("change", e => {
         cleanSubtitles();
         insertInfo();
-        storeFileTemporarily();
-        encryptFile(hashedPassword);
+        storeFileTemporarily().then( result => encryptFile(hashedPassword));        
     });
 
     downloadFileEl.addEventListener("click", e => {
@@ -47,7 +46,7 @@ function insertInfo(){
     titleEl.appendChild(sizeEl);
 }
 
-function storeFileTemporarily(){
+async function storeFileTemporarily(){
     const fileReader = new FileReader();
     const selectedFile = fileEl.files[0];
     
@@ -73,10 +72,10 @@ function changeButtonText(){
 
 async function encryptFile(password){
     const fileText = sessionStorage.getItem("file");
-    console.log(fileText);    
+    console.log("Texto puro codificado: ", fileText);    
     
     const encryptedText = await encrypt(fileText, password, mode, length, initializationVector);    
-    console.log(encryptedText);
+    console.log("Texto criptografado: ", encryptedText);
 
     const encryptedObject = {
         cipherText: arrayBufferToBase64(encryptedText.cipherText),
@@ -90,7 +89,7 @@ async function encryptFile(password){
 
 async function decryptFile(password){
     const cryptedObject = JSON.parse(sessionStorage.getItem("file"));        
-    console.log(cryptedObject);
+    console.log("Crypted:", cryptedObject);
 
     const cryptedText = {
         cipherText: base64ToArrayBuffer(cryptedObject.cipherText),
@@ -99,6 +98,6 @@ async function decryptFile(password){
     console.log(cryptedText);
       
     const file = await decrypt(cryptedText, password, mode, length);  
-    console.log(file);  
+    console.log("File", file);  
     sessionStorage.setItem("file3", file);
 }
