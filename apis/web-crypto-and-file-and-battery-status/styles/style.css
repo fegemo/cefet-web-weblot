@@ -23,6 +23,8 @@ body {
     color: red;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
 .container{
@@ -112,8 +114,10 @@ input[type="file"] {
     visibility: hidden;
 }
 
-#password-box{   
-    font-size: 18px;
+#password-box{ 
+    font-family: 'Indie Flower', cursive;  
+    font-size: 24px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #password{
