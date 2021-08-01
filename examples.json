@@ -6,6 +6,7 @@
     "drag-and-drop",
     "gamepad-vibration",
     "pointer-lock",
+    "speech-recognition-e-speech-synthesis",
     "web-app-manifest",
     "websockets"
   ]
