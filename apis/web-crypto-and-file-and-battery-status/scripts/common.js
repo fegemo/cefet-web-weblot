@@ -53,8 +53,7 @@ submitEl.addEventListener("click", initializeApplication);
 
 async function initializeApplication(){
     const hashedPassword = await handlePassword();
-    console.log(hashedPassword);
-    activateFileHandling();
+    activateFileHandling(hashedPassword);
     
     try {
         sessionStorage.setItem("password", hex(hashedPassword));        

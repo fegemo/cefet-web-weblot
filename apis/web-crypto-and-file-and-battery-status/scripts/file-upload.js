@@ -8,6 +8,7 @@ const downloadFileEl = document.querySelector("#decrypto");
 const mode = "AES-GCM";
 const length = 256;
 const initializationVector = 12;
+let fileName;
 
 function activateFileHandling(hashedPassword){       
 
@@ -44,6 +45,8 @@ function insertInfo(){
     titleEl.appendChild(nameEl);
     titleEl.appendChild(mimeEl);
     titleEl.appendChild(sizeEl);
+
+    fileName = selectedFile.name;
 }
 
 function changeButtonText(){
@@ -62,8 +65,6 @@ async function storeFile(password){
 
         try{                  
             const encryptedObject = await encryptFile(fileText, password);
-        
-            console.log(encryptedObject);
                   
             sessionStorage.setItem("file", JSON.stringify(encryptedObject));
             changeButtonText();
@@ -74,47 +75,38 @@ async function storeFile(password){
     };
 }
 
-async function encryptFile(file, password){
-    console.log("Texto puro codificado: ", file);    
+async function encryptFile(file, password){    
             
     const encryptedText = await encrypt(file, password, mode, length, initializationVector);    
-    console.log("Texto criptografado: ", encryptedText);
 
     const encryptedObject = {
         cipherText: arrayBufferToBase64(encryptedText.cipherText),
         iv: encryptedText.iv
     }
 
-    console.log(encryptedObject);
-
     return encryptedObject;
 }
 
 async function decryptFile(password){
-    const cryptedObject = JSON.parse(sessionStorage.getItem("file"));        
-    console.log("Crypted:", cryptedObject);
+    const cryptedObject = JSON.parse(sessionStorage.getItem("file"));    
 
     const cryptedText = {
         cipherText: base64ToArrayBuffer(cryptedObject.cipherText),
         iv: new Uint8Array(Object.values(cryptedObject.iv))
     }
-    console.log(cryptedText);
       
     const file = await decrypt(cryptedText, password, mode, length);  
-    console.log("File", file); 
     
     return file;
 }
 
 function downloadFile(data){
-    console.log('down');
-    console.log(typeof(data));
-    let myFile = new File([data], "data.txt", {
+    let myFile = new File([data], `${fileName}.txt`, {
         type:"text/plain"
     });
     let url = URL.createObjectURL(myFile);
     let a = document.createElement("a");
     a.href = url;
-    a.setAttribute("download","data.txt");
+    a.setAttribute("download",`${fileName}.txt`);
     a.click();
 }
