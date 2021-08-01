@@ -5,6 +5,7 @@
     "device-orientation",
     "drag-and-drop",
     "pointer-lock",
-    "web-app-manifest"
+    "web-app-manifest",
+    "websockets"
   ]
 }
