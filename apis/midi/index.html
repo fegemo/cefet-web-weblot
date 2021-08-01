@@ -42,7 +42,14 @@
             <li class="white c" id="high_c"></li>
         </ul>
     </section>
+    <section id="histogram">
+        <h2>Notas tocadas:</h2>
+        <button class="button_slide slide_right" onclick="renderNotesHistogramChart()">Obter histograma</button>
+        <canvas id="histogramCanvas"></canvas>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/piano.js"></script>
+    <script src="scripts/chart.js"></script>
 </body>
 </html>

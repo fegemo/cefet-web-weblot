@@ -4,6 +4,14 @@ let output = null;
 const loadingScreen = document.querySelector('#loading');
 const pianoScreen = document.querySelector('#piano');
 
+const notesPressTimestamp = {};
+
+function getDefaultNotesHistogram() {
+    return Object.keys(PIANO_VALUES_DICT).reduce((acc, note) => ({ ...acc, [note]: 0}), {});
+}
+
+let notesHistogram = getDefaultNotesHistogram();
+
 // First, let's validate if the browser has support to the API
 
 if (navigator.requestMIDIAccess) {
@@ -51,6 +59,22 @@ function startLoggingMIDIInput(midiAccess) {
     });
 }
 
+function handlePianoKeyDown(pianoNote) {
+    const pianoNoteElement = document.querySelector(`#${pianoNote}`)
+    pianoNoteElement.classList.add('active');
+    notesPressTimestamp[pianoNote] = Date.now();
+
+}
+
+function handlePianoKeyUp(pianoNote) {
+    const pianoNoteElement = document.querySelector(`#${pianoNote}`)
+    const currentTimestamp = Date.now();
+    const keyTimePressed = currentTimestamp - (notesPressTimestamp[pianoNote] ?? currentTimestamp);
+    notesHistogram[pianoNote] = notesHistogram[pianoNote] + keyTimePressed;
+    pianoNoteElement.classList.remove('active');
+
+}
+
 /**
  * Function to be executed in a Piano Key Press Event
  * @param {Object} message is the Web MIDI API Message Object
@@ -60,20 +84,19 @@ function startLoggingMIDIInput(midiAccess) {
     let note = message.data[1];
     let velocity = message.data[2];
     let pianoNote = pianoNotes(note);
-    const pianoNoteElement = document.querySelector(`#${pianoNote}`)
     switch (command) {
         case 144: // note on
             if (pianoNote) {
                 if (velocity) {
-                    pianoNoteElement.classList.add('active');
+                    handlePianoKeyDown(pianoNote);
                 } else {
                     // some keyboards also log velocity = 0 for note off
-                    pianoNoteElement.classList.remove('active');
+                    handlePianoKeyUp(pianoNote);
                 }
             }
             break;
         case 128: // note off
-            pianoNoteElement.classList.remove('active');
+            handlePianoKeyUp(pianoNote);
             break;
     }
 }
@@ -88,20 +111,20 @@ for (let key of pianoKeys){
     key.addEventListener('mouseover', (event) => {
         if (event.buttons === 1) {
             output.send([144, note, velocity]);
-            key.classList.add('active');
+            handlePianoKeyDown(key.id);
         }
         else {
             output.send([128, note, velocity]);
-            key.classList.remove('active');
+            handlePianoKeyUp(key.id);
         }
     });
     addMultipleEventsListener(key, 'mouseup mouseout', (event) => {
         output.send([128, note, velocity]);
-        key.classList.remove("active");
+        handlePianoKeyUp(key.id);
     });
     key.addEventListener('mousedown', (event) => {
         output.send([144, note, velocity]);
-        key.classList.add("active");
+        handlePianoKeyDown(key.id);
     });
     key.ondragstart = () => {
         return false;
