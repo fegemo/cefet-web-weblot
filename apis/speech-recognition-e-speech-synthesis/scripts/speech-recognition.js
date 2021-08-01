@@ -35,4 +35,4 @@ Recognizer.setLanguage = (lang) => {
     Recognizer.lang = lang;
 }
 
-export { Recognizer, GrammarLists, Dictionary };
+export { Recognizer, Dictionary };

@@ -1,16 +1,29 @@
-import { Synthesizer, Utterance, Voices } from "./scripts/speech-synthesis.js";
-import { Recognizer, GrammarLists, Dictionary } from "./scripts/speech-recognition.js";
+import { Synthesizer, Utterance } from "./scripts/speech-synthesis.js";
+import { Recognizer, Dictionary } from "./scripts/speech-recognition.js";
+
+document.getElementById('intro-btn').addEventListener('click', () => {
+    Recognizer.start();
+    document.getElementById('intro').classList.add('disabled');
+    document.getElementById('selection').classList.remove('disabled');
+    document.getElementsByTagName('main')[0].classList.remove('disabled');
+} , false);
+
+document.getElementById('back-btn').addEventListener('click', () => {
+    document.getElementById('selection').classList.remove('disabled');
+    document.getElementById('app').classList.add('disabled');
+} , false);
+
+const scrollNames = {
+    'pt-BR': 'Cura Menor',
+    'pl-PL': 'Cura Maior',
+    'ko-KR': 'Cura Suprema',
+}
 
 let rights = 0;
 let lang = 'pt-BR';
 let words = Dictionary[lang];
 Recognizer.setLanguage(lang);
 Synthesizer.setLanguage(lang);
-
-Synthesizer.customVoiceChanged = () => {    
-    testBarbarian();
-    Recognizer.start();
-}
 
 Recognizer.onresult = (event) => {
     checkBarbarian(event.results[event.resultIndex][0].transcript);
@@ -28,16 +41,28 @@ let currentWord = '';
 const wordListElement = document.querySelector('p#words');
 const resultSpanElement = document.querySelector('span#result');
 const progressBarDivElement = document.querySelector('footer.progress-bar div');
-const languageElement = document.querySelector('aside#languages');
+const languageElement = document.querySelector('#selection');
 
-Object.keys(Dictionary).forEach( (key) => {
+const onChoseLanguage = (key) => {
+    document.getElementById('selection').classList.add('disabled');
+    document.getElementById('app').classList.remove('disabled');
+    restart(key);
+}
+
+Object.keys(scrollNames).forEach( (key) => {
+    const optionElement = document.createElement('li');
+    optionElement.classList.add('option');
+    const textNode = document.createTextNode(scrollNames[key]);
+    optionElement.appendChild(textNode);
+
     const flagElement = document.createElement('span');
     const country = ('' || key.split('-')[1]).toLocaleLowerCase();
     flagElement.classList.add('flag-icon', `flag-icon-${country}`);
-    flagElement.addEventListener('click', () => {
-        restart(key);
-    })
-    languageElement.appendChild(flagElement);
+    optionElement.addEventListener('click', () => {
+        onChoseLanguage(key);
+    });
+    optionElement.appendChild(flagElement);
+    languageElement.appendChild(optionElement);
 });
 
 const createWordElement = (word) => {
@@ -59,7 +84,7 @@ const testBarbarian = () => {
 const checkBarbarian = (speechResult) => {
     const rightAnswer = (speechResult.trim().toLocaleLowerCase() === currentWord.toLocaleLowerCase());
     const resultText = rightAnswer ? (`"${speechResult}"? Right!`) : (`"${speechResult}"? Wrong!`);
-    if(rightAnswer) {        
+    if(rightAnswer) {
         rights++;
     }
     resultSpanElement.innerHTML = resultText;
@@ -72,8 +97,11 @@ const restart = (new_lang) => {
     Recognizer.setLanguage(lang);
     Recognizer.abort();
     Synthesizer.setLanguage(lang);
-    
+
     wordListElement.innerHTML = '';
     wordElements = words.map( createWordElement );
+    currentWord = '';
+    resultSpanElement.innerHTML = '';
+
     testBarbarian();
 }
