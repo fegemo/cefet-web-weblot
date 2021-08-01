@@ -26,9 +26,9 @@ Recognizer.setLanguage(lang);
 Synthesizer.setLanguage(lang);
 
 Recognizer.onresult = (event) => {
-    checkBarbarian(event.results[event.resultIndex][0].transcript);
+    let success = checkBarbarian(event.results[event.resultIndex][0].transcript);
     console.log(event);
-    testBarbarian();
+    testBarbarian(success);
 }
 
 Recognizer.onnomatch = (event) => {
@@ -42,6 +42,9 @@ const wordListElement = document.querySelector('p#words');
 const resultSpanElement = document.querySelector('span#result');
 const progressBarDivElement = document.querySelector('footer.progress-bar div');
 const languageElement = document.querySelector('#selection');
+document.getElementById('pronunciation-btn').addEventListener('click', () => {
+    speakWord(currentWord)
+}, false);
 
 const onChoseLanguage = (key) => {
     document.getElementById('selection').classList.add('disabled');
@@ -74,11 +77,16 @@ const createWordElement = (word) => {
 }
 let wordElements = words.map( createWordElement );
 
-const testBarbarian = () => {
+const speakWord = (word) => {
+    Utterance.text = word;
+    Synthesizer.speak(Utterance);
+}
+
+const testBarbarian = (success = false) => {
     currentWord = words[rights];
     wordElements[rights].classList.remove('blurred');
-    Utterance.text = currentWord;
-    Synthesizer.speak(Utterance);
+    if(success)
+        speakWord(currentWord);
 }
 
 const checkBarbarian = (speechResult) => {
@@ -88,6 +96,7 @@ const checkBarbarian = (speechResult) => {
         rights++;
     }
     resultSpanElement.innerHTML = resultText;
+    return rightAnswer;
 }
 
 const restart = (new_lang) => {
@@ -103,5 +112,5 @@ const restart = (new_lang) => {
     currentWord = '';
     resultSpanElement.innerHTML = '';
 
-    testBarbarian();
+    testBarbarian(true);
 }
