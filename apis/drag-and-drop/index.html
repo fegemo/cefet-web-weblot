@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drag and Drop API - Exemplo</title>
+  <link rel="stylesheet" href="styles/monstrinhos.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overlock|Chewy">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <main id="dnd-example-container">
+    <header>
+      <h1>Prenda os<br>Monstrinhos</h1>
+    </header>
+    <p>
+      Ajude <strong>Agáte Êmi-Éli, o Quinto</strong>, arrastando os
+      bichinhos para dentro da jaula para prendê-los.
+    </p>
+    <section id="dnd-target" class="anim-dashes">
+      <div class="anim-dashes-blank"></div>
+    </section>
+    <section id="dnd-sources">
+      <ul>
+        <li draggable="true" class="dnd-draggable" id="johnny">Johnny</li>
+        <li draggable="true" class="dnd-draggable" id="dmitry">Dmitry</li>
+        <li draggable="true" class="dnd-draggable" id="ales">Ales</li>
+        <li draggable="true" class="dnd-draggable" id="andraz">Andraz</li>
+        <li draggable="true" class="dnd-draggable" id="logar">Logar</li>
+      </ul>
+    </section>
+  </main>
+  <script src="scripts/monstrinhos.js"></script>
+</body>
+</html>

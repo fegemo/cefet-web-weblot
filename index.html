@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>APIs do HTML5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="assets/images/html5-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat+Brush|Macondo+Swash+Caps&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/placeholder.css">
+  <link rel="stylesheet" href="assets/estilos.css">
+  <link rel="stylesheet" href="assets/audio-player.css">
+
+  <!-- seo/media tags -->
+  <meta name="title" content="APIs do HTML5">
+  <meta name="description"
+    content="Exemplos de diversas APIs do HTML5 mostrando seu uso em um exemplinho simples e divertido">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="APIs do HTML5">
+  <meta property="og:description"
+    content="Exemplos de diversas APIs do HTML5 mostrando seu uso em um exemplinho simples e divertido">
+  <meta property="og:image" content="https://fegemo.github.io/cefet-web-weblot/media-cover.webp">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="APIs do HTML5">
+  <meta property="twitter:description"
+    content="Exemplos de diversas APIs do HTML5 mostrando seu uso em um exemplinho simples e divertido">
+  <meta property="twitter:image" content="https://fegemo.github.io/cefet-web-weblot/media-cover.webp">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebPage",
+      "name": "APIs do HTML5",
+      "author": {
+        "@type": "Person",
+        "name": "Flávio Coutinho",
+        "jobTitle": "Professor Efetivo do Ensino Básico, Técnico e Tecnológico",
+        "image": "https://fegemo.github.io/cefet-web/images/flavio-avatar.jpg",
+        "affiliation": {
+          "@type": "EducationalOrganization",
+          "name": "CEFET-MG",
+          "url": "https://cefetmg.br",
+          "address": "Belo Horizonte, MG, Brazil"
+        }
+      },
+      "inLanguage": "pt-BR",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https://fegemo.github.io/cefet-web-weblot/images/media-cover.webp",
+        "caption": "Imagem de uma taverna com os dizeres 'APIs do HTML5'"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header id="top">
+    <h1>APIs do HTML5</h1>
+    <blockquote class="paragrafo-importante" cite="https://github.com/fegemo/cefet-web/blob/master/assignments/seminar-html5/README.md#semin%C3%A1rio---apis-do-html5">
+      Os Ataques Potencialmente Irresponsáveis <i class="fa fa-cutlery" aria-hidden="true"></i><br>
+      ️      de Agáte Êmi-Éli, o Quinto <i class="fa fa-html5" aria-hidden="true"></i>
+    </blockquote>
+    <i class="fa fa-angle-down animated bounce"></i>
+  </header>
+
+  <main>
+    <!-- os trabalhos serão colocados aqui quando principal.js for executado -->
+    <progress value="0" max="100" id="progresso-carregamento">0%</progress>
+    <div id="galeria">
+      <section class="section placeholder">
+        <div class="middle ph-item">
+          <div class="ph-col-12">
+            <div class="ph-picture"></div>
+            <div class="ph-row">
+              <div class="ph-col-6 big"></div>
+              <div class="ph-col-4 empty big"></div>
+              <div class="ph-col-2 big"></div>
+              <div class="ph-col-4"></div>
+              <div class="ph-col-8 empty"></div>
+              <div class="ph-col-6"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-12"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <a href="#top" aria-label="Voltar ao topo"><i class="fa fa-angle-up animated bounce"></i></a>
+    <p class="paragrafo-importante">Trabalho realizado pela turma de
+      <a href="https://fegemo.github.io/cefet-web/" target="_blank" rel="noopener">Programação Web</a>
+      do CEFET-MG em
+      <span class="semestre">2019/01</span>
+    </p>
+    <dl class="lista-rodape">
+      <dt>Professor:</dt>
+      <dd>Flávio Coutinho (
+        <i class="fa fa-github-alt" aria-hidden="true"></i>
+        <a href="https://github.com/fegemo" target="_blank" rel="noopener">fegemo</a>)
+      </dd>
+      <dt>Enunciado:</dt>
+      <dd><a href="https://github.com/fegemo/cefet-web/blob/master/assignments/seminar-html5/README.md" target="_blank" rel="noopener">no Github</a></dd>
+      <dt>Criado em:</dt>
+      <dd class="semestre">maio/2019</dd>
+    </dl>
+    <p>Créditos:</p>
+    <dl class="lista-rodape">
+      <dt>Galeria de imagens:</dt>
+      <dd><a href="https://codepen.io/teeganlincoln/pen/MaNxBv" target="_blank" rel="noopener">Teegan Lincoln</a> (adaptada)</dd>
+      <dt>Ícones:</dt>
+      <dd><a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a></dd>
+      <dt>Imagem da taverna:</dt>
+      <dd><a href="https://plus.google.com/photos/photo/103386450032431213980/6285023244756389938?sqid=108969114956131481493&ssid=d4dd7989-2a5d-4a64-bef0-2a83e2041486" target="_blank" rel="noopener">Thomas Hutchison</a></dd>
+      <dt>Detecção de cor média de imagem:</dt>
+      <dd><a href="https://github.com/pseudosavant/psColor/" target="_blank" rel="noopener">psColor.js</a></dd>
+      <dt>Conversão de RGB para HSI:</dt>
+      <dd><a href="https://github.com/e-/hsi.js/" target="_blank" rel="noopener">hsi.js</a></dd>
+      <dt>Música:</dt>
+      <dd><a href="http://alendadoheroi.com.br/" target="_blank" rel="noopener">A Lenda do Herói</a> (<a href="https://www.youtube.com/channel/UC-PjJT0RVURj_L6D8D3WIww">Castro Brothers</a>)</dd>
+      <dt>Tocador de música:</dt><dd><a href="https://codepen.io/shayanea/pen/yvvjya" target="_blank" rel="noopener">Shayan</a> (adaptado)</dd>
+    </dl>
+  </footer>
+
+  <div id="audio-wrapper">
+    <aside id="audio">
+      <div class="player">
+        <div id="info" class="info">
+          <span class="artist">Flume</span>
+          <span class="name">Say it</span>
+          <div class="progress-bar">
+            <div class="bar"></div>
+          </div>
+        </div>
+        <div id="control-panel" class="control-panel">
+          <div class="album-art"></div>
+          <div class="controls">
+            <div id="play" class="play"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <template id="placeholder-template">
+    <section class="section placeholder">
+      <div class="middle ph-item">
+        <div class="ph-col-12">
+          <div class="ph-picture"></div>
+          <div class="ph-row">
+            <div class="ph-col-6 big"></div>
+            <div class="ph-col-4 empty big"></div>
+            <div class="ph-col-2 big"></div>
+            <div class="ph-col-4"></div>
+            <div class="ph-col-8 empty"></div>
+            <div class="ph-col-6"></div>
+            <div class="ph-col-6 empty"></div>
+            <div class="ph-col-12"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <script src="assets/psColor.min.js"></script>
+  <script src="assets/hsi.min.js"></script>
+  <script src="assets/principal.js" type="module" charset="utf-8"></script>
+</body>
+</html>
