@@ -5,7 +5,7 @@ const loadingScreen = document.querySelector('#loading');
 const pianoScreen = document.querySelector('#piano');
 const histogramScreen = document.querySelector('#histogram');
 
-const notesPressTimestamp = {};
+let notesPressTimestamp = {};
 
 function getDefaultNotesHistogram() {
     return Object.keys(PIANO_VALUES_DICT).reduce((acc, note) => ({ ...acc, [note]: 0}), {});
@@ -65,7 +65,6 @@ function handlePianoKeyDown(pianoNote) {
     const pianoNoteElement = document.querySelector(`#${pianoNote}`)
     pianoNoteElement.classList.add('active');
     notesPressTimestamp[pianoNote] = Date.now();
-
 }
 
 function handlePianoKeyUp(pianoNote) {
@@ -74,6 +73,7 @@ function handlePianoKeyUp(pianoNote) {
     const keyTimePressed = currentTimestamp - (notesPressTimestamp[pianoNote] ?? currentTimestamp);
     notesHistogram[pianoNote] = notesHistogram[pianoNote] + keyTimePressed;
     pianoNoteElement.classList.remove('active');
+    renderNotesHistogramChart()
 
 }
 

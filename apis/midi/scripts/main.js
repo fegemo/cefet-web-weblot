@@ -26,6 +26,34 @@ const PIANO_VALUES_DICT = {
     'high_c': 72
 };
 
+const PIANO_NOTE_NAME = {
+    'low_c': 'C3',
+    'low_cs': 'C#3',
+    'low_d': "D3",
+    'low_ds': "D#3",
+    'low_e': "E3",
+    'low_f': "F3",
+    'low_fs': "F#3",
+    'low_g': "G3",
+    'low_gs': "G#3",
+    'low_a': "A3",
+    'low_as': "A#3",
+    'low_b': "B3",
+    'middle_c': "C4",
+    'cs': "C#4",
+    'd': "D4",
+    'ds': "D#4",
+    'e': "E4",
+    'f': "F4",
+    'fs': "F#4",
+    'g': "G4",
+    'gs': "G#4",
+    'a': "A4",
+    'as': "A#4",
+    'b': "B4",
+    'high_c': "C5",
+};
+
 const PIANO_NOTES_DICT = Object.keys(PIANO_VALUES_DICT).reduce((acc, note) => {
     const value = PIANO_VALUES_DICT[note];
     return { ...acc, [value]: note};

@@ -1,6 +1,7 @@
 let currentChart;
 
 function renderNotesHistogramChart() {
+
   const labels = Object.keys(notesHistogram);
 
   const data = {
@@ -27,7 +28,10 @@ function renderNotesHistogramChart() {
     document.getElementById('histogramCanvas'),
     chartConfig
   );
+  notesPressTimestamp = {};
+}
 
-  // reset current histogram
+function resetHistogram() {
   notesHistogram = getDefaultNotesHistogram();
+  renderNotesHistogramChart();
 }
