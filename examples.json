@@ -1,7 +1,6 @@
 {
   "semestre": "2021/01",
   "pastas": [
-    "drag-and-drop",
     "beacon",
     "canvas-fullscreen",
     "custom-elements",
