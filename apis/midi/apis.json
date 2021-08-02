@@ -1,0 +1,41 @@
+[
+    {
+        "nome": "Web MIDI API",
+        "breveDescricao": "",
+        "paginaInicial": "apis/midi",
+        "screenshot": {
+            "caminho": "apis/midi/images/screenshot.png",
+            "textoAlternativo": ""
+        },
+        "desenvolvedores": [
+            {
+                "nome": "Bruno Damacena",
+                "usuarioGithub": "BrunoDamacena"
+            },
+            {
+                "nome": "Bruno Martins",
+                "usuarioGithub": "brunopmartins"
+            },
+            {
+                "nome": "Gabriel Dutra",
+                "usuarioGithub": "gabrieldutra"
+            },
+            {
+                "nome": "Ramon Griffo",
+                "usuarioGithub": "IguanaAzul"
+            },
+            {
+                "nome": "Sílvia Fonseca",
+                "usuarioGithub": "silviasfon"
+            }
+        ],
+        "suporteDeNavegadores": {
+            "chrome": true,
+            "safari": false,
+            "firefox": false,
+            "ie": false,
+            "edge": true,
+            "opera": false
+        }
+    }
+]
