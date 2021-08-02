@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "Web Share API",
+    "breveDescricao": "Possibilita o compartilhamento de arquivos utilizando o recurso nativo do sistema operacional.",
+    "paginaInicial": "apis/web-share/",
+    "screenshot": {
+      "caminho": "apis/web-share/images/screenshot.png",
+      "textoAlternativo": "Uma página com uma imagem de cachorro e dois botões para alterar a imagem e compartilhar, respectivamente."
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Mateus Mourão",
+        "usuarioGithub": "mmdfmateus"
+      },
+      {
+        "nome": "Igor Tomisch",
+        "usuarioGithub": "GitScrider"
+      },
+      {
+        "nome": "Matheus Brant",
+        "usuarioGithub": "matheusBrant"
+      },
+      {
+        "nome": "Tulio Bittar",
+        "usuarioGithub": "TulioBittar"
+      },
+      {
+        "nome": "Matheus Pinheiro",
+        "usuarioGithub": "MatheusPinheirodeSouza1"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": false,
+      "ie": false,
+      "edge": true,
+      "opera": false
+    }
+  }
+]
