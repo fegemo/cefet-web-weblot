@@ -8,6 +8,7 @@
     "gamepad-vibration",
     "midi",
     "pointer-lock",
+    "speech-recognition-e-speech-synthesis",
     "web-app-manifest",
     "websockets",
     "web-share"
