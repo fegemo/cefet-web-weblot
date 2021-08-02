@@ -2,6 +2,7 @@
   "semestre": "2021/01",
   "pastas": [
     "beacon",
+    "canvas-fullscreen",
     "custom-elements",
     "device-orientation",
     "drag-and-drop",
