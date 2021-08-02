@@ -1,0 +1,64 @@
+[
+    {
+      "nome": "Canvas API",
+      "breveDescricao": "Exemplo com a API Canvas que permite desenhar de forma colorida e com várias formas",
+      "paginaInicial": "apis/canvas-fullscreen/",
+      "screenshot": {
+        "caminho": "apis/canvas-fullscreen/images/canvas-fullscreen.webp",
+        "textoAlternativo": "Canvas para desenhar"
+      },
+      "desenvolvedores": [
+        {
+          "nome": "Beatriz Souza",
+          "usuarioGithub": "bia-souza"
+        },
+        {
+          "nome": "Priscilla Mendes",
+          "usuarioGithub": "PriscillaMendes"
+        },
+        {
+          "nome": "Matheus Santos",
+          "usuarioGithub": "matheusmstos"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "ie": true,
+        "edge": true,
+        "opera": true
+      }
+    },
+	{
+      "nome": "Fullscreen API",
+      "breveDescricao": "Canvas em fullscreen e tela em fullscreen",
+      "paginaInicial": "apis/canvas-fullscreen/",
+      "screenshot": {
+        "caminho": "apis/canvas-fullscreen/images/canvas-fullscreen.webp",
+        "textoAlternativo": "Fullscreen"
+      },
+      "desenvolvedores": [
+        {
+          "nome": "Beatriz Souza",
+          "usuarioGithub": "bia-souza"
+        },
+        {
+          "nome": "Priscilla Mendes",
+          "usuarioGithub": "PriscillaMendes"
+        },
+        {
+          "nome": "Matheus Santos",
+          "usuarioGithub": "matheusmstos"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "ie": false,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]

@@ -1,0 +1,182 @@
+body{
+    min-height: 100%;
+    border:0;
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+
+header{
+    color: #BDB76B;
+    padding: 15px 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 65px;
+    text-align: center;
+	background-color: #B0C4DE;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+canvas{
+    position: relative;
+    top: 30px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+#colors-controls{
+    position: absolute;
+    display: flex;
+    width: 120px;
+    flex-direction: column;
+    align-content: center;
+    top: 150px;
+    left:80%;
+    padding:20px;
+    border: 1px solid gray;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px gray;
+}
+
+.colors-item{
+    display: flex;
+    align-content: center;
+    padding: 10px;
+}
+.colors-item > p{
+    align-self: space-around;
+}
+
+
+#red-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 10px;
+}
+
+#blue-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blue;
+    margin-right: 10px;
+}
+
+#green-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 10px;
+}
+
+#yellow-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin-right: 10px;
+}
+
+#black-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 10px;
+}
+
+#pink-color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: pink;
+    margin-right: 10px;
+}
+
+#draw-style{
+    position: absolute;
+    top: 100px;
+    left: 3%;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    border: 20px solid grey;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px gray;
+}
+
+.draw-type{
+    padding: 10px 10px;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    width: 150px;
+    align-self: center;
+}
+
+.draw-type:hover{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+.draw-type-active{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+.colors-item:hover{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+.colors-item-active{
+    background-color: rgb(52, 52, 61);
+    color: white;
+}
+
+img[src='./images/frozenscastle.png']{
+    position: fixed;
+    z-index: -2;
+    bottom: 20px;
+    left: -5%;
+    width: 400px;
+}
+
+img[src='./images/sofiasdragon.png']{
+    position: fixed;
+    z-index: -2;
+    bottom: 0px;
+    right: 5%;
+    width: 400px;
+}
+
+img[src='./images/warrior.png']{
+    position: fixed;
+    z-index: -2;
+    bottom: 0px;
+    left: 15%;
+    width: 150px;
+}
+
+.bk-img{
+    position: absolute;
+    filter: opacity(70%);
+
+    height: 100vh;
+    width: 100vw;
+    z-index: -5;
+}
+img[src="./images/bk.jpg"]{
+    height: 100vh;
+    width: 100vw;
+}
+
+.bnt-fullscreen{
+    position: absolute;
+    bottom: 5px;
+    right: 100px;
+}
