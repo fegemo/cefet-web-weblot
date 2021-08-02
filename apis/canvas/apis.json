@@ -1,0 +1,37 @@
+[
+    {
+      "nome": "Canvas API",
+      "breveDescricao": "Exemplo com a API Canvas que permite desenhar de forma colorida e com várias formas",
+      "paginaInicial": "apis/canvas/",
+      "screenshot": {
+        "caminho": "apis/canvas/images/canvas.png",
+        "textoAlternativo": "Canvas para desenhar"
+      },
+      "desenvolvedores": [
+        {
+          "nome": "Beatriz Souza",
+          "usuarioGithub": "bia-souza"
+        },
+        {
+          "nome": "Priscilla Mendes",
+          "usuarioGithub": "PriscillaMendes"
+        },
+        {
+          "nome": "Matheus Santos",
+          "usuarioGithub": "matheusmstos"
+        },
+        {
+          "nome": "Pedro Cardoso",
+          "usuarioGithub": "PedroCardoso1"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": true,
+        "firefox": true,
+        "ie": true,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]
