@@ -1,0 +1,33 @@
+[
+    {
+      "nome": "Service Workers and Push API",
+      "breveDescricao": "Um script que o navegador executa em segundo plano, separado de uma página web, que permite aplicações utilizarem processamento persistente em segundo plano, possibilitando experiências offlines como por exemplo push notifications.\nPossibilita o envio de mensagens do servidor para o navegador mesmo que o site não esteja focado nem ao menos aberto no navegador",
+      "paginaInicial": "apis/service-workers-e-push/public",
+      "screenshot": {
+        "caminho": "apis/service-workers-e-push/images/screenshot.png",
+        "textoAlternativo": "Uma página com temática medieval com uma cidade da época ao fundo, um rodapé com o texto de introdução do livro 'The Witcher:o último desejo' e dois botões ao fim com os dizeres 'Iniciar aventura' e 'Preparar pra aventura' respectivamente"
+      },
+      "desenvolvedores": [
+        {
+          "nome": "Eduardo Alves",
+          "usuarioGithub": "Tuwtuw"
+        },
+        {
+          "nome": "Marcelo Ricoy",
+          "usuarioGithub": "MarceloRicoy"
+        },
+        {
+          "nome": "Sinal de Deus",
+          "usuarioGithub": "SinvalVJunior"
+        }
+      ],
+      "suporteDeNavegadores": {
+        "chrome": true,
+        "safari": false,
+        "firefox": true,
+        "ie": false,
+        "edge": true,
+        "opera": true
+      }
+    }
+  ]
