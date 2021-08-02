@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+html, body {   
+    margin: 0px;
+    min-height: 100vh;
+    background-color: lightblue;
+    
+}
+
+header {
+    text-align: center;
+    font-family: 'Tourney', cursive;
+    grid-area: header;
+    color: red;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    font-style: italic;
+}
+
+body {
+    background-image: url("../images/balloons.jpg");
+    font-family: 'Tourney', cursive;
+    color: red;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+}
+
+section {
+    padding-top: 10px;
+    grid-area: main;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.wrapper {
+    position: relative;
+}
+
+#input-file-label {
+    display: inline-block;
+    border: 1px solid tomato;
+    border-radius: 25%;
+    text-align: center;
+    line-height: 110px;
+    width: 110px; 
+    height: 110px; 
+    background-color: lightcyan;
+    color: blue;
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    padding: 0.3em;
+    margin: 1em;
+}
+
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    width: 110px; 
+    height: 110px; 
+}
+
+.battery-charging::before{
+    content:"🔋"
+}
+
+.battery-discharging::before{
+    content:"😱🔌";
+    
+}
+.set-alert-color{
+    background-color: red;
+    color: white;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    background-image: url("../images/flash.jpg");
+}
+
+.energy{
+    border-radius: 50px;
+    border: 2px double rgba(219, 185, 64, 255);
+    position: absolute;
+    top: 100px;
+    left:50px;
+    background-color: lightcyan;
+    width: 300px;
+    padding: 1em;
+    font-size: 18px;
+
+}
+.energy>div{
+    color: blueviolet;
+}
+.energy>img{
+    border-radius: 100%;
+    border: 2px double rgba(219, 185, 64, 255);
+    width: 300px;
+}
+
+.password-input {
+    visibility: hidden;
+}
+
+#password-box{ 
+    font-family: 'Indie Flower', cursive;  
+    color: red;
+    font-size: 24px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#password{
+    margin: 1em;
+    font-size: 18px;
+}
+
+input[type="submit"], button {
+    background-color: blue;
+    font-family: 'Tourney', cursive;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;    
+    padding: 0.5em;
+}
