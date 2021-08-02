@@ -1,6 +1,5 @@
 [
   {
- 
     "nome": "Web Crypto API",
     "breveDescricao": "Possibilita encriptar e decriptar arquivos.",
     "paginaInicial": "apis/web-crypto-and-file-and-battery-status/",
@@ -23,27 +22,14 @@
       }
     ],
     "suporteDeNavegadores": {
-        "ie":false,
-        "edge":true,
-        "firefox":true,
-        "chrome":true,
-        "safari":true,
-        "opera":true,
-        "safari on iOS":true,
-        "opera mini":false,
-        "android browser":true,
-        "opera mobile":true,
-        "chrome for android":true,
-        "firefox for android":true,
-        "uc browser for android":true,
-        "samsung internet":true,
-        "qq browser":true,
-        "baidu browser":true,
-        "kaiOS browser":true
+      "ie": false,
+      "edge": true,
+      "firefox": true,
+      "chrome": true,
+      "safari": true,
+      "opera": true
     }
-
-  }
-  ,
+  },
   {
     "nome": "File API",
     "breveDescricao": "Possibilita selecionar arquivos e ler seu conteúdo.",
@@ -67,27 +53,14 @@
       }
     ],
     "suporteDeNavegadores": {
-        "ie":false,
-        "edge":true,
-        "firefox":true,
-        "chrome":true,
-        "safari":true,
-        "opera":true,
-        "safari on iOS":true,
-        "opera mini":false,
-        "android browser":true,
-        "opera mobile":true,
-        "chrome for android":true,
-        "firefox for android":true,
-        "uc browser for android":true,
-        "samsung internet":true,
-        "qq browser":true,
-        "baidu browser":true,
-        "kaiOS browser":true
+      "ie": false,
+      "edge": true,
+      "firefox": true,
+      "chrome": true,
+      "safari": true,
+      "opera": true
     }
-
   },
-   
   {
     "nome": "Battery Status API",
     "breveDescricao": "Possibilita obter e então exibir dados do sistema de carregamento da bateria do dispositivo.",
@@ -111,24 +84,12 @@
       }
     ],
     "suporteDeNavegadores": {
-        "ie":false,
-        "edge":true,
-        "firefox":false,
-        "chrome":true,
-        "safari":false,
-        "opera":true,
-        "safari on iOS":false,
-        "opera mini":false,
-        "android browser":true,
-        "opera mobile":true,
-        "chrome for android":true,
-        "firefox for android":false,
-        "uc browser for android":true,
-        "samsung internet":true,
-        "qq browser":true,
-        "baidu browser":true,
-        "kaiOS browser":true
+      "ie": false,
+      "edge": true,
+      "firefox": false,
+      "chrome": true,
+      "safari": false,
+      "opera": true
     }
-
   }
 ]
