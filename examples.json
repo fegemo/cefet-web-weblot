@@ -9,6 +9,7 @@
     "geolocation",
     "midi",
     "pointer-lock",
+    "service-workers-e-push",
     "speech-recognition-e-speech-synthesis",
     "web-app-manifest",
     "websockets",
