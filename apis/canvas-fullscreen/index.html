@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="scripts/canvas.js"></script>
+</head>
+
+<body>
+    <header>Spielshiff</header>
+    <div class="bk-img">
+        <img src="./images/bk.jpg" alt="Imagem de pedras em um campo verde">
+    </div>
+    
+    <canvas id="canvas" width="600" height="500"></canvas>
+
+    <div id="draw-style">
+        <p><label>Fill: <input id="fillBox" type="checkbox" checked="checked"></label></p>
+        <button id="dt1" type="button" class="draw-type draw-type-active" value="line">Line: </button>
+        <button id="dt2" type="button" class="draw-type" value="polygon">Polygon: </button>
+        <button id="dt3" type="button" class="draw-type" value="triangle">Triangle: </button>
+        <button id="dt4" type="button" class="draw-type" value="square">Square: </button>
+        <button id="dt5" type="button" class="draw-type" value="circle">Circle: </button>
+        <button id="dt6" type="button" class="draw-type" value="clear">Clear</button>
+    </div>
+
+    <div id="colors-controls">
+        <button id="bnt-bkc" type="button" class="colors-item colors-item-active" value="black">
+            <div id="black-color"></div>Black
+        </button>
+        <button id="bnt-rc" type="button" class="colors-item" value="red">
+            <div id="red-color"></div>Red
+        </button>
+        <button id="bnt-bc" type="button" class="colors-item" value="blue">
+            <div id="blue-color"></div>Blue
+        </button>
+        <button id="bnt-fc" type="button" class="colors-item" value="green">
+            <div id="green-color"></div>Green
+        </button>
+        <button id="bnt-pc" type="button" class="colors-item" value="pink">
+            <div id="pink-color"></div>Pink
+        </button>
+        <button id="bnt-yc" type="button" class="colors-item" value="yellow">
+            <div id="yellow-color"></div>Yellow
+        </button>
+    </div>
+
+    <img src="./images/frozenscastle.png" alt="Castelo maravilhoso do frozen.">
+    <img src="./images/sofiasdragon.png" alt="Crackle dragão do desenho animado princesinha Sofia">
+    <img src="./images/warrior.png" alt="Guerreiro medieval com uma espada maneira">
+
+    
+    <div class="bnt-fullscreen">
+        <button id="canvas-button">Fullscreen Canvas</button>
+        <button id="body-button">Fullscreen Body</button>
+    </div>
+    
+
+
+    <script src="scripts/painel.js"></script>
+    <script src="scripts/fullscreen.js"></script>
+</body>
+
+</html>
