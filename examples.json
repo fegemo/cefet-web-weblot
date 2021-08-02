@@ -1,13 +1,19 @@
 {
   "semestre": "2021/01",
   "pastas": [
+    "beacon",
     "custom-elements",
     "device-orientation",
     "drag-and-drop",
     "gamepad-vibration",
+    "geolocation",
+    "midi",
+    "online-offline",
     "pointer-lock",
+    "service-workers-e-push",
+    "speech-recognition-e-speech-synthesis",
     "web-app-manifest",
     "websockets",
-    "online-offline"
+    "web-share"
   ]
 }
