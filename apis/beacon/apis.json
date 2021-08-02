@@ -1,0 +1,25 @@
+[
+  {
+    "nome": "Web Beacon Api",
+    "breveDescricao": "web beacon api, possibilita enviar requisições sem respostas para evitar delay e melhorar a experiência do usuário",
+    "paginaInicial": "apis/beacon/",
+    "screenshot": {
+      "caminho": "apis/beacon/img/screenshot.png",
+      "textoAlternativo": "quanto tempo o usuário consegue comtemplar os dragoões"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Igor Lacerda Tomich",
+        "usuarioGithub": "GitScrider"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": true,
+      "edge": true,
+      "opera": true
+    }
+  }
+]
