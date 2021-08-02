@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "Online-Offline API",
+    "breveDescricao": "Checa se um usuário está com conexão de internet online ou offline",
+    "paginaInicial": "apis/online-offline/",
+    "screenshot": {
+      "caminho": "apis/online-offline/images/screenshot.png",
+      "textoAlternativo": "Imagem simples alternando entre online e offline de acordo com a conectividade da página"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Mateus Mourão",
+        "usuarioGithub": "mmdfmateus"
+      },
+      {
+        "nome": "Igor Tomisch",
+        "usuarioGithub": "GitScrider"
+      },
+      {
+        "nome": "Matheus Brant",
+        "usuarioGithub": "matheusBrant"
+      },
+      {
+        "nome": "Tulio Bittar",
+        "usuarioGithub": "TulioBittar"
+      },
+      {
+        "nome": "Matheus Pinheiro",
+        "usuarioGithub": "MatheusPinheirodeSouza1"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": true,
+      "edge": true,
+      "opera": true
+    }
+  }
+]

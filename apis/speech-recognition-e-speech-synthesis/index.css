@@ -1,0 +1,103 @@
+body {
+    overflow: hidden;
+    background-color: #923cb5;
+    background-image: radial-gradient(circle, rgba(146,60,181,1) 0%, rgba(0,0,0,1) 125%);
+}
+
+.option:hover {
+    cursor: pointer;
+}
+
+#selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 50px;
+    list-style-type: None;
+    height: 100%;
+}
+
+#intro {
+    font-size: 30px;
+    color: white;
+    margin: 10% 20%;
+}
+
+.disabled {
+    display: none !important;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    background-image: url('./imgs/grimoire-page.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.blurred {
+    text-shadow: 0px 0px 15px rgb(0 0 0 / 50%);
+    color: transparent;
+}
+
+#words {
+    max-width: 40vw;
+    text-overflow: clip;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.word {
+    padding: 0px 5px;
+    font-size: 40px;
+    font-family: fantasy;
+}
+
+.progress-bar {
+    width: 100vw;
+    border: 1px solid;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    background: white;
+}
+
+.progress-bar div {
+    width: 1vw;
+    background: green;
+    height: 20px;
+}
+
+aside#speak-indicator {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+aside#speak-indicator.on {
+    background: radial-gradient(green 60%, transparent 70%);
+}
+
+aside#speak-indicator:not(.on) {
+    background: radial-gradient(red 60%, transparent 70%);
+}
+
+aside#languages {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.flag-icon {
+    margin: 5px;
+}

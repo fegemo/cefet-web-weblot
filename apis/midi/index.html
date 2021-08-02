@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/piano.css">
+    <title>Web MIDI Api</title>
+</head>
+<body>
+    <section id="loading">
+
+    </section>
+    <section id="piano" class="hidden">
+        <h1>Um Belo Piano de 9 Caldas</h1>
+        <span>graphic design is my passion</span>
+        <ul class="set">
+            <li class="white c" id="low_c"></li>
+            <li class="black cs" id="low_cs"></li>
+            <li class="white d" id="low_d"></li>
+            <li class="black ds" id="low_ds"></li>
+            <li class="white e" id="low_e"></li>
+            <li class="white f" id="low_f"></li>
+            <li class="black fs" id="low_fs"></li>
+            <li class="white g" id="low_g"></li>
+            <li class="black gs" id="low_gs"></li>
+            <li class="white a" id="low_a"></li>
+            <li class="black as" id="low_as"></li>
+            <li class="white b" id="low_b"></li>
+            <li class="white c" id="middle_c"></li>
+            <li class="black cs" id="cs"></li>
+            <li class="white d" id="d"></li>
+            <li class="black ds" id="ds"></li>
+            <li class="white e" id="e"></li>
+            <li class="white f" id="f"></li>
+            <li class="black fs" id="fs"></li>
+            <li class="white g" id="g"></li>
+            <li class="black gs" id="gs"></li>
+            <li class="white a" id="a"></li>
+            <li class="black as" id="as"></li>
+            <li class="white b" id="b"></li>
+            <li class="white c" id="high_c"></li>
+        </ul>
+    </section>
+    <section id="histogram" class="hidden">
+        <h2>Notas tocadas:</h2>
+        <button class="button_slide slide_right" onclick="resetHistogram()">Resetar histograma</button>
+        <canvas id="histogramCanvas"></canvas>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/audiosynth/1.0.0/audiosynth.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/piano.js"></script>
+    <script src="scripts/chart.js"></script>
+</body>
+</html>
