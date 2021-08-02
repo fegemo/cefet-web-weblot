@@ -8,6 +8,7 @@
     "gamepad-vibration",
     "geolocation",
     "midi",
+    "online-offline",
     "pointer-lock",
     "service-workers-e-push",
     "speech-recognition-e-speech-synthesis",
