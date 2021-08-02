@@ -6,6 +6,7 @@
     "drag-and-drop",
     "gamepad-vibration",
     "pointer-lock",
+    "service-workers-e-push",
     "web-app-manifest",
     "websockets"
   ]
