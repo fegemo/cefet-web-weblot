@@ -1,0 +1,80 @@
+[
+  {
+    "nome": "Speech Recognition API",
+    "breveDescricao": "Possibilita o reconhecimento de fala",
+    "paginaInicial": "apis/speech-recognition-e-speech-synthesis",
+    "screenshot": {
+      "caminho": "apis/speech-recognition-e-speech-synthesis/imgs/screenshot.png",
+      "textoAlternativo": "Página indicando para o usuário ler a palavra a ser reconhecida e botão para ler a mesma palavra pro usuário"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Lucas Dutra Marioza dos Santos",
+        "usuarioGithub": "lucasmarioza"
+      },
+      {
+        "nome": "Matheus de Oliveira Marçal",
+        "usuarioGithub": "mmarshall323"
+      },
+      {
+        "nome": "Matheus Galantine Diniz Machado",
+        "usuarioGithub": "galantine"
+      },
+      {
+        "nome": "Pedro Frois Bittencourt",
+        "usuarioGithub": "pedrofrois"
+      },
+      {
+        "nome": "Vitor Gomes Soares Lins Peixoto",
+        "usuarioGithub": "vitorpeixoto"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": false,
+      "ie": false,
+      "edge": true,
+      "opera": false
+    }
+  },
+  {
+    "nome": "Speech Synthesis API",
+    "breveDescricao": "Possibilita a leitura de frases para o usuário",
+    "paginaInicial": "apis/speech-recognition-e-speech-synthesis",
+    "screenshot": {
+      "caminho": "apis/speech-recognition-e-speech-synthesis/imgs/screenshot.png",
+      "textoAlternativo": "Página indicando para o usuário ler a palavra a ser reconhecida e botão para ler a mesma palavra pro usuário"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Lucas Dutra Marioza dos Santos",
+        "usuarioGithub": "lucasmarioza"
+      },
+      {
+        "nome": "Matheus de Oliveira Marçal",
+        "usuarioGithub": "mmarshall323"
+      },
+      {
+        "nome": "Matheus Galantine Diniz Machado",
+        "usuarioGithub": "galantine"
+      },
+      {
+        "nome": "Pedro Frois Bittencourt",
+        "usuarioGithub": "pedrofrois"
+      },
+      {
+        "nome": "Vitor Gomes Soares Lins Peixoto",
+        "usuarioGithub": "vitorpeixoto"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": false,
+      "edge": true,
+      "opera": true
+    }
+  }
+]
