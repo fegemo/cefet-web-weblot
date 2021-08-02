@@ -7,12 +7,14 @@ body{
 }
 
 header{
-    color: gold;
+    color: #BDB76B;
     padding: 15px 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 65px;
     text-align: center;
+	background-color: #B0C4DE;
+	text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 canvas{
