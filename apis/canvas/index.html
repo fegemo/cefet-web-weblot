@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,11 @@
 </head>
 
 <body>
+    <header>Spielshiff</header>
+    <div class="bk-img">
+        <img src="./images/bk.jpg" alt="Imagem de pedras em um campo verde">
+    </div>
+    
     <canvas id="canvas" width="600" height="500"></canvas>
 
     <div id="draw-style">
@@ -22,18 +28,32 @@
         <button id="dt6" type="button" class="draw-type" value="clear">Clear</button>
     </div>
 
-    <form id="colors-controls">
-        <button id="bnt-bkc" type="button" class="colors-item colors-item-active" value="black" ><div id="black-color"></div>Black</button>
-        <button id="bnt-rc" type="button" class="colors-item" value="red"><div id="red-color"></div>Red</button>
-        <button id="bnt-bc" type="button" class="colors-item" value="blue"><div id="blue-color"></div>Blue</button>
-        <button id="bnt-fc" type="button" class="colors-item" value="green"><div id="green-color"></div>Green</button>
-        <button id="bnt-pc" type="button" class="colors-item" value="pink"><div id="pink-color"></div>Pink</button>
-        <button id="bnt-yc" type="button" class="colors-item" value="yellow"><div id="yellow-color"></div>Yellow</button>
-    </form>
+    <div id="colors-controls">
+        <button id="bnt-bkc" type="button" class="colors-item colors-item-active" value="black">
+            <div id="black-color"></div>Black
+        </button>
+        <button id="bnt-rc" type="button" class="colors-item" value="red">
+            <div id="red-color"></div>Red
+        </button>
+        <button id="bnt-bc" type="button" class="colors-item" value="blue">
+            <div id="blue-color"></div>Blue
+        </button>
+        <button id="bnt-fc" type="button" class="colors-item" value="green">
+            <div id="green-color"></div>Green
+        </button>
+        <button id="bnt-pc" type="button" class="colors-item" value="pink">
+            <div id="pink-color"></div>Pink
+        </button>
+        <button id="bnt-yc" type="button" class="colors-item" value="yellow">
+            <div id="yellow-color"></div>Yellow
+        </button>
+    </div>
 
+    <img src="./images/frozenscastle.png" alt="Castelo maravilhoso do frozen.">
+    <img src="./images/sofiasdragon.png" alt="Crackle dragão do desenho animado princesinha Sofia">
+    <img src="./images/warrior.png" alt="Guerreiro medieval com uma espada maneira">
 
     <script src="js/painel.js"></script>
 </body>
+
 </html>
-
-
