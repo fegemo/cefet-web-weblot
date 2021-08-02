@@ -174,3 +174,9 @@ img[src="./images/bk.jpg"]{
     height: 100vh;
     width: 100vw;
 }
+
+.bnt-fullscreen{
+    position: absolute;
+    bottom: 5px;
+    right: 100px;
+}
