@@ -54,8 +54,8 @@ function subscribeUserToPush() {
     });
 
 }
-const introEndpoint = "Your push endpoint is:";
-const urlDescription = "To test it, make a POST request to this endpoint with a TTL header:"
+const introEndpoint = "Seu endpoint é:";
+const urlDescription = "Para continuar a aventura, faça uma requisição POST nesse endpoint com um TTL no header. Por exemplo, rodando esse comando no terminal:"
 function fillEndpointURL(endpoint) {
   pushEndpoint = endpoint;
 
