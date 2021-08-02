@@ -8,6 +8,6 @@
     "pointer-lock",
     "web-app-manifest",
     "websockets",
-	"canvas"
+	"canvas-fullscreen"
   ]
 }
