@@ -4,7 +4,7 @@
       "breveDescricao": "Exemplo com a API Canvas que permite desenhar de forma colorida e com várias formas",
       "paginaInicial": "apis/canvas-fullscreen/",
       "screenshot": {
-        "caminho": "apis/canvas-fullscreen/images/canvas.png",
+        "caminho": "apis/canvas-fullscreen/images/canvas-fullscreen.webp",
         "textoAlternativo": "Canvas para desenhar"
       },
       "desenvolvedores": [
@@ -35,7 +35,7 @@
       "breveDescricao": "Canvas em fullscreen e tela em fullscreen",
       "paginaInicial": "apis/canvas-fullscreen/",
       "screenshot": {
-        "caminho": "apis/canvas-fullscreen/images/canvas.png",
+        "caminho": "apis/canvas-fullscreen/images/canvas-fullscreen.webp",
         "textoAlternativo": "Fullscreen"
       },
       "desenvolvedores": [
