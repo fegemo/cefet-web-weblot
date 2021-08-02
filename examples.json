@@ -2,11 +2,11 @@
   "semestre": "2021/01",
   "pastas": [
     "beacon",
-    "drag-and-drop",
     "custom-elements",
     "device-orientation",
     "drag-and-drop",
     "gamepad-vibration",
+    "geolocation",
     "midi",
     "pointer-lock",
     "speech-recognition-e-speech-synthesis",

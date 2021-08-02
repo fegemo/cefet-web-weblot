@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "Geolocation API",
+    "breveDescricao": "Permite que o usuário forneça sua localização a aplicativos web.",
+    "paginaInicial": "apis/geolocation/",
+    "screenshot": {
+      "caminho": "apis/geolocation/images/screenshot.png",
+      "textoAlternativo": "Uma pagina com um botão que ao clicar indicará a posição atual do usuário"
+    },
+    "desenvolvedores": [
+      {
+        "nome": "Mateus Mourão",
+        "usuarioGithub": "mmdfmateus"
+      },
+      {
+        "nome": "Igor Tomisch",
+        "usuarioGithub": "GitScrider"
+      },
+      {
+        "nome": "Matheus Brant",
+        "usuarioGithub": "matheusBrant"
+      },
+      {
+        "nome": "Tulio Bittar",
+        "usuarioGithub": "TulioBittar"
+      },
+      {
+        "nome": "Matheus Pinheiro",
+        "usuarioGithub": "MatheusPinheirodeSouza1"
+      }
+    ],
+    "suporteDeNavegadores": {
+      "chrome": true,
+      "safari": true,
+      "firefox": true,
+      "ie": true,
+      "edge": true,
+      "opera": true
+    }
+  }
+]
